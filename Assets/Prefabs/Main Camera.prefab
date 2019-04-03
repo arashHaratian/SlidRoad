@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1100841853705457160}
   - component: {fileID: 1100841853705457162}
   - component: {fileID: 1100841853705457175}
+  - component: {fileID: 1378958823}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -96,3 +97,16 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100841853705457174}
   m_Enabled: 1
+--- !u!114 &1378958823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100841853705457174}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c47795186942dc4589fe9eeaac6d656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bug: this script is for test and i think it will not fix
