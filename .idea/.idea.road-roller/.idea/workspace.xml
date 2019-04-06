@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bf5d946-345c-47d7-8938-41ac51c839b1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/TestMaterials/FakeGroundColor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/TestMaterials/FakeGroundColor.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TestObjects/FakePlayer.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/TestObjects/FakePlayer.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.road-roller/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.road-roller/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.road-roller/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.road-roller/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SphereStaticMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SphereStaticMovement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TestZeroRot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TestZeroRot.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,10 +19,18 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+            <state relative-caret-position="354">
+              <caret line="51" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
               <folding>
-                <element signature="e#0#78#0" expanded="true" />
+                <marker date="1554556648039" expanded="false" signature="6:78" ph="..." />
+                <marker date="1554556648039" expanded="true" signature="179:2779" ph="{...}" />
+                <marker date="1554556648039" expanded="true" signature="499:642" ph="{...}" />
+                <marker date="1554556648039" expanded="true" signature="677:733" ph="{...}" />
+                <marker date="1554556648039" expanded="true" signature="762:947" ph="{...}" />
+                <marker date="1554556648039" expanded="true" signature="976:2777" ph="{...}" />
+                <marker date="1554556648039" expanded="true" signature="1063:1173" ph="{...}" />
+                <marker date="1554556648039" expanded="true" signature="1302:1748" ph="{...}" />
+                <marker date="1554556648039" expanded="true" signature="1496:1659" ph="/* firstRotation = currentTouch; ... */" />
               </folding>
             </state>
           </provider>
@@ -40,6 +40,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -67,13 +70,13 @@
     </navigator>
     <panes>
       <pane id="FileSystemExplorer" />
-      <pane id="AssemblyExplorer" />
       <pane id="UnityExplorer">
         <option name="show-hidden-items" value="false" />
       </pane>
       <pane id="SolutionExplorer">
         <option name="show-all-files" value="false" />
       </pane>
+      <pane id="AssemblyExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -121,12 +124,13 @@
       <option name="presentableId" value="Default" />
       <updated>1554444382722</updated>
       <workItem from="1554444405879" duration="8346000" />
-      <workItem from="1554534534070" duration="184000" />
+      <workItem from="1554534534070" duration="868000" />
+      <workItem from="1554538929343" duration="13568000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8530000" />
+    <option name="totallyTimeSpent" value="22782000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -139,7 +143,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -190,33 +193,23 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/SphereStaticMovement.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="27" column="68" selection-start-line="27" selection-start-column="68" selection-end-line="27" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Gameplay.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/SphereStaticMovement.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+        <state relative-caret-position="354">
+          <caret line="51" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
           <folding>
-            <element signature="e#0#78#0" expanded="true" />
+            <marker date="1554556648039" expanded="false" signature="6:78" ph="..." />
+            <marker date="1554556648039" expanded="true" signature="179:2779" ph="{...}" />
+            <marker date="1554556648039" expanded="true" signature="499:642" ph="{...}" />
+            <marker date="1554556648039" expanded="true" signature="677:733" ph="{...}" />
+            <marker date="1554556648039" expanded="true" signature="762:947" ph="{...}" />
+            <marker date="1554556648039" expanded="true" signature="976:2777" ph="{...}" />
+            <marker date="1554556648039" expanded="true" signature="1063:1173" ph="{...}" />
+            <marker date="1554556648039" expanded="true" signature="1302:1748" ph="{...}" />
+            <marker date="1554556648039" expanded="true" signature="1496:1659" ph="/* firstRotation = currentTouch; ... */" />
           </folding>
         </state>
       </provider>
