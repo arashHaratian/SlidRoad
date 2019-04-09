@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0726066b-b85b-4216-8bd0-358f8609c255" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.road-roller/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.road-roller/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.road-roller/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.road-roller/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.road-roller/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.road-roller/riderModule.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,18 +19,40 @@
     <favorites_list name="road-roller" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/RoadGenerator.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/Script/RoadGenerator.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="444">
+              <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
               <folding>
-                <marker date="1554646296908" expanded="false" signature="6:78" ph="..." />
-                <marker date="1554646296908" expanded="true" signature="122:945" ph="{...}" />
-                <marker date="1554646296908" expanded="true" signature="392:531" ph="{...}" />
-                <marker date="1554646296908" expanded="true" signature="589:704" ph="{...}" />
-                <marker date="1554646296908" expanded="true" signature="735:943" ph="{...}" />
+                <marker date="1554710553696" expanded="false" signature="6:78" ph="..." />
+                <marker date="1554710553696" expanded="true" signature="122:1920" ph="{...}" />
+                <marker date="1554710553696" expanded="true" signature="475:778" ph="{...}" />
+                <marker date="1554710553696" expanded="true" signature="661:772" ph="{...}" />
+                <marker date="1554710553696" expanded="true" signature="844:1025" ph="{...}" />
+                <marker date="1554710553696" expanded="true" signature="948:1019" ph="{...}" />
+                <marker date="1554710553696" expanded="true" signature="1075:1453" ph="{...}" />
+                <marker date="1554710553696" expanded="true" signature="1484:1562" ph="{...}" />
+                <marker date="1554710553696" expanded="true" signature="1599:1911" ph="{...}" />
+                <marker date="1554710553696" expanded="true" signature="1754:1837" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Script/PlayerMovement.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="478">
+              <caret line="58" column="1" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
+              <folding>
+                <marker date="1554710349919" expanded="true" signature="63:1784" ph="{...}" />
+                <marker date="1554710349919" expanded="true" signature="658:953" ph="{...}" />
+                <marker date="1554710349919" expanded="true" signature="673:847" ph="/* Create a layer mask for the floor layer. ... */" />
+                <marker date="1554710349919" expanded="true" signature="978:1346" ph="{...}" />
+                <marker date="1554710349919" expanded="true" signature="1191:1339" ph="/* Turn the player to face the mouse cursor. ... */" />
+                <marker date="1554710349919" expanded="true" signature="1379:1781" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -38,8 +64,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/RoadGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/RoadGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://E:/unity/Tanks/Assets/Scripts/Managers/CarePackages.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/RandomTitle.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -47,6 +74,9 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Script/RandomTitle.cs" />
         <option value="$PROJECT_DIR$/Assets/RoadGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Prefab/PlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/PlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/RoadGenerator.cs" />
       </list>
     </option>
   </component>
@@ -56,25 +86,30 @@
     </ignored-facets>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1177" />
-    <option name="y" value="217" />
-    <option name="width" value="740" />
-    <option name="height" value="604" />
+    <option name="x" value="372" />
+    <option name="y" value="397" />
+    <option name="width" value="1334" />
+    <option name="height" value="430" />
   </component>
   <component name="ProjectView">
     <navigator currentView="UnityExplorer" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AssemblyExplorer" />
       <pane id="FileSystemExplorer" />
-      <pane id="UnityExplorer">
-        <option name="show-hidden-items" value="false" />
-      </pane>
       <pane id="SolutionExplorer">
         <option name="show-all-files" value="false" />
       </pane>
+      <pane id="AssemblyExplorer" />
+      <pane id="UnityExplorer">
+        <option name="show-hidden-items" value="false" />
+      </pane>
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -112,12 +147,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1554631130332</updated>
-      <workItem from="1554631154725" duration="9650000" />
+      <workItem from="1554631154725" duration="9654000" />
+      <workItem from="1554695698441" duration="7933000" />
+      <workItem from="1554710035130" duration="716000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9650000" />
+    <option name="totallyTimeSpent" value="18303000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -130,17 +167,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Capture Tool" order="0" />
       <window_info id="Favorites" order="1" sideWeight="0.50285715" side_tool="true" weight="0.25" />
       <window_info id="Captures" order="2" />
-      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49714285" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49714285" visible="true" weight="0.020134227" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="5" />
       <window_info anchor="bottom" id="Android Profiler" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" visible="true" weight="0.04249292" />
       <window_info anchor="bottom" id="NuGet" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Logcat" order="4" />
       <window_info anchor="bottom" id="Unit Tests" order="5" />
@@ -155,7 +191,7 @@
       <window_info anchor="bottom" id="Cvs" order="14" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="15" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="16" />
-      <window_info anchor="right" id="Errors In Solution" order="0" />
+      <window_info anchor="right" id="Errors In Solution" order="0" weight="0.3295302" />
       <window_info anchor="right" id="Device File Explorer" order="1" side_tool="true" />
       <window_info anchor="right" id="Database" order="2" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="3" type="SLIDING" weight="0.4" />
@@ -165,7 +201,7 @@
     </layout>
     <layout-to-restore>
       <window_info id="Capture Tool" order="0" />
-      <window_info id="Favorites" order="1" sideWeight="0.50285715" side_tool="true" visible="true" weight="0.25" />
+      <window_info id="Favorites" order="1" sideWeight="0.50285715" side_tool="true" weight="0.25" />
       <window_info id="Captures" order="2" />
       <window_info content_ui="combo" id="Project" order="3" sideWeight="0.49714285" visible="true" weight="0.25" />
       <window_info id="Structure" order="4" side_tool="true" weight="0.25" />
@@ -212,9 +248,7 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/RoadGenerated.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/RoadGenerated.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Script/RandomTitle.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -239,16 +273,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/RoadGenerator.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/RoadGenerator.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Prefab/PlayerMovement.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Script/Movement.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Script/PlayerMovement.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="478">
+          <caret line="58" column="1" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
           <folding>
-            <marker date="1554646296908" expanded="false" signature="6:78" ph="..." />
-            <marker date="1554646296908" expanded="true" signature="122:945" ph="{...}" />
-            <marker date="1554646296908" expanded="true" signature="392:531" ph="{...}" />
-            <marker date="1554646296908" expanded="true" signature="589:704" ph="{...}" />
-            <marker date="1554646296908" expanded="true" signature="735:943" ph="{...}" />
+            <marker date="1554710349919" expanded="true" signature="63:1784" ph="{...}" />
+            <marker date="1554710349919" expanded="true" signature="658:953" ph="{...}" />
+            <marker date="1554710349919" expanded="true" signature="673:847" ph="/* Create a layer mask for the floor layer. ... */" />
+            <marker date="1554710349919" expanded="true" signature="978:1346" ph="{...}" />
+            <marker date="1554710349919" expanded="true" signature="1191:1339" ph="/* Turn the player to face the mouse cursor. ... */" />
+            <marker date="1554710349919" expanded="true" signature="1379:1781" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Script/RoadGenerator.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+          <folding>
+            <marker date="1554710553696" expanded="false" signature="6:78" ph="..." />
+            <marker date="1554710553696" expanded="true" signature="122:1920" ph="{...}" />
+            <marker date="1554710553696" expanded="true" signature="475:778" ph="{...}" />
+            <marker date="1554710553696" expanded="true" signature="661:772" ph="{...}" />
+            <marker date="1554710553696" expanded="true" signature="844:1025" ph="{...}" />
+            <marker date="1554710553696" expanded="true" signature="948:1019" ph="{...}" />
+            <marker date="1554710553696" expanded="true" signature="1075:1453" ph="{...}" />
+            <marker date="1554710553696" expanded="true" signature="1484:1562" ph="{...}" />
+            <marker date="1554710553696" expanded="true" signature="1599:1911" ph="{...}" />
+            <marker date="1554710553696" expanded="true" signature="1754:1837" ph="{...}" />
           </folding>
         </state>
       </provider>
