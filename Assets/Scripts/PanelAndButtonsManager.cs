@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 #endif
 
-public class ButtonsManager : MonoBehaviour
+public class PanelAndButtonsManager : MonoBehaviour
 {
 
     //-------------------Refrences-------------------------------- 
