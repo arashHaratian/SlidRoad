@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
@@ -18,9 +19,18 @@ public class PlayerManager : MonoBehaviour
         roadMapGameObject = GameObject.FindWithTag("Road Map");
         roadMap = roadMapGameObject.GetComponent<Rotation>();
 //        playerRigidbody = GetComponent<Rigidbody>();
-    }   
-    
-    
+    }
+
+    private void OnDisable()
+    {
+        this.GetComponent<ScoreManager>().enabled = false;
+    }
+
+    private void OnEnable()
+    {
+        this.GetComponent<ScoreManager>().enabled = true;
+    }
+
     private void FixedUpdate()
     {
         Rotation();
