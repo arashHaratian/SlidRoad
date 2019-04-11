@@ -8,30 +8,63 @@ using UnityEditor;
 
 public class ButtonsManager : MonoBehaviour
 {
-    //pasue refs
-    public Canvas pauseCanvas;
 
+    //-------------------Refrences-------------------------------- 
     //mainmenu refs
     public Canvas mainMenuCanvas;
+
+    //pasue refs
+    public Canvas pauseCanvas;
 
     //HUD refs
     public Canvas HUDCanves;
 
+    // Game Over refs
+    public Canvas gameOverCanves;
+
+    //-----------------------------------------------------
     private void Start()
     {
-        pauseCanvas.enabled = false;
-        HUDCanves.enabled = false;
         mainMenuCanvas.enabled = true;
-        Time.timeScale = 0;
+        pauseCanvas.enabled = false;
+        gameOverCanves.enabled = false;
+        HUDCanves.enabled = false;
+    }
+    //-------------------GameManager functions----------------------------------
+    public void GameOver()
+    {
+        gameOverCanves.enabled = true;
+        HUDCanves.enabled = false;
     }
 
-    //pasue buttons
-    public void PauseOrResume()
+    public void TapToPlay()
     {
-        pauseCanvas.enabled = !pauseCanvas.enabled;
-        HUDCanves.enabled = !HUDCanves.enabled;
-        Time.timeScale = Time.timeScale == 0 ? 1 : 0;
-        
+        mainMenuCanvas.enabled = false;
+        HUDCanves.enabled = true;
+        mainMenuCanvas.gameObject.SetActive(false);
+        //GameManager.instance.init();
+    }
+    //-----------------------------------------------------
+
+    //-------------------Buttons Functions----------------------------------
+
+    public void SettingsButton()
+    {
+        print("Setting canves Not Found");
+    }
+
+    public void Resume()
+    {
+        pauseCanvas.enabled = false;
+        HUDCanves.enabled = true;
+        Time.timeScale = 1;
+    }
+
+    public void Pause()
+    {
+        pauseCanvas.enabled = true;
+        HUDCanves.enabled = false;
+        Time.timeScale = 0;
     }
 
     public void Quit()
@@ -42,17 +75,12 @@ public class ButtonsManager : MonoBehaviour
 		Application.Quit();
 #endif
     }
-    public void Restart()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
 
-    //start menu buttons
-    public void StartGame()
-    {
-        mainMenuCanvas.enabled = !mainMenuCanvas.enabled;
-        HUDCanves.enabled = true;
-        Time.timeScale = Time.timeScale == 1 ? 0 : 1;
-    }
 
+    public void OpenMainMenu()
+    {
+        gameOverCanves.enabled = false;
+        mainMenuCanvas.enabled = true;
+    }
 }
+
