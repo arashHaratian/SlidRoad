@@ -29,6 +29,7 @@ public class PanelAndButtonsManager : MonoBehaviour
         pauseCanvas.enabled = false;
         gameOverCanves.enabled = false;
         HUDCanves.enabled = false;
+        Time.timeScale = 0;
     }
     //-------------------GameManager functions----------------------------------
     public void GameOver()
@@ -42,7 +43,7 @@ public class PanelAndButtonsManager : MonoBehaviour
         mainMenuCanvas.enabled = false;
         HUDCanves.enabled = true;
         mainMenuCanvas.gameObject.SetActive(false);
-        //GameManager.instance.init();
+        GameManager.instance.init();
     }
     //-----------------------------------------------------
 

@@ -27,19 +27,21 @@ public class GameManager : MonoBehaviour
         playerManagerScript.enabled = true;
         //road Manager start
         Time.timeScale = 1;
+        
         StartCoroutine(GameLoop());
     }
 
     IEnumerator GameLoop()
-    {
+    { Time.timeScale = 1;
         yield return StartCoroutine(RoundStarting());
         GameIsOver();        
     }
 
     IEnumerator RoundStarting()
     {
-        while (IsGameOver())
+        while (!IsGameOver())
             yield return null;
+        print("init()");
     }
 
     void GameIsOver()
@@ -51,11 +53,8 @@ public class GameManager : MonoBehaviour
     }
     bool IsGameOver()
     {
+        print("init()");
         return playerRigidbody.velocity.y < -1 && player.transform.position.y < 0;
     }
-    private void Update()
-    {
-        if(IsGameOver())
-            print("GameOver");
-    }
+   
 }
