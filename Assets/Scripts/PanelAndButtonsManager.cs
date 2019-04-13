@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -22,7 +23,18 @@ public class PanelAndButtonsManager : MonoBehaviour
     // Game Over refs
     public Canvas gameOverCanves;
 
+    public static PanelAndButtonsManager instance = null;
     //-----------------------------------------------------
+    private void Awake()
+    {
+        if (!instance)
+            instance = this;
+        else if (instance != this)
+            Destroy(this);
+        
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     private void Start()
     {
         mainMenuCanvas.enabled = true;
@@ -31,6 +43,7 @@ public class PanelAndButtonsManager : MonoBehaviour
         HUDCanves.enabled = false;
         Time.timeScale = 0;
     }
+
     //-------------------GameManager functions----------------------------------
     public void GameOver()
     {
@@ -43,7 +56,7 @@ public class PanelAndButtonsManager : MonoBehaviour
         mainMenuCanvas.enabled = false;
         HUDCanves.enabled = true;
         mainMenuCanvas.gameObject.SetActive(false);
-        GameManager.instance.init();
+        GameManager.instance.Init();
     }
     //-----------------------------------------------------
 
