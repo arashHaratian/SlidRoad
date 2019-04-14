@@ -9,25 +9,28 @@ public class HighscoreText : MonoBehaviour
 {
     public string highScoreString = "HighScore: ";
     [SerializeField] private Text _highScoreText;
-    private float _lastHighScore;
+    private int _lastHighScore;
+
+//    private int currentHighScore;
     // Start is called before the first frame update
     void Start()
     {
         _highScoreText = GetComponent<Text>();
-        _lastHighScore = PlayerPrefs.GetFloat("HighScore");
+        _lastHighScore = (int)PlayerPrefs.GetFloat("HighScore");
         _highScoreText.text = highScoreString + ((int)_lastHighScore).ToString();
+//        currentHighScore = (int)ScoreManager.highScore;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_lastHighScore != PlayerPrefs.GetFloat("HighScore"))
+        if (_lastHighScore != (int)ScoreManager.highScore)
             setHighScoreText();
     }
 
     private void setHighScoreText()
     {
-        _lastHighScore = PlayerPrefs.GetFloat("HighScore");
-        _highScoreText.text = highScoreString + ((int)_lastHighScore).ToString();
+        _lastHighScore = (int)PlayerPrefs.GetFloat("HighScore");
+        _highScoreText.text = highScoreString + _lastHighScore;
     }
 }

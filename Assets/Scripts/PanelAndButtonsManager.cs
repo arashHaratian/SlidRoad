@@ -54,8 +54,8 @@ public class PanelAndButtonsManager : MonoBehaviour
     public void TapToPlay()
     {
         mainMenuCanvas.enabled = false;
+        gameOverCanves.enabled = false;
         HUDCanves.enabled = true;
-        mainMenuCanvas.gameObject.SetActive(false);
         GameManager.instance.Init();
     }
     //-----------------------------------------------------

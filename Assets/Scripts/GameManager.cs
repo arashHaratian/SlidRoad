@@ -6,9 +6,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
     public GameObject player;
-
+    public GameObject testRoad;
+    
     private Rigidbody playerRigidbody;
     private PlayerManager playerManagerScript;
+    
     private void Awake()
     {
         if (!instance)
@@ -24,15 +26,17 @@ public class GameManager : MonoBehaviour
 
     public void Init()
     {
-        
         playerManagerScript.enabled = true;
         //road Manager init
+        testRoad.transform.position = Vector3.zero;
+//        testRoad.transform.rotation = new Quaternion(0, 0, 0, 0);
+        player.transform.position = Vector3.zero;
         Time.timeScale = 1;
         StartCoroutine(GameLoop());
     }
 
     IEnumerator GameLoop()
-    { Time.timeScale = 1;
+    {
         yield return StartCoroutine(RoundStarting());
         GameIsOver();        
     }
