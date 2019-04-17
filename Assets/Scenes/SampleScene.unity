@@ -497,12 +497,12 @@ PrefabInstance:
     - target: {fileID: 7367111652824580836, guid: 4b0421de46772bb4489ef9df18ea7d5a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 29.63
+      value: 14.9
       objectReference: {fileID: 0}
     - target: {fileID: 7367111652824580836, guid: 4b0421de46772bb4489ef9df18ea7d5a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.66
+      value: -8.02
       objectReference: {fileID: 0}
     - target: {fileID: 7367111652824580836, guid: 4b0421de46772bb4489ef9df18ea7d5a,
         type: 3}
@@ -512,12 +512,12 @@ PrefabInstance:
     - target: {fileID: 7367111652824580836, guid: 4b0421de46772bb4489ef9df18ea7d5a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7367111652824580836, guid: 4b0421de46772bb4489ef9df18ea7d5a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7367111652824580836, guid: 4b0421de46772bb4489ef9df18ea7d5a,
         type: 3}
@@ -796,6 +796,11 @@ PrefabInstance:
       propertyPath: rotateSpeed
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2275488689009445520, guid: 1da6974015ef3414e89bbcfeae1e2470,
+        type: 3}
+      propertyPath: limitSpeed
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1da6974015ef3414e89bbcfeae1e2470, type: 3}
 --- !u!1001 &3675519722787555308
@@ -1008,7 +1013,7 @@ PrefabInstance:
     - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
         type: 3}
       propertyPath: gameSpeed
-      value: -2
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
         type: 3}
