@@ -12,11 +12,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         roadMapRigidbody = GetComponent<Rigidbody>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         roadMapRigidbody.velocity = Vector3.forward * speed;
+
     }
 }

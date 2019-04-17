@@ -63,7 +63,7 @@ private GameObject endOfRoad;
         }
 
         else
-        go = Instantiate(tilePrefabs[prefabIndex], Vector3.forward * -20, Quaternion.identity) as GameObject;
+        go = Instantiate(tilePrefabs[prefabIndex], Vector3.zero, Quaternion.identity) as GameObject;
         
         //print(activeTiles[activeTiles.Count-1]);
        
