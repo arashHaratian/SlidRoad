@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
-//using NUnit.Compatibility;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -37,8 +36,7 @@ public class GameManager : MonoBehaviour
     public void Init()
     {
         playerManagerScript.enabled = true;
-        //road Manager init
-        testRoad.transform.position = Vector3.zero;
+        RoadGenerator.Instance.Restart();
 //        testRoad.transform.rotation = new Quaternion(0, 0, 0, 0);
         player.transform.position = Vector3.zero;
         Time.timeScale = 1;
