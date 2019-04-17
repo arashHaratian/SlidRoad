@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public void Init()
     {
         playerManagerScript.enabled = true;
-        //road Manager init
+        RoadGenerator.Instance.Restart();
 //        testRoad.transform.position = Vector3.zero;
 //        testRoad.transform.rotation = new Quaternion(0, 0, 0, 0);
         player.transform.position = Vector3.zero;

@@ -19,10 +19,7 @@ private float safeZone = 20.0f;
 private int lastPrefabIndex = 0;
 private List<GameObject> activeTiles;
 private GameObject endOfRoad;
-//private IsTrigger isTrigger;
 
-
-    // Start is called before the first frame update
     void Awake()
     {
         if (_instance != null && _instance != this)
@@ -37,19 +34,33 @@ private GameObject endOfRoad;
         }
         
         activeTiles = new List<GameObject>();
-      //  playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-      //  isTrigger = tilePrefabs[0].GetComponentInChildren<IsTrigger>();
+        
+    }
+
+
+    private void Init()
+    {
         for (int i = 0; i < amountTitlesOnScreen; i++)
         {
             if (i < 1)
-            SpawnTile(0);
+                SpawnTile(0);
             else
-            SpawnTile();
+                SpawnTile();
         }
     }
 
-   
-
+    public void Restart()
+    {
+        if (activeTiles.Count > 0)
+        {
+            for (int i = 0; i < activeTiles.Count; i++)
+            {
+                Destroy(activeTiles[i]);
+            }
+            activeTiles.Clear();
+        }
+        Init();   
+    }
 
    public void SpawnTile(int prefabIndex = -1)
     {
@@ -64,12 +75,7 @@ private GameObject endOfRoad;
 
         else
         go = Instantiate(tilePrefabs[prefabIndex], Vector3.zero, Quaternion.identity) as GameObject;
-        
-        //print(activeTiles[activeTiles.Count-1]);
        
-//        go.transform.SetParent(transform);
-        
-//        print(endOfRoad.transform.position);
         spawnZ += tileLength;
         activeTiles.Add(go);
     }
