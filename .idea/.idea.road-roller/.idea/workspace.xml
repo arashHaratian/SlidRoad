@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0726066b-b85b-4216-8bd0-358f8609c255" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/ice.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/ice.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Camera.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Camera.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.road-roller/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.road-roller/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.road-roller/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.road-roller/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Ice blue.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Ice blue.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Road/Dilemma.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Road/Dilemma.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Road/Helix road1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Road/Helix road1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Road/Helix road2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Road/Helix road2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Road/Road trouble.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Road/Road trouble.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Road/Smooth road.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Road/Smooth road.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Road/Smooth road.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Road/Smooth road.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RoadGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RoadGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,10 +18,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/IsTrigger.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="238">
               <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
               <folding>
-                <marker date="1555340517009" expanded="false" signature="6:79" ph="..." />
+                <marker date="1555340517009" expanded="false" signature="6:112" ph="..." />
                 <marker date="1555340517009" expanded="true" signature="152:543" ph="{...}" />
                 <marker date="1555340517009" expanded="true" signature="331:541" ph="{...}" />
                 <marker date="1555340517009" expanded="true" signature="396:533" ph="{...}" />
@@ -49,7 +33,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="204">
               <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <marker date="1554886555803" expanded="false" signature="6:135" ph="..." />
@@ -68,7 +52,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Movement.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="289">
               <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <marker date="1554886555803" expanded="false" signature="6:78" ph="..." />
@@ -83,23 +67,23 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/RoadGenerator.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="58" column="79" lean-forward="true" selection-start-line="58" selection-start-column="79" selection-end-line="58" selection-end-column="79" />
+            <state relative-caret-position="544">
+              <caret line="58" column="80" selection-start-line="58" selection-start-column="80" selection-end-line="58" selection-end-column="80" />
               <folding>
-                <marker date="1555345033618" expanded="false" signature="6:78" ph="..." />
-                <marker date="1555345033618" expanded="true" signature="122:2525" ph="{...}" />
-                <marker date="1555345033618" expanded="true" signature="206:240" ph="{...}" />
-                <marker date="1555345033618" expanded="true" signature="654:1235" ph="{...}" />
-                <marker date="1555345033618" expanded="true" signature="712:770" ph="{...}" />
-                <marker date="1555345033618" expanded="true" signature="784:852" ph="{...}" />
-                <marker date="1555345033618" expanded="true" signature="914:1063" ph="/* playerTransform = GameObject.FindGameObjectWithTag(&quot;Player&quot;).transform; ... */" />
-                <marker date="1555345033618" expanded="true" signature="1118:1229" ph="{...}" />
-                <marker date="1555345033618" expanded="true" signature="1289:2059" ph="{...}" />
-                <marker date="1555345033618" expanded="true" signature="1349:1701" ph="{...}" />
-                <marker date="1555345033618" expanded="true" signature="1843:1994" ph="/* print(activeTiles[activeTiles.Count-1]); ... */" />
-                <marker date="1555345033618" expanded="true" signature="2089:2167" ph="{...}" />
-                <marker date="1555345033618" expanded="true" signature="2204:2516" ph="{...}" />
-                <marker date="1555345033618" expanded="true" signature="2359:2442" ph="{...}" />
+                <marker date="1555345138046" expanded="false" signature="6:78" ph="..." />
+                <marker date="1555345138046" expanded="true" signature="122:2525" ph="{...}" />
+                <marker date="1555345138046" expanded="true" signature="206:240" ph="{...}" />
+                <marker date="1555345138046" expanded="true" signature="654:1235" ph="{...}" />
+                <marker date="1555345138046" expanded="true" signature="712:770" ph="{...}" />
+                <marker date="1555345138046" expanded="true" signature="784:852" ph="{...}" />
+                <marker date="1555345138046" expanded="true" signature="914:1063" ph="/* playerTransform = GameObject.FindGameObjectWithTag(&quot;Player&quot;).transform; ... */" />
+                <marker date="1555345138046" expanded="true" signature="1118:1229" ph="{...}" />
+                <marker date="1555345138046" expanded="true" signature="1289:2059" ph="{...}" />
+                <marker date="1555345138046" expanded="true" signature="1349:1701" ph="{...}" />
+                <marker date="1555345138046" expanded="true" signature="1843:1994" ph="/* print(activeTiles[activeTiles.Count-1]); ... */" />
+                <marker date="1555345138046" expanded="true" signature="2089:2167" ph="{...}" />
+                <marker date="1555345138046" expanded="true" signature="2204:2516" ph="{...}" />
+                <marker date="1555345138046" expanded="true" signature="2359:2442" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -142,9 +126,9 @@
     </ignored-facets>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="538" />
-    <option name="y" value="428" />
-    <option name="width" value="1134" />
+    <option name="x" value="537" />
+    <option name="y" value="427" />
+    <option name="width" value="1135" />
     <option name="height" value="430" />
   </component>
   <component name="ProjectView">
@@ -152,14 +136,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="FileSystemExplorer" />
       <pane id="AssemblyExplorer" />
-      <pane id="SolutionExplorer">
-        <option name="show-all-files" value="false" />
-      </pane>
       <pane id="UnityExplorer">
         <option name="show-hidden-items" value="false" />
       </pane>
-      <pane id="FileSystemExplorer" />
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -209,12 +193,13 @@
       <workItem from="1554892721199" duration="557000" />
       <workItem from="1554979744728" duration="8871000" />
       <workItem from="1555137324809" duration="3709000" />
-      <workItem from="1555312489139" duration="16099000" />
+      <workItem from="1555312489139" duration="16801000" />
+      <workItem from="1555486557683" duration="440000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50901000" />
+    <option name="totallyTimeSpent" value="52043000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -387,22 +372,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Movement.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/IsTrigger.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="238">
+          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
           <folding>
-            <marker date="1554886555803" expanded="false" signature="6:78" ph="..." />
-            <marker date="1554886555803" expanded="true" signature="117:458" ph="{...}" />
-            <marker date="1554886555803" expanded="true" signature="259:325" ph="{...}" />
-            <marker date="1554886555803" expanded="true" signature="383:456" ph="{...}" />
+            <marker date="1555340517009" expanded="false" signature="6:112" ph="..." />
+            <marker date="1555340517009" expanded="true" signature="152:543" ph="{...}" />
+            <marker date="1555340517009" expanded="true" signature="331:541" ph="{...}" />
+            <marker date="1555340517009" expanded="true" signature="396:533" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="204">
           <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <marker date="1554886555803" expanded="false" signature="6:135" ph="..." />
@@ -417,38 +402,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/IsTrigger.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Movement.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
-            <marker date="1555340517009" expanded="false" signature="6:79" ph="..." />
-            <marker date="1555340517009" expanded="true" signature="152:543" ph="{...}" />
-            <marker date="1555340517009" expanded="true" signature="331:541" ph="{...}" />
-            <marker date="1555340517009" expanded="true" signature="396:533" ph="{...}" />
+            <marker date="1554886555803" expanded="false" signature="6:78" ph="..." />
+            <marker date="1554886555803" expanded="true" signature="117:458" ph="{...}" />
+            <marker date="1554886555803" expanded="true" signature="259:325" ph="{...}" />
+            <marker date="1554886555803" expanded="true" signature="383:456" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/RoadGenerator.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="58" column="79" lean-forward="true" selection-start-line="58" selection-start-column="79" selection-end-line="58" selection-end-column="79" />
+        <state relative-caret-position="544">
+          <caret line="58" column="80" selection-start-line="58" selection-start-column="80" selection-end-line="58" selection-end-column="80" />
           <folding>
-            <marker date="1555345033618" expanded="false" signature="6:78" ph="..." />
-            <marker date="1555345033618" expanded="true" signature="122:2525" ph="{...}" />
-            <marker date="1555345033618" expanded="true" signature="206:240" ph="{...}" />
-            <marker date="1555345033618" expanded="true" signature="654:1235" ph="{...}" />
-            <marker date="1555345033618" expanded="true" signature="712:770" ph="{...}" />
-            <marker date="1555345033618" expanded="true" signature="784:852" ph="{...}" />
-            <marker date="1555345033618" expanded="true" signature="914:1063" ph="/* playerTransform = GameObject.FindGameObjectWithTag(&quot;Player&quot;).transform; ... */" />
-            <marker date="1555345033618" expanded="true" signature="1118:1229" ph="{...}" />
-            <marker date="1555345033618" expanded="true" signature="1289:2059" ph="{...}" />
-            <marker date="1555345033618" expanded="true" signature="1349:1701" ph="{...}" />
-            <marker date="1555345033618" expanded="true" signature="1843:1994" ph="/* print(activeTiles[activeTiles.Count-1]); ... */" />
-            <marker date="1555345033618" expanded="true" signature="2089:2167" ph="{...}" />
-            <marker date="1555345033618" expanded="true" signature="2204:2516" ph="{...}" />
-            <marker date="1555345033618" expanded="true" signature="2359:2442" ph="{...}" />
+            <marker date="1555345138046" expanded="false" signature="6:78" ph="..." />
+            <marker date="1555345138046" expanded="true" signature="122:2525" ph="{...}" />
+            <marker date="1555345138046" expanded="true" signature="206:240" ph="{...}" />
+            <marker date="1555345138046" expanded="true" signature="654:1235" ph="{...}" />
+            <marker date="1555345138046" expanded="true" signature="712:770" ph="{...}" />
+            <marker date="1555345138046" expanded="true" signature="784:852" ph="{...}" />
+            <marker date="1555345138046" expanded="true" signature="914:1063" ph="/* playerTransform = GameObject.FindGameObjectWithTag(&quot;Player&quot;).transform; ... */" />
+            <marker date="1555345138046" expanded="true" signature="1118:1229" ph="{...}" />
+            <marker date="1555345138046" expanded="true" signature="1289:2059" ph="{...}" />
+            <marker date="1555345138046" expanded="true" signature="1349:1701" ph="{...}" />
+            <marker date="1555345138046" expanded="true" signature="1843:1994" ph="/* print(activeTiles[activeTiles.Count-1]); ... */" />
+            <marker date="1555345138046" expanded="true" signature="2089:2167" ph="{...}" />
+            <marker date="1555345138046" expanded="true" signature="2204:2516" ph="{...}" />
+            <marker date="1555345138046" expanded="true" signature="2359:2442" ph="{...}" />
           </folding>
         </state>
       </provider>
