@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
+//using NUnit.Compatibility;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -7,6 +9,14 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     public GameObject player;
     public GameObject testRoad;
+
+    #region GameSpeed
+
+    public int gameSpeed;
+    public float timeIncreaseSpeed;
+    private float lastTime;
+
+    #endregion
     
     private Rigidbody playerRigidbody;
     private PlayerManager playerManagerScript;
@@ -43,8 +53,20 @@ public class GameManager : MonoBehaviour
 
     IEnumerator RoundStarting()
     {
+        lastTime = Time.time;
+        Movement.Speed = gameSpeed;
         while (!IsGameOver())
+        {
+            if (lastTime + timeIncreaseSpeed < Time.time)
+                IncreaseSpeed();
             yield return null;
+        }
+    }
+
+    void IncreaseSpeed()
+    {
+        Movement.Speed -= 1;
+        lastTime = Time.time;
     }
 
     void GameIsOver()
