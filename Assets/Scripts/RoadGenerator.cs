@@ -56,7 +56,7 @@ private GameObject endOfRoad;
         GameObject go;
         if (prefabIndex == -1)
         {
-            endOfRoad = activeTiles[activeTiles.Count - 1].transform.GetChild(10).gameObject;
+            endOfRoad = activeTiles[activeTiles.Count - 1].transform.GetChild(0).gameObject;
             go = Instantiate(tilePrefabs[RandomPrefabIndex()]) as GameObject;
             Vector3 roadTrueY = new Vector3(endOfRoad.transform.position.x, 0 , endOfRoad.transform.position.z);
             go.transform.position = roadTrueY;
