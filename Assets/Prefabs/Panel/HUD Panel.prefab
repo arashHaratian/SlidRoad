@@ -88,7 +88,6 @@ GameObject:
   - component: {fileID: 2576049867182181942}
   - component: {fileID: 2576049867182181931}
   - component: {fileID: 2576049867182181928}
-  - component: {fileID: 2576049867182181929}
   - component: {fileID: 1399991079407095141}
   m_Layer: 5
   m_Name: Score Text
@@ -158,20 +157,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Score : 0'
---- !u!114 &2576049867182181929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2576049867182181943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce27bff8e7b731844a59f237072e2ae4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highScoreString: 'HighScore: '
-  _highScoreText: {fileID: 0}
 --- !u!114 &1399991079407095141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,7 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highScoreString: 'HighScore: '
-  _highScoreText: {fileID: 0}
+  _highScoreText: {fileID: 2576049867182181928}
 --- !u!1 &6275442493704468163
 GameObject:
   m_ObjectHideFlags: 0
