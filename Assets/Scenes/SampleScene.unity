@@ -413,11 +413,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 183048485489140954, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3050578143369406964, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
         type: 3}
       propertyPath: m_Constraints
@@ -437,6 +432,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 183048485489140954, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6, type: 3}
@@ -600,6 +600,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275488689009445520, guid: 1da6974015ef3414e89bbcfeae1e2470,
+        type: 3}
+      propertyPath: rotateSpeed
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275488689009445520, guid: 1da6974015ef3414e89bbcfeae1e2470,
+        type: 3}
+      propertyPath: limitSpeed
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1da6974015ef3414e89bbcfeae1e2470, type: 3}
@@ -841,6 +851,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 3745113664528203418}
+    - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
+        type: 3}
+      propertyPath: gameSpeed.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
+        type: 3}
+      propertyPath: timeIncreaseSpeed
+      value: Infinity
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c1b682abd2b7064d824651e0f4eaa33, type: 3}
 --- !u!1001 &7080894349683764848
@@ -1263,11 +1283,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 76325037}
-    - target: {fileID: 4140939315106073668, guid: 974c00410f26a3d4e89344fdd9eff475,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 76325037}
     - target: {fileID: 7419746133780034534, guid: 974c00410f26a3d4e89344fdd9eff475,
         type: 3}
       propertyPath: m_IsActive
@@ -1283,6 +1298,11 @@ PrefabInstance:
       propertyPath: m_FontData.m_AlignByGeometry
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4140939315106073668, guid: 974c00410f26a3d4e89344fdd9eff475,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 76325037}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 974c00410f26a3d4e89344fdd9eff475, type: 3}
 --- !u!1001 &8642750745158142829
