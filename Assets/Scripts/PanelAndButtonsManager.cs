@@ -41,6 +41,12 @@ public class PanelAndButtonsManager : MonoBehaviour
         pauseCanvas.enabled = false;
         gameOverCanves.enabled = false;
         HUDCanves.enabled = false;
+
+        mainMenuCanvas.gameObject.SetActive(true);
+        gameOverCanves.gameObject.SetActive(true);
+        HUDCanves.gameObject.SetActive(true);
+        pauseCanvas.gameObject.SetActive(true);
+
         Time.timeScale = 0;
     }
 
@@ -55,6 +61,7 @@ public class PanelAndButtonsManager : MonoBehaviour
     {
         mainMenuCanvas.enabled = false;
         gameOverCanves.enabled = false;
+        pauseCanvas.enabled = false;
         HUDCanves.enabled = true;
         GameManager.instance.Init();
     }
