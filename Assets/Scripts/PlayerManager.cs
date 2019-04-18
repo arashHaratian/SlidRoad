@@ -16,8 +16,21 @@ public class PlayerManager : MonoBehaviour
     private GameObject roadMapGameObject;
     private Rotation roadMap;
     private float rot;
+
+    public static PlayerManager instance = null;
+
+    public Vector2 LastPosition
+    {
+        get { return lastPosition; }
+    }
+
     private void Start()
     {
+        if (!instance)
+            instance = this;
+        else if(instance != this)
+            Destroy(this.gameObject);
+        
         Application.targetFrameRate = 300;
         roadMapGameObject = GameObject.FindWithTag("Road Map");
         roadMap = roadMapGameObject.GetComponent<Rotation>();
