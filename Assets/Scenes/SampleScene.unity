@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5425668, g: 0.5047162, b: 0.52498007, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -611,6 +611,11 @@ PrefabInstance:
       propertyPath: limitSpeed
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 2275488689009445520, guid: 1da6974015ef3414e89bbcfeae1e2470,
+        type: 3}
+      propertyPath: rotateRange
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1da6974015ef3414e89bbcfeae1e2470, type: 3}
 --- !u!1 &2976546712828867169 stripped
@@ -854,12 +859,12 @@ PrefabInstance:
     - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
         type: 3}
       propertyPath: gameSpeed.z
-      value: 0
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
         type: 3}
       propertyPath: timeIncreaseSpeed
-      value: Infinity
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c1b682abd2b7064d824651e0f4eaa33, type: 3}
