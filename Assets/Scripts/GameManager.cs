@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         playerManagerScript.enabled = true;
         RoadGenerator.Instance.Restart();
 //        testRoad.transform.rotation = new Quaternion(0, 0, 0, 0);
-        player.transform.position = Vector3.zero;
+        player.transform.position = Vector3.up;
         Time.timeScale = 1;
         StartCoroutine(GameLoop());
     }
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
     }
     bool IsGameOver()
     {
-        return playerRigidbody.velocity.y < -2 && player.transform.position.y < 0;
+        return playerRigidbody.velocity.y < -2 && player.transform.position.y < -20;
     }
    
 }

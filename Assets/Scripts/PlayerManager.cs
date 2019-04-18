@@ -42,7 +42,7 @@ public class PlayerManager : MonoBehaviour
     }
     private void Rotation()
     {
-#if UNITY_STANDALONE || UNITY_WEBPLAYER
+//#if UNITY_STANDALONE || UNITY_WEBPLAYER
         if (Input.GetMouseButtonDown(0))
         {
             currentPosition = Input.mousePosition;
@@ -61,26 +61,26 @@ public class PlayerManager : MonoBehaviour
 //            playerDirectionRigidbody.angularVelocity = new Vector3(0, rot, 0);
         }
         
-#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
-        if (Input.touchCount > 0)
-        {
-            Touch myTouch = Input.touches[0];
-            if (myTouch.phase == TouchPhase.Began)
-            {
-                currentPosition = myTouch.position;
-                firstPosition = myTouch.position;
-            }
-            else //if (myTouch.phase == TouchPhase.Moved)
-            {
-                currentPosition = myTouch.position;
-                distanceOfX = currentPosition.x - firstPosition.x;
-                rot = distanceOfX * Time.deltaTime * -1;
-//                firstPosition = currentPosition;
-                roadMap.Rotate(rot, transform);
-//                        playerDirection.transform.eulerAngles = new Vector3(0, playerDirection.transform.eulerAngles.y - rot, 0);
-//                        playerDirectionRigidbody.angularVelocity = new Vector3(0, rot, 0);
-            }
-        }
-#endif
+//#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
+//        if (Input.touchCount > 0)
+//        {
+//            Touch myTouch = Input.touches[0];
+//            if (myTouch.phase == TouchPhase.Began)
+//            {
+//                currentPosition = myTouch.position;
+//                firstPosition = myTouch.position;
+//            }
+//            else //if (myTouch.phase == TouchPhase.Moved)
+//            {
+//                currentPosition = myTouch.position;
+//                distanceOfX = currentPosition.x - firstPosition.x;
+//                rot = distanceOfX * Time.deltaTime * -1;
+////                firstPosition = currentPosition;
+//                roadMap.Rotate(rot, transform);
+////                        playerDirection.transform.eulerAngles = new Vector3(0, playerDirection.transform.eulerAngles.y - rot, 0);
+////                        playerDirectionRigidbody.angularVelocity = new Vector3(0, rot, 0);
+//            }
+//        }
+//#endif
     }
 }
