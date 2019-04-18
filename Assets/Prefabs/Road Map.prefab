@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2275488689009445521}
   - component: {fileID: 2275488689009445522}
   - component: {fileID: 2275488689009445520}
-  - component: {fileID: 2275488689009445533}
   m_Layer: 0
   m_Name: Road Map
   m_TagString: Road Map
@@ -47,7 +46,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 94
   m_CollisionDetection: 0
 --- !u!114 &2275488689009445520
 MonoBehaviour:
@@ -61,17 +60,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7955b78f622ccf244bd38bc0ea9ff069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 10
---- !u!65 &2275488689009445533
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2275488689009445526}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  rotateSpeed: 0.5
+  limitSpeed: 4

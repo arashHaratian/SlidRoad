@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
     }
     bool IsGameOver()
     {
-        return playerRigidbody.velocity.y < -2 && player.transform.position.y < -5;
+        return playerRigidbody.velocity.y < -2 && player.transform.position.y < -15;
     }
    
 }
