@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     public void Init()
     {
+        playerManagerScript.enabled = false;
         playerManagerScript.enabled = true;
         //road Manager init
         testRoad.transform.position = Vector3.zero;
