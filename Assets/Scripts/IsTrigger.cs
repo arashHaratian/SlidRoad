@@ -7,18 +7,18 @@ using UnityEngine.Serialization;
 public class IsTrigger : MonoBehaviour
 {
     // Start is called before the first frame update
-     public bool collision_ ;
-     private RoadGenerator _roadGenerator;
- 
-
     private void OnTriggerEnter(Collider other)
-      {
-        
-          if (other.gameObject.tag == "Player")
-          {    
-              RoadGenerator.Instance.SpawnTile();
-              RoadGenerator.Instance.DeleteTile();
-       
-          }
-      }
+    {
+        if (other.CompareTag("Player"))
+        {    
+            RoadGenerator.Instance.SpawnTile();
+            Invoke("DeleteRoad",4f); 
+        }
+    }
+
+    void DeleteRoad()
+    {
+        RoadGenerator.Instance.DeleteTile();
+    }
+    
 }

@@ -5,43 +5,31 @@ using UnityEngine;
 public class RoadGenerator : MonoBehaviour
 {
     private static RoadGenerator _instance;
-public static  RoadGenerator Instance
-{
-    get
+    public static  RoadGenerator Instance
     {
-        return _instance;
+        get
+        {
+            return _instance;
+        }
     }
-}
-public GameObject[] tilePrefabs;
-
-public GameObject roadMap;    
-//private Transform playerTransform;
-private float spawnZ = -20.0f;
-private float tileLength = 40.0f;
-private int amountTitlesOnScreen = 6;
-private float safeZone = 20.0f;
-private int lastPrefabIndex = 0;
-private List<GameObject> activeTiles;
-private GameObject endOfRoad;
-
+    public GameObject[] tilePrefabs;
+    
+    public GameObject roadMap;    
+    private float tileLength = 40.0f;
+    private int amountTitlesOnScreen = 6;
+    private int lastPrefabIndex = 0;
+    private List<GameObject> activeTiles;
+    private GameObject endOfRoad;
 
     void Awake()
     {
         if (_instance != null && _instance != this)
-        {
             Destroy(this.gameObject);
-        }
-
         else
-        {
             _instance = this;
-                 
-        }
         
         activeTiles = new List<GameObject>();
-        
     }
-
 
     private void Init()
     {
@@ -74,15 +62,11 @@ private GameObject endOfRoad;
         {
             endOfRoad = activeTiles[activeTiles.Count - 1].transform.GetChild(0).gameObject;
             go = Instantiate(tilePrefabs[RandomPrefabIndex()], endOfRoad.transform.position,activeTiles[activeTiles.Count - 1].transform.rotation);
-//            Vector3 roadTrueY = new Vector3(endOfRoad.transform.position.x, 0 , endOfRoad.transform.position.z);
-//            go.transform.position = endOfRoad.transform.position;
         }
-
         else
-        go = Instantiate(tilePrefabs[prefabIndex], new Vector3(0,0,-3), Quaternion.identity) as GameObject;
+            go = Instantiate(tilePrefabs[prefabIndex], new Vector3(0,0,-3), Quaternion.identity) as GameObject;
 
         go.transform.parent = roadMap.transform;
-        spawnZ += tileLength;
         activeTiles.Add(go);
     }
 
@@ -101,7 +85,6 @@ private GameObject endOfRoad;
         {
             randomIndex = Random.Range(0, tilePrefabs.Length);
         }
-
         lastPrefabIndex = randomIndex;
         return randomIndex;
     }

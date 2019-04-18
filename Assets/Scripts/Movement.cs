@@ -7,20 +7,17 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     // Start is called before the first frame update
-    private static float speed;
+    private static Vector3 speed;
     private Rigidbody rb;
-    public static float Speed
+    public static Vector3 Speed
     {
         set { speed = value; }
         get { return speed; }
     }
 
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
     private void Update()
     {
-        rb.velocity = Vector3.forward * speed;
+        transform.position = transform.position +( speed * Time.deltaTime);
+
     }
 }

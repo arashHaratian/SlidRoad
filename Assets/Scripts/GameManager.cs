@@ -7,11 +7,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
     public GameObject player;
-    public GameObject testRoad;
 
     #region GameSpeed
 
-    public int gameSpeed;
+    public Vector3 gameSpeed;
     public float timeIncreaseSpeed;
     private float lastTime;
 
@@ -37,7 +36,6 @@ public class GameManager : MonoBehaviour
     {
         playerManagerScript.enabled = true;
         RoadGenerator.Instance.Restart();
-//        testRoad.transform.rotation = new Quaternion(0, 0, 0, 0);
         player.transform.position = Vector3.up;
         Time.timeScale = 1;
         StartCoroutine(GameLoop());
@@ -63,7 +61,7 @@ public class GameManager : MonoBehaviour
 
     void IncreaseSpeed()
     {
-        Movement.Speed -= 1;
+        Movement.Speed -= Vector3.forward;
         lastTime = Time.time;
     }
 
@@ -71,12 +69,11 @@ public class GameManager : MonoBehaviour
     {
         playerManagerScript.enabled = false;
         Time.timeScale = 0;
-        //road manager stop
         PanelAndButtonsManager.instance.GameOver();
     }
     bool IsGameOver()
     {
-        return playerRigidbody.velocity.y < -2 && player.transform.position.y < -20;
+        return playerRigidbody.velocity.y < -2 && player.transform.position.y < -5;
     }
    
 }
