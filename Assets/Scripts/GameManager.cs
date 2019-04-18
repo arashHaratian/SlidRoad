@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour
 
     public void Init()
     {
-        playerManagerScript.enabled = false;
         playerManagerScript.enabled = true;
         RoadGenerator.Instance.Restart();
         player.transform.position = Vector3.up;

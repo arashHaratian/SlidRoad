@@ -30,7 +30,7 @@ public class HighscoreText : MonoBehaviour
 
     private void setHighScoreText()
     {
-        _lastHighScore = (int)ScoreManager.highScore;
+        _lastHighScore = (int)PlayerPrefs.GetFloat("HighScore");
         _highScoreText.text = highScoreString + _lastHighScore;
     }
 }
