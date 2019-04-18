@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour
     }
     bool IsGameOver()
     {
+        playerRigidbody.AddForce(Physics.gravity * 3f, ForceMode.Acceleration);
         return playerRigidbody.velocity.y < -2 && player.transform.position.y < -15;
     }
    
