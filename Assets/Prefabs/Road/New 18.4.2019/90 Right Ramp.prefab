@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 7405601545263083705}
   - component: {fileID: 3350962408495145256}
   - component: {fileID: 1401212618895217751}
+  - component: {fileID: 6834959239300740430}
   m_Layer: 0
   m_Name: 90 Right Ramp
   m_TagString: Untagged
@@ -212,6 +213,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa0f08cab0f5c044d82de33ceec28d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6834959239300740430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5509270081071986286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532dda64f16aa9345bc41cacd923b3d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverHeigh: 0
+  lowestCube: {fileID: 5989856226749516804}
 --- !u!1 &5989856226749516804
 GameObject:
   m_ObjectHideFlags: 0

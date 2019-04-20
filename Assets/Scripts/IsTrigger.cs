@@ -12,7 +12,8 @@ public class IsTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {    
             RoadGenerator.Instance.SpawnTile();
-            Invoke("DeleteRoad",4f); 
+            if (RoadGenerator.Instance.AmountTitlesOnScreen > 6)
+                DeleteRoad();
         }
     }
 

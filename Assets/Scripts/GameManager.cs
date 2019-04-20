@@ -6,7 +6,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
-   
+    public GameObject player;
+
     #region GameSpeed
 
     public Vector3 gameSpeed;
@@ -31,6 +32,9 @@ public class GameManager : MonoBehaviour
         else if(instance != this)
             Destroy(this.gameObject);
         DontDestroyOnLoad(this.gameObject);
+
+        playerManagerScript = player.GetComponent<PlayerManager>();
+
     }
 
     public void Init()
@@ -39,7 +43,7 @@ public class GameManager : MonoBehaviour
         playerManagerScript.enabled = true;
         gameOver = false;
         RoadGenerator.Instance.Restart();
-        PlayerManager.instance.transform.position = Vector3.up * 3;
+        player.transform.position = Vector3.up * 3;
         Time.timeScale = 1;
         StartCoroutine(GameLoop());
     }

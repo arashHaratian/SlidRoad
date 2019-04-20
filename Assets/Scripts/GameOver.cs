@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameOver : MonoBehaviour
 {
-    public int gameOverHeigh = 0;
     public GameObject lowestCube;
 
     private float gameOverPossition;
@@ -15,6 +14,8 @@ public class GameOver : MonoBehaviour
 
     void Update()
     {
+        if (this != RoadGenerator.Instance.currentRoad)
+            return;
         if (PlayerManager.instance.transform.position.y < gameOverPossition)
             GameManager.instance.GameOver = true;
     }

@@ -17,6 +17,14 @@ public class RoadGenerator : MonoBehaviour
     public GameObject roadMap;    
     private float tileLength = 40.0f;
     private int amountTitlesOnScreen = 6;
+    public int AmountTitlesOnScreen
+    {
+        get { return amountTitlesOnScreen; }
+    }
+    public GameObject currentRoad
+    {
+        get { return activeTiles[1]; }
+    }
     private int lastPrefabIndex = 0;
     private List<GameObject> activeTiles;
     private GameObject endOfRoad;
@@ -68,12 +76,14 @@ public class RoadGenerator : MonoBehaviour
 
         go.transform.parent = roadMap.transform;
         activeTiles.Add(go);
+        amountTitlesOnScreen++;
     }
 
     public void DeleteTile()
     {
         Destroy(activeTiles[0]);
         activeTiles.RemoveAt(0);
+        amountTitlesOnScreen--;
     }
 
     private int RandomPrefabIndex()
