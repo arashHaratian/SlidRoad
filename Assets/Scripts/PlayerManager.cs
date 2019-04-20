@@ -34,21 +34,21 @@ public class PlayerManager : MonoBehaviour
         Application.targetFrameRate = 300;
         roadMapGameObject = GameObject.FindWithTag("Road Map");
         roadMap = roadMapGameObject.GetComponent<Rotation>();
-        
-//        playerRigidbody = GetComponent<Rigidbody>();
+        //        playerRigidbody = GetComponent<Rigidbody>();
+        lastPosition = new Vector2(Screen.width / 2, Screen.height / 2);
+
     }
-    
+
 
     private void OnDisable()
     {
         this.GetComponent<ScoreManager>().enabled = false;
-        lastPosition = new Vector2(Screen.width / 2 , Screen.height / 2);
-
     }
 
     private void OnEnable()
     {
         this.GetComponent<ScoreManager>().enabled = true;
+        lastPosition = new Vector2(Screen.width / 2, Screen.height / 2);
     }
 
     private void FixedUpdate()

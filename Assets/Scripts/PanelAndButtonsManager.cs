@@ -18,10 +18,12 @@ public class PanelAndButtonsManager : MonoBehaviour
     public Canvas pauseCanvas;
 
     //HUD refs
-    public Canvas HUDCanves;
+    public Canvas HUDCanvas;
 
     // Game Over refs
-    public Canvas gameOverCanves;
+    public Canvas gameOverCanvas;
+
+    public Canvas InputCanvas;
 
     public static PanelAndButtonsManager instance = null;
     //-----------------------------------------------------
@@ -38,14 +40,16 @@ public class PanelAndButtonsManager : MonoBehaviour
     private void Start()
     {
         mainMenuCanvas.enabled = true;
+        InputCanvas.enabled = true;
         pauseCanvas.enabled = false;
-        gameOverCanves.enabled = false;
-        HUDCanves.enabled = false;
+        gameOverCanvas.enabled = false;
+        HUDCanvas.enabled = false;
 
         mainMenuCanvas.gameObject.SetActive(true);
-        gameOverCanves.gameObject.SetActive(true);
-        HUDCanves.gameObject.SetActive(true);
+        gameOverCanvas.gameObject.SetActive(true);
+        HUDCanvas.gameObject.SetActive(true);
         pauseCanvas.gameObject.SetActive(true);
+        InputCanvas.gameObject.SetActive(true);
 
         Time.timeScale = 0;
     }
@@ -53,16 +57,18 @@ public class PanelAndButtonsManager : MonoBehaviour
     //-------------------GameManager functions----------------------------------
     public void GameOver()
     {
-        gameOverCanves.enabled = true;
-        HUDCanves.enabled = false;
+        gameOverCanvas.enabled = true;
+        HUDCanvas.enabled = false;
+        InputCanvas.enabled = false;
     }
 
     public void TapToPlay()
     {
         mainMenuCanvas.enabled = false;
-        gameOverCanves.enabled = false;
+        gameOverCanvas.enabled = false;
         pauseCanvas.enabled = false;
-        HUDCanves.enabled = true;
+        HUDCanvas.enabled = true;
+        InputCanvas.enabled = true;
         GameManager.instance.Init();
     }
     //-----------------------------------------------------
@@ -71,20 +77,22 @@ public class PanelAndButtonsManager : MonoBehaviour
 
     public void SettingsButton()
     {
-        print("Setting canves Not Found");
+        print("Setting canvas Not Found");
     }
 
     public void Resume()
     {
         pauseCanvas.enabled = false;
-        HUDCanves.enabled = true;
+        HUDCanvas.enabled = true;
+        InputCanvas.enabled = true;
         Time.timeScale = 1;
     }
 
     public void Pause()
     {
         pauseCanvas.enabled = true;
-        HUDCanves.enabled = false;
+        HUDCanvas.enabled = false;
+        InputCanvas.enabled = false;
         Time.timeScale = 0;
     }
 
@@ -100,8 +108,9 @@ public class PanelAndButtonsManager : MonoBehaviour
 
     public void OpenMainMenu()
     {
-        gameOverCanves.enabled = false;
+        gameOverCanvas.enabled = false;
         mainMenuCanvas.enabled = true;
+        InputCanvas.enabled = true;
     }
 }
 
