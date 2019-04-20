@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class GameOver : MonoBehaviour
 {
-    // Start is called before the first frame update
     public int gameOverHeigh = 0;
-    // Update is called once per frame
+    public GameObject lowestCube;
+
+    private float gameOverPossition;
+    private void Start()
+    {
+        gameOverPossition = lowestCube.transform.position.y - 4;
+    }
+
     void Update()
     {
-        if (PlayerManager.instance.transform.position.y < gameOverHeigh)
+        if (PlayerManager.instance.transform.position.y < gameOverPossition)
             GameManager.instance.GameOver = true;
     }
 }
