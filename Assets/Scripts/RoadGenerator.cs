@@ -14,7 +14,8 @@ public class RoadGenerator : MonoBehaviour
             return _instance;
         }
     }
-
+    
+   
     public GameObject firstTile;
     public GameObject[] tilePrefabs;
     public GameObject roadMap;
@@ -29,7 +30,8 @@ public class RoadGenerator : MonoBehaviour
     private int firstSpawnCount = 5;
     private int lastPrefabIndex;
     private List<GameObject> activeTiles;
-
+    private Color roadColor ;
+    
     public List<GameObject> ActiveTiles
     {
         get { return activeTiles; }
@@ -53,6 +55,9 @@ public class RoadGenerator : MonoBehaviour
             SpawnTile();
         }
         
+        roadColor = Random.ColorHSV(Random.value, Random.value);
+        MeshRenderer[] renderer =  activeTiles[0].GetComponentsInChildren<MeshRenderer> ();
+        renderer[0].material.color = roadColor;
     }
 
     public void Restart()
