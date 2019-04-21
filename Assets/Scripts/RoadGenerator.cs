@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.Experimental.Audio.Google;
 
 public class RoadGenerator : MonoBehaviour
@@ -19,7 +20,10 @@ public class RoadGenerator : MonoBehaviour
     public GameObject roadMap;
     public int roadOnScreen = 6;
 
-
+    public GameObject CurrentRoad
+    {
+        get { return activeTiles[1]; }
+    }
     private GameObject lastRoad;
     private Vector3 endOfRoad;
     private int firstSpawnCount = 5;
@@ -73,9 +77,10 @@ public class RoadGenerator : MonoBehaviour
 
     public void SpawnFirstTile()
     {
-        lastRoad= Instantiate(firstTile, Vector3.zero, Quaternion.identity);
+        lastRoad = Instantiate(firstTile, Vector3.zero, Quaternion.identity);
         lastRoad.transform.parent = roadMap.transform;
         activeTiles.Add(lastRoad);
+        GameOverManager.instance.CalGameOverPosition(lastRoad);
     }
 
    public void DeleteTile()

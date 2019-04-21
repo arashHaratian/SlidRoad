@@ -14,7 +14,8 @@ public class IsTrigger : MonoBehaviour
             RoadGenerator.Instance.SpawnTile();
             if (RoadGenerator.Instance.ActiveTiles.Count > RoadGenerator.Instance.roadOnScreen)
                 DeleteRoad();
-            GameOverManager.instance.CalGameOverPosition(RoadGenerator.Instance.ActiveTiles[1]);
+            GameOverManager.instance.CalGameOverPosition(RoadGenerator.Instance.CurrentRoad);
+            print(RoadGenerator.Instance.CurrentRoad);
         }
     }
 
