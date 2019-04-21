@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
         gameOver = false;
         RoadGenerator.Instance.Restart();
         player.transform.position = Vector3.up * 3;
+        GameOverManager.instance.Reset();
         Time.timeScale = 1;
         StartCoroutine(GameLoop());
     }

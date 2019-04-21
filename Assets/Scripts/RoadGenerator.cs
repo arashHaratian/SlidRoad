@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Audio.Google;
 
 public class RoadGenerator : MonoBehaviour
 {
@@ -12,21 +13,20 @@ public class RoadGenerator : MonoBehaviour
             return _instance;
         }
     }
+
     public GameObject[] tilePrefabs;
-    
-    public GameObject roadMap;    
-    private float tileLength = 40.0f;
-    private int amountTitlesOnScreen = 6;
-    public int AmountTitlesOnScreen
-    {
-        get { return amountTitlesOnScreen; }
-    }
-    public GameObject currentRoad
-    {
-        get { return activeTiles[1]; }
-    }
-    private int lastPrefabIndex = 0;
+    public GameObject roadMap;
+    public int roadOnScreen = 6;
+
+    private int firstSpawnCount = 5;
+    private int lastPrefabIndex;
     private List<GameObject> activeTiles;
+
+    public List<GameObject> ActiveTiles
+    {
+        get { return activeTiles; }
+    }
+
     private GameObject endOfRoad;
 
     void Awake()
@@ -41,7 +41,7 @@ public class RoadGenerator : MonoBehaviour
 
     private void Init()
     {
-        for (int i = 0; i < amountTitlesOnScreen; i++)
+        for (int i = 0; i < firstSpawnCount; i++)
         {
             if (i < 1)
                 SpawnTile(0);
@@ -72,18 +72,18 @@ public class RoadGenerator : MonoBehaviour
             go = Instantiate(tilePrefabs[RandomPrefabIndex()], endOfRoad.transform.position,activeTiles[activeTiles.Count - 1].transform.rotation);
         }
         else
+        {
             go = Instantiate(tilePrefabs[prefabIndex], new Vector3(0,0,-3), Quaternion.identity) as GameObject;
+        }
 
         go.transform.parent = roadMap.transform;
         activeTiles.Add(go);
-        amountTitlesOnScreen++;
     }
 
-    public void DeleteTile()
+   public void DeleteTile()
     {
         Destroy(activeTiles[0]);
         activeTiles.RemoveAt(0);
-        amountTitlesOnScreen--;
     }
 
     private int RandomPrefabIndex()
@@ -98,7 +98,4 @@ public class RoadGenerator : MonoBehaviour
         lastPrefabIndex = randomIndex;
         return randomIndex;
     }
-
-
-    
 }

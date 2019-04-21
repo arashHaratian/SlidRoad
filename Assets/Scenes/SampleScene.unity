@@ -202,6 +202,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &325144879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 325144881}
+  - component: {fileID: 325144880}
+  m_Layer: 0
+  m_Name: Game Over Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &325144880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325144879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532dda64f16aa9345bc41cacd923b3d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &325144881
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325144879}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.318127, y: -1.5063171, z: 42.389988}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &927865616
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,15 +549,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilePrefabs:
   - {fileID: 3086435196763915310, guid: 18231acea2f05cb45a797f82e12b648d, type: 3}
-  - {fileID: 3269747045869043078, guid: ca9f68f3f6a43ee4099f72499e8e17c5, type: 3}
-  - {fileID: 5310376073196416933, guid: 04182aec2cdf359448f801ffd431a4b0, type: 3}
-  - {fileID: 4678676906349447137, guid: e680cefd0cffc77489cdb27481b7f53a, type: 3}
-  - {fileID: 7929571686242649144, guid: b3f794a93fb6d9f418f3b70230329240, type: 3}
-  - {fileID: 3741970438600579569, guid: f6d01f9815f32fe4c9e924d56c0c2902, type: 3}
   - {fileID: 4733133536067809896, guid: a337a71d85ad1cb4883729cfac709641, type: 3}
-  - {fileID: 5509270081071986286, guid: 5be3171ec4e91bc409b771f6072fbeb1, type: 3}
-  - {fileID: 7011183630334864888, guid: b2d38582c471149488c8b8045e130a50, type: 3}
+  - {fileID: 7929571686242649144, guid: b3f794a93fb6d9f418f3b70230329240, type: 3}
   roadMap: {fileID: 1751447842}
+  roadOnScreen: 6
 --- !u!4 &1810072242
 Transform:
   m_ObjectHideFlags: 0
