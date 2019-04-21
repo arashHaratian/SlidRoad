@@ -14,10 +14,14 @@ public class RoadGenerator : MonoBehaviour
         }
     }
 
+    public GameObject firstTile;
     public GameObject[] tilePrefabs;
     public GameObject roadMap;
     public int roadOnScreen = 6;
 
+
+    private GameObject lastRoad;
+    private Vector3 endOfRoad;
     private int firstSpawnCount = 5;
     private int lastPrefabIndex;
     private List<GameObject> activeTiles;
@@ -26,9 +30,6 @@ public class RoadGenerator : MonoBehaviour
     {
         get { return activeTiles; }
     }
-
-    private GameObject endOfRoad;
-
     void Awake()
     {
         if (_instance != null && _instance != this)
@@ -37,17 +38,17 @@ public class RoadGenerator : MonoBehaviour
             _instance = this;
         
         activeTiles = new List<GameObject>();
+        Init();
     }
 
     private void Init()
     {
-        for (int i = 0; i < firstSpawnCount; i++)
+        SpawnFirstTile();
+        for (int i = 1; i < firstSpawnCount; i++)
         {
-            if (i < 1)
-                SpawnTile(0);
-            else
-                SpawnTile();
+            SpawnTile();
         }
+        
     }
 
     public void Restart()
@@ -63,21 +64,18 @@ public class RoadGenerator : MonoBehaviour
         Init();   
     }
 
-   public void SpawnTile(int prefabIndex = -1)
+    public void SpawnTile()
     {
-        GameObject go;
-        if (prefabIndex == -1)
-        {
-            endOfRoad = activeTiles[activeTiles.Count - 1].transform.GetChild(0).gameObject;
-            go = Instantiate(tilePrefabs[RandomPrefabIndex()], endOfRoad.transform.position,activeTiles[activeTiles.Count - 1].transform.rotation);
-        }
-        else
-        {
-            go = Instantiate(tilePrefabs[prefabIndex], new Vector3(0,0,-3), Quaternion.identity) as GameObject;
-        }
+        lastRoad = Instantiate(tilePrefabs[RandomPrefabIndex()], lastRoad.transform.GetChild(0).gameObject.transform.position,lastRoad.transform.rotation);
+        lastRoad.transform.parent = roadMap.transform;
+        activeTiles.Add(lastRoad);
+    }
 
-        go.transform.parent = roadMap.transform;
-        activeTiles.Add(go);
+    public void SpawnFirstTile()
+    {
+        lastRoad= Instantiate(firstTile, Vector3.zero, Quaternion.identity);
+        lastRoad.transform.parent = roadMap.transform;
+        activeTiles.Add(lastRoad);
     }
 
    public void DeleteTile()
