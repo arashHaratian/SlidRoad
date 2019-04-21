@@ -16,9 +16,15 @@ public class GameManager : MonoBehaviour
 
     #endregion
     
-    private Rigidbody playerRigidbody;
     private PlayerManager playerManagerScript;
-    
+    private bool gameOver;
+
+    public bool GameOver
+    {
+        get { return gameOver; }
+        set { gameOver = value; }
+    }
+
     private void Awake()
     {
         if (!instance)
@@ -27,7 +33,6 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         DontDestroyOnLoad(this.gameObject);
 
-        playerRigidbody = player.GetComponent<Rigidbody>();
         playerManagerScript = player.GetComponent<PlayerManager>();
 
     }
@@ -36,8 +41,10 @@ public class GameManager : MonoBehaviour
     {
         playerManagerScript.enabled = false;
         playerManagerScript.enabled = true;
+        gameOver = false;
         RoadGenerator.Instance.Restart();
-        player.transform.position = Vector3.up;
+        player.transform.position = Vector3.up * 3;
+        GameOverManager.instance.Reset();
         Time.timeScale = 1;
         StartCoroutine(GameLoop());
     }
@@ -52,7 +59,7 @@ public class GameManager : MonoBehaviour
     {
         lastTime = Time.time;
         Movement.Speed = gameSpeed;
-        while (!IsGameOver())
+        while (!gameOver)
         {
             if (lastTime + timeIncreaseSpeed < Time.time)
                 IncreaseSpeed();
@@ -72,10 +79,4 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         PanelAndButtonsManager.instance.GameOver();
     }
-    bool IsGameOver()
-    {
-        playerRigidbody.AddForce(Physics.gravity * 3f, ForceMode.Acceleration);
-        return playerRigidbody.velocity.y < -2 && player.transform.position.y < -15;
-    }
-   
 }
