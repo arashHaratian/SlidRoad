@@ -7,7 +7,7 @@ public class FollowingFinger : MonoBehaviour
 {
     private Slider slider;
 
-    private void OnEnable()
+    private void Start()
     {
         slider = GetComponent<Slider>();
         slider.maxValue = Screen.width;
