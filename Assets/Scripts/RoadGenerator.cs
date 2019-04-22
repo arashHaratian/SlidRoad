@@ -44,7 +44,7 @@ public class RoadGenerator : MonoBehaviour
             _instance = this;
         
         activeTiles = new List<GameObject>();
-        Init();
+//        Init();
     }
 
     private void Init()

@@ -62,13 +62,22 @@ public class PanelAndButtonsManager : MonoBehaviour
         InputCanvas.enabled = false;
     }
 
-    public void TapToPlay()
+    private void PlayMenu()
     {
         mainMenuCanvas.enabled = false;
         gameOverCanvas.enabled = false;
         pauseCanvas.enabled = false;
         HUDCanvas.enabled = true;
         InputCanvas.enabled = true;
+    }
+    public void Restart()
+    {
+       PlayMenu();        
+       GameManager.instance.Restart(); 
+    }
+    public void TapToPlay()
+    {
+        PlayMenu();
         GameManager.instance.Init();
     }
     //-----------------------------------------------------

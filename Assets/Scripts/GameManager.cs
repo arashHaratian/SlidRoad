@@ -34,10 +34,15 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         playerManagerScript = player.GetComponent<PlayerManager>();
-
     }
 
-    public void Init()
+    private void Start()
+    {
+        gameOver = false;
+        RoadGenerator.Instance.Restart();
+    }
+
+    public void Restart()
     {
         playerManagerScript.enabled = false;
         playerManagerScript.enabled = true;
@@ -45,6 +50,10 @@ public class GameManager : MonoBehaviour
         RoadGenerator.Instance.Restart();
         player.transform.position = Vector3.up * 3;
         GameOverManager.instance.Reset();
+        Init();
+    }
+    public void Init()
+    {
         Time.timeScale = 1;
         StartCoroutine(GameLoop());
     }
