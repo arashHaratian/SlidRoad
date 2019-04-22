@@ -16,7 +16,7 @@ public class PlayerManager : MonoBehaviour
     private GameObject roadMapGameObject;
     private Rotation roadMap;
     private float rot;
-
+    private bool wrongTabPosition;
     public static PlayerManager instance = null;
 
     public Vector2 LastPosition
@@ -36,6 +36,7 @@ public class PlayerManager : MonoBehaviour
         roadMap = roadMapGameObject.GetComponent<Rotation>();
         //        playerRigidbody = GetComponent<Rigidbody>();
         lastPosition = new Vector2(Screen.width / 2, Screen.height / 2);
+        wrongTabPosition = false;
 
     }
 
@@ -53,15 +54,26 @@ public class PlayerManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Rotation();
+            Rotation();
     }
     private void Rotation()
     {
 //#if UNITY_STANDALONE || UNITY_WEBPLAYER
         if (Input.GetMouseButtonDown(0))
+        {
+            if (Input.mousePosition.y > Screen.height - 100 || Input.mousePosition.y < 50)
+            {
+                wrongTabPosition = true;
+                return;
+            }
+
+            wrongTabPosition = false;
             currentPosition = Input.mousePosition;
+        }
         else if (Input.GetMouseButton(0))
         {
+            if (wrongTabPosition)
+                return;
             currentPosition = Input.mousePosition;
             distanceOfX = (currentPosition.x - lastPosition.x) / Screen.width;
             float rot = distanceOfX * -1;
