@@ -378,6 +378,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 186754028775487817, guid: 4b0421de46772bb4489ef9df18ea7d5a,
+        type: 3}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7367111652824580836, guid: 4b0421de46772bb4489ef9df18ea7d5a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -441,11 +446,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 3745113664528203425}
-    - target: {fileID: 186754028775487817, guid: 4b0421de46772bb4489ef9df18ea7d5a,
-        type: 3}
-      propertyPath: orthographic
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b0421de46772bb4489ef9df18ea7d5a, type: 3}
 --- !u!1001 &1850000476476577645
@@ -822,6 +822,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3031130935910620758, guid: b2df3f4d0c8c2874db5f97dbf900fe2c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2df3f4d0c8c2874db5f97dbf900fe2c, type: 3}
 --- !u!1 &3745113664528203418 stripped
@@ -848,8 +853,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577c121b0ed30004483a00cbfd9752ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha: 0
-  beta: 0
+  alpha: 3
+  beta: 1
 --- !u!1001 &6144813135385091561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1512,6 +1517,18 @@ PrefabInstance:
       propertyPath: roadMap
       value: 
       objectReference: {fileID: 1751447842}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: tilePrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 4839091151933126709, guid: a4c8c8dfeb7662a4fa78ca40376e7c14,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: tilePrefabs.Array.data[8]
+      value: 
+      objectReference: {fileID: 7855334792145032778, guid: d18fe37c9f728c4449ebe610c423d48a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a55b368d5bc33740b33ff1d62b7078e, type: 3}
 --- !u!1001 &9115385317772792023
