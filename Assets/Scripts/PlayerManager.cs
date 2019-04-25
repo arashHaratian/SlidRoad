@@ -29,10 +29,8 @@ public class PlayerManager : MonoBehaviour
             instance = this;
         else if(instance != this)
             Destroy(this.gameObject);
-        
         roadMapGameObject = GameObject.FindWithTag("Road Map");
         roadMap = roadMapGameObject.GetComponent<Rotation>();
-        lastPosition = new Vector2(Screen.width / 2, Screen.height / 2);
         wrongTabPosition = false;
 
     }
@@ -46,8 +44,6 @@ public class PlayerManager : MonoBehaviour
     private void OnEnable()
     {
         this.GetComponent<ScoreManager>().enabled = true;
-        lastPosition = new Vector2(Screen.width / 2, Screen.height / 2);
-        
     }
 
     private void Update()
@@ -90,10 +86,11 @@ public class PlayerManager : MonoBehaviour
                     wrongTabPosition = true;
                     return;
                 }
-                currentPosition = myTouch.position;
+
+                wrongTabPosition = false;
                 lastPosition = myTouch.position;
             }
-            else if(myTouch.phase == TouchPhase.Moved)
+            else //if(myTouch.phase == TouchPhase.Moved)
             {
                 if (wrongTabPosition)
                     return;
