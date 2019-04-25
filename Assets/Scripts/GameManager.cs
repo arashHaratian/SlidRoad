@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
     public GameObject player;
-
+    public GameObject roadMap;
     #region GameSpeed
 
     public Vector3 gameSpeed;
@@ -46,10 +46,12 @@ public class GameManager : MonoBehaviour
     {
         playerManagerScript.enabled = false;
         playerManagerScript.enabled = true;
+        roadMap.transform.rotation = Quaternion.identity;
         gameOver = false;
         RoadGenerator.Instance.Restart();
         player.transform.position = Vector3.up * 3;
         GameOverManager.instance.Reset();
+        
         Init();
     }
     public void Init()
