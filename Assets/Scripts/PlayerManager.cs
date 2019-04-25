@@ -61,7 +61,7 @@ public class PlayerManager : MonoBehaviour
 //#if UNITY_STANDALONE || UNITY_WEBPLAYER
         if (Input.GetMouseButtonDown(0))
         {
-            if (Input.mousePosition.y > Screen.height - 100 || Input.mousePosition.y < 50)
+            if (Input.mousePosition.y > Screen.height - Screen.height / 13 || Input.mousePosition.y < Screen.height / 25)
             {
                 wrongTabPosition = true;
                 return;
