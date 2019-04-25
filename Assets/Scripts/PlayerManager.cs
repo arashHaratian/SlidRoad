@@ -15,7 +15,6 @@ public class PlayerManager : MonoBehaviour
     private float distanceOfX;
     private GameObject roadMapGameObject;
     private Rotation roadMap;
-    private float rot;
     private bool wrongTabPosition;
     public static PlayerManager instance = null;
 
@@ -31,10 +30,8 @@ public class PlayerManager : MonoBehaviour
         else if(instance != this)
             Destroy(this.gameObject);
         
-        Application.targetFrameRate = 300;
         roadMapGameObject = GameObject.FindWithTag("Road Map");
         roadMap = roadMapGameObject.GetComponent<Rotation>();
-        //        playerRigidbody = GetComponent<Rigidbody>();
         lastPosition = new Vector2(Screen.width / 2, Screen.height / 2);
         wrongTabPosition = false;
 
@@ -50,15 +47,16 @@ public class PlayerManager : MonoBehaviour
     {
         this.GetComponent<ScoreManager>().enabled = true;
         lastPosition = new Vector2(Screen.width / 2, Screen.height / 2);
+        
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-            Rotation();
+        Rotation();
     }
     private void Rotation()
     {
-//#if UNITY_STANDALONE || UNITY_WEBPLAYER
+#if UNITY_STANDALONE || UNITY_WEBPLAYER
         if (Input.GetMouseButtonDown(0))
         {
             if (Input.mousePosition.y > Screen.height - Screen.height / 13 || Input.mousePosition.y < Screen.height / 25)
@@ -66,43 +64,47 @@ public class PlayerManager : MonoBehaviour
                 wrongTabPosition = true;
                 return;
             }
-
             wrongTabPosition = false;
-            currentPosition = Input.mousePosition;
+            lastPosition = Input.mousePosition;
         }
         else if (Input.GetMouseButton(0))
         {
             if (wrongTabPosition)
                 return;
-            currentPosition = Input.mousePosition;
-            distanceOfX = (currentPosition.x - lastPosition.x) / Screen.width;
-            float rot = distanceOfX * -1;
-            roadMap.Rotate(rot, transform);
+            currentPosition.x = Input.mousePosition.x;
+            distanceOfX = (currentPosition.x - lastPosition.x) / Screen.width * -1;
+            roadMap.Rotate(distanceOfX);
             lastPosition = currentPosition;
 //            playerDirection.transform.eulerAngles = new Vector3(0, playerDirection.transform.eulerAngles.y - rot, 0);
 //            playerDirectionRigidbody.angularVelocity = new Vector3(0, rot, 0);
         }
         
-//#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
-//        if (Input.touchCount > 0)
-//        {
-//            Touch myTouch = Input.touches[0];
-//            if (myTouch.phase == TouchPhase.Began)
-//            {
-//                currentPosition = myTouch.position;
-//                firstPosition = myTouch.position;
-//            }
-//            else //if (myTouch.phase == TouchPhase.Moved)
-//            {
-//                currentPosition = myTouch.position;
-//                distanceOfX = currentPosition.x - firstPosition.x;
-//                rot = distanceOfX * Time.deltaTime * -1;
-////                firstPosition = currentPosition;
-//                roadMap.Rotate(rot, transform);
-////                        playerDirection.transform.eulerAngles = new Vector3(0, playerDirection.transform.eulerAngles.y - rot, 0);
-////                        playerDirectionRigidbody.angularVelocity = new Vector3(0, rot, 0);
-//            }
-//        }
-//#endif
+#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
+        if (Input.touchCount > 0)
+        {
+            Touch myTouch = Input.touches[0];
+            if (myTouch.phase == TouchPhase.Began)
+            {
+                if (myTouch.position.y > Screen.height - Screen.height / 13 || myTouch.position.y < Screen.height / 25)
+                {
+                    wrongTabPosition = true;
+                    return;
+                }
+                currentPosition = myTouch.position;
+                lastPosition = myTouch.position;
+            }
+            else if(myTouch.phase == TouchPhase.Moved)
+            {
+                if (wrongTabPosition)
+                    return;
+                currentPosition = myTouch.position;
+                distanceOfX = (currentPosition.x - lastPosition.x) / Screen.width * -1;
+                roadMap.Rotate(distanceOfX);
+                lastPosition = currentPosition;
+//                        playerDirection.transform.eulerAngles = new Vector3(0, playerDirection.transform.eulerAngles.y - rot, 0);
+//                        playerDirectionRigidbody.angularVelocity = new Vector3(0, rot, 0);
+            }
+        }
+#endif
     }
 }
