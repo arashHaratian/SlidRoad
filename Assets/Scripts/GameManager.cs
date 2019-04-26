@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     public Vector3 gameSpeed;
     public float timeIncreaseSpeed;
+    public float maxSpeed;
     private float lastTime;
 
     #endregion
@@ -71,8 +72,9 @@ public class GameManager : MonoBehaviour
         Movement.Speed = gameSpeed;
         while (!gameOver)
         {
-            if (lastTime + timeIncreaseSpeed < Time.time)
-                IncreaseSpeed();
+            if(Movement.Speed.z < maxSpeed)
+                if (lastTime + timeIncreaseSpeed < Time.time)
+                    IncreaseSpeed();
             yield return null;
         }
     }
@@ -81,6 +83,7 @@ public class GameManager : MonoBehaviour
     {
         Movement.Speed -= Vector3.forward;
         lastTime = Time.time;
+        Physics.gravity += Vector3.down;
     }
 
     void GameIsOver()
