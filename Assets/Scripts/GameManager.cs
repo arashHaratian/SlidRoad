@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject roadMap;
     #region GameSpeed
 
-    public Vector3 gameSpeed;
+    public float gameSpeed;
     public float timeIncreaseSpeed;
     public float maxSpeed;
     private float lastTime;
@@ -69,10 +69,11 @@ public class GameManager : MonoBehaviour
     IEnumerator RoundStarting()
     {
         lastTime = Time.time;
-        Movement.Speed = gameSpeed;
+        Movement.Speed = Vector3.back * gameSpeed;
         while (!gameOver)
         {
-            if(Movement.Speed.z < maxSpeed)
+            print(Movement.Speed.z );
+            if(gameSpeed < maxSpeed)
                 if (lastTime + timeIncreaseSpeed < Time.time)
                     IncreaseSpeed();
             yield return null;
@@ -81,6 +82,7 @@ public class GameManager : MonoBehaviour
 
     void IncreaseSpeed()
     {
+        gameSpeed++;
         Movement.Speed -= Vector3.forward;
         lastTime = Time.time;
         Physics.gravity += Vector3.down;
