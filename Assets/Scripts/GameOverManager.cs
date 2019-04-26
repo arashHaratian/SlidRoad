@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameOverManager : MonoBehaviour
 {
+    public float gameOverHeight;
     private float gameOverPossition;
     public static GameOverManager instance = null;
     private void Awake()
@@ -13,7 +14,7 @@ public class GameOverManager : MonoBehaviour
         else if(this != instance)
             Destroy(this.gameObject);
         
-        gameOverPossition = -3;
+        gameOverPossition = gameOverHeight;
     }
 
     private void Update()
@@ -24,18 +25,18 @@ public class GameOverManager : MonoBehaviour
 
     public void Reset()
     {
-        gameOverPossition = -3;
+        gameOverPossition = gameOverHeight;
     }
 
     public void CalGameOverPosition(GameObject currentRoad)
     {
-        gameOverPossition = currentRoad.transform.position.y - 3;
+        gameOverPossition = currentRoad.transform.position.y + gameOverHeight;
         float cubePosition;
         for (int i = 0; i < currentRoad.transform.childCount; i++)
         {
             cubePosition = currentRoad.transform.GetChild(i).gameObject.transform.position.y;
-            if(cubePosition - 3 < gameOverPossition)
-                gameOverPossition = cubePosition - 3;
+            if(cubePosition + gameOverHeight < gameOverPossition)
+                gameOverPossition = cubePosition + gameOverHeight;
         }
     }
 }
