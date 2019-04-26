@@ -44,6 +44,8 @@ public class PlayerManager : MonoBehaviour
     private void OnEnable()
     {
         this.GetComponent<ScoreManager>().enabled = true;
+        if (Input.touchCount > 0)
+            lastPosition = Input.touches[0].position;
     }
 
     private void Update()
