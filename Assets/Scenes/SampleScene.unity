@@ -112,26 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &23054746 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4866447776369823454, guid: 22f27581b0254a54494e759a29829bc9,
-    type: 3}
-  m_PrefabInstance: {fileID: 8642750745158142829}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &23054752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23054746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 146111bc8facd0e40882c0f499d8d68d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transitionTimeInSec: 4
-  color2: {r: 0, g: 0, b: 0, a: 0}
 --- !u!223 &45328529 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 8642750745132098556, guid: 22f27581b0254a54494e759a29829bc9,
@@ -1423,11 +1403,6 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 76325037}
-    - target: {fileID: 5654155918224040769, guid: 22f27581b0254a54494e759a29829bc9,
-        type: 3}
-      propertyPath: m_FontData.m_MaxSize
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22f27581b0254a54494e759a29829bc9, type: 3}
 --- !u!1001 &8709932131583575628
@@ -1499,6 +1474,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
+      propertyPath: tilePrefabs.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
       propertyPath: roadMap
       value: 
       objectReference: {fileID: 1751447842}
@@ -1506,13 +1486,61 @@ PrefabInstance:
         type: 3}
       propertyPath: tilePrefabs.Array.data[5]
       value: 
-      objectReference: {fileID: 4839091151933126709, guid: a4c8c8dfeb7662a4fa78ca40376e7c14,
+      objectReference: {fileID: 2051399372067817452, guid: 03cc4d0000bd4504eac4f7185638a925,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: tilePrefabs.Array.data[8]
       value: 
-      objectReference: {fileID: 2664496334852427143, guid: b2d38582c471149488c8b8045e130a50,
+      objectReference: {fileID: 7982485220690288313, guid: dc7c527daccebbc4eac29c4af2c34e40,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: tilePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 4054287638075189011, guid: 542f81577f05a024f919b90e55fedbe4,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: firstTile
+      value: 
+      objectReference: {fileID: 4933636953312451253, guid: 18231acea2f05cb45a797f82e12b648d,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: tilePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 172602741113346955, guid: 76d393beace41a249847198c3a85aca2,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: tilePrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 3466447592806077067, guid: 94aafbb0539be76428427730dd03a1f3,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: tilePrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1067614461687188132, guid: bce15067fa9b9b04fa00393491298ce7,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: tilePrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 997719354955293116, guid: ddc2e51ca4fa2094a995c618f9903b20,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: tilePrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 7982485220690288313, guid: dc7c527daccebbc4eac29c4af2c34e40,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: tilePrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 2051399372067817452, guid: 03cc4d0000bd4504eac4f7185638a925,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a55b368d5bc33740b33ff1d62b7078e, type: 3}
