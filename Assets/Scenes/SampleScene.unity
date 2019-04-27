@@ -647,7 +647,7 @@ PrefabInstance:
     - target: {fileID: 3050578143369406964, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
         type: 3}
       propertyPath: m_Mass
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3050578143369406964, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
         type: 3}
@@ -668,6 +668,56 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2021759495088180295, guid: 99f4166a692b92440b62b20124f229ad,
+        type: 3}
+      propertyPath: m_Name
+      value: Buttons Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2021759495088180295, guid: 99f4166a692b92440b62b20124f229ad,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2021759495088180295, guid: 99f4166a692b92440b62b20124f229ad,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2021759495088180294, guid: 99f4166a692b92440b62b20124f229ad,
+        type: 3}
+      propertyPath: mainMenuCanvas
+      value: 
+      objectReference: {fileID: 45328529}
+    - target: {fileID: 2021759495088180294, guid: 99f4166a692b92440b62b20124f229ad,
+        type: 3}
+      propertyPath: pauseCanvas
+      value: 
+      objectReference: {fileID: 1023851423}
+    - target: {fileID: 2021759495088180294, guid: 99f4166a692b92440b62b20124f229ad,
+        type: 3}
+      propertyPath: HUDCanves
+      value: 
+      objectReference: {fileID: 1894183564}
+    - target: {fileID: 2021759495088180294, guid: 99f4166a692b92440b62b20124f229ad,
+        type: 3}
+      propertyPath: gameOverCanves
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2021759495088180294, guid: 99f4166a692b92440b62b20124f229ad,
+        type: 3}
+      propertyPath: HUDCanvas
+      value: 
+      objectReference: {fileID: 1894183564}
+    - target: {fileID: 2021759495088180294, guid: 99f4166a692b92440b62b20124f229ad,
+        type: 3}
+      propertyPath: gameOverCanvas
+      value: 
+      objectReference: {fileID: 1092102851}
+    - target: {fileID: 2021759495088180294, guid: 99f4166a692b92440b62b20124f229ad,
+        type: 3}
+      propertyPath: InputCanvas
+      value: 
+      objectReference: {fileID: 99345678}
     - target: {fileID: 2021759495088180293, guid: 99f4166a692b92440b62b20124f229ad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -722,56 +772,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2021759495088180294, guid: 99f4166a692b92440b62b20124f229ad,
-        type: 3}
-      propertyPath: mainMenuCanvas
-      value: 
-      objectReference: {fileID: 45328529}
-    - target: {fileID: 2021759495088180294, guid: 99f4166a692b92440b62b20124f229ad,
-        type: 3}
-      propertyPath: pauseCanvas
-      value: 
-      objectReference: {fileID: 1023851423}
-    - target: {fileID: 2021759495088180294, guid: 99f4166a692b92440b62b20124f229ad,
-        type: 3}
-      propertyPath: HUDCanves
-      value: 
-      objectReference: {fileID: 1894183564}
-    - target: {fileID: 2021759495088180294, guid: 99f4166a692b92440b62b20124f229ad,
-        type: 3}
-      propertyPath: gameOverCanves
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2021759495088180294, guid: 99f4166a692b92440b62b20124f229ad,
-        type: 3}
-      propertyPath: HUDCanvas
-      value: 
-      objectReference: {fileID: 1894183564}
-    - target: {fileID: 2021759495088180294, guid: 99f4166a692b92440b62b20124f229ad,
-        type: 3}
-      propertyPath: gameOverCanvas
-      value: 
-      objectReference: {fileID: 1092102851}
-    - target: {fileID: 2021759495088180294, guid: 99f4166a692b92440b62b20124f229ad,
-        type: 3}
-      propertyPath: InputCanvas
-      value: 
-      objectReference: {fileID: 99345678}
-    - target: {fileID: 2021759495088180295, guid: 99f4166a692b92440b62b20124f229ad,
-        type: 3}
-      propertyPath: m_Name
-      value: Buttons Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 2021759495088180295, guid: 99f4166a692b92440b62b20124f229ad,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2021759495088180295, guid: 99f4166a692b92440b62b20124f229ad,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99f4166a692b92440b62b20124f229ad, type: 3}
@@ -1069,6 +1069,26 @@ PrefabInstance:
     - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
         type: 3}
       propertyPath: gameSpeed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
+        type: 3}
+      propertyPath: gravity
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
+        type: 3}
+      propertyPath: firstGravity
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
+        type: 3}
+      propertyPath: firstSpeed
       value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1475,7 +1495,7 @@ PrefabInstance:
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: tilePrefabs.Array.size
-      value: 7
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
@@ -1486,19 +1506,19 @@ PrefabInstance:
         type: 3}
       propertyPath: tilePrefabs.Array.data[5]
       value: 
-      objectReference: {fileID: 933253471282835999, guid: 03cc4d0000bd4504eac4f7185638a925,
+      objectReference: {fileID: 2888584720217509053, guid: a337a71d85ad1cb4883729cfac709641,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: tilePrefabs.Array.data[8]
       value: 
-      objectReference: {fileID: 7982485220690288313, guid: dc7c527daccebbc4eac29c4af2c34e40,
+      objectReference: {fileID: 626035113227941427, guid: 94aafbb0539be76428427730dd03a1f3,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: tilePrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 4054287638075189011, guid: 542f81577f05a024f919b90e55fedbe4,
+      objectReference: {fileID: 4084839427861057654, guid: e5940fed781daef49a9c4489abbb9df3,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
@@ -1510,37 +1530,79 @@ PrefabInstance:
         type: 3}
       propertyPath: tilePrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 172602741113346955, guid: 76d393beace41a249847198c3a85aca2,
+      objectReference: {fileID: 8117787148328415884, guid: f0209d63feed5c14995cdd29c005d39b,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: tilePrefabs.Array.data[2]
       value: 
-      objectReference: {fileID: 626035113227941427, guid: 94aafbb0539be76428427730dd03a1f3,
+      objectReference: {fileID: 7082995737884091357, guid: b3f794a93fb6d9f418f3b70230329240,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: tilePrefabs.Array.data[3]
       value: 
-      objectReference: {fileID: 1067614461687188132, guid: bce15067fa9b9b04fa00393491298ce7,
+      objectReference: {fileID: 5149642159400103555, guid: ca9f68f3f6a43ee4099f72499e8e17c5,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: tilePrefabs.Array.data[4]
       value: 
-      objectReference: {fileID: 8205244513237073178, guid: ddc2e51ca4fa2094a995c618f9903b20,
+      objectReference: {fileID: 4933636953312451253, guid: 18231acea2f05cb45a797f82e12b648d,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: tilePrefabs.Array.data[6]
       value: 
-      objectReference: {fileID: 7982485220690288313, guid: dc7c527daccebbc4eac29c4af2c34e40,
+      objectReference: {fileID: 4054287638075189011, guid: 542f81577f05a024f919b90e55fedbe4,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: tilePrefabs.Array.data[7]
       value: 
-      objectReference: {fileID: 2051399372067817452, guid: 03cc4d0000bd4504eac4f7185638a925,
+      objectReference: {fileID: 816832991007526797, guid: 76d393beace41a249847198c3a85aca2,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: tilePrefabs.Array.data[9]
+      value: 
+      objectReference: {fileID: 1067614461687188132, guid: bce15067fa9b9b04fa00393491298ce7,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: tilePrefabs.Array.data[10]
+      value: 
+      objectReference: {fileID: 7414604028165125942, guid: ddc2e51ca4fa2094a995c618f9903b20,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: tilePrefabs.Array.data[11]
+      value: 
+      objectReference: {fileID: 4876776189251445938, guid: 03cc4d0000bd4504eac4f7185638a925,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: tilePrefabs.Array.data[12]
+      value: 
+      objectReference: {fileID: 7982485220690288313, guid: dc7c527daccebbc4eac29c4af2c34e40,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: tilePrefabs.Array.data[13]
+      value: 
+      objectReference: {fileID: 4129373761660936536, guid: f6d01f9815f32fe4c9e924d56c0c2902,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: tilePrefabs.Array.data[14]
+      value: 
+      objectReference: {fileID: 7970132764936666891, guid: 5be3171ec4e91bc409b771f6072fbeb1,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: tilePrefabs.Array.data[15]
+      value: 
+      objectReference: {fileID: 2632542326696057736, guid: b2d38582c471149488c8b8045e130a50,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a55b368d5bc33740b33ff1d62b7078e, type: 3}
