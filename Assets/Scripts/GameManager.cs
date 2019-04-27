@@ -8,12 +8,18 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     public GameObject player;
     public GameObject roadMap;
-    #region GameSpeed
 
-    public float gameSpeed;
+    #region RatioGravity
+    public float firstGravity;
+    private float gravitPerSpeed;
+    #endregion
+    
+    #region GameSpeed
+    public float firstSpeed;
+    private float gameSpeed;
     public float timeIncreaseSpeed;
     public float maxSpeed;
-    private float lastTime;
+    private float Count = 0;
 
     #endregion
     
@@ -35,6 +41,9 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         playerManagerScript = player.GetComponent<PlayerManager>();
+        gravitPerSpeed = firstGravity / firstSpeed;
+        Physics.gravity = Vector3.down * firstGravity;
+
     }
 
     private void Start()
@@ -68,12 +77,14 @@ public class GameManager : MonoBehaviour
 
     IEnumerator RoundStarting()
     {
-        lastTime = Time.time;
-        Movement.Speed = Vector3.back * gameSpeed;
+        gameSpeed = firstSpeed;
+        Movement.Speed = Vector3.back * firstSpeed;
+        
         while (!gameOver)
         {
             if(gameSpeed < maxSpeed)
-                if (lastTime + timeIncreaseSpeed < Time.time)
+                Count += Time.deltaTime;
+                if (Count > timeIncreaseSpeed)
                     IncreaseSpeed();
             yield return null;
         }
@@ -81,10 +92,11 @@ public class GameManager : MonoBehaviour
 
     void IncreaseSpeed()
     {
-        gameSpeed++;
+        gameSpeed += 0.5f;
         Movement.Speed -= Vector3.forward;
-        lastTime = Time.time;
-        Physics.gravity += Vector3.down;
+        Count = 0;
+        Physics.gravity = Vector3.down * gravitPerSpeed * gameSpeed;
+        print("speed " + gameSpeed + "gravity " + Physics.gravity.y);
     }
 
     void GameIsOver()
