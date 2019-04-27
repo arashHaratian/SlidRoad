@@ -72,7 +72,6 @@ public class GameManager : MonoBehaviour
         Movement.Speed = Vector3.back * gameSpeed;
         while (!gameOver)
         {
-            print(Movement.Speed.z );
             if(gameSpeed < maxSpeed)
                 if (lastTime + timeIncreaseSpeed < Time.time)
                     IncreaseSpeed();
