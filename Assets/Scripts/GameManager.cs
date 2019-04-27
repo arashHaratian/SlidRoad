@@ -96,7 +96,6 @@ public class GameManager : MonoBehaviour
         Movement.Speed -= Vector3.forward;
         Count = 0;
         Physics.gravity = Vector3.down * gravitPerSpeed * gameSpeed;
-        print("speed " + gameSpeed + "gravity " + Physics.gravity.y);
     }
 
     void GameIsOver()

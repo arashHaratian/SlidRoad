@@ -355,6 +355,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3675519721850787841, guid: 4c0eeaf14439099459a198ea70f178e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3675519721850787869, guid: 4c0eeaf14439099459a198ea70f178e4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1495,7 +1500,7 @@ PrefabInstance:
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: tilePrefabs.Array.size
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
@@ -1572,7 +1577,7 @@ PrefabInstance:
         type: 3}
       propertyPath: tilePrefabs.Array.data[10]
       value: 
-      objectReference: {fileID: 7414604028165125942, guid: ddc2e51ca4fa2094a995c618f9903b20,
+      objectReference: {fileID: 9009336024049471379, guid: 35857585d8ef095439bbc640cc73d6cc,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
@@ -1607,6 +1612,12 @@ PrefabInstance:
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: firstTile
+      value: 
+      objectReference: {fileID: 4933636953312451253, guid: 18231acea2f05cb45a797f82e12b648d,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: tilePrefabs.Array.data[16]
       value: 
       objectReference: {fileID: 7806607901001225511, guid: 5d5625fa4f1f5f047b0593ee741cecfe,
         type: 3}
