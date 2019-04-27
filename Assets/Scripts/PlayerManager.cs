@@ -54,7 +54,7 @@ public class PlayerManager : MonoBehaviour
     }
     private void Rotation()
     {
-#if UNITY_STANDALONE || UNITY_WEBPLAYER
+//#if UNITY_STANDALONE || UNITY_WEBPLAYER
         if (Input.GetMouseButtonDown(0))
         {
             if (Input.mousePosition.y > Screen.height - Screen.height / 13 || Input.mousePosition.y < Screen.height / 25)
@@ -77,33 +77,33 @@ public class PlayerManager : MonoBehaviour
 //            playerDirectionRigidbody.angularVelocity = new Vector3(0, rot, 0);
         }
         
-#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
-        if (Input.touchCount > 0)
-        {
-            Touch myTouch = Input.touches[0];
-            if (myTouch.phase == TouchPhase.Began)
-            {
-                if (myTouch.position.y > Screen.height - Screen.height / 13 || myTouch.position.y < Screen.height / 25)
-                {
-                    wrongTabPosition = true;
-                    return;
-                }
-
-                wrongTabPosition = false;
-                lastPosition = myTouch.position;
-            }
-            else //if(myTouch.phase == TouchPhase.Moved)
-            {
-                if (wrongTabPosition)
-                    return;
-                currentPosition = myTouch.position;
-                distanceOfX = (currentPosition.x - lastPosition.x) / Screen.width * -1;
-                roadMap.Rotate(distanceOfX);
-                lastPosition = currentPosition;
-//                        playerDirection.transform.eulerAngles = new Vector3(0, playerDirection.transform.eulerAngles.y - rot, 0);
-//                        playerDirectionRigidbody.angularVelocity = new Vector3(0, rot, 0);
-            }
-        }
-#endif
+//#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
+//        if (Input.touchCount > 0)
+//        {
+//            Touch myTouch = Input.touches[0];
+//            if (myTouch.phase == TouchPhase.Began)
+//            {
+//                if (myTouch.position.y > Screen.height - Screen.height / 13 || myTouch.position.y < Screen.height / 25)
+//                {
+//                    wrongTabPosition = true;
+//                    return;
+//                }
+//
+//                wrongTabPosition = false;
+//                lastPosition = myTouch.position;
+//            }
+//            else //if(myTouch.phase == TouchPhase.Moved)
+//            {
+//                if (wrongTabPosition)
+//                    return;
+//                currentPosition = myTouch.position;
+//                distanceOfX = (currentPosition.x - lastPosition.x) / Screen.width * -1;
+//                roadMap.Rotate(distanceOfX);
+//                lastPosition = currentPosition;
+////                        playerDirection.transform.eulerAngles = new Vector3(0, playerDirection.transform.eulerAngles.y - rot, 0);
+////                        playerDirectionRigidbody.angularVelocity = new Vector3(0, rot, 0);
+//            }
+//        }
+//#endif
     }
 }
