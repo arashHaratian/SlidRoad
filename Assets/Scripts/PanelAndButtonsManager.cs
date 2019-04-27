@@ -23,7 +23,6 @@ public class PanelAndButtonsManager : MonoBehaviour
     // Game Over refs
     public Canvas gameOverCanvas;
 
-    public Canvas InputCanvas;
 
     public static PanelAndButtonsManager instance = null;
     //-----------------------------------------------------
@@ -40,7 +39,6 @@ public class PanelAndButtonsManager : MonoBehaviour
     private void Start()
     {
         mainMenuCanvas.enabled = true;
-        InputCanvas.enabled = true;
         pauseCanvas.enabled = false;
         gameOverCanvas.enabled = false;
         HUDCanvas.enabled = false;
@@ -49,7 +47,6 @@ public class PanelAndButtonsManager : MonoBehaviour
         gameOverCanvas.gameObject.SetActive(true);
         HUDCanvas.gameObject.SetActive(true);
         pauseCanvas.gameObject.SetActive(true);
-        InputCanvas.gameObject.SetActive(true);
 
         Time.timeScale = 0;
     }
@@ -59,7 +56,6 @@ public class PanelAndButtonsManager : MonoBehaviour
     {
         gameOverCanvas.enabled = true;
         HUDCanvas.enabled = false;
-        InputCanvas.enabled = false;
     }
 
     private void PlayMenu()
@@ -68,7 +64,6 @@ public class PanelAndButtonsManager : MonoBehaviour
         gameOverCanvas.enabled = false;
         pauseCanvas.enabled = false;
         HUDCanvas.enabled = true;
-        InputCanvas.enabled = true;
     }
     public void Restart()
     {
@@ -93,7 +88,6 @@ public class PanelAndButtonsManager : MonoBehaviour
     {
         pauseCanvas.enabled = false;
         HUDCanvas.enabled = true;
-        InputCanvas.enabled = true;
         Time.timeScale = 1;
     }
 
@@ -101,7 +95,6 @@ public class PanelAndButtonsManager : MonoBehaviour
     {
         pauseCanvas.enabled = true;
         HUDCanvas.enabled = false;
-        InputCanvas.enabled = false;
         Time.timeScale = 0;
     }
 
@@ -119,7 +112,6 @@ public class PanelAndButtonsManager : MonoBehaviour
     {
         gameOverCanvas.enabled = false;
         mainMenuCanvas.enabled = true;
-        InputCanvas.enabled = true;
     }
 }
 
