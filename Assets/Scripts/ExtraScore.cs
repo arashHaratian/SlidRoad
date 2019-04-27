@@ -8,12 +8,10 @@ public class ExtraScore : MonoBehaviour
     public int extraScore_;
     public int waitTime_;
     
-    private bool isCollisionEnter_;
     private bool isCollisionStay_;
     private int CalculateTime;
     private void Awake()
     {
-       isCollisionEnter_ = false;
        isCollisionStay_ = false;
     }
 
@@ -21,7 +19,6 @@ public class ExtraScore : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            isCollisionEnter_ = true;
             isCollisionStay_ = true;
             StartCoroutine(scoreBounce(waitTime_));
         }
@@ -39,7 +36,6 @@ public class ExtraScore : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            isCollisionEnter_ = false;
             isCollisionStay_ = false;
         }
     }
