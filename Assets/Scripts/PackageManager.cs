@@ -11,6 +11,7 @@ public class PackageManager: MonoBehaviour
     public GameObject greenCube;
     public GameObject redCube;
     public GameObject[] badPackages;
+    public GameObject[] goodPackage;
     
     private Transform goodPoint;
     private Transform badPoint;
@@ -33,7 +34,6 @@ public class PackageManager: MonoBehaviour
                 goodPoint = child;
                 return true;
             }
-            
         }
         return false;
     }
@@ -44,8 +44,12 @@ public class PackageManager: MonoBehaviour
         if (random.Next(0, 4) < 3)
         {
             Instantiate(greenCube, goodPoint);
+            return;
         }
-        
+        int rIndex = random.Next(0, goodPackage.Length + 1);
+        print(rIndex);
+        if (rIndex < goodPackage.Length)
+            Instantiate(goodPackage[rIndex], goodPoint);
     }
     
     bool FindBadPoints(Transform tRoad)
@@ -71,7 +75,7 @@ public class PackageManager: MonoBehaviour
             return;
         }
         
-        int rIndex = random.Next(0, badPackages.Length + 2);
+        int rIndex = random.Next(0, badPackages.Length + 1);
         if (rIndex < badPackages.Length)
             Instantiate(badPackages[rIndex], badPoint);
     }
