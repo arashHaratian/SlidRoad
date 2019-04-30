@@ -32,11 +32,11 @@ public class ScoreManager : MonoBehaviour
     {
         score = 0;
         combo = 1;
-        ShowCombo.Instance.UpdateText("");
     }
 
     private void OnDisable()
     {
         PlayerPrefs.SetFloat("HighScore", highScore);
+        ShowCombo.Instance.UpdateText("");
     }
 }
