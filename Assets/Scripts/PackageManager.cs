@@ -41,7 +41,7 @@ public class PackageManager: MonoBehaviour
     void SpawnGreenCube()
     {
         System.Random random = new System.Random();
-        if (random.Next(0, 1) == 0)
+        if (random.Next(0, 4) < 3)
         {
             Instantiate(greenCube, goodPoint);
         }
@@ -65,7 +65,7 @@ public class PackageManager: MonoBehaviour
     void SpawnBadObject()
     {
         Random random = new Random();
-        if (ScoreManager.combo != 1 && random.Next(0,1) == 0)
+        if (ScoreManager.combo != 1 && random.Next(0,4) < 3)
         {
             Instantiate(redCube, badPoint);
             return;
