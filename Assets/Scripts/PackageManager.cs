@@ -43,7 +43,6 @@ public class PackageManager: MonoBehaviour
         System.Random random = new System.Random();
         if (random.Next(0, 1) == 0)
         {
-            print("insert green cube");
             Instantiate(greenCube, goodPoint);
         }
         
@@ -68,7 +67,6 @@ public class PackageManager: MonoBehaviour
         Random random = new Random();
         if (ScoreManager.combo != 1 && random.Next(0,1) == 0)
         {
-            print("insert red cube");
             Instantiate(redCube, badPoint);
             return;
         }

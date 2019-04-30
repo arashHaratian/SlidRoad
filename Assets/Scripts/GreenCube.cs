@@ -17,7 +17,7 @@ public class GreenCube : MonoBehaviour
         {
             ScoreManager.combo ++;
             Destroy(this.gameObject);
-            ShowCombo.Instance.UpdateText("COMBO X" + ScoreManager.combo);
+            ShowCombo.Instance.UpdateText("COMBO " + ScoreManager.combo + "X");
         }
     }
 }
