@@ -31,6 +31,8 @@ public class ScoreManager : MonoBehaviour
     private void OnEnable()
     {
         score = 0;
+        combo = 1;
+        ShowCombo.Instance.UpdateText("");
     }
 
     private void OnDisable()
