@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class RoadGenerator : MonoBehaviour
 {
@@ -15,9 +16,12 @@ public class RoadGenerator : MonoBehaviour
     
    
     public GameObject firstTile;
-    public GameObject[] tilePrefabs;
+    public GameObject[] easyTilePrefabs;
+    public GameObject[] mediumTilePrefabs;
+    public GameObject[] hardTilePrefabs;
     public GameObject roadMap;
     public int roadOnScreen = 6;
+    public int counts;
 
     public GameObject CurrentRoad
     {
@@ -29,7 +33,7 @@ public class RoadGenerator : MonoBehaviour
     private int lastPrefabIndex;
     private List<GameObject> activeTiles;
     private Color roadColor ;
-    
+ 
     public List<GameObject> ActiveTiles
     {
         get { return activeTiles; }
@@ -42,7 +46,6 @@ public class RoadGenerator : MonoBehaviour
             _instance = this;
         
         activeTiles = new List<GameObject>();
-//        Init();
     }
 
     private void Init()
@@ -50,7 +53,7 @@ public class RoadGenerator : MonoBehaviour
         SpawnFirstTile();
         for (int i = 1; i < firstSpawnCount; i++)
         {
-            SpawnTile();
+            SpawnTile(easyTilePrefabs);
         }
         
         roadColor = Random.ColorHSV(Random.value, Random.value);
@@ -67,18 +70,21 @@ public class RoadGenerator : MonoBehaviour
                 Destroy(activeTiles[i]);
             }
             activeTiles.Clear();
+            counts = 0;
+            DetectionOfPlayerMovement.num = 0;
         }
         Init();   
     }
 
-    public void SpawnTile()
+    public void SpawnTile(GameObject[] tiles)
     {
-        lastRoad = Instantiate(tilePrefabs[RandomPrefabIndex()], lastRoad.transform.GetChild(0).gameObject.transform.position,lastRoad.transform.rotation);
+        counts++;
+        lastRoad = Instantiate(tiles[RandomPrefabIndex(tiles)], lastRoad.transform.GetChild(0).gameObject.transform.position,lastRoad.transform.rotation);
         lastRoad.transform.parent = roadMap.transform;
         activeTiles.Add(lastRoad);
     }
 
-    public void SpawnFirstTile()
+    private void SpawnFirstTile()
     {
         lastRoad = Instantiate(firstTile, Vector3.zero, Quaternion.identity);
         lastRoad.transform.parent = roadMap.transform;
@@ -92,14 +98,14 @@ public class RoadGenerator : MonoBehaviour
         activeTiles.RemoveAt(0);
     }
 
-    private int RandomPrefabIndex()
+    private int RandomPrefabIndex(GameObject[] tiles)
     {
-        if (tilePrefabs.Length <= 1)
-            return 0;
+       if (easyTilePrefabs.Length <= 1)
+           return 0;
         int randomIndex = lastPrefabIndex;
         while (randomIndex == lastPrefabIndex)
         {
-            randomIndex = Random.Range(0, tilePrefabs.Length);
+            randomIndex = Random.Range(0, tiles.Length);
         }
         lastPrefabIndex = randomIndex;
         return randomIndex;
