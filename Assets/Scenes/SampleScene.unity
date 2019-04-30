@@ -194,7 +194,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &340323638
 PrefabInstance:
@@ -330,6 +330,73 @@ PrefabInstance:
       objectReference: {fileID: 76325037}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c2e800a41f491a4eb12b8e39baa74ee, type: 3}
+--- !u!1 &357334062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 9115385317772792023}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 357334063}
+  m_Layer: 0
+  m_Name: Input Canvas (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &357334063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 9115385317772792023}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357334062}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 593416562}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &593416561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 9115385317772792023}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 593416562}
+  - component: {fileID: 99345678}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &593416562
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593416561}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 357334063}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &870271962
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,7 +530,7 @@ PrefabInstance:
     - target: {fileID: 7367111652824580836, guid: 4b0421de46772bb4489ef9df18ea7d5a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7367111652824580836, guid: 4b0421de46772bb4489ef9df18ea7d5a,
         type: 3}
@@ -546,7 +613,7 @@ PrefabInstance:
     - target: {fileID: 3050578144880102517, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3050578144880102517, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
         type: 3}
@@ -685,7 +752,7 @@ PrefabInstance:
     - target: {fileID: 2021759495088180293, guid: 99f4166a692b92440b62b20124f229ad,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2021759495088180293, guid: 99f4166a692b92440b62b20124f229ad,
         type: 3}
@@ -759,7 +826,7 @@ PrefabInstance:
     - target: {fileID: 2275488689009445521, guid: 1da6974015ef3414e89bbcfeae1e2470,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2275488689009445521, guid: 1da6974015ef3414e89bbcfeae1e2470,
         type: 3}
@@ -1103,7 +1170,7 @@ PrefabInstance:
     - target: {fileID: 6144813134036261586, guid: 3c1b682abd2b7064d824651e0f4eaa33,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6144813134036261586, guid: 3c1b682abd2b7064d824651e0f4eaa33,
         type: 3}
@@ -1217,7 +1284,7 @@ PrefabInstance:
     - target: {fileID: 6176647241080878597, guid: eb7eab8bbbfd65142badda498e6ca1af,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6176647241080878597, guid: eb7eab8bbbfd65142badda498e6ca1af,
         type: 3}
@@ -1291,7 +1358,7 @@ PrefabInstance:
     - target: {fileID: 8375032957002271766, guid: 974c00410f26a3d4e89344fdd9eff475,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8375032957002271766, guid: 974c00410f26a3d4e89344fdd9eff475,
         type: 3}
@@ -1425,7 +1492,7 @@ PrefabInstance:
     - target: {fileID: 8642750745132098559, guid: 22f27581b0254a54494e759a29829bc9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8642750745132098559, guid: 22f27581b0254a54494e759a29829bc9,
         type: 3}
@@ -1549,7 +1616,7 @@ PrefabInstance:
     - target: {fileID: 8709932130147190014, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8709932130147190014, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
@@ -1569,6 +1636,21 @@ PrefabInstance:
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: tilePrefabs.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: hardTilePrefabs.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: mediumTilePrefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: easyTilePrefabs.Array.size
       value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
@@ -1687,6 +1769,144 @@ PrefabInstance:
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: tilePrefabs.Array.data[16]
+      value: 
+      objectReference: {fileID: 7806607901001225511, guid: 5d5625fa4f1f5f047b0593ee741cecfe,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: hardTilePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 4129373761660936536, guid: f6d01f9815f32fe4c9e924d56c0c2902,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: hardTilePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 7970132764936666891, guid: 5be3171ec4e91bc409b771f6072fbeb1,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: mediumTilePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 2632542326696057736, guid: b2d38582c471149488c8b8045e130a50,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: mediumTilePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 7082995737884091357, guid: b3f794a93fb6d9f418f3b70230329240,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: hardTilePrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 4054287638075189011, guid: 542f81577f05a024f919b90e55fedbe4,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: hardTilePrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 816832991007526797, guid: 76d393beace41a249847198c3a85aca2,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: hardTilePrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 626035113227941427, guid: 94aafbb0539be76428427730dd03a1f3,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: hardTilePrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 9009336024049471379, guid: 35857585d8ef095439bbc640cc73d6cc,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: hardTilePrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 4876776189251445938, guid: 03cc4d0000bd4504eac4f7185638a925,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: hardTilePrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 7982485220690288313, guid: dc7c527daccebbc4eac29c4af2c34e40,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: easyTilePrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 5149642159400103555, guid: ca9f68f3f6a43ee4099f72499e8e17c5,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: easyTilePrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 4933636953312451253, guid: 18231acea2f05cb45a797f82e12b648d,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: easyTilePrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 4054287638075189011, guid: 542f81577f05a024f919b90e55fedbe4,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: easyTilePrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 816832991007526797, guid: 76d393beace41a249847198c3a85aca2,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: easyTilePrefabs.Array.data[8]
+      value: 
+      objectReference: {fileID: 626035113227941427, guid: 94aafbb0539be76428427730dd03a1f3,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: easyTilePrefabs.Array.data[9]
+      value: 
+      objectReference: {fileID: 1067614461687188132, guid: bce15067fa9b9b04fa00393491298ce7,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: easyTilePrefabs.Array.data[10]
+      value: 
+      objectReference: {fileID: 9009336024049471379, guid: 35857585d8ef095439bbc640cc73d6cc,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: easyTilePrefabs.Array.data[11]
+      value: 
+      objectReference: {fileID: 4876776189251445938, guid: 03cc4d0000bd4504eac4f7185638a925,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: easyTilePrefabs.Array.data[12]
+      value: 
+      objectReference: {fileID: 7982485220690288313, guid: dc7c527daccebbc4eac29c4af2c34e40,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: easyTilePrefabs.Array.data[13]
+      value: 
+      objectReference: {fileID: 4129373761660936536, guid: f6d01f9815f32fe4c9e924d56c0c2902,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: easyTilePrefabs.Array.data[14]
+      value: 
+      objectReference: {fileID: 7970132764936666891, guid: 5be3171ec4e91bc409b771f6072fbeb1,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: easyTilePrefabs.Array.data[15]
+      value: 
+      objectReference: {fileID: 2632542326696057736, guid: b2d38582c471149488c8b8045e130a50,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: easyTilePrefabs.Array.data[16]
       value: 
       objectReference: {fileID: 7806607901001225511, guid: 5d5625fa4f1f5f047b0593ee741cecfe,
         type: 3}
