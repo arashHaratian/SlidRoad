@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
@@ -105,5 +106,31 @@ public class PlayerManager : MonoBehaviour
 //            }
 //        }
 //#endif
+    }
+
+    public void RaiseSize(int size, float time)
+    {
+        StartCoroutine(StartRaise(size, time));
+    }
+
+    private IEnumerator StartRaise(int size, float time)
+    {
+        while (transform.localScale.x <= size)
+        {
+            transform.localScale += Vector3.one * Time.deltaTime;
+            yield return null;
+        }
+
+        float firstTime = Time.time;
+        while (Time.time < firstTime + time)
+        {
+            yield return null;
+        }
+        
+        while (transform.localScale.x >= 1)
+        {
+            transform.localScale -= Vector3.one * Time.deltaTime;
+            yield return null;
+        }
     }
 }
