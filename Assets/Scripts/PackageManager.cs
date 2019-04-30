@@ -47,7 +47,6 @@ public class PackageManager: MonoBehaviour
             return;
         }
         int rIndex = random.Next(0, goodPackage.Length + 1);
-        print(rIndex);
         if (rIndex < goodPackage.Length)
             Instantiate(goodPackage[rIndex], goodPoint);
     }
