@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
+    public GameObject particleEffect;
 
 //    private Rigidbody playerRigidbody;
     private Vector2 lastPosition; 
@@ -29,6 +30,7 @@ public class PlayerManager : MonoBehaviour
             instance = this;
         else if(instance != this)
             Destroy(this.gameObject);
+        particleEffect.SetActive(false);
         roadMapGameObject = GameObject.FindWithTag("Road Map");
         roadMap = roadMapGameObject.GetComponent<Rotation>();
         wrongTabPosition = false;
