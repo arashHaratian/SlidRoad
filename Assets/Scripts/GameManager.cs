@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator RoundStarting()
     {
+        MusicManager.instance.StartMusic();
         gameSpeed = firstSpeed;
         Movement.Speed = Vector3.back * firstSpeed;
         
@@ -94,6 +95,7 @@ public class GameManager : MonoBehaviour
     {
         gameSpeed += 0.5f;
         Movement.Speed -= Vector3.forward;
+        MusicManager.instance.increaseMusicSpeed(gameSpeed/firstSpeed);
         Count = 0;
         Physics.gravity = Vector3.down * gravitPerSpeed * gameSpeed;
     }
@@ -103,5 +105,6 @@ public class GameManager : MonoBehaviour
         playerManagerScript.enabled = false;
         Time.timeScale = 0;
         PanelAndButtonsManager.instance.GameOver();
+        StartCoroutine(MusicManager.instance.gameOVerEffect()); 
     }
 }
