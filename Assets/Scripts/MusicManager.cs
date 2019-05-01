@@ -42,10 +42,16 @@ public class MusicManager : MonoBehaviour
         musicSource.enabled = true;
         musicSource.Play();
     }
+
     public void increaseMusicSpeed(float speed)
     {
         musicSource.pitch *= speed;
         if (musicSource.pitch > 3)
             musicSource.pitch = 3;
+    }
+
+    public void SliderValue(float volume)
+    {
+        musicMixer.SetFloat("MusicVol", volume);
     }
 }
