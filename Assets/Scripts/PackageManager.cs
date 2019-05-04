@@ -47,7 +47,6 @@ public class PackageManager: MonoBehaviour
         if(goodPoints.Count == 0)
             return;
         Transform instantiatePoint = goodPoints[random.Next(goodPoints.Count)];
-        print(instantiatePoint);
         if (random.Next(0, 4) < 3)
         {
             Instantiate(greenCube, instantiatePoint);
@@ -65,7 +64,6 @@ public class PackageManager: MonoBehaviour
         {
             if (random.Next(0,2) < 1)
                Instantiate(redCube, badPoints[i]);
-            print("spawn bad things");
         }
     }
     public void InsertPackage(GameObject road)
