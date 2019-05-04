@@ -13,8 +13,10 @@ public class PackageManager: MonoBehaviour
     public GameObject[] badPackages;
     public GameObject[] goodPackage;
     
-    private Transform goodPoint;
-    private Transform badPoint;
+    private List<Transform> goodPoints;
+    private List<Transform> badPoints;
+    System.Random random = new System.Random();
+
     private void Awake()
     {
         if (!Instance)
@@ -22,69 +24,56 @@ public class PackageManager: MonoBehaviour
         else if(Instance != this)
             Destroy(this.gameObject);
         DontDestroyOnLoad(this.gameObject);
+        
+        goodPoints = new List<Transform>();
+        badPoints = new List<Transform>();
     }
 
-    bool FindGoodPoints(Transform tRoad)
+    void FindBGPoints(Transform tRoad)
     {
         for (int i = 1; i < tRoad.childCount; i++)
         {
             Transform child = tRoad.GetChild(i);
             if (child.CompareTag("GoodPoint"))
-            {
-                goodPoint = child;
-                return true;
-            }
+                goodPoints.Add(child);
+            else if(child.CompareTag("BadPoint"))
+                badPoints.Add(child);
         }
-        return false;
+        
     }
     
-    void SpawnGreenCube()
+    void SpawnGoodObject()
     {
-        System.Random random = new System.Random();
+        if(goodPoints.Count == 0)
+            return;
+        Transform instantiatePoint = goodPoints[random.Next(goodPoints.Count)];
+        print(instantiatePoint);
         if (random.Next(0, 4) < 3)
         {
-            Instantiate(greenCube, goodPoint);
+            Instantiate(greenCube, instantiatePoint);
             return;
         }
         int rIndex = random.Next(0, goodPackage.Length + 1);
         if (rIndex < goodPackage.Length)
-            Instantiate(goodPackage[rIndex], goodPoint);
+            Instantiate(goodPackage[rIndex],instantiatePoint);
     }
-    
-    bool FindBadPoints(Transform tRoad)
-    {
-        for (int i = 1; i < tRoad.childCount; i++)
-        {
-            Transform child = tRoad.GetChild(i);
-            if (child.CompareTag("BadPoint"))
-            {
-                badPoint = child;
-                return true;
-            }
-        }
-        return false;
-    }
-
     void SpawnBadObject()
     {
-        Random random = new Random();
-        if (ScoreManager.combo != 1 && random.Next(0,4) < 3)
-        {
-            Instantiate(redCube, badPoint);
+        if (ScoreManager.combo == 1)
             return;
+        for(int i = 0; i < badPoints.Count; i++)
+        {
+            if (random.Next(0,2) < 1)
+               Instantiate(redCube, badPoints[i]);
+            print("spawn bad things");
         }
-        
-        int rIndex = random.Next(0, badPackages.Length + 1);
-        if (rIndex < badPackages.Length)
-            Instantiate(badPackages[rIndex], badPoint);
     }
     public void InsertPackage(GameObject road)
     {
-        
-        if (FindGoodPoints(road.transform))
-            SpawnGreenCube();
-    
-        if (FindBadPoints(road.transform))
-            SpawnBadObject();
+        FindBGPoints(road.transform);
+        SpawnGoodObject();
+        goodPoints.Clear();
+        SpawnBadObject();
+        badPoints.Clear();
     }
 }
