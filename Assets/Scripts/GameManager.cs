@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     #region RatioGravity
     public float firstGravity;
+    private float gravity;
     private float gravitPerSpeed;
     #endregion
     
@@ -42,8 +43,7 @@ public class GameManager : MonoBehaviour
 
         playerManagerScript = player.GetComponent<PlayerManager>();
         gravitPerSpeed = firstGravity / firstSpeed;
-        Physics.gravity = Vector3.down * firstGravity;
-
+        gravity = firstGravity;
     }
 
     private void Start()
@@ -61,6 +61,8 @@ public class GameManager : MonoBehaviour
         RoadGenerator.Instance.Restart();
         player.transform.position = Vector3.up * 3;
         GameOverManager.instance.Reset();
+        gravity = firstGravity;
+        Gravity.SetGravity(gravity);
         Init();
     }
     public void Init()
@@ -97,7 +99,8 @@ public class GameManager : MonoBehaviour
         Movement.Speed -= Vector3.forward;
         MusicManager.instance.increaseMusicSpeed(gameSpeed/firstSpeed);
         Count = 0;
-        Physics.gravity = Vector3.down * gravitPerSpeed * gameSpeed;
+        gravity = gameSpeed * gravitPerSpeed;
+        Gravity.SetGravity(gravity);
     }
 
     void GameIsOver()
