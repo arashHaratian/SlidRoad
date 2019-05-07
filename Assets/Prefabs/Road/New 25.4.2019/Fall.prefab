@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 2, y: 1, z: 10.700001}
   m_Children: []
   m_Father: {fileID: 332892631456730126}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2353675608597134983
 MeshFilter:
@@ -108,6 +108,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &3073864550759280970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3639025182076368714}
+  m_Layer: 0
+  m_Name: Spawn Good Thing (1)
+  m_TagString: GoodPoint
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3639025182076368714
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3073864550759280970}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.38, y: -14, z: 46.46}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 332892631456730126}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3721884056876673233
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +200,7 @@ Transform:
   m_LocalScale: {x: 3.1000013, y: 1, z: 17.281317}
   m_Children: []
   m_Father: {fileID: 332892631456730126}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 25, z: 0}
 --- !u!33 &5135071527732745428
 MeshFilter:
@@ -278,7 +308,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 332892631456730126}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 25, z: 0}
 --- !u!33 &5135071527762308168
 MeshFilter:
@@ -386,7 +416,7 @@ Transform:
   m_LocalScale: {x: 5, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 332892631456730126}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5135071527823175306
 MeshFilter:
@@ -494,7 +524,7 @@ Transform:
   m_LocalScale: {x: 2, y: 1, z: 15.110001}
   m_Children: []
   m_Father: {fileID: 332892631456730126}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: -25.05, y: 10, z: -4.9}
 --- !u!33 &5135071528200721782
 MeshFilter:
@@ -602,7 +632,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 25}
   m_Children: []
   m_Father: {fileID: 332892631456730126}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: -25, z: 0}
 --- !u!33 &5135071528777962173
 MeshFilter:
@@ -710,7 +740,7 @@ Transform:
   m_LocalScale: {x: 2, y: 1, z: 19.799995}
   m_Children: []
   m_Father: {fileID: 332892631456730126}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: -28, y: 5.3, z: -2.94}
 --- !u!33 &5135071528799986486
 MeshFilter:
@@ -818,7 +848,7 @@ Transform:
   m_LocalScale: {x: 3.9286196, y: 1, z: 17.281311}
   m_Children: []
   m_Father: {fileID: 332892631456730126}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: -25, z: 0}
 --- !u!33 &5135071529000402029
 MeshFilter:
@@ -926,7 +956,7 @@ Transform:
   m_LocalScale: {x: 2, y: 1, z: 15.109995}
   m_Children: []
   m_Father: {fileID: 332892631456730126}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: -25.05, y: 0, z: 0}
 --- !u!33 &5135071529337002696
 MeshFilter:
@@ -1034,7 +1064,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1, z: 98}
   m_Children: []
   m_Father: {fileID: 332892631456730126}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5135071529775171582
 MeshFilter:
@@ -1142,6 +1172,8 @@ Transform:
   - {fileID: 8981537103732448736}
   - {fileID: 7396420105477139797}
   - {fileID: 5579892815507590229}
+  - {fileID: 3639025182076368714}
+  - {fileID: 1983231770938932982}
   - {fileID: 5816440575481223718}
   - {fileID: 5135071527732745429}
   - {fileID: 6143133843696879533}
@@ -1216,7 +1248,7 @@ Transform:
   m_LocalScale: {x: 5, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 332892631456730126}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4398721093488075016
 MeshFilter:
@@ -1292,6 +1324,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &7975495478053171944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1983231770938932982}
+  m_Layer: 0
+  m_Name: Spawn Good Thing (2)
+  m_TagString: GoodPoint
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1983231770938932982
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7975495478053171944}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.5, y: -19, z: 53.47}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 332892631456730126}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8331015806662706723
 GameObject:
   m_ObjectHideFlags: 0
