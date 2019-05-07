@@ -51,7 +51,6 @@ public class PackageManager: MonoBehaviour
         probabilityGoodPackage = currentRoad.probabiltyInsertGoodPackage;
         Transform instantiatePoint = goodPoints[random.Next(goodPoints.Count)];
         int chance = random.Next(0, 100);
-        print(chance + " < " + probabilityGoodPackage);
         if (chance < probabilityGoodPackage)
         {
             Instantiate(greenCube, instantiatePoint);
@@ -71,7 +70,6 @@ public class PackageManager: MonoBehaviour
         int probabilityBadPackage;
         probabilityBadPackage = currentRoad.probabiltyInsertBadPackage;
         int chance = random.Next(0, 100);
-        print(chance + " < " + probabilityBadPackage);
         for(int i = 0; i < badPoints.Count; i++)
         {
             if (chance < probabilityBadPackage)
