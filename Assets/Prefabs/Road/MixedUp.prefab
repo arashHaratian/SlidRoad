@@ -799,6 +799,7 @@ GameObject:
   - component: {fileID: 7082995737884091356}
   - component: {fileID: 5065085244810198068}
   - component: {fileID: 5065085244810198069}
+  - component: {fileID: 4669615879441085494}
   m_Layer: 0
   m_Name: MixedUp
   m_TagString: Untagged
@@ -863,6 +864,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa0f08cab0f5c044d82de33ceec28d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4669615879441085494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7082995737884091357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e1ec4de8f4c89b47b92d1c0abd2282e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  probabiltyInsertGoodPackage: 30
+  probabiltyInsertBadPackage: 0
 --- !u!1 &7082995738046914737
 GameObject:
   m_ObjectHideFlags: 0

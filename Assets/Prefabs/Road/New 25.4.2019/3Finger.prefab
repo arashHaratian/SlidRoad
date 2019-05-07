@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 5921428643585827652}
   - component: {fileID: 7972297442285513628}
   - component: {fileID: 6278562169028805362}
+  - component: {fileID: 9188273655238496296}
   m_Layer: 0
   m_Name: 3Finger
   m_TagString: Untagged
@@ -166,6 +167,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa0f08cab0f5c044d82de33ceec28d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9188273655238496296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067614461687188132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e1ec4de8f4c89b47b92d1c0abd2282e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  probabiltyInsertGoodPackage: 40
+  probabiltyInsertBadPackage: 80
 --- !u!1 &1659097974200409804
 GameObject:
   m_ObjectHideFlags: 0
