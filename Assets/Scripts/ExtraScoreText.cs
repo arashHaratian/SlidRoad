@@ -16,6 +16,13 @@ public class ExtraScoreText : MonoBehaviour
     }
     
     private Text text;
+
+    public Text Text
+    {
+        get { return text; }
+        set { text = value; }
+    }
+
     private int waitForDestroyColor;
     public Color scoreColor; 
     public Color destroyColor;
@@ -32,18 +39,27 @@ public class ExtraScoreText : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void showText(int instanceOfExtraScore)
+    public void showText(float instanceOfExtraScore)
     {
-
-            text.text = "+" + instanceOfExtraScore; 
+            text.text = "+" + (int)instanceOfExtraScore; 
             text.color = scoreColor;
-            StartCoroutine("ChangeColor");
+//            StartCoroutine("ChangeColor");
     }
 
-    IEnumerator ChangeColor()
+    public void FinishExtraScore()
     {
-        yield return new WaitForSeconds(0.5f);
-        text.color = destroyColor;
+        StartCoroutine(FinishExtraScoreCoroutine());
+    }
+    private IEnumerator FinishExtraScoreCoroutine()
+    {;
+        while (text.color.a >= 0)
+        {
+            text.color -= Color.black * Time.deltaTime; 
+            yield return null;
+        }
+
+        text.text = "";
+        text.color += Color.black;
     }
 
 }
