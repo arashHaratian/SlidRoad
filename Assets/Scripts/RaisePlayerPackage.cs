@@ -10,7 +10,7 @@ public class RaisePlayerPackage : MonoBehaviour
     public int rotateSpeed;
     void Update()
     {
-        transform.Rotate(Vector3.one * rotateSpeed);
+        transform.Rotate(Vector3.up * rotateSpeed);
     }
     private void OnTriggerEnter(Collider other)
     {
