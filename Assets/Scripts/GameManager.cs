@@ -103,7 +103,6 @@ public class GameManager : MonoBehaviour
 
     void IncreaseSpeed()
     {
-        print("test");
         gameSpeed += 0.5f;
         Movement.Speed -= Vector3.forward;
         MusicManager.instance.increaseMusicSpeed(gameSpeed/firstSpeed);
