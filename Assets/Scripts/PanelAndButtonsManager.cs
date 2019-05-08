@@ -86,6 +86,7 @@ public class PanelAndButtonsManager : MonoBehaviour
 
     public void Resume()
     {
+        GameManager.instance.paused = false;
         pauseCanvas.enabled = false;
         HUDCanvas.enabled = true;
         Time.timeScale = 1;
@@ -93,6 +94,7 @@ public class PanelAndButtonsManager : MonoBehaviour
 
     public void Pause()
     {
+        GameManager.instance.paused = true;
         pauseCanvas.enabled = true;
         HUDCanvas.enabled = false;
         Time.timeScale = 0;

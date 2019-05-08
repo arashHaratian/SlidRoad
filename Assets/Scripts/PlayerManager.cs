@@ -53,7 +53,8 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
-        Rotation();
+        if(!GameManager.instance.paused)
+            Rotation();
     }
     private void Rotation()
     {

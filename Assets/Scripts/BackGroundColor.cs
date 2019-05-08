@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BackGroundColor : MonoBehaviour
 {
-    public float transitionTimeInSec = 2f;
+    public BackGroundColor Instance;
+    public float transitionTimeInSec;
     private bool changingColor = false;
 
     private Color color1;
@@ -13,6 +14,10 @@ public class BackGroundColor : MonoBehaviour
 
     void Start()
     {
+        if (!Instance)
+            Instance = this;
+        else if (Instance != this)
+            Destroy(this.gameObject);
         StartCoroutine(beginToChangeColor());
     }
 
@@ -54,5 +59,10 @@ public class BackGroundColor : MonoBehaviour
             yield return null;
         }
         changingColor = false;
+    }
+
+    public void IncreaseTransitionTimeInSec()
+    {
+        
     }
 }

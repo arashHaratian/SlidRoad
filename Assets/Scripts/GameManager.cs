@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     private Coroutine lastRoundStarting;
     private PlayerManager playerManagerScript;
     private bool gameOver;
+    public bool paused;
 
     public bool GameOver
     {
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        paused = false; 
         gameOver = false;
         RoadGenerator.Instance.Restart();
     }
