@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
@@ -23,7 +24,9 @@ public class GameManager : MonoBehaviour
     private float Count = 0;
 
     #endregion
-    
+
+    private Coroutine lastGameLoop;
+    private Coroutine lastRoundStarting;
     private PlayerManager playerManagerScript;
     private bool gameOver;
 
@@ -56,6 +59,9 @@ public class GameManager : MonoBehaviour
     {
         playerManagerScript.enabled = false;
         playerManagerScript.enabled = true;
+        Count = 0;
+        StopCoroutine(lastRoundStarting);
+        StopCoroutine(lastGameLoop);
         roadMap.transform.rotation = Quaternion.identity;
         gameOver = false;
         RoadGenerator.Instance.Restart();
@@ -68,12 +74,13 @@ public class GameManager : MonoBehaviour
     public void Init()
     {
         Time.timeScale = 1;
-        StartCoroutine(GameLoop());
+        lastGameLoop = StartCoroutine(GameLoop());
     }
 
     IEnumerator GameLoop()
     {
-        yield return StartCoroutine(RoundStarting());
+        lastRoundStarting = StartCoroutine(RoundStarting());
+        yield return lastRoundStarting;
         GameIsOver();        
     }
 
@@ -82,7 +89,6 @@ public class GameManager : MonoBehaviour
         MusicManager.instance.StartMusic();
         gameSpeed = firstSpeed;
         Movement.Speed = Vector3.back * firstSpeed;
-        
         while (!gameOver)
         {
             if(gameSpeed < maxSpeed)
@@ -95,6 +101,7 @@ public class GameManager : MonoBehaviour
 
     void IncreaseSpeed()
     {
+        print("test");
         gameSpeed += 0.5f;
         Movement.Speed -= Vector3.forward;
         MusicManager.instance.increaseMusicSpeed(gameSpeed/firstSpeed);
