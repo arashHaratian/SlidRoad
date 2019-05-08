@@ -15,6 +15,7 @@ public class PackageManager: MonoBehaviour
     
     private List<Transform> goodPoints;
     private List<Transform> badPoints;
+    private Road currentRoad;
     System.Random random = new System.Random();
 
     private void Awake()
@@ -46,28 +47,41 @@ public class PackageManager: MonoBehaviour
     {
         if(goodPoints.Count == 0)
             return;
+        int probabilityGoodPackage;
+        probabilityGoodPackage = currentRoad.probabiltyInsertGoodPackage;
         Transform instantiatePoint = goodPoints[random.Next(goodPoints.Count)];
-        if (random.Next(0, 4) < 3)
+        int chance = random.Next(0, 100);
+        if (chance < probabilityGoodPackage)
         {
             Instantiate(greenCube, instantiatePoint);
             return;
         }
-        int rIndex = random.Next(0, goodPackage.Length + 1);
-        if (rIndex < goodPackage.Length)
+
+        if (chance < probabilityGoodPackage)
+        {
+            int rIndex = random.Next(0, goodPackage.Length);
             Instantiate(goodPackage[rIndex],instantiatePoint);
+        }
     }
     void SpawnBadObject()
     {
-        if (ScoreManager.combo == 1)
+        if (ScoreManager.combo == 1 || badPoints.Count == 0)
             return;
+        int probabilityBadPackage;
+        probabilityBadPackage = currentRoad.probabiltyInsertBadPackage;
+        int chance = random.Next(0, 100);
         for(int i = 0; i < badPoints.Count; i++)
         {
-            if (random.Next(0,2) < 1)
+            if (chance < probabilityBadPackage)
                Instantiate(redCube, badPoints[i]);
         }
     }
     public void InsertPackage(GameObject road)
     {
+        
+        if (road.GetComponent<Road>())
+            currentRoad = road.GetComponent<Road>();
+        
         FindBGPoints(road.transform);
         SpawnGoodObject();
         goodPoints.Clear();
