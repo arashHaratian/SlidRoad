@@ -3,11 +3,10 @@ using UnityEngine;
 
 public class ExtraScore : MonoBehaviour
 {
-    public int extraScore_;
     public int waitTime_;
     
+    private float extraScore_;
     private bool isCollisionStay_;
-    private int CalculateTime;
     private void Awake()
     {
        isCollisionStay_ = false;
@@ -20,6 +19,7 @@ public class ExtraScore : MonoBehaviour
         {
             isCollisionStay_ = true;
             StartCoroutine(scoreBounce(waitTime_));
+            extraScore_ = 0;
         }
     }
     
@@ -37,20 +37,21 @@ public class ExtraScore : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             isCollisionStay_ = false;
+            ScoreManager.score += extraScore_;
+            ExtraScoreText.Instance.FinishExtraScore();
         }
     }
     
     IEnumerator scoreBounce( int waiteTime)
     {
-        yield return new WaitForSeconds(waiteTime);
-        CalculateTime = 3;
+        yield return new WaitForSeconds(Time.deltaTime);
+        float mult = 10;
         while (isCollisionStay_)
         {
-            ScoreManager.score += (extraScore_ / CalculateTime);
-            ExtraScoreText.Instance.showText(extraScore_ / CalculateTime); 
-            yield return new WaitForSeconds(waiteTime);
-            if (CalculateTime > 1)
-                CalculateTime -= 1;
+            extraScore_ += Time.deltaTime * mult;
+            ExtraScoreText.Instance.showText(extraScore_ ); 
+            yield return new WaitForSeconds(Time.deltaTime);
+            mult += 2;
         }            
     }
 }
