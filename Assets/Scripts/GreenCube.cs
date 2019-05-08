@@ -15,9 +15,23 @@ public class GreenCube : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            ScoreManager.combo ++;
-            Destroy(this.gameObject);
-            ShowCombo.Instance.UpdateText("COMBO " + ScoreManager.combo + "X");
+            if (ScoreManager.numberOfTakenGreenboxes <= 2)
+            {
+                ScoreManager.numberOfTakenGreenboxes++;
+                ScoreManager.score += ScoreManager.numberOfTakenGreenboxes * 150;
+                ShowCombo.Instance.UpdateText("+" + ScoreManager.numberOfTakenGreenboxes * 150);
+                Invoke("hideString", 1f);
+            }
+            else
+            {
+                ScoreManager.combo++;
+                Destroy(this.gameObject);
+                ShowCombo.Instance.UpdateText("COMBO " + ScoreManager.combo + "X");
+            }
         }
+    }
+    public void hideString()
+    {
+        ShowCombo.Instance.UpdateText(string.Empty);
     }
 }

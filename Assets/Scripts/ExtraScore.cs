@@ -37,6 +37,8 @@ public class ExtraScore : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             isCollisionStay_ = false;
+            ExtraScoreText.Instance.UpdateText(string.Empty);
+            StopCoroutine("scoreBounce");
         }
     }
     
@@ -47,7 +49,7 @@ public class ExtraScore : MonoBehaviour
         while (isCollisionStay_)
         {
             ScoreManager.score += (extraScore_ / CalculateTime);
-            ExtraScoreText.Instance.showText(extraScore_ / CalculateTime); 
+            ExtraScoreText.Instance.UpdateText("+" + (extraScore_ / CalculateTime).ToString());
             yield return new WaitForSeconds(waiteTime);
             if (CalculateTime > 1)
                 CalculateTime -= 1;
