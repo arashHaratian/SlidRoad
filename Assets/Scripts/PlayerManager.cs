@@ -109,13 +109,12 @@ public class PlayerManager : MonoBehaviour
             roadMap.Rotate(distanceOfX);
             lastPosition = currentPosition;
 
-            distanceOfY = (currentPosition.y - firstPosition.y) / Screen.height;
-            manualSpeed = distanceOfY * Movement.Speed.z * 2;
+            distanceOfY = (currentPosition.y - firstPosition.y) / Screen.height * 4;
+            manualSpeed = distanceOfY * Movement.Speed.z;
             if (manualSpeed > maxManualSpeed)
                 manualSpeed = maxManualSpeed;
             else if (manualSpeed < minManualSpeed)
                 manualSpeed = minManualSpeed;
-            print(manualSpeed);
 //              playerDirection.transform.eulerAngles = new Vector3(0, playerDirection.transform.eulerAngles.y - rot, 0);
 //              playerDirectionRigidbody.angularVelocity = new Vector3(0, rot, 0);
         }
