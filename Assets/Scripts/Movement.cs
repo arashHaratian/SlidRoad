@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -15,9 +16,17 @@ public class Movement : MonoBehaviour
         get { return speed; }
     }
 
+    private static float deltaSpeed;
+
+    public static float DeltaSpeed
+    {
+        get { return deltaSpeed; }
+        set { deltaSpeed = value; }
+    }
+
     private void Update()
     {
-        transform.position = transform.position +( speed * Time.deltaTime);
-
+        transform.position = (transform.position +(((Vector3.forward * deltaSpeed) + speed) * Time.deltaTime));
+        ScoreManager.manualSpeed = -1 * deltaSpeed + Math.Abs(PlayerManager.instance.minManualSpeed);
     }
 }

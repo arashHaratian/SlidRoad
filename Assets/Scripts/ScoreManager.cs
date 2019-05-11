@@ -7,8 +7,9 @@ public class ScoreManager : MonoBehaviour
 {
     public static float score;
     public static float highScore;
-
     public static int combo;
+
+    public static float manualSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score += Time.deltaTime * 7 * combo;
+        score += Time.deltaTime * manualSpeed * combo;
 
         if (score > highScore)
         {

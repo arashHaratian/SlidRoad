@@ -753,6 +753,16 @@ PrefabInstance:
       propertyPath: particleEffect
       value: 
       objectReference: {fileID: 1565984757}
+    - target: {fileID: 3050578143369406965, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
+        type: 3}
+      propertyPath: maxManualSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050578143369406965, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
+        type: 3}
+      propertyPath: minManualSpeed
+      value: -5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3745113664528203426, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6, type: 3}
@@ -5835,22 +5845,22 @@ PrefabInstance:
     - target: {fileID: 8888361601049242763, guid: 4c0eeaf14439099459a198ea70f178e4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 33.30005
+      value: 33.30078
       objectReference: {fileID: 0}
     - target: {fileID: 8888361601049242763, guid: 4c0eeaf14439099459a198ea70f178e4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -112.69995
+      value: -112.69922
       objectReference: {fileID: 0}
     - target: {fileID: 8888361601049242763, guid: 4c0eeaf14439099459a198ea70f178e4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 33.30005
+      value: 33.30078
       objectReference: {fileID: 0}
     - target: {fileID: 8888361601049242763, guid: 4c0eeaf14439099459a198ea70f178e4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -112.69995
+      value: -112.69922
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4024548214445317336, guid: 4c0eeaf14439099459a198ea70f178e4, type: 3}
