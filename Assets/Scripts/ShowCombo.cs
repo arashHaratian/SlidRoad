@@ -22,4 +22,23 @@ public class ShowCombo : MonoBehaviour
     {
         text.text = newText;
     }
+
+    public void FinishExtraScore()
+    {
+        StartCoroutine(FinishExtraScoreCoroutine());
+        StopCoroutine(FinishExtraScoreCoroutine());
+    }
+
+    private IEnumerator FinishExtraScoreCoroutine()
+    {
+        while (text.color.a >= 0)
+        {
+            text.color -= Color.black * Time.deltaTime;
+            yield return null;
+        }
+
+        text.text = "";
+        text.color += Color.black;
+        
+    }
 }

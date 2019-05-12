@@ -36,15 +36,10 @@ public class ExtraScore : MonoBehaviour
         PlayerManager.instance.particleEffect.SetActive(false);
         if (other.gameObject.tag == "Player")
         {
-<<<<<<< HEAD
             isCollisionStay_ = false;
-            ExtraScoreText.Instance.UpdateText(string.Empty);
             StopCoroutine("scoreBounce");
-=======
-            isCollisionStay_ = false;
             ScoreManager.score += extraScore_;
             ExtraScoreText.Instance.FinishExtraScore();
->>>>>>> 1eea6e21ad9e74acd30600fc91d4a5b165968ccc
         }
     }
     
@@ -54,18 +49,11 @@ public class ExtraScore : MonoBehaviour
         float mult = 10;
         while (isCollisionStay_)
         {
-<<<<<<< HEAD
-            ScoreManager.score += (extraScore_ / CalculateTime);
-            ExtraScoreText.Instance.UpdateText("+" + (extraScore_ / CalculateTime).ToString());
-            yield return new WaitForSeconds(waiteTime);
-            if (CalculateTime > 1)
-                CalculateTime -= 1;
-=======
+
+            ExtraScoreText.Instance.UpdateText("+" + ((int)extraScore_).ToString());
             extraScore_ += Time.deltaTime * mult;
-            ExtraScoreText.Instance.showText(extraScore_ ); 
             yield return new WaitForSeconds(Time.deltaTime);
-            mult += 2;
->>>>>>> 1eea6e21ad9e74acd30600fc91d4a5b165968ccc
+            mult += 1;
         }            
     }
 }

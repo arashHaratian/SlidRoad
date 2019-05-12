@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
     public static float score;
     public static float highScore;
-    public static int numberOfTakenGreenboxes = 0;
+    public static int numberOfTakenGreenboxes;
 
     public static int combo;
     // Start is called before the first frame update
@@ -16,6 +16,7 @@ public class ScoreManager : MonoBehaviour
         score = 0;
         highScore = PlayerPrefs.GetFloat("HighScore");
         combo = 1;
+        numberOfTakenGreenboxes = 0;
     }
 
     // Update is called once per frame

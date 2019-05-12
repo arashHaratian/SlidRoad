@@ -69,6 +69,11 @@ public class GameManager : MonoBehaviour
         GameOverManager.instance.Reset();
         gravity = firstGravity;
         Gravity.SetGravity(gravity);
+        BackGroundColor.instance.resetSpeed();
+        PlayerManager.instance.particleEffect.SetActive(false);
+        ExtraScoreText.Instance.FinishExtraScore();
+        MusicManager.instance.RestartSpeed();
+        PackageManager.Instance.restart();
         Init();
     }
     public void Init()
@@ -101,10 +106,8 @@ public class GameManager : MonoBehaviour
 
     void IncreaseSpeed()
     {
-        print("test");
         gameSpeed += 0.5f;
         Movement.Speed -= Vector3.forward;
-        MusicManager.instance.increaseMusicSpeed(gameSpeed/firstSpeed);
         Count = 0;
         gravity = gameSpeed * gravitPerSpeed;
         Gravity.SetGravity(gravity);

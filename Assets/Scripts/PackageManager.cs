@@ -12,10 +12,12 @@ public class PackageManager: MonoBehaviour
     public GameObject redCube;
     public GameObject[] badPackages;
     public GameObject[] goodPackage;
-    
+    public List<GameObject> CubeInRoads;
+
     private List<Transform> goodPoints;
     private List<Transform> badPoints;
     private Road currentRoad;
+    public int numOfSkippedGreeenBoxes;
     System.Random random = new System.Random();
 
     private void Awake()
@@ -28,6 +30,7 @@ public class PackageManager: MonoBehaviour
         
         goodPoints = new List<Transform>();
         badPoints = new List<Transform>();
+        CubeInRoads = new List<GameObject>();
     }
 
     void FindBGPoints(Transform tRoad)
@@ -53,7 +56,7 @@ public class PackageManager: MonoBehaviour
         int chance = random.Next(0, 100);
         if (chance < probabilityGoodPackage)
         {
-            Instantiate(greenCube, instantiatePoint);
+            CubeInRoads.Add(Instantiate(greenCube, instantiatePoint));
             return;
         }
 
@@ -65,7 +68,7 @@ public class PackageManager: MonoBehaviour
     }
     void SpawnBadObject()
     {
-        if (ScoreManager.combo == 1 || badPoints.Count == 0)
+        if (ScoreManager.numberOfTakenGreenboxes == 0 || badPoints.Count == 0)
             return;
         int probabilityBadPackage;
         probabilityBadPackage = currentRoad.probabiltyInsertBadPackage;
@@ -87,5 +90,34 @@ public class PackageManager: MonoBehaviour
         goodPoints.Clear();
         SpawnBadObject();
         badPoints.Clear();
+    }
+    public void BoxState()
+    {
+        for (int i=0;i<CubeInRoads.Count;i++)
+        {
+            if (!CubeInRoads[i])
+                CubeInRoads.RemoveAt(i);
+            else if (CubeInRoads[i].transform.position.z < 0)
+            {
+                numOfSkippedGreeenBoxes++;
+                BoxesStateText.Instance.UpdateText(numOfSkippedGreeenBoxes.ToString());
+                CubeInRoads.RemoveAt(i);
+                Destroy(CubeInRoads[i]);
+                break;
+            }
+        }
+        if(numOfSkippedGreeenBoxes > 2)
+        {
+            ScoreManager.combo = 1;
+            BoxesStateText.Instance.FinishBoxesState();
+            ScoreManager.numberOfTakenGreenboxes = 0;
+            MusicManager.instance.startResetMusicSpeed();
+            BackGroundColor.instance.resetSpeed();
+        }
+    }
+    public void restart()
+    {
+        PackageManager.Instance.CubeInRoads.Clear();
+        numOfSkippedGreeenBoxes = 0;
     }
 }

@@ -15,8 +15,11 @@ public class RedCube : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             ScoreManager.combo = 1;
-            Destroy(this.gameObject);
             ShowCombo.Instance.UpdateText("");
+            ScoreManager.numberOfTakenGreenboxes = 0;
+            MusicManager.instance.startResetMusicSpeed();
+            BackGroundColor.instance.resetSpeed();
+            Destroy(this.gameObject);
         }
     }
 }
