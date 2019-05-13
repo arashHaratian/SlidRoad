@@ -47,14 +47,15 @@ public class ExtraScore : MonoBehaviour
     {
         yield return new WaitForSeconds(Time.deltaTime);
         float mult = 10;
+        MusicManager.instance.startIncreaseMusicSpeed(0.2f);
         while (isCollisionStay_)
         {
-
             ExtraScoreText.Instance.UpdateText("+" + ((int)extraScore_).ToString());
             extraScore_ += Time.deltaTime * mult;
             yield return new WaitForSeconds(Time.deltaTime);
             mult += 1;
-        }            
+        }
+        MusicManager.instance.StartDecreaseMusicSpeed(0.2f);
     }
 }
 

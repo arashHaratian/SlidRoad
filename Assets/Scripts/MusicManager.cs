@@ -56,8 +56,22 @@ public class MusicManager : MonoBehaviour
             yield return new WaitForSeconds(Time.deltaTime);
         }
         musicSource.pitch = finalSpeed;
-        yield break;
     }
+
+    private IEnumerator DecreaseMusicSpeed(float speed)
+    {
+        StopCoroutine("decreaseMusicSpeed");
+        float finalSpeed = musicSource.pitch - speed;
+        while (musicSource.pitch >= finalSpeed)
+        {
+            musicSource.pitch -= Time.deltaTime;
+            if (musicSource.pitch > 3)
+                musicSource.pitch = 3;
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+        musicSource.pitch = finalSpeed;
+    }
+
 
     private IEnumerator resetMusicSpeed()
     {
@@ -75,6 +89,11 @@ public class MusicManager : MonoBehaviour
     public void startIncreaseMusicSpeed(float speed)
     {
         StartCoroutine(increaseMusicSpeed(speed));
+    }
+
+    public void StartDecreaseMusicSpeed(float speed)
+    {
+        StartCoroutine(DecreaseMusicSpeed(speed));
     }
 
     public void RestartSpeed()
