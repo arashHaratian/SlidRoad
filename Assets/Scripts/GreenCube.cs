@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class GreenCube : MonoBehaviour
 {
     public float speed;
+    public static bool isGreenEated = false;
+
     void Update()
     {
         transform.Rotate(Vector3.one * speed);
@@ -15,6 +17,7 @@ public class GreenCube : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            isGreenEated = true;
             ScoreManager.combo ++;
             Destroy(this.gameObject);
             ShowCombo.Instance.UpdateText("COMBO " + ScoreManager.combo + "X");

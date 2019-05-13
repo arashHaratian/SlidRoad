@@ -7,8 +7,10 @@ public class EatingBoxes : MonoBehaviour
 {
     private Image eatingBoxImage;
     private bool lastIsRedEated;
+    private bool lastIsGreenEated;
 
-    public Color flashColour; /*= new Color(1, 0, 0, 200);*/
+    public Color flashColourForRedBox; /*= new Color(1, 0, 0, 200);*/
+    public Color flashColourForGreenBox;
     public float fadingTime;
 
     private void Awake()
@@ -20,10 +22,16 @@ public class EatingBoxes : MonoBehaviour
     private void Update()
     {
         lastIsRedEated = RedCube.isRedEated;
+        lastIsGreenEated = GreenCube.isGreenEated;
         if (lastIsRedEated)
-            eatingBoxImage.color = flashColour;
+            eatingBoxImage.color = flashColourForRedBox;
         else
             eatingBoxImage.color = Color.Lerp(eatingBoxImage.color, Color.clear, fadingTime * Time.deltaTime);
-        RedCube.isRedEated = false;
+
+        if (lastIsGreenEated)
+            eatingBoxImage.color = flashColourForGreenBox;
+        else
+            eatingBoxImage.color = Color.Lerp(eatingBoxImage.color, Color.clear, fadingTime * Time.deltaTime);
+        RedCube.isRedEated = GreenCube.isGreenEated = false;
     }
 }
