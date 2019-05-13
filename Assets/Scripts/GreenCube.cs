@@ -20,7 +20,7 @@ public class GreenCube : MonoBehaviour
             {
                 ScoreManager.numberOfTakenGreenboxes++;
                 BackGroundColor.instance.changeFaster(4f);
-                MusicManager.instance.startIncreaseMusicSpeed(1f);
+                MusicManager.instance.startIncreaseMusicSpeed(0.3f);
                 ScoreManager.score += ScoreManager.numberOfTakenGreenboxes * 150;
                 ShowCombo.Instance.UpdateText("+" + ScoreManager.numberOfTakenGreenboxes * 150);
                 ShowCombo.Instance.FinishExtraScore();

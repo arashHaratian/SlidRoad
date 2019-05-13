@@ -102,7 +102,7 @@ public class PackageManager: MonoBehaviour
                 numOfSkippedGreeenBoxes++;
                 BoxesStateText.Instance.UpdateText(numOfSkippedGreeenBoxes.ToString());
                 CubeInRoads.RemoveAt(i);
-                Destroy(CubeInRoads[i]);
+//                Destroy(CubeInRoads[i]);
                 break;
             }
         }
@@ -117,7 +117,8 @@ public class PackageManager: MonoBehaviour
     }
     public void restart()
     {
-        PackageManager.Instance.CubeInRoads.Clear();
+        BoxesStateText.Instance.FinishBoxesState();
+        CubeInRoads.Clear();
         numOfSkippedGreeenBoxes = 0;
     }
 }

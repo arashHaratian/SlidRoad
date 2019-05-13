@@ -18,7 +18,7 @@ public class ExtraScore : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             isCollisionStay_ = true;
-            StartCoroutine(scoreBounce(waitTime_));
+            StartCoroutine(scoreBounce());
             extraScore_ = 0;
         }
     }
@@ -43,7 +43,7 @@ public class ExtraScore : MonoBehaviour
         }
     }
     
-    IEnumerator scoreBounce( int waiteTime)
+    IEnumerator scoreBounce()
     {
         yield return new WaitForSeconds(Time.deltaTime);
         float mult = 10;
