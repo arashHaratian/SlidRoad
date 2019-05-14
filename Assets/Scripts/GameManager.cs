@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
         GameOverManager.instance.Reset();
         gravity = firstGravity;
         Gravity.SetGravity(gravity);
-        BackGroundColor.instance.resetSpeed();
+        BackGroundColor.instance.Reset();
         PlayerManager.instance.particleEffect.SetActive(false);
         ExtraScoreText.Instance.FinishExtraScore();
         MusicManager.instance.RestartSpeed();

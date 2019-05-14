@@ -370,6 +370,8 @@ MonoBehaviour:
   badPackages: []
   goodPackage:
   - {fileID: 5132064862230048934, guid: 74309164592224040b0361b392fc1bea, type: 3}
+  CubeInRoads: []
+  numOfSkippedGreeenBoxes: 0
 --- !u!4 &870271964
 Transform:
   m_ObjectHideFlags: 0
@@ -621,6 +623,26 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 3745113664528203425}
+    - target: {fileID: 242760530, guid: 4b0421de46772bb4489ef9df18ea7d5a, type: 3}
+      propertyPath: roadMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 15e18411438739f44b9c937e5825f40f, type: 2}
+    - target: {fileID: 242760530, guid: 4b0421de46772bb4489ef9df18ea7d5a, type: 3}
+      propertyPath: roadColor.r
+      value: 0.07756319
+      objectReference: {fileID: 0}
+    - target: {fileID: 242760530, guid: 4b0421de46772bb4489ef9df18ea7d5a, type: 3}
+      propertyPath: roadColor.g
+      value: 0.56517637
+      objectReference: {fileID: 0}
+    - target: {fileID: 242760530, guid: 4b0421de46772bb4489ef9df18ea7d5a, type: 3}
+      propertyPath: roadColor.b
+      value: 0.7830189
+      objectReference: {fileID: 0}
+    - target: {fileID: 242760530, guid: 4b0421de46772bb4489ef9df18ea7d5a, type: 3}
+      propertyPath: roadColor.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b0421de46772bb4489ef9df18ea7d5a, type: 3}
 --- !u!1001 &1850000476476577645
@@ -735,8 +757,8 @@ PrefabInstance:
       propertyPath: particleEffect
       value: 
       objectReference: {fileID: 1565984757}
-    m_RemovedComponents: [{fileID: 3745113664528203426, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
-        type: 3}]
+    m_RemovedComponents:
+    - {fileID: 3745113664528203426, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6, type: 3}
 --- !u!1001 &2021759495030287595
 PrefabInstance:

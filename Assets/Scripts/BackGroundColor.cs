@@ -6,8 +6,11 @@ public class BackGroundColor : MonoBehaviour
 {
     public static BackGroundColor instance = null;
     public float transitionTimeInSec = 2f;
-    private bool changingColor = false;
+    public Material roadMaterial;
+    public Color roadColor;
+    public Color apticRoadColor;
 
+    private bool changingColor = false;
     private Color color1;
     [SerializeField] private Color color2;
 
@@ -21,6 +24,7 @@ public class BackGroundColor : MonoBehaviour
     }
         void Start()
     {
+        ResetRoadColor();
         StartCoroutine(beginToChangeColor());
     }
 
@@ -70,6 +74,22 @@ public class BackGroundColor : MonoBehaviour
     public void resetSpeed(float speed = 15f)
     {
         transitionTimeInSec = speed;
+    }
+
+    public void ApticRoadColor()
+    {
+        roadMaterial.color = apticRoadColor;
+    }
+
+    public void ResetRoadColor()
+    {
+        roadMaterial.color = roadColor;
+    }
+
+    public void Reset()
+    {
+        resetSpeed();
+        ResetRoadColor();
     }
 }
 

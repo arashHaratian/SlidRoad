@@ -28,8 +28,16 @@ public class GreenCube : MonoBehaviour
             }
             else
             {
+                if (ScoreManager.numberOfTakenGreenboxes == 2)
+                {
+                    print("A");
+                    BackGroundColor.instance.changeFaster(ScoreManager.numberOfTakenGreenboxes + 4f);
+                    BackGroundColor.instance.ApticRoadColor();
+                    MusicManager.instance.startIncreaseMusicSpeed(0.6f);
+                    
+                }
+                    
                 ScoreManager.numberOfTakenGreenboxes++;
-                BackGroundColor.instance.changeFaster(ScoreManager.numberOfTakenGreenboxes + 4f);
                 ScoreManager.combo++;
                 ShowCombo.Instance.UpdateText("COMBO " + ScoreManager.combo + "X");
                 PackageManager.Instance.CubeInRoads.Remove(gameObject);
