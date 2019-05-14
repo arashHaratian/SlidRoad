@@ -86,7 +86,7 @@ public class PlayerManager : MonoBehaviour
     private void Rotation()
     {
         Movement.DeltaSpeed = manualSpeed * -1;
-        CameraFollow.Instance.RotateAround(transform, manualSpeed * -1);
+        CameraFollow.Instance.RotateAround(transform, manualSpeed/2 * -1);
 //#if UNITY_STANDALONE || UNITY_WEBPLAYER
         if (Input.GetMouseButtonDown(0))
         {
