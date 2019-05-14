@@ -9,7 +9,7 @@ public class MusicManager : MonoBehaviour
 
     public AudioMixer musicMixer;
 
-    AudioSource musicSource;
+    AudioSource  musicSource;
 
     private void Awake()
     {
@@ -43,11 +43,67 @@ public class MusicManager : MonoBehaviour
         musicSource.Play();
     }
 
-    public void increaseMusicSpeed(float speed)
+
+    private IEnumerator increaseMusicSpeed(float speed)
     {
-        musicSource.pitch *= speed;
-        if (musicSource.pitch > 3)
-            musicSource.pitch = 3;
+        StopCoroutine("decreaseMusicSpeed");
+        float finalSpeed = musicSource.pitch + speed;
+        while (musicSource.pitch <= finalSpeed)
+        {
+            musicSource.pitch += Time.deltaTime;
+            if (musicSource.pitch > 3)
+                musicSource.pitch = 3;
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+        musicSource.pitch = finalSpeed;
+    }
+
+    private IEnumerator DecreaseMusicSpeed(float speed)
+    {
+        StopCoroutine("decreaseMusicSpeed");
+        float finalSpeed = musicSource.pitch - speed;
+        while (musicSource.pitch >= finalSpeed)
+        {
+            musicSource.pitch -= Time.deltaTime;
+            if (musicSource.pitch > 3)
+                musicSource.pitch = 3;
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+        musicSource.pitch = finalSpeed;
+    }
+
+
+    private IEnumerator resetMusicSpeed()
+    {
+        StopCoroutine("increaseMusicSpeed");
+        while (musicSource.pitch >= 1)
+        {
+            musicSource.pitch -= Time.deltaTime;
+
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+        musicSource.pitch = 1;
+        yield break;
+    }
+
+    public void startIncreaseMusicSpeed(float speed)
+    {
+        StartCoroutine(increaseMusicSpeed(speed));
+    }
+
+    public void StartDecreaseMusicSpeed(float speed)
+    {
+        StartCoroutine(DecreaseMusicSpeed(speed));
+    }
+
+    public void RestartSpeed()
+    {
+        musicSource.pitch = 1;
+    }
+    public void startResetMusicSpeed()
+    {
+        StartCoroutine(resetMusicSpeed());
+        StopCoroutine("increaseMusicSpeed");
     }
 
     public void SliderValue(float volume)

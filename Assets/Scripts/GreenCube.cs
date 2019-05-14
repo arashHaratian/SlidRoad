@@ -15,9 +15,35 @@ public class GreenCube : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            ScoreManager.combo ++;
-            Destroy(this.gameObject);
-            ShowCombo.Instance.UpdateText("COMBO " + ScoreManager.combo + "X");
+            PackageManager.Instance.numOfSkippedGreeenBoxes = 0;
+            if (ScoreManager.numberOfTakenGreenboxes < 2)
+            {
+                ScoreManager.numberOfTakenGreenboxes++;
+                BackGroundColor.instance.changeFaster(4f);
+                MusicManager.instance.startIncreaseMusicSpeed(0.3f);
+                ScoreManager.score += ScoreManager.numberOfTakenGreenboxes * 150;
+                ShowCombo.Instance.UpdateText("+" + ScoreManager.numberOfTakenGreenboxes * 150);
+                ShowCombo.Instance.FinishExtraScore();
+                Destroy(gameObject);
+            }
+            else
+            {
+                if (ScoreManager.numberOfTakenGreenboxes == 2)
+                {
+                    print("A");
+                    BackGroundColor.instance.changeFaster(ScoreManager.numberOfTakenGreenboxes + 4f);
+                    BackGroundColor.instance.ApticRoadColor();
+                    MusicManager.instance.startIncreaseMusicSpeed(0.6f);
+                    
+                }
+                    
+                ScoreManager.numberOfTakenGreenboxes++;
+                ScoreManager.combo++;
+                ShowCombo.Instance.UpdateText("COMBO " + ScoreManager.combo + "X");
+                PackageManager.Instance.CubeInRoads.Remove(gameObject);
+                BoxesStateText.Instance.UpdateText(PackageManager.Instance.numOfSkippedGreeenBoxes.ToString());
+                gameObject.SetActive(false);
+            }
         }
     }
 }

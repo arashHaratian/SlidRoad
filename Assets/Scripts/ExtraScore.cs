@@ -18,7 +18,7 @@ public class ExtraScore : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             isCollisionStay_ = true;
-            StartCoroutine(scoreBounce(waitTime_));
+            StartCoroutine(scoreBounce());
             extraScore_ = 0;
         }
     }
@@ -37,22 +37,25 @@ public class ExtraScore : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             isCollisionStay_ = false;
+            StopCoroutine("scoreBounce");
             ScoreManager.score += extraScore_;
             ExtraScoreText.Instance.FinishExtraScore();
         }
     }
     
-    IEnumerator scoreBounce( int waiteTime)
+    IEnumerator scoreBounce()
     {
         yield return new WaitForSeconds(Time.deltaTime);
         float mult = 10;
+        MusicManager.instance.startIncreaseMusicSpeed(0.2f);
         while (isCollisionStay_)
         {
+            ExtraScoreText.Instance.UpdateText("+" + ((int)extraScore_).ToString());
             extraScore_ += Time.deltaTime * mult;
-            ExtraScoreText.Instance.showText(extraScore_ ); 
             yield return new WaitForSeconds(Time.deltaTime);
-            mult += 2;
-        }            
+            mult += 1;
+        }
+        MusicManager.instance.StartDecreaseMusicSpeed(0.2f);
     }
 }
 

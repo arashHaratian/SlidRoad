@@ -7,8 +7,9 @@ public class ScoreManager : MonoBehaviour
 {
     public static float score;
     public static float highScore;
-    public static int combo;
+    public static int numberOfTakenGreenboxes;
 
+    public static int combo;
     public static float manualSpeed;
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class ScoreManager : MonoBehaviour
         score = 0;
         highScore = PlayerPrefs.GetFloat("HighScore");
         combo = 1;
+        numberOfTakenGreenboxes = 0;
     }
 
     // Update is called once per frame
@@ -39,5 +41,6 @@ public class ScoreManager : MonoBehaviour
     {
         PlayerPrefs.SetFloat("HighScore", highScore);
         ShowCombo.Instance.UpdateText("");
+        numberOfTakenGreenboxes = 0;
     }
 }
