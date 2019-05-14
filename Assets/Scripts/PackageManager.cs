@@ -99,8 +99,12 @@ public class PackageManager: MonoBehaviour
                 CubeInRoads.RemoveAt(i);
             else if (CubeInRoads[i].transform.position.z < 0)
             {
-                numOfSkippedGreeenBoxes++;
-                BoxesStateText.Instance.UpdateText(numOfSkippedGreeenBoxes.ToString());
+                if (ScoreManager.numberOfTakenGreenboxes > 0)
+                {
+                    numOfSkippedGreeenBoxes++;
+                    BoxesStateText.Instance.UpdateText(numOfSkippedGreeenBoxes.ToString());
+
+                }
                 CubeInRoads.RemoveAt(i);
 //                Destroy(CubeInRoads[i]);
                 break;
@@ -112,7 +116,7 @@ public class PackageManager: MonoBehaviour
             BoxesStateText.Instance.FinishBoxesState();
             ScoreManager.numberOfTakenGreenboxes = 0;
             MusicManager.instance.startResetMusicSpeed();
-            BackGroundColor.instance.resetSpeed();
+            BackGroundColor.instance.Reset();
         }
     }
     public void restart()

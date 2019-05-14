@@ -46,12 +46,12 @@ public class ExtraScore : MonoBehaviour
     IEnumerator scoreBounce()
     {
         yield return new WaitForSeconds(Time.deltaTime);
-        float mult = 10;
+        float mult = 5;
         MusicManager.instance.startIncreaseMusicSpeed(0.2f);
         while (isCollisionStay_)
         {
             ExtraScoreText.Instance.UpdateText("+" + ((int)extraScore_).ToString());
-            extraScore_ += Time.deltaTime * mult;
+            extraScore_ += Time.deltaTime * mult * ScoreManager.manualSpeed;
             yield return new WaitForSeconds(Time.deltaTime);
             mult += 1;
         }
