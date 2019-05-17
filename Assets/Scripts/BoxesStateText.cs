@@ -22,9 +22,12 @@ public class BoxesStateText : MonoBehaviour
         text = GetComponent<Text>();
     }
 
-    public void UpdateText(string newText)
+    public void UpdateText()
     {
-        text.text = newText + "/2";
+        if (PackageManager.Instance.numOfSkippedGreeenBoxes == 0)
+            text.text = "";
+        else
+            text.text = PackageManager.Instance.numOfSkippedGreeenBoxes + "/2";
     }
 
     public void FinishBoxesState()

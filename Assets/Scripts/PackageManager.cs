@@ -102,7 +102,7 @@ public class PackageManager: MonoBehaviour
                 if (ScoreManager.numberOfTakenGreenboxes > 0)
                 {
                     numOfSkippedGreeenBoxes++;
-                    BoxesStateText.Instance.UpdateText(numOfSkippedGreeenBoxes.ToString());
+                    BoxesStateText.Instance.UpdateText();
 
                 }
                 CubeInRoads.RemoveAt(i);
