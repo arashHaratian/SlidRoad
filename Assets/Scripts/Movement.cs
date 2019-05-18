@@ -27,6 +27,6 @@ public class Movement : MonoBehaviour
     private void Update()
     {
         transform.position = (transform.position +(((Vector3.forward * deltaSpeed) + speed) * Time.deltaTime));
-        ScoreManager.manualSpeed = -1 * deltaSpeed + Math.Abs(PlayerManager.instance.minManualSpeed);
+        ScoreManager.manualSpeed = -1 * deltaSpeed + Math.Abs(PlayerManager.instance.minManualSpeed - 1);
     }
 }
