@@ -81,7 +81,6 @@ public class PackageManager: MonoBehaviour
     }
     public void InsertPackage(GameObject road)
     {
-        print(ScoreManager.numberOfTakenGreenboxes);
         if (road.GetComponent<PackageChance>())
             currentRoad = road.GetComponent<PackageChance>();
         
