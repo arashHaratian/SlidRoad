@@ -41,7 +41,7 @@ public class RoadGenerator : MonoBehaviour
     void Awake()
     {
         if (_instance != null && _instance != this)
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         else
             _instance = this;
         
@@ -56,9 +56,9 @@ public class RoadGenerator : MonoBehaviour
             SpawnTile(easyTilePrefabs);
         }
         
-        roadColor = Random.ColorHSV(Random.value, Random.value);
-        MeshRenderer[] renderer =  activeTiles[0].GetComponentsInChildren<MeshRenderer> ();
-        renderer[0].material.color = roadColor;
+     //   roadColor = Random.ColorHSV(Random.value, Random.value);
+        //MeshRenderer[] renderer =  activeTiles[0].GetComponentsInChildren<MeshRenderer> ();
+       // renderer[0].material.color = roadColor;
     }
 
     public void Restart()

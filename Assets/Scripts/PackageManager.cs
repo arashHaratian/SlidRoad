@@ -16,7 +16,7 @@ public class PackageManager: MonoBehaviour
 
     private List<Transform> goodPoints;
     private List<Transform> badPoints;
-    private Road currentRoad;
+    private PackageChance currentRoad;
     public int numOfSkippedGreeenBoxes;
     System.Random random = new System.Random();
 
@@ -81,9 +81,9 @@ public class PackageManager: MonoBehaviour
     }
     public void InsertPackage(GameObject road)
     {
-        
-        if (road.GetComponent<Road>())
-            currentRoad = road.GetComponent<Road>();
+        print(ScoreManager.numberOfTakenGreenboxes);
+        if (road.GetComponent<PackageChance>())
+            currentRoad = road.GetComponent<PackageChance>();
         
         FindBGPoints(road.transform);
         SpawnGoodObject();
