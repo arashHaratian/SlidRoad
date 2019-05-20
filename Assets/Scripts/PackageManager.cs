@@ -120,7 +120,7 @@ public class PackageManager: MonoBehaviour
     }
     public void restart()
     {
-        BoxesStateText.Instance.FinishBoxesState();
+        BoxesStateText.Instance.ResetBoxesState();
         CubeInRoads.Clear();
         numOfSkippedGreeenBoxes = 0;
     }

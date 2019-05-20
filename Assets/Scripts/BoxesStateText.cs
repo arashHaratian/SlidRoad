@@ -30,6 +30,11 @@ public class BoxesStateText : MonoBehaviour
             text.text = PackageManager.Instance.numOfSkippedGreeenBoxes + "/2";
     }
 
+    public void ResetBoxesState()
+    {
+        text.text = "";
+    }
+
     public void FinishBoxesState()
     {
         StartCoroutine(FinishBoxesStateCoroutine());
