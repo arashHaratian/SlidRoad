@@ -14,3 +14,4 @@ public class GameAnalyticsEvent : MonoBehaviour
         GameAnalytics.Initialize();
     }
 }
+ 

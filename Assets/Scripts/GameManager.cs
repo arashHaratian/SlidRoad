@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using GameAnalyticsSDK;
 using UnityEditor;
 using UnityEngine;
 
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        GameAnalytics.NewDesignEvent("test");
         paused = false; 
         gameOver = false;
         RoadGenerator.Instance.Restart();

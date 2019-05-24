@@ -25,20 +25,25 @@ MonoBehaviour:
   UserMessagesSubmitted: 0
   UserMessagesFailed: 0
   CustomArea: 
-  gameKey: []
-  secretKey: []
-  Build: []
-  SelectedPlatformStudio: []
-  SelectedPlatformGame: []
-  SelectedPlatformGameID: 
-  SelectedStudio: 
-  SelectedGame: 
+  gameKey:
+  - 06ac30c5cb398d3c0f247eb5213ecda9
+  secretKey:
+  - b7e998ae4d2a2dd37f821852656230245e1ea5e2
+  Build:
+  - 0.1
+  SelectedPlatformStudio:
+  - Mercury Arc
+  SelectedPlatformGame:
+  - SlidRoad
+  SelectedPlatformGameID: 40220100
+  SelectedStudio: 01000000
+  SelectedGame: 01000000
   NewVersion: 
   Changes: 
   SignUpOpen: 0
   StudioName: MercuryArc
   GameName: SlidRoad
-  EmailGA: arashharatian@hotmail.com
+  EmailGA: anphoenix1999@gmail.com
   IntroScreen: 0
   InfoLogEditor: 1
   InfoLogBuild: 1
@@ -49,10 +54,13 @@ MonoBehaviour:
   CustomDimensions01: []
   CustomDimensions02: []
   CustomDimensions03: []
-  ResourceItemTypes: []
-  ResourceCurrencies: []
+  ResourceItemTypes:
+  - test
+  - test2
+  ResourceCurrencies:
+  - NewCurrency
   LastCreatedGamePlatform: -1
-  Platforms: 
+  Platforms: 0b000000
   CurrentInspectorState: 1
   ClosedHints: 
   DisplayHints: 0
@@ -79,9 +87,9 @@ MonoBehaviour:
   IncludeGooglePlay: 1
   FpsCriticalThreshold: 20
   FpsCirticalSubmitInterval: 1
-  PlatformFoldOut: 
+  PlatformFoldOut: 01
   CustomDimensions01FoldOut: 0
   CustomDimensions02FoldOut: 0
   CustomDimensions03FoldOut: 0
   ResourceItemTypesFoldOut: 0
-  ResourceCurrenciesFoldOut: 0
+  ResourceCurrenciesFoldOut: 1
