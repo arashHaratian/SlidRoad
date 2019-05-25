@@ -68,7 +68,6 @@ public class GameManager : MonoBehaviour
         player.transform.position = Vector3.up * 3;
         gravity = firstGravity;
         Gravity.SetGravity(gravity);
-        BackGroundColor.instance.Reset();
         PlayerManager.instance.particleEffect.SetActive(false);
         ExtraScoreText.Instance.FinishExtraScore();
         MusicManager.instance.RestartSpeed();

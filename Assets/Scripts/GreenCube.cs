@@ -21,7 +21,6 @@ public class GreenCube : MonoBehaviour
             if (ScoreManager.numberOfTakenGreenboxes < 2)
             {
                 ScoreManager.numberOfTakenGreenboxes++;
-                BackGroundColor.instance.changeFaster(4f);
                 MusicManager.instance.startIncreaseMusicSpeed(0.3f);
                 ScoreManager.score += ScoreManager.numberOfTakenGreenboxes * 150;
                 ShowCombo.Instance.UpdateText("+" + ScoreManager.numberOfTakenGreenboxes * 150);
@@ -32,8 +31,6 @@ public class GreenCube : MonoBehaviour
             {
                 if (ScoreManager.numberOfTakenGreenboxes == 2)
                 {
-                    BackGroundColor.instance.changeFaster(ScoreManager.numberOfTakenGreenboxes + 4f);
-                    BackGroundColor.instance.ApticRoadColor();
                     MusicManager.instance.startIncreaseMusicSpeed(0.6f);
                     
                 }
