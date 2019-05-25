@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
     public GameObject player;
-    public GameObject roadMap;
 
     #region RatioGravity
     public float firstGravity;
@@ -64,7 +63,6 @@ public class GameManager : MonoBehaviour
         Count = 0;
         StopCoroutine(lastRoundStarting);
         StopCoroutine(lastGameLoop);
-        roadMap.transform.rotation = Quaternion.identity;
         gameOver = false;
         RoadGenerator.Instance.Restart();
         player.transform.position = Vector3.up * 3;
