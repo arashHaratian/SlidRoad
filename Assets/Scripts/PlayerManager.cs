@@ -17,7 +17,7 @@ public class PlayerManager : MonoBehaviour
     private Vector2 currentPosition;
     private float distanceOfX;
     private bool wrongTabPosition;
-    
+    private Vector3 playerPosition;
     public static PlayerManager instance = null;
     public float maxMove;
     private void Start()
@@ -28,7 +28,7 @@ public class PlayerManager : MonoBehaviour
             Destroy(this.gameObject);
         particleEffect.SetActive(false);
         wrongTabPosition = false;
-
+        playerPosition = new Vector3(0,0,0);
     }
 
 
@@ -105,7 +105,18 @@ public class PlayerManager : MonoBehaviour
 
     void MoveBall(float movementValue)
     {
+        playerPosition = transform.position;
         transform.position += Vector3.right * movementValue;
+        if (transform.position.x > maxMove)
+        {
+            playerPosition.x = maxMove;
+            transform.position = playerPosition;
+        }
+        else if (transform.position.x < maxMove * -1)
+        {
+            playerPosition.x = maxMove * -1;
+            transform.position = playerPosition;
+        }
     }
 
     public void RaiseSize(int size, float time)
