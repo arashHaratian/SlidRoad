@@ -11,26 +11,26 @@ public class DetectionOfPlayerMovement : MonoBehaviour
     { 
         if (other.CompareTag("Player"))
         {
-            if (RoadGenerator.Instance.counts - 1 < RoadGenerator.Instance.easyTilePrefabs.Length)
+//            if (RoadGenerator.Instance.counts - 1 < RoadGenerator.Instance.easyTilePrefabs.Length)
                 RoadGenerator.Instance.SpawnTile(RoadGenerator.Instance.easyTilePrefabs);   
-
-            else
-            {
-                if (num == 0)
-                 RoadGenerator.Instance.SpawnTile(RoadGenerator.Instance.easyTilePrefabs);    
-
-                else if (num == 1 || num == 2)
-                    RoadGenerator.Instance.SpawnTile(RoadGenerator.Instance.mediumTilePrefabs);
-                
-                else if(num >= 3)
-                  RoadGenerator.Instance.SpawnTile(RoadGenerator.Instance.hardTilePrefabs);
-
-                  num++;
-                  
-                  if (num == 6)
-                   num = 0;
-            }
-            
+//
+//            else
+//            {
+//                if (num == 0)
+//                 RoadGenerator.Instance.SpawnTile(RoadGenerator.Instance.easyTilePrefabs);    
+//
+//                else if (num == 1 || num == 2)
+//                    RoadGenerator.Instance.SpawnTile(RoadGenerator.Instance.mediumTilePrefabs);
+//                
+//                else if(num >= 3)
+//                  RoadGenerator.Instance.SpawnTile(RoadGenerator.Instance.hardTilePrefabs);
+//
+//                  num++;
+//                  
+//                  if (num == 6)
+//                   num = 0;
+//            }
+//            
             if (RoadGenerator.Instance.ActiveTiles.Count > RoadGenerator.Instance.roadOnScreen)
                 DeleteRoad();
             PackageManager.Instance.InsertPackage(RoadGenerator.Instance.ActiveTiles[3]);
