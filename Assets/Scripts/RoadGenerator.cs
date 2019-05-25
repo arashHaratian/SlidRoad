@@ -80,14 +80,12 @@ public class RoadGenerator : MonoBehaviour
     {
         counts++;
         lastRoad = Instantiate(tiles[RandomPrefabIndex(tiles)], lastRoad.transform.GetChild(0).gameObject.transform.position,lastRoad.transform.rotation);
-        lastRoad.transform.parent = roadMap.transform;
         activeTiles.Add(lastRoad);
     }
 
     private void SpawnFirstTile()
     {
         lastRoad = Instantiate(firstTile, Vector3.zero, Quaternion.identity);
-        lastRoad.transform.parent = roadMap.transform;
         activeTiles.Add(lastRoad);
     }
 
