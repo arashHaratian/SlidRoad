@@ -62,15 +62,15 @@ public class PlayerManager : MonoBehaviour
                 return;
             }
             wrongTabPosition = false;
-            lastPosition.x = Input.mousePosition.x - Screen.width/2 ;
+            lastPosition.x = Input.mousePosition.x - Screen.width/2;
         }
         else if (Input.GetMouseButton(0))
         {
             if (wrongTabPosition)
                 return;
-            currentPosition.x = Input.mousePosition.x - Screen.width/2 ;
+            currentPosition.x = Input.mousePosition.x - Screen.width/2;
             distanceOfX = (currentPosition.x - lastPosition.x);
-            MoveBall(distanceOfX * maxMove / (Screen.width / 2));
+            MoveBall(distanceOfX * (maxMove + 1f) / (Screen.width / 2));
             lastPosition = currentPosition;
         }
 //#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
