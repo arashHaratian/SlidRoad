@@ -34,7 +34,6 @@ public class DetectionOfPlayerMovement : MonoBehaviour
             if (RoadGenerator.Instance.ActiveTiles.Count > RoadGenerator.Instance.roadOnScreen)
                 DeleteRoad();
             PackageManager.Instance.InsertPackage(RoadGenerator.Instance.ActiveTiles[3]);
-            PackageManager.Instance.BoxState();
         }
     }
 
