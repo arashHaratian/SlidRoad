@@ -53,15 +53,9 @@ public class PackageManager: MonoBehaviour
         int chance = random.Next(0, 100);
         if (chance < probabilityGoodPackage)
         {
-            return;
+            Instantiate(greenCube, instantiatePoint);
         }
-
-        if (chance < probabilityGoodPackage)
-        {
-            int rIndex = random.Next(0, goodPackage.Length);
-            Instantiate(goodPackage[rIndex],instantiatePoint);
-        }
-    }
+   }
     void SpawnBadObject()
     {
         if (ScoreManager.numberOfTakenGreenboxes == 0 || badPoints.Count == 0)
