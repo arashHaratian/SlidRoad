@@ -18,15 +18,9 @@ public class Movement : MonoBehaviour
 
     private static float deltaSpeed;
 
-    public static float DeltaSpeed
-    {
-        get { return deltaSpeed; }
-        set { deltaSpeed = value; }
-    }
-
+    
     private void Update()
     {
-        transform.position = (transform.position +(((Vector3.forward * deltaSpeed) + speed) * Time.deltaTime));
-        ScoreManager.manualSpeed = -1 * deltaSpeed + Math.Abs(PlayerManager.instance.minManualSpeed - 1);
+        transform.position = (transform.position +(((Vector3.forward) + speed) * Time.deltaTime));
     }
 }

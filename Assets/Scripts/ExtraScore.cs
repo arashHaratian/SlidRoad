@@ -51,7 +51,7 @@ public class ExtraScore : MonoBehaviour
         while (isCollisionStay_)
         {
             ExtraScoreText.Instance.UpdateText("+" + ((int)extraScore_).ToString());
-            extraScore_ += Time.deltaTime * mult * ScoreManager.manualSpeed * ScoreManager.combo;
+            extraScore_ += Time.deltaTime * mult  * ScoreManager.combo;
             yield return new WaitForSeconds(Time.deltaTime);
             mult += 1;
         }

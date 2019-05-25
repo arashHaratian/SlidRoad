@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using Unity.Collections;
 using UnityEditor;
 using UnityEngine;
@@ -14,23 +15,11 @@ public class PlayerManager : MonoBehaviour
 //    private Rigidbody playerRigidbody;
     private Vector2 lastPosition; 
     private Vector2 currentPosition;
-    private Vector2 firstPosition;
     private float distanceOfX;
-    private float distanceOfY;
-    private GameObject roadMapGameObject;
-    private Rotation roadMap;
     private bool wrongTabPosition;
-    private float manualSpeed;
     
     public static PlayerManager instance = null;
-    public float maxManualSpeed;
-    public float minManualSpeed;
-    
-    public Vector2 LastPosition
-    {
-        get { return lastPosition; }
-    }
-
+    public float maxMove;
     private void Start()
     {
         if (!instance)
@@ -38,8 +27,6 @@ public class PlayerManager : MonoBehaviour
         else if(instance != this)
             Destroy(this.gameObject);
         particleEffect.SetActive(false);
-        roadMapGameObject = GameObject.FindWithTag("Road Map");
-        roadMap = roadMapGameObject.GetComponent<Rotation>();
         wrongTabPosition = false;
 
     }
@@ -53,7 +40,6 @@ public class PlayerManager : MonoBehaviour
     private void OnEnable()
     {
         this.GetComponent<ScoreManager>().enabled = true;
-        manualSpeed = 0;
         if (Input.touchCount > 0)
             lastPosition = Input.touches[0].position;
     }
@@ -65,28 +51,8 @@ public class PlayerManager : MonoBehaviour
         
     }
 
-    IEnumerator ResetManualSpeed()
-    {
-        if(manualSpeed > 0)
-            while (manualSpeed >= 0)
-            {
-                manualSpeed -= Time.deltaTime * 8;
-                yield return null;
-            }
-        else
-            while (manualSpeed <= 0)
-            {
-                manualSpeed += Time.deltaTime * 8;
-                yield return null;
-            }
-
-        manualSpeed = 0;
-    }
-
     private void Rotation()
     {
-        Movement.DeltaSpeed = manualSpeed * -1;
-        CameraFollow.Instance.RotateAround(transform, manualSpeed * -1);
 //#if UNITY_STANDALONE || UNITY_WEBPLAYER
         if (Input.GetMouseButtonDown(0))
         {
@@ -96,36 +62,19 @@ public class PlayerManager : MonoBehaviour
                 return;
             }
             wrongTabPosition = false;
-            lastPosition = Input.mousePosition;
-            firstPosition = lastPosition;
+            lastPosition.x = Input.mousePosition.x - Screen.width/2 ;
         }
         else if (Input.GetMouseButton(0))
         {
             if (wrongTabPosition)
                 return;
-            currentPosition = Input.mousePosition;
-            
-            distanceOfX = (currentPosition.x - lastPosition.x) / Screen.width * -1;
-            roadMap.Rotate(distanceOfX);
+            currentPosition.x = Input.mousePosition.x - Screen.width/2 ;
+            print("current x : " + currentPosition.x);
+            distanceOfX = (currentPosition.x - lastPosition.x);
+            print("distanceX : " + distanceOfX);
+            MoveBall(distanceOfX * maxMove / (Screen.width / 2));
             lastPosition = currentPosition;
-
-            distanceOfY = (currentPosition.y - firstPosition.y) / Screen.height * 4;
-            manualSpeed = distanceOfY * Movement.Speed.z;
-            if (manualSpeed > maxManualSpeed)
-                manualSpeed = maxManualSpeed;
-            else if (manualSpeed < minManualSpeed)
-                manualSpeed = minManualSpeed;
-//              playerDirection.transform.eulerAngles = new Vector3(0, playerDirection.transform.eulerAngles.y - rot, 0);
-//              playerDirectionRigidbody.angularVelocity = new Vector3(0, rot, 0);
         }
-        else
-        {
-            if (Input.GetMouseButtonUp(0))
-            {
-                StartCoroutine(ResetManualSpeed());
-            }
-        }
-        
 //#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
 //        if (Input.touchCount > 0)
 //        {
@@ -154,6 +103,12 @@ public class PlayerManager : MonoBehaviour
 //            }
 //        }
 //#endif
+    }
+
+    void MoveBall(float movementValue)
+    {
+        print("movementValu : " + movementValue);
+        transform.position += Vector3.right * movementValue;
     }
 
     public void RaiseSize(int size, float time)

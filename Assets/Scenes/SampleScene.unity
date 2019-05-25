@@ -623,6 +623,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 3745113664528203425}
+    - target: {fileID: 1388646688, guid: 4b0421de46772bb4489ef9df18ea7d5a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 242760530, guid: 4b0421de46772bb4489ef9df18ea7d5a, type: 3}
       propertyPath: roadMaterial
       value: 
@@ -655,7 +659,8 @@ PrefabInstance:
       propertyPath: apticRoadColor.b
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1388646688, guid: 4b0421de46772bb4489ef9df18ea7d5a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4b0421de46772bb4489ef9df18ea7d5a, type: 3}
 --- !u!1001 &1850000476476577645
 PrefabInstance:
@@ -697,7 +702,7 @@ PrefabInstance:
     - target: {fileID: 3050578144880102517, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.37
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3050578144880102517, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
         type: 3}
@@ -747,7 +752,7 @@ PrefabInstance:
     - target: {fileID: 3050578143369406964, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
         type: 3}
       propertyPath: m_UseGravity
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3050578143369406964, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
         type: 3}
@@ -764,6 +769,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 183048485489140954, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
+        type: 3}
+      propertyPath: constScoreMult
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3050578143369406965, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
         type: 3}
       propertyPath: particleEffect
@@ -778,6 +788,11 @@ PrefabInstance:
         type: 3}
       propertyPath: minManualSpeed
       value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050578143369406965, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
+        type: 3}
+      propertyPath: maxMove
+      value: 5.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3745113664528203426, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6, type: 3}
@@ -983,7 +998,8 @@ PrefabInstance:
       propertyPath: rotateRange
       value: 200
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2275488689009445520, guid: 1da6974015ef3414e89bbcfeae1e2470, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1da6974015ef3414e89bbcfeae1e2470, type: 3}
 --- !u!1001 &3031130936164421478
 PrefabInstance:
