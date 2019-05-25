@@ -69,9 +69,7 @@ public class PlayerManager : MonoBehaviour
             if (wrongTabPosition)
                 return;
             currentPosition.x = Input.mousePosition.x - Screen.width/2 ;
-            print("current x : " + currentPosition.x);
             distanceOfX = (currentPosition.x - lastPosition.x);
-            print("distanceX : " + distanceOfX);
             MoveBall(distanceOfX * maxMove / (Screen.width / 2));
             lastPosition = currentPosition;
         }
@@ -107,7 +105,6 @@ public class PlayerManager : MonoBehaviour
 
     void MoveBall(float movementValue)
     {
-        print("movementValu : " + movementValue);
         transform.position += Vector3.right * movementValue;
     }
 
