@@ -89,7 +89,6 @@ public class RoadGenerator : MonoBehaviour
         lastRoad = Instantiate(firstTile, Vector3.zero, Quaternion.identity);
         lastRoad.transform.parent = roadMap.transform;
         activeTiles.Add(lastRoad);
-        GameOverManager.instance.CalGameOverPosition(lastRoad);
     }
 
    public void DeleteTile()
