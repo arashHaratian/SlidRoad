@@ -398,24 +398,6 @@ Canvas:
     type: 3}
   m_PrefabInstance: {fileID: 340323638}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1312510153 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6144813134036261584, guid: 3c1b682abd2b7064d824651e0f4eaa33,
-    type: 3}
-  m_PrefabInstance: {fileID: 6144813135385091561}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1312510154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312510153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65ee461709489854abbc04ba92b7a32c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1565984757 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6867853029280244189, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
@@ -5967,11 +5949,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 6144813134036261584, guid: 3c1b682abd2b7064d824651e0f4eaa33,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6144813134036261586, guid: 3c1b682abd2b7064d824651e0f4eaa33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6034,44 +6011,9 @@ PrefabInstance:
       objectReference: {fileID: 3745113664528203418}
     - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
         type: 3}
-      propertyPath: gameSpeed.z
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
-        type: 3}
-      propertyPath: timeIncreaseSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
-        type: 3}
       propertyPath: roadMap
       value: 
       objectReference: {fileID: 1751447842}
-    - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
-        type: 3}
-      propertyPath: gameSpeed
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
-        type: 3}
-      propertyPath: maxSpeed
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
-        type: 3}
-      propertyPath: gravity
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
-        type: 3}
-      propertyPath: firstGravity
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
-        type: 3}
-      propertyPath: firstSpeed
-      value: 12
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c1b682abd2b7064d824651e0f4eaa33, type: 3}
 --- !u!199 &6249175836460416781

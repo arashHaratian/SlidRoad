@@ -35,6 +35,7 @@ public class GreenCube : MonoBehaviour
             {
                 if (ScoreManager.numberOfTakenGreenboxes == 2)
                 {
+                    GameAnalyticsEvent.Instance.apticMode();
                     BackGroundColor.instance.changeFaster(ScoreManager.numberOfTakenGreenboxes + 4f);
                     BackGroundColor.instance.ApticRoadColor();
                     MusicManager.instance.startIncreaseMusicSpeed(0.6f);
