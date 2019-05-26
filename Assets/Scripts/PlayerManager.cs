@@ -20,6 +20,8 @@ public class PlayerManager : MonoBehaviour
     private Vector3 playerPosition;
     public static PlayerManager instance = null;
     public float maxMove;
+    public float maxCameraMove;
+    public CameraMove cameraMove;
     private void Start()
     {
         if (!instance)
@@ -29,6 +31,13 @@ public class PlayerManager : MonoBehaviour
         particleEffect.SetActive(false);
         wrongTabPosition = false;
         playerPosition = new Vector3(0,0,0);
+    }
+
+    public void Reset()
+    {
+        transform.position = Vector3.up * 3;
+        particleEffect.SetActive(false);
+        cameraMove.Reset();
     }
 
 
@@ -47,11 +56,11 @@ public class PlayerManager : MonoBehaviour
     private void Update()
     {
         if(!GameManager.instance.paused)
-            Rotation();
+            TouchInput();
         
     }
 
-    private void Rotation()
+    private void TouchInput()
     {
 //#if UNITY_STANDALONE || UNITY_WEBPLAYER
         if (Input.GetMouseButtonDown(0))
@@ -71,6 +80,7 @@ public class PlayerManager : MonoBehaviour
             currentPosition.x = Input.mousePosition.x - Screen.width/2;
             distanceOfX = (currentPosition.x - lastPosition.x);
             MoveBall(distanceOfX * (maxMove + 1f) / (Screen.width / 2));
+            cameraMove.Move(distanceOfX * maxCameraMove / (Screen.width / 2));
             lastPosition = currentPosition;
         }
 //#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
