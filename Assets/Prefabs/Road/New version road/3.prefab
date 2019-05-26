@@ -183,8 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e1ec4de8f4c89b47b92d1c0abd2282e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  probabiltyInsertGoodPackage: 60
-  probabiltyInsertBadPackage: 60
+  probabiltyInsertGoodPackage: 40
+  probabiltyInsertBadPackage: 40
 --- !u!1 &3601068154501534047
 GameObject:
   m_ObjectHideFlags: 0
@@ -5622,7 +5622,7 @@ PrefabInstance:
     - target: {fileID: 64586204140884357, guid: e9e8801013eb4304bb77d392ea1133e6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 64586204140884357, guid: e9e8801013eb4304bb77d392ea1133e6,
         type: 3}
@@ -5677,7 +5677,7 @@ PrefabInstance:
     - target: {fileID: 64586204140884357, guid: e9e8801013eb4304bb77d392ea1133e6,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9e8801013eb4304bb77d392ea1133e6, type: 3}
@@ -6007,7 +6007,7 @@ PrefabInstance:
     - target: {fileID: 64586204140884357, guid: e9e8801013eb4304bb77d392ea1133e6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 64586204140884357, guid: e9e8801013eb4304bb77d392ea1133e6,
         type: 3}
@@ -6062,7 +6062,7 @@ PrefabInstance:
     - target: {fileID: 64586204140884357, guid: e9e8801013eb4304bb77d392ea1133e6,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9e8801013eb4304bb77d392ea1133e6, type: 3}
