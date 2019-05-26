@@ -379,9 +379,6 @@ MonoBehaviour:
   greenCube: {fileID: 2176549128496508491, guid: 2bcb85723f8ef7547ba8e62f715b138a,
     type: 3}
   redCube: {fileID: 4712098616299111582, guid: c9efb6a9fde593a4882c1698b803a5a4, type: 3}
-  badPackages: []
-  goodPackage:
-  - {fileID: 5132064862230048934, guid: 74309164592224040b0361b392fc1bea, type: 3}
 --- !u!4 &870271964
 Transform:
   m_ObjectHideFlags: 0
@@ -807,6 +804,11 @@ PrefabInstance:
         type: 3}
       propertyPath: maxMove
       value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050578143369406965, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3745113664528203426, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6, type: 3}
