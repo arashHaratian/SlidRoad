@@ -21,6 +21,7 @@ public class RedCube : MonoBehaviour
             ShowCombo.Instance.UpdateText("");
             ScoreManager.numberOfTakenGreenboxes = 0;
             MusicManager.instance.startResetMusicSpeed();
+            PackageManager.Instance.removeRedCubes();
             Destroy(this.gameObject);
         }
     }

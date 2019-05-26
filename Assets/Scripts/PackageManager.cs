@@ -10,9 +10,8 @@ public class PackageManager: MonoBehaviour
 
     public GameObject greenCube;
     public GameObject redCube;
-    public GameObject[] badPackages;
-    public GameObject[] goodPackage;
 
+    private List<GameObject> redCubeInScene;
     private List<Transform> goodPoints;
     private List<Transform> badPoints;
     private PackageChance currentRoad;
@@ -28,6 +27,7 @@ public class PackageManager: MonoBehaviour
         
         goodPoints = new List<Transform>();
         badPoints = new List<Transform>();
+        redCubeInScene = new List<GameObject>();
     }
 
     void FindBGPoints(Transform tRoad)
@@ -62,11 +62,15 @@ public class PackageManager: MonoBehaviour
             return;
         int probabilityBadPackage;
         probabilityBadPackage = currentRoad.probabiltyInsertBadPackage;
-        int chance = random.Next(0, 100);
+        int chance;
         for(int i = 0; i < badPoints.Count; i++)
         {
+            chance = random.Next(0, 100);
             if (chance < probabilityBadPackage)
-               Instantiate(redCube, badPoints[i]);
+            {
+                redCubeInScene.Add(Instantiate(redCube, badPoints[i]));
+                
+            }
         }
     }
     public void InsertPackage(GameObject road)
@@ -79,5 +83,12 @@ public class PackageManager: MonoBehaviour
         goodPoints.Clear();
         SpawnBadObject();
         badPoints.Clear();
+    }
+
+    public void removeRedCubes()
+    {
+        foreach (GameObject redCube in redCubeInScene)
+            Destroy(redCube);
+        redCubeInScene.Clear();
     }
 }
