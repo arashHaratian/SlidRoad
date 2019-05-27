@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
         StopCoroutine(lastGameLoop);
         gameOver = false;
         RoadGenerator.Instance.Restart();
-        player.transform.position = Vector3.up * 3;
+        player.transform.position = new Vector3(0,1,3);
         gravity = firstGravity;
         Gravity.SetGravity(gravity);
         PlayerManager.instance.particleEffect.SetActive(false);

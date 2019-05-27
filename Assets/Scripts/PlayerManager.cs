@@ -18,6 +18,9 @@ public class PlayerManager : MonoBehaviour
     private float distanceOfX;
     private bool wrongTabPosition;
     private Vector3 playerPosition;
+    private float radius;
+
+    public LayerMask blockingLayer;
     public static PlayerManager instance = null;
     public float maxMove;
     public float moveSpeed;
@@ -30,6 +33,7 @@ public class PlayerManager : MonoBehaviour
         particleEffect.SetActive(false);
         wrongTabPosition = false;
         playerPosition = new Vector3(0,0,0);
+        radius = transform.localScale.x / 2;
     }
 
 
@@ -107,17 +111,38 @@ public class PlayerManager : MonoBehaviour
     void MoveBall(float movementValue)
     {
         playerPosition = transform.position;
-        transform.position += Vector3.right * movementValue;
-        if (transform.position.x > maxMove)
-        {
-            playerPosition.x = maxMove;
-            transform.position = playerPosition;
-        }
-        else if (transform.position.x < maxMove * -1)
-        {
-            playerPosition.x = maxMove * -1;
-            transform.position = playerPosition;
-        }
+        Vector3 newPlayerPosition = playerPosition + Vector3.right * movementValue;
+        if (movementValue < 0)
+            LeftMove(newPlayerPosition);
+        else
+            RightMove(newPlayerPosition);
+    }
+
+    void RightMove(Vector3 newPlayerPosition)
+    {
+        if (newPlayerPosition.x > maxMove)
+            newPlayerPosition.x = maxMove;
+        RaycastHit hit;
+        if (CanMove(playerPosition, newPlayerPosition + Vector3.right * radius, out hit))
+            transform.position = newPlayerPosition;
+        else
+            transform.position = hit.point - Vector3.right * radius;
+    }
+
+    void LeftMove(Vector3 newPlayerPosition)
+    {
+        if (newPlayerPosition.x < maxMove * -1)
+            newPlayerPosition.x = maxMove * -1;
+        RaycastHit hit;
+        if (CanMove(playerPosition, newPlayerPosition - Vector3.right * radius, out hit))
+            transform.position = newPlayerPosition;
+        else
+            transform.position = hit.point + Vector3.right * radius;
+    }
+
+    bool CanMove(Vector3 start, Vector3 end, out RaycastHit hit)
+    {
+        return !Physics.Linecast(start, end, out hit, blockingLayer);
     }
 
     public void RaiseSize(int size, float time)
