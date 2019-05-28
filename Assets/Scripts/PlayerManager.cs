@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Unity.Collections;
@@ -19,6 +20,7 @@ public class PlayerManager : MonoBehaviour
     private bool wrongTabPosition;
     private Vector3 playerPosition;
     private float radius;
+    private bool collision;
 
     public LayerMask blockingLayer;
     public static PlayerManager instance = null;
@@ -34,6 +36,7 @@ public class PlayerManager : MonoBehaviour
         wrongTabPosition = false;
         playerPosition = new Vector3(0,0,0);
         radius = transform.localScale.x / 2;
+        collision = false;
     }
 
 
@@ -116,6 +119,7 @@ public class PlayerManager : MonoBehaviour
             LeftMove(newPlayerPosition);
         else
             RightMove(newPlayerPosition);
+        
     }
 
     void RightMove(Vector3 newPlayerPosition)
@@ -124,9 +128,19 @@ public class PlayerManager : MonoBehaviour
             newPlayerPosition.x = maxMove;
         RaycastHit hit;
         if (CanMove(playerPosition, newPlayerPosition + Vector3.right * radius, out hit))
+        {
             transform.position = newPlayerPosition;
+            collision = false;
+        }
         else
+        {
+            if (!collision)
+            {
+                SoundManager.instance.CollisionPlay(0.1f);
+                collision = true;
+            }
             transform.position = hit.point - Vector3.right * radius;
+        }
     }
 
     void LeftMove(Vector3 newPlayerPosition)
@@ -137,7 +151,14 @@ public class PlayerManager : MonoBehaviour
         if (CanMove(playerPosition, newPlayerPosition - Vector3.right * radius, out hit))
             transform.position = newPlayerPosition;
         else
+        {
             transform.position = hit.point + Vector3.right * radius;
+            if (!collision)
+            {
+                SoundManager.instance.CollisionPlay(0.1f);
+                collision = true;
+            }
+        }
     }
 
     bool CanMove(Vector3 start, Vector3 end, out RaycastHit hit)
