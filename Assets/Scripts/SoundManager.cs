@@ -48,7 +48,6 @@ public class SoundManager : MonoBehaviour
 
     public void PlayFallingCollision(float volume)
     {
-        print("play");
         fallingCollision.volume = volume;
         fallingCollision.Play();
     }
