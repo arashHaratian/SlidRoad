@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1340,8 +1340,13 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3, z: -0.3699999}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: [{fileID: 1303890320}, {fileID: 1236203321}, {fileID: 537178917}, {
-      fileID: 89412172}, {fileID: 438811784}, {fileID: 955928890}]
+  m_Children:
+  - {fileID: 1303890320}
+  - {fileID: 1236203321}
+  - {fileID: 537178917}
+  - {fileID: 89412172}
+  - {fileID: 438811784}
+  - {fileID: 955928890}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7516,7 +7521,7 @@ PrefabInstance:
         type: 3}
       propertyPath: easyTilePrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 1749940325616937375, guid: 28162dca1fdbe7848af0418bbca75f35,
+      objectReference: {fileID: 7188795561587827588, guid: 9287c2e83c66dc94fbd3ba73117d12d1,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
