@@ -8,6 +8,9 @@ public class SoundManager : MonoBehaviour
     public static SoundManager instance = null;
 
     public AudioSource gameOverCollision;
+//    public AudioSource gameOverFalling;
+    public AudioSource getGreen;
+    public AudioSource getRed;
     public AudioSource movePlayer;
     public AudioSource  collisionSource;
     public AudioSource fallingCollision;
@@ -21,6 +24,22 @@ public class SoundManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    private void Start()
+    {
+        movePlayer.volume = 0;
+        movePlayer.Play();
+    }
+
+    public void Reset()
+    {
+        movePlayer.volume = 0;
+    }
+
+    public void GameOverCollision(float volume)
+    {
+        gameOverCollision.volume = volume;
+        gameOverCollision.Play();
+    }
     public void CollisionPlay(float volume)
     {
         collisionSource.volume = volume;
@@ -33,5 +52,27 @@ public class SoundManager : MonoBehaviour
         fallingCollision.volume = volume;
         fallingCollision.Play();
     }
-    
+
+    public void PlayGetGreen(float volume)
+    {
+        getGreen.volume = volume;
+        getGreen.Play();
+    }
+
+    public void PlayGetRed(float volume)
+    {
+        getRed.volume = volume;
+        getRed.Play();
+    }
+
+    public void ChangeVolumeMovement(float volume)
+    {
+        movePlayer.volume = volume;
+    }
+
+//    public void PlayGameOverFalling(float volume)
+//    {
+//        gameOverFalling.volume = volume;
+//        gameOverFalling.Play();
+//    }
 }

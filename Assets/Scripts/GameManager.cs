@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
         player.transform.position = new Vector3(0,1,3);
         PlayerManager.instance.particleEffect.SetActive(false);
         ExtraScoreText.Instance.FinishExtraScore();
+        SoundManager.instance.Reset();
         Init();
     }
     public void Init()

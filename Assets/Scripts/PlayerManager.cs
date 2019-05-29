@@ -119,7 +119,7 @@ public class PlayerManager : MonoBehaviour
             LeftMove(newPlayerPosition);
         else
             RightMove(newPlayerPosition);
-        
+        SoundManager.instance.ChangeVolumeMovement(Math.Abs(movementValue));
     }
 
     void RightMove(Vector3 newPlayerPosition)

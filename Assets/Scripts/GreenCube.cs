@@ -18,6 +18,7 @@ public class GreenCube : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             isGreenEated = true;
+            SoundManager.instance.PlayGetGreen(0.4f);
             if (ScoreManager.numberOfTakenGreenboxes < 2)
             {
                 ScoreManager.numberOfTakenGreenboxes++;

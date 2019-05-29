@@ -30,7 +30,6 @@ public class Falling : MonoBehaviour
         }
         else
         {
-            print("inja");
             collision = true;
             transform.position = newPlayerPosition;
         }
