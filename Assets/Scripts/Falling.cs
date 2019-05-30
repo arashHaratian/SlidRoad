@@ -7,6 +7,7 @@ public class Falling : MonoBehaviour
     public LayerMask blockingLayer;
     public float radius;
     public float gravity;
+    public GameObject shade;
 
     private Vector3 newPlayerPosition;
     private bool collision;
@@ -23,6 +24,8 @@ public class Falling : MonoBehaviour
         newPlayerPosition = transform.position + Vector3.down * Time.deltaTime * gravity;
         if (!IsFalling())
         {
+            if(!shade.activeSelf)
+                shade.SetActive(true);
             if(collision)
                 SoundManager.instance.PlayFallingCollision(0.5f);
             collision = false;
@@ -30,6 +33,8 @@ public class Falling : MonoBehaviour
         }
         else
         {
+            if(shade.activeSelf)
+                shade.SetActive(false);
             collision = true;
             transform.position = newPlayerPosition;
         }

@@ -1216,6 +1216,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1661512742 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 897933125, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1850000476476577645}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1762035499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,8 +1248,13 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3, z: -0.3699999}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: [{fileID: 1303890320}, {fileID: 1236203321}, {fileID: 537178917}, {
-      fileID: 89412172}, {fileID: 438811784}, {fileID: 955928890}]
+  m_Children:
+  - {fileID: 1303890320}
+  - {fileID: 1236203321}
+  - {fileID: 537178917}
+  - {fileID: 89412172}
+  - {fileID: 438811784}
+  - {fileID: 955928890}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1761,7 +1772,9 @@ PrefabInstance:
       propertyPath: m_LengthScale
       value: 0.85
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3745113664528203419, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6, type: 3}
+    - {fileID: 600905767123841903, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6, type: 3}
 --- !u!1001 &2021759495030287595
 PrefabInstance:
@@ -1978,6 +1991,24 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1850000476476577645}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3745113664528203419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3745113664528203418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095552feca434b94883cd06cdb424fed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockingLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  radius: 0.5
+  gravity: 40
+  shade: {fileID: 1661512742}
 --- !u!4 &3745113664528203425 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3050578144880102517, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
