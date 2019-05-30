@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
         StopCoroutine(lastGameLoop);
         gameOver = false;
         RoadGenerator.Instance.Restart();
-        player.transform.position = new Vector3(0,1,3);
+        player.transform.position = new Vector3(0,2,2);
         PlayerManager.instance.particleEffect.SetActive(false);
         ExtraScoreText.Instance.FinishExtraScore();
         Init();
