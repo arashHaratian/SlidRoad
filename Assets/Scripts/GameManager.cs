@@ -9,12 +9,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     public GameObject player;
 
-    #region RatioGravity
-    public float firstGravity;
-    private float gravity;
-    private float gravitPerSpeed;
-    #endregion
-    
     #region GameSpeed
     public float firstSpeed;
     private float gameSpeed;
@@ -45,8 +39,6 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         playerManagerScript = player.GetComponent<PlayerManager>();
-        gravitPerSpeed = firstGravity / firstSpeed;
-        gravity = firstGravity;
     }
 
     private void Start()
@@ -66,11 +58,8 @@ public class GameManager : MonoBehaviour
         gameOver = false;
         RoadGenerator.Instance.Restart();
         player.transform.position = new Vector3(0,1,3);
-        gravity = firstGravity;
-        Gravity.SetGravity(gravity);
         PlayerManager.instance.particleEffect.SetActive(false);
         ExtraScoreText.Instance.FinishExtraScore();
-        MusicManager.instance.RestartSpeed();
         Init();
     }
     public void Init()
@@ -88,7 +77,6 @@ public class GameManager : MonoBehaviour
 
     IEnumerator RoundStarting()
     {
-        MusicManager.instance.StartMusic();
         gameSpeed = firstSpeed;
         Movement.Speed = Vector3.back * firstSpeed;
         while (!gameOver)
@@ -106,8 +94,6 @@ public class GameManager : MonoBehaviour
         gameSpeed += 0.5f;
         Movement.Speed -= Vector3.forward;
         Count = 0;
-        gravity = gameSpeed * gravitPerSpeed;
-        Gravity.SetGravity(gravity);
     }
 
     void GameIsOver()
@@ -115,6 +101,6 @@ public class GameManager : MonoBehaviour
         playerManagerScript.enabled = false;
         Time.timeScale = 0;
         PanelAndButtonsManager.instance.GameOver();
-        StartCoroutine(MusicManager.instance.gameOVerEffect()); 
+        SoundManager.instance.Reset();
     }
 }
