@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using GameAnalyticsSDK;
 using UnityEditor;
 using UnityEngine;
 
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        GameAnalytics.NewDesignEvent("test");
         paused = false; 
         gameOver = false;
         RoadGenerator.Instance.Restart();
@@ -98,9 +100,16 @@ public class GameManager : MonoBehaviour
 
     void GameIsOver()
     {
+        GameAnalyticsEvent.Instance.getGameOverRoad(RoadGenerator.Instance.CurrentRoad.name);
+        GameAnalyticsEvent.Instance.getScore();
         playerManagerScript.enabled = false;
         Time.timeScale = 0;
         PanelAndButtonsManager.instance.GameOver();
         SoundManager.instance.Reset();
+    }
+
+    private void OnApplicationQuit()
+    {
+        GameAnalyticsEvent.Instance.getLastRoadBeforeExit(RoadGenerator.Instance.CurrentRoad.name);
     }
 }

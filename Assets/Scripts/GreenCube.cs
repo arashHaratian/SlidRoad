@@ -29,7 +29,8 @@ public class GreenCube : MonoBehaviour
             }
             else
             {
-                    
+ if (ScoreManager.numberOfTakenGreenboxes == 2)
+		GameAnalyticsEvent.Instance.apticMode();                    
                 ScoreManager.numberOfTakenGreenboxes++;
                 ScoreManager.combo++;
 		 Destroy(this.gameObject);
