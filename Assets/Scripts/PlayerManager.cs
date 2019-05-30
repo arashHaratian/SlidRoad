@@ -149,7 +149,10 @@ public class PlayerManager : MonoBehaviour
             newPlayerPosition.x = maxMove * -1;
         RaycastHit hit;
         if (CanMove(playerPosition, newPlayerPosition - Vector3.right * radius, out hit))
+        {
             transform.position = newPlayerPosition;
+            collision = false;
+        }
         else
         {
             transform.position = hit.point + Vector3.right * radius;
