@@ -66,7 +66,6 @@ public class GameManager : MonoBehaviour
     }
     public void Init()
     {
-        Time.timeScale = 1;
         lastGameLoop = StartCoroutine(GameLoop());
     }
 

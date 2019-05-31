@@ -38,6 +38,8 @@ public class PanelAndButtonsManager : MonoBehaviour
 
     private void Start()
     {
+        GameManager.instance.Init();
+
         mainMenuCanvas.enabled = true;
         pauseCanvas.enabled = false;
         gameOverCanvas.enabled = false;
@@ -60,6 +62,7 @@ public class PanelAndButtonsManager : MonoBehaviour
 
     private void PlayMenu()
     {
+        Time.timeScale = 1;
         mainMenuCanvas.enabled = false;
         gameOverCanvas.enabled = false;
         pauseCanvas.enabled = false;
@@ -67,13 +70,12 @@ public class PanelAndButtonsManager : MonoBehaviour
     }
     public void Restart()
     {
-       PlayMenu();        
-       GameManager.instance.Restart(); 
+        GameManager.instance.Restart();
+        OpenMainMenu();
     }
     public void TapToPlay()
     {
         PlayMenu();
-        GameManager.instance.Init();
     }
     //-----------------------------------------------------
 
