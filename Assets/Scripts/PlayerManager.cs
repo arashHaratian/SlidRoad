@@ -124,8 +124,6 @@ public class PlayerManager : MonoBehaviour
 
     void RightMove(Vector3 newPlayerPosition)
     {
-        if (newPlayerPosition.x > maxMove)
-            newPlayerPosition.x = maxMove;
         RaycastHit hit;
         if (CanMove(playerPosition, newPlayerPosition + Vector3.right * radius, out hit))
         {
@@ -145,8 +143,6 @@ public class PlayerManager : MonoBehaviour
 
     void LeftMove(Vector3 newPlayerPosition)
     {
-        if (newPlayerPosition.x < maxMove * -1)
-            newPlayerPosition.x = maxMove * -1;
         RaycastHit hit;
         if (CanMove(playerPosition, newPlayerPosition - Vector3.right * radius, out hit))
         {
