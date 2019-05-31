@@ -125,7 +125,7 @@ public class PlayerManager : MonoBehaviour
     void RightMove(Vector3 newPlayerPosition)
     {
         RaycastHit hit;
-        if (CanMove(playerPosition, newPlayerPosition + Vector3.right * radius, out hit))
+        if (CanMove(playerPosition + Vector3.left * 0.2f, newPlayerPosition + Vector3.right * radius, out hit))
         {
             transform.position = newPlayerPosition;
             collision = false;
@@ -144,7 +144,7 @@ public class PlayerManager : MonoBehaviour
     void LeftMove(Vector3 newPlayerPosition)
     {
         RaycastHit hit;
-        if (CanMove(playerPosition, newPlayerPosition - Vector3.right * radius, out hit))
+        if (CanMove(playerPosition + Vector3.right * 0.2f, newPlayerPosition - Vector3.right * radius, out hit))
         {
             transform.position = newPlayerPosition;
             collision = false;
