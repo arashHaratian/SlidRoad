@@ -10,7 +10,13 @@ public class ForwardCollision : MonoBehaviour
     private Vector3 endPoint;
     private RaycastHit hit;
     private Vector3 newPlayerPosition;
-    
+    private bool firstCollision;
+
+    private void Start()
+    {
+        firstCollision = true;
+    }
+
     void Update()
     {
         endPoint = transform.position;
@@ -20,7 +26,15 @@ public class ForwardCollision : MonoBehaviour
             newPlayerPosition = hit.point;
             newPlayerPosition.z -= radius;
             transform.position = newPlayerPosition;
+            if (firstCollision)
+            {
+                SoundManager.instance.GameOverCollision(0.15f);
+                firstCollision = false;
+            }
         }
+        
+        else
+            firstCollision = true;
     }
 
     private bool IsCollision()

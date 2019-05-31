@@ -27,7 +27,7 @@ public class Falling : MonoBehaviour
             if(!shade.activeSelf)
                 shade.SetActive(true);
             if(collision)
-                SoundManager.instance.PlayFallingCollision(0.5f);
+                SoundManager.instance.PlayFallingCollision(0.3f);
             collision = false;
             transform.position = hit.point + Vector3.up * radius;
         }
