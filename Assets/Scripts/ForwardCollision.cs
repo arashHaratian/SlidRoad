@@ -11,16 +11,18 @@ public class ForwardCollision : MonoBehaviour
     private RaycastHit hit;
     private Vector3 newPlayerPosition;
     private bool firstCollision;
-
+    private Movement movement;
     private void Start()
     {
         firstCollision = true;
+        movement = GetComponent<Movement>();
+        movement.enabled = false;
     }
 
     void Update()
     {
         endPoint = transform.position;
-        endPoint.z += radius + 0.05f;
+        endPoint.z += radius + 0.1f;
         if (!IsCollision())
         {
             newPlayerPosition = hit.point;
@@ -30,15 +32,19 @@ public class ForwardCollision : MonoBehaviour
             {
                 SoundManager.instance.GameOverCollision(0.15f);
                 firstCollision = false;
+                movement.enabled = true;
             }
         }
-        
+
         else
+        {
             firstCollision = true;
+            movement.enabled = false;
+        }
     }
 
     private bool IsCollision()
     {
-           return !Physics.Linecast(transform.position, endPoint, out hit, block);
+           return !Physics.Linecast(transform.position + Vector3.back * 0.2f, endPoint, out hit, block);
     }
 }
