@@ -42,6 +42,6 @@ public class Falling : MonoBehaviour
 
     private bool IsFalling()
     {
-        return !Physics.Linecast(transform.position, newPlayerPosition + (Vector3.down * radius), out hit, blockingLayer);
+        return !Physics.Linecast(transform.position + Vector3.up * 0.2f, newPlayerPosition + (Vector3.down * radius), out hit, blockingLayer);
     }
 }
