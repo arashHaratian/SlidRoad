@@ -32,7 +32,7 @@ public class DetectionOfPlayerMovement : MonoBehaviour
                     else if (num == 2)
                         RoadGenerator.Instance.SpawnTile(RoadGenerator.Instance.easyTilePrefabs);
 
-                    else if (num == 3 || num == 5)
+                    else if (num == 3 || num == 4)
                         RoadGenerator.Instance.SpawnTile(RoadGenerator.Instance.mediumTilePrefabs);
 
                     num++;
