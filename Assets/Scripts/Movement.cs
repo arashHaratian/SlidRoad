@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+//[RequireComponent(typeof(Rigidbody))]
 public class Movement : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -21,6 +21,6 @@ public class Movement : MonoBehaviour
     
     private void Update()
     {
-        transform.position = (transform.position +(((Vector3.forward) + speed) * Time.deltaTime));
+        transform.position += speed * Time.deltaTime;
     }
 }

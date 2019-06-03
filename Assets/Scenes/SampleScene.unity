@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1974,9 +1974,24 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3050578143369406971, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050578143369406964, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3050578143369406964, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 3745113664528203419, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6, type: 3}
-    - {fileID: 600905767123841903, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6, type: 3}
 --- !u!1001 &2021759495030287595
 PrefabInstance:
@@ -2866,22 +2881,22 @@ PrefabInstance:
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: hardTilePrefabs.Array.size
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: mediumTilePrefabs.Array.size
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: easyTilePrefabs.Array.size
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: withoutTheWallTilePrefabs.Array.size
-      value: 12
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
@@ -3006,7 +3021,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hardTilePrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 6538180724519859625, guid: da7313544fb6f6b4c82f605a5bf58b60,
+      objectReference: {fileID: 6464099595993472884, guid: 9287c2e83c66dc94fbd3ba73117d12d1,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
@@ -3018,7 +3033,7 @@ PrefabInstance:
         type: 3}
       propertyPath: mediumTilePrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 5820407183548393411, guid: c2e795d41463273458fda080257ae936,
+      objectReference: {fileID: 6464099595993472884, guid: 9287c2e83c66dc94fbd3ba73117d12d1,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
@@ -3156,7 +3171,7 @@ PrefabInstance:
         type: 3}
       propertyPath: easyTilePrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 6456020972721467751, guid: 8ad9603722a8cbc448c5f78f4e8ca97b,
+      objectReference: {fileID: 6464099595993472884, guid: 9287c2e83c66dc94fbd3ba73117d12d1,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
@@ -3216,7 +3231,7 @@ PrefabInstance:
         type: 3}
       propertyPath: withoutTheWallTilePrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 5181238193999906130, guid: 4755ff5a36c4db4429dca4ae53fd0b97,
+      objectReference: {fileID: 6464099595993472884, guid: 9287c2e83c66dc94fbd3ba73117d12d1,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
