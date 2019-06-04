@@ -35,7 +35,6 @@ public class DetectionOfPlayerMovement : MonoBehaviour
                 DeleteRoad();
             GameOverManager.instance.CalGameOverPosition(RoadGenerator.Instance.CurrentRoad);
             PackageManager.Instance.InsertPackage(RoadGenerator.Instance.ActiveTiles[3]);
-            PackageManager.Instance.BoxState();
         }
     }
 

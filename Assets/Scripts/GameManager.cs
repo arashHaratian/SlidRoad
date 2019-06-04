@@ -77,7 +77,6 @@ public class GameManager : MonoBehaviour
         PlayerManager.instance.particleEffect.SetActive(false);
         ExtraScoreText.Instance.FinishExtraScore();
         MusicManager.instance.RestartSpeed();
-        PackageManager.Instance.restart();
         Init();
     }
     public void Init()

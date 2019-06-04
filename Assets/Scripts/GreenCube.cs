@@ -18,8 +18,6 @@ public class GreenCube : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             isGreenEated = true;
-            PackageManager.Instance.numOfSkippedGreeenBoxes = 0;
-            BoxesStateText.Instance.UpdateText();
 
             if (ScoreManager.numberOfTakenGreenboxes < 2)
             {
@@ -47,7 +45,6 @@ public class GreenCube : MonoBehaviour
 		 Destroy(this.gameObject);
            
                 ShowCombo.Instance.UpdateText("COMBO " + ScoreManager.combo + "X");
-                PackageManager.Instance.CubeInRoads.Remove(gameObject);
                 gameObject.SetActive(false);
             }
         }

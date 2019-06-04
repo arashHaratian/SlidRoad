@@ -20,10 +20,8 @@ public class RedCube : MonoBehaviour
             ScoreManager.combo = 1;
             ShowCombo.Instance.UpdateText("");
             ScoreManager.numberOfTakenGreenboxes = 0;
-            PackageManager.Instance.numOfSkippedGreeenBoxes = 0;
             MusicManager.instance.startResetMusicSpeed();
             BackGroundColor.instance.Reset();
-            BoxesStateText.Instance.UpdateText();
             Destroy(this.gameObject);
         }
     }
