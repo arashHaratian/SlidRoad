@@ -49,6 +49,8 @@ public class GameManager : MonoBehaviour
         paused = false; 
         gameOver = false;
         RoadGenerator.Instance.Restart();
+        ColorManager.instance.firstStage();
+
     }
 
     public void Restart()
@@ -64,8 +66,6 @@ public class GameManager : MonoBehaviour
         //RoadGenerator.Instance.Restart();
         //player.transform.position = new Vector3(0, 2, 2);
         PlayerManager.instance.particleEffect.SetActive(false);
-        ExtraScoreText.Instance.FinishExtraScore();
-        ColorManager.instance.firstStage();
 
         Init();
     }
@@ -121,6 +121,7 @@ public class GameManager : MonoBehaviour
     public void resetPlayerAndCamera()
     {
         RoadGenerator.Instance.Restart();
+        ColorManager.instance.firstStage();
         player.transform.position = new Vector3(0, 2, 5);
         playerParticle.gameObject.SetActive(false);
         playerParticle.gameObject.SetActive(true);

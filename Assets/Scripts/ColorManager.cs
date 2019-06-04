@@ -33,19 +33,12 @@ public class ColorManager : MonoBehaviour
     public Material BlockMaterial;
     public Material DarkBlockMaterial;
 
-    [SerializeField]
-    private Color privateBlockMaterialColor;
-    private Color privateDarkBlockMaterialColor;
-
     private void Awake()
     {
         if (!instance)
             instance = this;
         else if (instance != this)
             Destroy(this.gameObject);
-
-        privateBlockMaterialColor = BlockMaterial.GetColor("Color_EB5D025E");
-        privateDarkBlockMaterialColor = DarkBlockMaterial.GetColor("Color_EB5D025E");
     }
     //public void normalStage()
     //{
@@ -59,24 +52,24 @@ public class ColorManager : MonoBehaviour
     {
         Fog.color = fogFirstModeColor;
         backGround.color = backGroundFirstModeColor;
-        privateBlockMaterialColor = firstModeColor;
-        privateDarkBlockMaterialColor = firstModeColorDark;
+        DarkBlockMaterial.SetColor("Color_EB5D025E", firstModeColorDark);
+        BlockMaterial.SetColor("Color_EB5D025E", firstModeColor);
     }
 
     public void secondStage()
     {
         Fog.color = fogSecondModeColor;
         backGround.color = backGroundSecondModeColor;
-        privateBlockMaterialColor = secondModeColor;
-        privateDarkBlockMaterialColor = secondModeColorDark;
+        DarkBlockMaterial.SetColor("Color_EB5D025E", secondModeColorDark);
+        BlockMaterial.SetColor("Color_EB5D025E", secondModeColor);
     }
 
     public void thirdStage()
     {
         Fog.color = fogThirdModeColor;
         backGround.color = backGroundThirdModeColor;
-        privateBlockMaterialColor = thirdModeColor;
-        privateDarkBlockMaterialColor = thirdModeColorDark;
+        DarkBlockMaterial.SetColor("Color_EB5D025E", thirdModeColorDark);
+        BlockMaterial.SetColor("Color_EB5D025E", thirdModeColor);
     }
 }
 

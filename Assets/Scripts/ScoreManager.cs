@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     public static int numberOfTakenGreenboxes;
     public float constScoreMult;
     public static int combo;
-    public HighscoreText gameOverHighscore;
+//    public HighscoreText gameOverHighscore;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +42,7 @@ public class ScoreManager : MonoBehaviour
         PlayerPrefs.SetFloat("HighScore", highScore);
         ShowCombo.Instance.UpdateText("");
         numberOfTakenGreenboxes = 0;
-        gameOverHighscore.enabled = false;
-        gameOverHighscore.enabled = true;
+//        gameOverHighscore.enabled = false;
+//        gameOverHighscore.enabled = true;
     }
 }
