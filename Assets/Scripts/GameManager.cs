@@ -65,6 +65,8 @@ public class GameManager : MonoBehaviour
         //player.transform.position = new Vector3(0, 2, 2);
         PlayerManager.instance.particleEffect.SetActive(false);
         ExtraScoreText.Instance.FinishExtraScore();
+        ColorManager.instance.firstStage();
+
         Init();
     }
     public void Init()
@@ -119,7 +121,7 @@ public class GameManager : MonoBehaviour
     public void resetPlayerAndCamera()
     {
         RoadGenerator.Instance.Restart();
-        player.transform.position = new Vector3(0, 2, 2);
+        player.transform.position = new Vector3(0, 2, 5);
         playerParticle.gameObject.SetActive(false);
         playerParticle.gameObject.SetActive(true);
     }

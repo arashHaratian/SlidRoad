@@ -9,8 +9,8 @@ public class Obstacle : MonoBehaviour
     {
         if (other.transform.CompareTag("Player"))
         {
-            GameOverManager.instance.Collision();
-            SoundManager.instance.GameOverCollision(0.3f);
+//            GameOverManager.instance.Collision();
+//            SoundManager.instance.GameOverCollision(0.3f);
         }
     }
 
