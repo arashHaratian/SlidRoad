@@ -1360,7 +1360,6 @@ MonoBehaviour:
   thirdModeColorDark: {r: 0.69803923, g: 0.42745098, b: 0.11372549, a: 0}
   BlockMaterial: {fileID: 2100000, guid: b10429a4f7c7de746ad2f27d3d4e9160, type: 2}
   DarkBlockMaterial: {fileID: 2100000, guid: d590b5adfdc2d0945817f3a7fbc7423a, type: 2}
-  privateBlockMaterialColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1762035499
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,6 +2073,11 @@ PrefabInstance:
         type: 3}
       propertyPath: gameOverHighscore
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302676832231542328, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6, type: 3}
