@@ -14,22 +14,13 @@ public class PlayerManager : MonoBehaviour
 //    private Rigidbody playerRigidbody;
     private Vector2 lastPosition; 
     private Vector2 currentPosition;
-    private Vector2 firstPosition;
     private float distanceOfX;
-    private float distanceOfY;
     private GameObject roadMapGameObject;
     private Rotation roadMap;
     private bool wrongTabPosition;
-    private float manualSpeed;
     
     public static PlayerManager instance = null;
-    public float maxManualSpeed;
-    public float minManualSpeed;
     
-    public Vector2 LastPosition
-    {
-        get { return lastPosition; }
-    }
 
     private void Start()
     {
@@ -53,7 +44,6 @@ public class PlayerManager : MonoBehaviour
     private void OnEnable()
     {
         this.GetComponent<ScoreManager>().enabled = true;
-        manualSpeed = 0;
         if (Input.touchCount > 0)
             lastPosition = Input.touches[0].position;
     }
@@ -65,28 +55,8 @@ public class PlayerManager : MonoBehaviour
         
     }
 
-    IEnumerator ResetManualSpeed()
-    {
-        if(manualSpeed > 0)
-            while (manualSpeed >= 0)
-            {
-                manualSpeed -= Time.deltaTime * 8;
-                yield return null;
-            }
-        else
-            while (manualSpeed <= 0)
-            {
-                manualSpeed += Time.deltaTime * 8;
-                yield return null;
-            }
-
-        manualSpeed = 0;
-    }
-
     private void Rotation()
     {
-        Movement.DeltaSpeed = manualSpeed * -1;
-        CameraFollow.Instance.RotateAround(transform, manualSpeed * -1);
 //#if UNITY_STANDALONE || UNITY_WEBPLAYER
         if (Input.GetMouseButtonDown(0))
         {
@@ -97,7 +67,6 @@ public class PlayerManager : MonoBehaviour
             }
             wrongTabPosition = false;
             lastPosition = Input.mousePosition;
-            firstPosition = lastPosition;
         }
         else if (Input.GetMouseButton(0))
         {
@@ -109,23 +78,10 @@ public class PlayerManager : MonoBehaviour
             roadMap.Rotate(distanceOfX);
             lastPosition = currentPosition;
 
-            distanceOfY = (currentPosition.y - firstPosition.y) / Screen.height * 4;
-            manualSpeed = distanceOfY * Movement.Speed.z;
-            if (manualSpeed > maxManualSpeed)
-                manualSpeed = maxManualSpeed;
-            else if (manualSpeed < minManualSpeed)
-                manualSpeed = minManualSpeed;
 //              playerDirection.transform.eulerAngles = new Vector3(0, playerDirection.transform.eulerAngles.y - rot, 0);
 //              playerDirectionRigidbody.angularVelocity = new Vector3(0, rot, 0);
         }
-        else
-        {
-            if (Input.GetMouseButtonUp(0))
-            {
-                StartCoroutine(ResetManualSpeed());
-            }
-        }
-        
+//        
 //#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
 //        if (Input.touchCount > 0)
 //        {

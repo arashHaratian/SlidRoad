@@ -10,7 +10,6 @@ public class ScoreManager : MonoBehaviour
     public static int numberOfTakenGreenboxes;
 
     public static int combo;
-    public static float manualSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +22,7 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score += Time.deltaTime * manualSpeed * combo;
+        score += Time.deltaTime * 7 * combo;
 
         if (score > highScore)
         {

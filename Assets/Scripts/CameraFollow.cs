@@ -19,24 +19,14 @@ public class CameraFollow : MonoBehaviour
         else if(Instance != this)
             Destroy(this.gameObject);
     }
-
     private void Start()
     {
         offset = transform.position - target.position;
         offset.y += 2;
     }
-
     private void FixedUpdate()
     {
         Vector3 targetCamPos = target.position + offset;
         transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
-    }
-
-    public void RotateAround(Transform target, float angle)
-    {
-        transform.RotateAround(target.position,Vector3.right,(angle - lastAngle) * 2);
-        lastAngle = angle;
-//        transform.LookAt(target, Vector3.up);
-
     }
 }
