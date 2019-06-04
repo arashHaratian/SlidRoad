@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System;
+using GameAnalyticsSDK.Setup;
 using UnityEngine;
 using Random = System.Random;
 
@@ -13,6 +14,7 @@ public class PackageManager: MonoBehaviour
     public GameObject[] badPackages;
     public GameObject[] goodPackage;
 
+    private List<GameObject> redCubeInScene;
     private List<Transform> goodPoints;
     private List<Transform> badPoints;
     private PackageChance currentRoad;
@@ -26,6 +28,7 @@ public class PackageManager: MonoBehaviour
             Destroy(this.gameObject);
         DontDestroyOnLoad(this.gameObject);
         
+        redCubeInScene = new List<GameObject>();
         goodPoints = new List<Transform>();
         badPoints = new List<Transform>();
     }
@@ -73,7 +76,7 @@ public class PackageManager: MonoBehaviour
         for(int i = 0; i < badPoints.Count; i++)
         {
             if (chance < probabilityBadPackage)
-               Instantiate(redCube, badPoints[i]);
+               redCubeInScene.Add(Instantiate(redCube, badPoints[i]));
         }
     }
     public void InsertPackage(GameObject road)
@@ -86,5 +89,11 @@ public class PackageManager: MonoBehaviour
         goodPoints.Clear();
         SpawnBadObject();
         badPoints.Clear();
+    }
+    public void removeRedCubes()
+    {
+        foreach (GameObject redCube in redCubeInScene)
+            Destroy(redCube);
+        redCubeInScene.Clear();
     }
 }
