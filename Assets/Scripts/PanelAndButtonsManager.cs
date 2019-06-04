@@ -13,6 +13,10 @@ public class PanelAndButtonsManager : MonoBehaviour
     //-------------------Refrences-------------------------------- 
     //mainmenu refs
     public Canvas mainMenuCanvas;
+    public Image muteLine;
+    public Button muteButton;
+    public Button helpButton;
+    public Slider tutotrial;
 
     //pasue refs
     public Canvas pauseCanvas;
@@ -67,13 +71,13 @@ public class PanelAndButtonsManager : MonoBehaviour
     }
     public void Restart()
     {
-       PlayMenu();        
-       GameManager.instance.Restart(); 
+        OpenMainMenu();
+        GameManager.instance.resetPlayerAndCamera();
     }
     public void TapToPlay()
     {
         PlayMenu();
-        GameManager.instance.Init();
+        GameManager.instance.Restart();
     }
     //-----------------------------------------------------
 
@@ -114,6 +118,22 @@ public class PanelAndButtonsManager : MonoBehaviour
     {
         gameOverCanvas.enabled = false;
         mainMenuCanvas.enabled = true;
+        helpButton.gameObject.SetActive(true);
+        muteButton.gameObject.SetActive(true);
+        tutotrial.gameObject.SetActive(false);
+    }
+
+    public void OnHelpButtonClick()
+    {
+        helpButton.gameObject.SetActive(false);
+        muteButton.gameObject.SetActive(false);
+        tutotrial.gameObject.SetActive(true);
+    }
+
+    public void OnMuteButtonClick()
+    {
+        SoundManager.instance.Mute(muteLine.IsActive());
+        muteLine.enabled = !muteLine.IsActive();
     }
 }
 

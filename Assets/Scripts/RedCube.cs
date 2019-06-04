@@ -16,6 +16,7 @@ public class RedCube : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            ColorManager.instance.firstStage();
             isRedEated = true;
             ScoreManager.combo = 1;
             ShowCombo.Instance.UpdateText("");

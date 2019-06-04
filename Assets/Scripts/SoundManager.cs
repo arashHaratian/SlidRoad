@@ -14,6 +14,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource movePlayer;
     public AudioSource  collisionSource;
     public AudioSource fallingCollision;
+    public AudioMixer masterMixer;
 
     private void Awake()
     {
@@ -69,9 +70,18 @@ public class SoundManager : MonoBehaviour
         movePlayer.volume = volume;
     }
 
-//    public void PlayGameOverFalling(float volume)
-//    {
-//        gameOverFalling.volume = volume;
-//        gameOverFalling.Play();
-//    }
+    public void Mute(bool stateOfVol)
+    {
+        if(!stateOfVol)
+            masterMixer.SetFloat("SFXVol", -80);
+        else
+            masterMixer.SetFloat("SFXVol", 0);
+
+    }
+
+    //    public void PlayGameOverFalling(float volume)
+    //    {
+    //        gameOverFalling.volume = volume;
+    //        gameOverFalling.Play();
+    //    }
 }

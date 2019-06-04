@@ -21,21 +21,27 @@ public class GreenCube : MonoBehaviour
             SoundManager.instance.PlayGetGreen(0.4f);
             if (ScoreManager.numberOfTakenGreenboxes < 2)
             {
+                if (ScoreManager.numberOfTakenGreenboxes == 1)
+                    ColorManager.instance.secondStage();
+
                 ScoreManager.numberOfTakenGreenboxes++;
                 ScoreManager.score += ScoreManager.numberOfTakenGreenboxes * 150;
-                ShowCombo.Instance.UpdateText("+" + ScoreManager.numberOfTakenGreenboxes * 150);
+                //ShowCombo.Instance.UpdateText("+" + ScoreManager.numberOfTakenGreenboxes * 150);
                 ShowCombo.Instance.FinishExtraScore();
                 Destroy(gameObject);
             }
             else
             {
- if (ScoreManager.numberOfTakenGreenboxes == 2)
-		GameAnalyticsEvent.Instance.apticMode();                    
+                if (ScoreManager.numberOfTakenGreenboxes == 2)
+                {
+                    GameAnalyticsEvent.Instance.apticMode();
+                    ColorManager.instance.thirdStage();
+                }
                 ScoreManager.numberOfTakenGreenboxes++;
                 ScoreManager.combo++;
-		 Destroy(this.gameObject);
+		        Destroy(this.gameObject);
            
-                ShowCombo.Instance.UpdateText("COMBO " + ScoreManager.combo + "X");
+                ShowCombo.Instance.UpdateText(ScoreManager.combo.ToString());
                 gameObject.SetActive(false);
             }
         }
