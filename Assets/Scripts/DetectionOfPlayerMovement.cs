@@ -9,6 +9,7 @@ public class DetectionOfPlayerMovement : MonoBehaviour
     public static int num ;
     private void OnTriggerEnter(Collider other)
     {
+        print("test");
         if (other.CompareTag("Player"))
         {
             if (RoadGenerator.Instance.counts <= 8)
