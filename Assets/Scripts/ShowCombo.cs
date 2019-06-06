@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.Rendering;
 using UnityEngine;
 using UnityEngine.Experimental.PlayerLoop;
 using UnityEngine.UI;
 
 public class ShowCombo : MonoBehaviour
 {
-    public static ShowCombo Instance = null;
-    private Text text;
+    public static ShowCombo Instance;
+    public Text comboSign;
+    public Text apticCombo;
+    public Text apticSign;
+    private Text comboNumber;
     private void Awake()
     {
         if (!Instance)
@@ -15,30 +19,42 @@ public class ShowCombo : MonoBehaviour
         else if(Instance != this)
             Destroy(this.gameObject);
 
-        text = GetComponent<Text>();
+        comboNumber = GetComponent<Text>();
+        comboSign.text = "";
+        apticSign.text = "";
+        apticCombo.text = "";
     }
 
     public void UpdateText(string newText)
     {
-        text.text = newText;
+        comboNumber.text = newText;
     }
 
-    public void FinishExtraScore()
+    public void ApticeScore(string score)
     {
-        StartCoroutine(FinishExtraScoreCoroutine());
-        StopCoroutine(FinishExtraScoreCoroutine());
+        StartCoroutine(StartApticeScore(score));
     }
 
-    private IEnumerator FinishExtraScoreCoroutine()
+    private IEnumerator StartApticeScore(string score)
     {
-        while (text.color.a >= 0)
+        apticCombo.text = score;
+        apticSign.text = "+";
+        yield return new WaitForSeconds(1);
+        while (apticCombo.color.a >= 0)
         {
-            text.color -= Color.black * Time.deltaTime;
+            apticCombo.color -= Color.black * Time.deltaTime;
+            apticSign.color -= Color.black * Time.deltaTime;
             yield return null;
         }
 
-        text.text = "";
-        text.color += Color.black;
-        
+        apticCombo.text = "";
+        apticSign.text = "";
+        apticCombo.color += Color.black;
+        apticCombo.color += Color.black;    
+    }
+
+    public void UpdateSign(string newChar)
+    {
+        comboSign.text = newChar;
     }
 }

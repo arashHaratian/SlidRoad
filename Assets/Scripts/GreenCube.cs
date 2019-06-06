@@ -20,39 +20,28 @@ public class GreenCube : MonoBehaviour
              isGreenEated = true;
             ScoreManager.numberOfTakenGreenboxes++;
             SoundManager.instance.PlayGetGreen(0.4f);
-
-
-            if (ScoreManager.numberOfTakenGreenboxes <= 4)
+        
+            if (ScoreManager.numberOfTakenGreenboxes < 4)
             {
                 if (ScoreManager.numberOfTakenGreenboxes == 1)     
                     ColorManager.instance.secondStage();   
                 
                     ScoreManager.combo++;
                     ShowCombo.Instance.UpdateText(ScoreManager.combo.ToString());
+                    ShowCombo.Instance.UpdateSign("x");
                     Destroy(gameObject);
             }
-            
-            
-            
-          else
+            else
             {                          
-
-              if (ScoreManager.numberOfTakenGreenboxes == 4)
+                if (ScoreManager.numberOfTakenGreenboxes == 4)
                 {
                     GameAnalyticsEvent.Instance.apticMode();                
-
                     ColorManager.instance.thirdStage();
-                    ScoreManager.score += ScoreManager.numberOfTakenGreenboxes * 50; 
-                    ShowCombo.Instance.UpdateText("+" + ScoreManager.numberOfTakenGreenboxes * 150);
                 }
-
-            else
-                {
-                    ScoreManager.score += ScoreManager.numberOfTakenGreenboxes * 50 + 50;
-                    ShowCombo.Instance.UpdateText("+" + ScoreManager.numberOfTakenGreenboxes * 150 + 50);                  
-                }
-                
-           Destroy(gameObject);
+            
+                ScoreManager.score += ScoreManager.numberOfTakenGreenboxes * 50 + 50;
+                ShowCombo.Instance.ApticeScore((ScoreManager.numberOfTakenGreenboxes * 50 + 50).ToString());
+                Destroy(gameObject);
          }           
       }
    }
