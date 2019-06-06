@@ -69,6 +69,7 @@ public class PanelAndButtonsManager : MonoBehaviour
     }
     public void Restart()
     {
+        GameManager.instance.paused = false;
         OpenMainMenu();
         GameManager.instance.resetPlayerAndCamera();
     }
