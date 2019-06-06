@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GreenCube : MonoBehaviour
 {
     public float speed;
-    public static bool isGreenEated = false;
+    public static bool isGreenEated;
 
     void Update()
     {
@@ -17,33 +17,43 @@ public class GreenCube : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            isGreenEated = true;
+             isGreenEated = true;
+            ScoreManager.numberOfTakenGreenboxes++;
             SoundManager.instance.PlayGetGreen(0.4f);
-            if (ScoreManager.numberOfTakenGreenboxes < 2)
-            {
-                if (ScoreManager.numberOfTakenGreenboxes == 1)
-                    ColorManager.instance.secondStage();
 
-                ScoreManager.numberOfTakenGreenboxes++;
-                ScoreManager.score += ScoreManager.numberOfTakenGreenboxes * 150;
-                //ShowCombo.Instance.UpdateText("+" + ScoreManager.numberOfTakenGreenboxes * 150);
-                ShowCombo.Instance.FinishExtraScore();
-                Destroy(gameObject);
-            }
-            else
+
+            if (ScoreManager.numberOfTakenGreenboxes <= 4)
             {
-                if (ScoreManager.numberOfTakenGreenboxes == 2)
-                {
-                    GameAnalyticsEvent.Instance.apticMode();
-                    ColorManager.instance.thirdStage();
-                }
-                ScoreManager.numberOfTakenGreenboxes++;
-                ScoreManager.combo++;
-		        Destroy(this.gameObject);
-           
-                ShowCombo.Instance.UpdateText(ScoreManager.combo.ToString());
-                gameObject.SetActive(false);
+                if (ScoreManager.numberOfTakenGreenboxes == 1)     
+                    ColorManager.instance.secondStage();   
+                
+                    ScoreManager.combo++;
+                    ShowCombo.Instance.UpdateText(ScoreManager.combo.ToString());
+                    Destroy(gameObject);
             }
-        }
-    }
+            
+            
+            
+          else
+            {                          
+
+              if (ScoreManager.numberOfTakenGreenboxes == 4)
+                {
+                    GameAnalyticsEvent.Instance.apticMode();                
+
+                    ColorManager.instance.thirdStage();
+                    ScoreManager.score += ScoreManager.numberOfTakenGreenboxes * 50; 
+                    ShowCombo.Instance.UpdateText("+" + ScoreManager.numberOfTakenGreenboxes * 150);
+                }
+
+            else
+                {
+                    ScoreManager.score += ScoreManager.numberOfTakenGreenboxes * 50 + 50;
+                    ShowCombo.Instance.UpdateText("+" + ScoreManager.numberOfTakenGreenboxes * 150 + 50);                  
+                }
+                
+           Destroy(gameObject);
+         }           
+      }
+   }
 }
