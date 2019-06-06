@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Dark-Blocks
-  m_Shader: {fileID: 4800000, guid: 7ba253aa2f90d0945b3ab7fa54fa860d, type: 3}
+  m_Shader: {fileID: 4800000, guid: 056bcdc9ed49db849977b2b389897133, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -48,8 +48,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_2C23BFA5: -0.4
     - Vector1_B5716E3: -0.4
     - Vector1_BAFB0D0C: 0.5
+    - Vector1_C3509AD1: 1
+    - Vector1_C686B406: 0
     - Vector1_E1623CF2: 0
     - _AlphaClip: 0
     - _Blend: 0
@@ -70,10 +73,14 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_23A40CCC: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 0}
     - Color_839683A9: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
+    - Color_B1D3B990: {r: 0.8207547, g: 0.8207547, b: 0.8207547, a: 0}
     - Color_C285BCB1: {r: 0.6415094, g: 0, b: 0, a: 0}
     - Color_D61D1777: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
+    - Color_EB5D025E: {r: 0.14509805, g: 0.23921569, b: 0.30980393, a: 0}
     - Vector4_3CBDACE5: {r: 0.02, g: 0.6, b: 0.5, a: 0}
-    - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - Vector4_8995800A: {r: 0, g: 0.6, b: 0.5, a: 0}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}

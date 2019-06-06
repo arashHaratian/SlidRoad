@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     private float Count = 0;
 
     #endregion
-
+    [SerializeField]private ParticleSystem playerParticle;
     private Coroutine lastGameLoop;
     private Coroutine lastRoundStarting;
     private PlayerManager playerManagerScript;
@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         DontDestroyOnLoad(this.gameObject);
 
+        playerParticle = player.GetComponentInChildren<ParticleSystem>();
         playerManagerScript = player.GetComponent<PlayerManager>();
     }
 
@@ -48,6 +49,8 @@ public class GameManager : MonoBehaviour
         paused = false; 
         gameOver = false;
         RoadGenerator.Instance.Restart();
+        ColorManager.instance.firstStage();
+
     }
 
     public void Restart()
@@ -55,13 +58,15 @@ public class GameManager : MonoBehaviour
         playerManagerScript.enabled = false;
         playerManagerScript.enabled = true;
         Count = 0;
-        StopCoroutine(lastRoundStarting);
-        StopCoroutine(lastGameLoop);
+        if(lastRoundStarting != null)
+            StopCoroutine(lastRoundStarting);
+        if (lastGameLoop != null)
+            StopCoroutine(lastGameLoop);
         gameOver = false;
-        RoadGenerator.Instance.Restart();
-        player.transform.position = new Vector3(0,2,2);
+        //RoadGenerator.Instance.Restart();
+        //player.transform.position = new Vector3(0, 2, 2);
         PlayerManager.instance.particleEffect.SetActive(false);
-        ExtraScoreText.Instance.FinishExtraScore();
+
         Init();
     }
     public void Init()
@@ -111,5 +116,14 @@ public class GameManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         GameAnalyticsEvent.Instance.getLastRoadBeforeExit(RoadGenerator.Instance.CurrentRoad.name);
+    }
+
+    public void resetPlayerAndCamera()
+    {
+        RoadGenerator.Instance.Restart();
+        ColorManager.instance.firstStage();
+        player.transform.position = new Vector3(0, 2, 5);
+        playerParticle.gameObject.SetActive(false);
+        playerParticle.gameObject.SetActive(true);
     }
 }
