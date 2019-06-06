@@ -11,8 +11,6 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
-    public GameObject particleEffect;
-
 //    private Rigidbody playerRigidbody;
     private Vector2 lastPosition; 
     private Vector2 currentPosition;
@@ -32,7 +30,6 @@ public class PlayerManager : MonoBehaviour
             instance = this;
         else if(instance != this)
             Destroy(this.gameObject);
-        particleEffect.SetActive(false);
         wrongTabPosition = false;
         playerPosition = new Vector3(0,0,0);
         radius = transform.localScale.x / 2;

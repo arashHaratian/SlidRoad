@@ -68,7 +68,6 @@ public class GameManager : MonoBehaviour
         RoadGenerator.Instance.StartGame();
         //RoadGenerator.Instance.Restart();
         //player.transform.position = new Vector3(0, 2, 2);
-        PlayerManager.instance.particleEffect.SetActive(false);
 
         Init();
     }
