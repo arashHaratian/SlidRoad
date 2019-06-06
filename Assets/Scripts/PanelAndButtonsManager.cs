@@ -114,6 +114,7 @@ public class PanelAndButtonsManager : MonoBehaviour
 
     public void OpenMainMenu()
     {
+        pauseCanvas.enabled = false;
         gameOverCanvas.enabled = false;
         mainMenuCanvas.enabled = true;
         helpButton.gameObject.SetActive(true);

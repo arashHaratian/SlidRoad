@@ -120,6 +120,7 @@ public class GameManager : MonoBehaviour
 
     public void resetPlayerAndCamera()
     {
+        Time.timeScale = 1;
         RoadGenerator.Instance.Restart();
         ColorManager.instance.firstStage();
         player.transform.position = new Vector3(0, 2, 5);
