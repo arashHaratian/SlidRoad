@@ -27,6 +27,9 @@ public class RoadGenerator : MonoBehaviour
     {
         get { return activeTiles[1]; }
     }
+
+    public bool startGame;
+
     private GameObject lastRoad;
     private Vector3 endOfRoad;
     private int firstSpawnCount = 5;
@@ -44,7 +47,7 @@ public class RoadGenerator : MonoBehaviour
             Destroy(gameObject);
         else
             _instance = this;
-        
+        startGame = false;
         activeTiles = new List<GameObject>();
     }
 
@@ -53,14 +56,20 @@ public class RoadGenerator : MonoBehaviour
         SpawnFirstTile();
         for (int i = 1; i < firstSpawnCount; i++)
         {
-            SpawnTile(easyTilePrefabs);
+            SpawnSmoothTile();
         }
-        
-     //   roadColor = Random.ColorHSV(Random.value, Random.value);
+
+        startGame = false;
+
+        //   roadColor = Random.ColorHSV(Random.value, Random.value);
         //MeshRenderer[] renderer =  activeTiles[0].GetComponentsInChildren<MeshRenderer> ();
-       // renderer[0].material.color = roadColor;
+        // renderer[0].material.color = roadColor;
     }
 
+    public void StartGame()
+    {
+        startGame = true;
+    }
     public void Restart()
     {
         if (activeTiles.Count > 0)
@@ -83,6 +92,11 @@ public class RoadGenerator : MonoBehaviour
         activeTiles.Add(lastRoad);
     }
 
+    public void SpawnSmoothTile()
+    {
+        lastRoad = Instantiate(firstTile, lastRoad.transform.GetChild(0).gameObject.transform.position, Quaternion.identity);
+        activeTiles.Add(lastRoad);
+    }
     private void SpawnFirstTile()
     {
         lastRoad = Instantiate(firstTile, Vector3.zero, Quaternion.identity);

@@ -51,8 +51,6 @@ public class PanelAndButtonsManager : MonoBehaviour
         gameOverCanvas.gameObject.SetActive(true);
         HUDCanvas.gameObject.SetActive(true);
         pauseCanvas.gameObject.SetActive(true);
-
-        Time.timeScale = 0;
     }
 
     //-------------------GameManager functions----------------------------------

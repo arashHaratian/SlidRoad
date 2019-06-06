@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour
         GameAnalytics.NewDesignEvent("test");
         paused = false; 
         gameOver = false;
+        gameSpeed = firstSpeed;
+        Movement.Speed = Vector3.back * firstSpeed;
         RoadGenerator.Instance.Restart();
         ColorManager.instance.firstStage();
 
@@ -63,6 +65,7 @@ public class GameManager : MonoBehaviour
         if (lastGameLoop != null)
             StopCoroutine(lastGameLoop);
         gameOver = false;
+        RoadGenerator.Instance.StartGame();
         //RoadGenerator.Instance.Restart();
         //player.transform.position = new Vector3(0, 2, 2);
         PlayerManager.instance.particleEffect.SetActive(false);
@@ -71,7 +74,6 @@ public class GameManager : MonoBehaviour
     }
     public void Init()
     {
-        Time.timeScale = 1;
         lastGameLoop = StartCoroutine(GameLoop());
     }
 
@@ -84,8 +86,6 @@ public class GameManager : MonoBehaviour
 
     IEnumerator RoundStarting()
     {
-        gameSpeed = firstSpeed;
-        Movement.Speed = Vector3.back * firstSpeed;
         while (!gameOver)
         {
             if(gameSpeed < maxSpeed)
@@ -108,9 +108,9 @@ public class GameManager : MonoBehaviour
         GameAnalyticsEvent.Instance.getGameOverRoad(RoadGenerator.Instance.CurrentRoad.name);
         GameAnalyticsEvent.Instance.getScore();
         playerManagerScript.enabled = false;
-        Time.timeScale = 0;
         PanelAndButtonsManager.instance.GameOver();
         SoundManager.instance.Reset();
+        Movement.Speed = Vector3.zero;
     }
 
     private void OnApplicationQuit()
@@ -125,5 +125,7 @@ public class GameManager : MonoBehaviour
         player.transform.position = new Vector3(0, 2, 5);
         playerParticle.gameObject.SetActive(false);
         playerParticle.gameObject.SetActive(true);
+        gameSpeed = firstSpeed;
+        Movement.Speed = Vector3.back * firstSpeed;
     }
 }
