@@ -1,8 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.Rendering;
 using UnityEngine;
-using UnityEngine.Experimental.PlayerLoop;
 using UnityEngine.UI;
 
 public class ShowCombo : MonoBehaviour
