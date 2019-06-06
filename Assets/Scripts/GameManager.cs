@@ -9,14 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
     public GameObject player;
-    public GameObject roadMap;
 
-    #region RatioGravity
-    public float firstGravity;
-    private float gravity;
-    private float gravitPerSpeed;
-    #endregion
-    
     #region GameSpeed
     public float firstSpeed;
     private float gameSpeed;
@@ -25,7 +18,7 @@ public class GameManager : MonoBehaviour
     private float Count = 0;
 
     #endregion
-
+    [SerializeField]private ParticleSystem playerParticle;
     private Coroutine lastGameLoop;
     private Coroutine lastRoundStarting;
     private PlayerManager playerManagerScript;
@@ -46,9 +39,8 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         DontDestroyOnLoad(this.gameObject);
 
+        playerParticle = player.GetComponentInChildren<ParticleSystem>();
         playerManagerScript = player.GetComponent<PlayerManager>();
-        gravitPerSpeed = firstGravity / firstSpeed;
-        gravity = firstGravity;
     }
 
     private void Start()
@@ -56,7 +48,11 @@ public class GameManager : MonoBehaviour
         GameAnalytics.NewDesignEvent("test");
         paused = false; 
         gameOver = false;
+        gameSpeed = firstSpeed;
+        Movement.Speed = Vector3.back * firstSpeed;
         RoadGenerator.Instance.Restart();
+        ColorManager.instance.firstStage();
+
     }
 
     public void Restart()
@@ -64,24 +60,19 @@ public class GameManager : MonoBehaviour
         playerManagerScript.enabled = false;
         playerManagerScript.enabled = true;
         Count = 0;
-        StopCoroutine(lastRoundStarting);
-        StopCoroutine(lastGameLoop);
-        roadMap.transform.rotation = Quaternion.identity;
+        if(lastRoundStarting != null)
+            StopCoroutine(lastRoundStarting);
+        if (lastGameLoop != null)
+            StopCoroutine(lastGameLoop);
         gameOver = false;
-        RoadGenerator.Instance.Restart();
-        player.transform.position = Vector3.up * 3;
-        GameOverManager.instance.Reset();
-        gravity = firstGravity;
-        Gravity.SetGravity(gravity);
-        BackGroundColor.instance.Reset();
-        PlayerManager.instance.particleEffect.SetActive(false);
-        ExtraScoreText.Instance.FinishExtraScore();
-        MusicManager.instance.RestartSpeed();
+        
+        //RoadGenerator.Instance.Restart();
+        //player.transform.position = new Vector3(0, 2, 2);
+
         Init();
     }
     public void Init()
     {
-        Time.timeScale = 1;
         lastGameLoop = StartCoroutine(GameLoop());
     }
 
@@ -94,9 +85,6 @@ public class GameManager : MonoBehaviour
 
     IEnumerator RoundStarting()
     {
-        MusicManager.instance.StartMusic();
-        gameSpeed = firstSpeed;
-        Movement.Speed = Vector3.back * firstSpeed;
         while (!gameOver)
         {
             if(gameSpeed < maxSpeed)
@@ -112,8 +100,6 @@ public class GameManager : MonoBehaviour
         gameSpeed += 0.5f;
         Movement.Speed -= Vector3.forward;
         Count = 0;
-        gravity = gameSpeed * gravitPerSpeed;
-        Gravity.SetGravity(gravity);
     }
 
     void GameIsOver()
@@ -121,13 +107,25 @@ public class GameManager : MonoBehaviour
         GameAnalyticsEvent.Instance.getGameOverRoad(RoadGenerator.Instance.CurrentRoad.name);
         GameAnalyticsEvent.Instance.getScore();
         playerManagerScript.enabled = false;
-        Time.timeScale = 0;
         PanelAndButtonsManager.instance.GameOver();
-        StartCoroutine(MusicManager.instance.gameOVerEffect()); 
+        SoundManager.instance.Reset();
+        Movement.Speed = Vector3.zero;
     }
 
     private void OnApplicationQuit()
     {
         GameAnalyticsEvent.Instance.getLastRoadBeforeExit(RoadGenerator.Instance.CurrentRoad.name);
+    }
+
+    public void resetPlayerAndCamera()
+    {
+        Time.timeScale = 1;
+        RoadGenerator.Instance.Restart();
+        ColorManager.instance.firstStage();
+        player.transform.position = new Vector3(0, 2, 5);
+        playerParticle.gameObject.SetActive(false);
+        playerParticle.gameObject.SetActive(true);
+        gameSpeed = firstSpeed;
+        Movement.Speed = Vector3.back * firstSpeed;
     }
 }
