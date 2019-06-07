@@ -112,6 +112,7 @@ public class GameManager : MonoBehaviour
         playerManagerScript.enabled = false;
         PanelAndButtonsManager.instance.GameOver();
         SoundManager.instance.Reset();
+        gameOverCollider.enabled = false;
         Movement.Speed = Vector3.zero;
     }
 

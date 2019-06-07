@@ -10,11 +10,11 @@ public class GameOverCollider : MonoBehaviour
 
     private void Update()
     {
-        if(player.transform.position.z < 5)
+        if(player.transform.position.z < 6)
         {
             player.transform.position += Vector3.forward * Time.deltaTime * sppedOfComingForward;
         }
-        if (player.transform.position.z > 5.1f)
+        if (player.transform.position.z > 6.1f)
             player.transform.position -= Vector3.forward * Time.deltaTime * sppedOfComingBack;
     }
     private void OnTriggerEnter(Collider other)
