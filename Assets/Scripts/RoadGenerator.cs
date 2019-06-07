@@ -32,7 +32,6 @@ public class RoadGenerator : MonoBehaviour
 
     private GameObject lastRoad;
     private Vector3 endOfRoad;
-    private int firstSpawnCount = 5;
     private int lastPrefabIndex;
     private List<GameObject> activeTiles;
     private Color roadColor ;
@@ -54,7 +53,7 @@ public class RoadGenerator : MonoBehaviour
     private void Init()
     {
         SpawnFirstTile();
-        for (int i = 1; i < firstSpawnCount; i++)
+        for (int i = 1; i < roadOnScreen - 1; i++)
         {
             SpawnSmoothTile();
         }
