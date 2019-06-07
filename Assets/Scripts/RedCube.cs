@@ -10,7 +10,7 @@ public class RedCube : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(Vector3.one * speed);
+        transform.Rotate(Vector3.up * speed);
     }
     private void OnTriggerEnter(Collider other)
     {
