@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
     public GameObject player;
+    public GameOverCollider gameOverCollider;
 
     #region GameSpeed
     public float firstSpeed;
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
 
         playerParticle = player.GetComponentInChildren<ParticleSystem>();
         playerManagerScript = player.GetComponent<PlayerManager>();
+        gameOverCollider.enabled = false;
     }
 
     private void Start()
@@ -57,6 +59,7 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
+        gameOverCollider.enabled = true;
         playerManagerScript.enabled = false;
         playerManagerScript.enabled = true;
         Count = 0;
@@ -122,7 +125,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         RoadGenerator.Instance.Restart();
         ColorManager.instance.firstStage();
-        player.transform.position = new Vector3(0, 2, 5);
+        player.transform.position = new Vector3(0, 2, 14.5f);
         playerParticle.gameObject.SetActive(false);
         playerParticle.gameObject.SetActive(true);
         gameSpeed = firstSpeed;
