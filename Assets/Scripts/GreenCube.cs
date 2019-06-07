@@ -9,10 +9,6 @@ public class GreenCube : MonoBehaviour
     public float speed;
     public static bool isGreenEated;
 
-    void Update()
-    {
-        transform.Rotate(Vector3.up * speed);
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))

@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: green
-  m_Shader: {fileID: 4800000, guid: 056bcdc9ed49db849977b2b389897133, type: 3}
+  m_Shader: {fileID: 4800000, guid: e0b8d2cac47656144b46ad92f4ef1e22, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -57,8 +57,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_2C23BFA5: 0
-    - Vector1_C3509AD1: 0.5
-    - Vector1_C686B406: -0.1
+    - Vector1_83F6B6AD: 0.7
+    - Vector1_970FB7F9: 4
+    - Vector1_A737ED8B: 1
+    - Vector1_C3509AD1: 1
+    - Vector1_C686B406: -0.01
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -76,9 +79,10 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - Color_23A40CCC: {r: 0.052135095, g: 0.3301887, b: 0, a: 0}
-    - Color_B1D3B990: {r: 0.2911069, g: 0.4056604, b: 0.15881987, a: 0}
-    - Color_EB5D025E: {r: 0.08661711, g: 0.93333334, b: 0.039215684, a: 0}
-    - Vector4_8995800A: {r: 0, g: 0.25, b: -0.7, a: 0}
+    - Color_23A40CCC: {r: 0.23728679, g: 0.5566038, b: 0, a: 0}
+    - Color_7A5B9D85: {r: 0.8598987, g: 1, b: 0.1462264, a: 1}
+    - Color_B1D3B990: {r: 0.43688422, g: 0.9433962, b: 0.10234961, a: 0}
+    - Color_EB5D025E: {r: 0.21535873, g: 1, b: 0, a: 0}
+    - Vector4_8995800A: {r: -1, g: 1, b: 0, a: 0}
     - _Color: {r: 0, g: 1, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

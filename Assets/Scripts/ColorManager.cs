@@ -16,19 +16,32 @@ public class ColorManager : MonoBehaviour
     //public Color normalModeColorDark;
 
     public Color firstModeColor;
+    public Color firstModeColorDark;
     public Color fogFirstModeColor;
     public Color backGroundFirstModeColor;
-    public Color firstModeColorDark;
+    public Color textureTintFirst;
+    public Color secondTintFirst;
+    public Color darkTextureTintFirst;
+    public Color darkSecondTintFirst;
+
 
     public Color secondModeColor;
+    public Color secondModeColorDark;
     public Color fogSecondModeColor;
     public Color backGroundSecondModeColor;
-    public Color secondModeColorDark;
+    public Color textureTintSecond;
+    public Color secondTintSecond;
+    public Color darkTextureTintSecond;
+    public Color darkSecondTintSecond;
 
     public Color thirdModeColor;
+    public Color thirdModeColorDark;
     public Color fogThirdModeColor;
     public Color backGroundThirdModeColor;
-    public Color thirdModeColorDark;
+    public Color textureTintThird;
+    public Color secondTintThird;
+    public Color darkTextureTintThird;
+    public Color darkSecondTintThird;
 
     public Material BlockMaterial;
     public Material DarkBlockMaterial;
@@ -40,12 +53,6 @@ public class ColorManager : MonoBehaviour
         else if (instance != this)
             Destroy(this.gameObject);
     }
-    //public void normalStage()
-    //{
-    //    mainCamera.backgroundColor = CameraNormalModeColor;
-    //    BlockMaterialColor = normalModeColor;
-    //    DarkBlockMaterialColor = normalModeColorDark;
-    //}
 
 
     public void firstStage()
@@ -54,6 +61,10 @@ public class ColorManager : MonoBehaviour
         backGround.color = backGroundFirstModeColor;
         DarkBlockMaterial.SetColor("Color_EB5D025E", firstModeColorDark);
         BlockMaterial.SetColor("Color_EB5D025E", firstModeColor);
+        BlockMaterial.SetColor("Color_B1D3B990", textureTintFirst);
+        BlockMaterial.SetColor("Color_23A40CCC", secondTintFirst);
+        DarkBlockMaterial.SetColor("Color_B1D3B990", darkTextureTintFirst);
+        DarkBlockMaterial.SetColor("Color_23A40CCC", darkSecondTintFirst);
     }
 
     public void secondStage()
@@ -62,6 +73,10 @@ public class ColorManager : MonoBehaviour
         backGround.color = backGroundSecondModeColor;
         DarkBlockMaterial.SetColor("Color_EB5D025E", secondModeColorDark);
         BlockMaterial.SetColor("Color_EB5D025E", secondModeColor);
+        BlockMaterial.SetColor("Color_B1D3B990", textureTintSecond);
+        BlockMaterial.SetColor("Color_23A40CCC", secondTintSecond);
+        DarkBlockMaterial.SetColor("Color_B1D3B990", darkTextureTintSecond);
+        DarkBlockMaterial.SetColor("Color_23A40CCC", darkSecondTintSecond);
     }
 
     public void thirdStage()
@@ -70,12 +85,13 @@ public class ColorManager : MonoBehaviour
         backGround.color = backGroundThirdModeColor;
         DarkBlockMaterial.SetColor("Color_EB5D025E", thirdModeColorDark);
         BlockMaterial.SetColor("Color_EB5D025E", thirdModeColor);
+        BlockMaterial.SetColor("Color_B1D3B990", textureTintThird);
+        BlockMaterial.SetColor("Color_23A40CCC", secondTintThird);
+        DarkBlockMaterial.SetColor("Color_B1D3B990", darkTextureTintThird);
+        DarkBlockMaterial.SetColor("Color_23A40CCC", darkSecondTintThird);
     }
 }
 
 
-
-//reset Anime or slider script
-//set anchor of ui
-//2first extra score
-//delete quit code
+//anim boxes
+//particle script

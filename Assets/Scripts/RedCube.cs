@@ -8,10 +8,6 @@ public class RedCube : MonoBehaviour
     public float speed;
     public static bool isRedEated = false;
 
-    void Update()
-    {
-        transform.Rotate(Vector3.up * speed);
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
