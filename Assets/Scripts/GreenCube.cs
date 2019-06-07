@@ -27,8 +27,7 @@ public class GreenCube : MonoBehaviour
                     ColorManager.instance.secondStage();   
                 
                     ScoreManager.combo++;
-                    ShowCombo.Instance.UpdateText(ScoreManager.combo.ToString());
-                    ShowCombo.Instance.UpdateSign("x");
+                    ShowCombo.Instance.UpdateText(ScoreManager.combo.ToString(),"x");
                     Destroy(gameObject);
             }
             else

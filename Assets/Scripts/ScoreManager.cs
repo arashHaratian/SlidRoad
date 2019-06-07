@@ -40,7 +40,7 @@ public class ScoreManager : MonoBehaviour
     private void OnDisable()
     {
         PlayerPrefs.SetFloat("HighScore", highScore);
-        ShowCombo.Instance.UpdateText("");
+        ShowCombo.Instance.UpdateText("","");
         numberOfTakenGreenboxes = 0;
 //        gameOverHighscore.enabled = false;
 //        gameOverHighscore.enabled = true;

@@ -19,8 +19,7 @@ public class RedCube : MonoBehaviour
             ColorManager.instance.firstStage();
             isRedEated = true;
             ScoreManager.combo = 1;
-            ShowCombo.Instance.UpdateText("");
-            ShowCombo.Instance.UpdateSign("");
+            ShowCombo.Instance.UpdateText("","");
             ScoreManager.numberOfTakenGreenboxes = 0;
             PackageManager.Instance.removeRedCubes();
             SoundManager.instance.PlayGetRed(0.5f);

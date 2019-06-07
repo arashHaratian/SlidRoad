@@ -5,9 +5,13 @@ using UnityEngine.UI;
 public class ShowCombo : MonoBehaviour
 {
     public static ShowCombo Instance;
+    public GameObject apticeText;
     public Text comboSign;
     public Text apticCombo;
     public Text apticSign;
+    
+    private Animation comboAnimation;
+    private Animation apticAnimation;
     private Text comboNumber;
     private void Awake()
     {
@@ -17,41 +21,25 @@ public class ShowCombo : MonoBehaviour
             Destroy(this.gameObject);
 
         comboNumber = GetComponent<Text>();
+        apticAnimation = apticeText.GetComponent<Animation>();
+        comboAnimation = GetComponent<Animation>();
+        comboNumber.text = "";
         comboSign.text = "";
         apticSign.text = "";
         apticCombo.text = "";
     }
 
-    public void UpdateText(string newText)
+    public void UpdateText(string newText, string sign)
     {
         comboNumber.text = newText;
+        comboSign.text = sign;
+        comboAnimation.Play();
     }
 
     public void ApticeScore(string score)
     {
-        StartCoroutine(StartApticeScore(score));
-    }
-
-    private IEnumerator StartApticeScore(string score)
-    {
         apticCombo.text = score;
         apticSign.text = "+";
-        yield return new WaitForSeconds(1);
-        while (apticCombo.color.a >= 0)
-        {
-            apticCombo.color -= Color.black * Time.deltaTime;
-            apticSign.color -= Color.black * Time.deltaTime;
-            yield return null;
-        }
-
-        apticCombo.text = "";
-        apticSign.text = "";
-        apticCombo.color += Color.black;
-        apticCombo.color += Color.black;    
-    }
-
-    public void UpdateSign(string newChar)
-    {
-        comboSign.text = newChar;
+        apticAnimation.Play();
     }
 }
