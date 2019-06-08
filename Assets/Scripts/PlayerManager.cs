@@ -11,6 +11,10 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
+    public GameObject tailParticles;
+    public GameObject smokeParticles;
+    public GameObject fireParticles;
+
 //    private Rigidbody playerRigidbody;
     private Vector2 lastPosition; 
     private Vector2 currentPosition;
@@ -39,6 +43,9 @@ public class PlayerManager : MonoBehaviour
 
     private void OnDisable()
     {
+        tailParticles.SetActive(true);
+        fireParticles.SetActive(false);
+        smokeParticles.SetActive(false);
         this.GetComponent<ScoreManager>().enabled = false;
     }
 
