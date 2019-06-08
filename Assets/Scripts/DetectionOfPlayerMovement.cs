@@ -23,7 +23,7 @@ public class DetectionOfPlayerMovement : MonoBehaviour
                 else
                 {
 
-                    if (RoadGenerator.Instance.counts <= 25)
+                    if (RoadGenerator.Instance.counts <= 30)
                     {
 
                         if (num <= 1)
@@ -44,7 +44,7 @@ public class DetectionOfPlayerMovement : MonoBehaviour
                     else
                         RoadGenerator.Instance.SpawnTile(RoadGenerator.Instance.withoutTheWallTilePrefabs);
                 }
-                PackageManager.Instance.InsertPackage(RoadGenerator.Instance.ActiveTiles[4]);
+                PackageManager.Instance.InsertPackage(RoadGenerator.Instance.ActiveTiles[3]);
             }
             else
                 RoadGenerator.Instance.SpawnSmoothTile();

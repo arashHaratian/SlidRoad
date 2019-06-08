@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2181,6 +2181,16 @@ PrefabInstance:
       propertyPath: gameOverCollider
       value: 
       objectReference: {fileID: 1627092103}
+    - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
+        type: 3}
+      propertyPath: timeIncreaseSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144813134036261587, guid: 3c1b682abd2b7064d824651e0f4eaa33,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 19
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c1b682abd2b7064d824651e0f4eaa33, type: 3}
 --- !u!1001 &6242271564323680421
@@ -2814,7 +2824,7 @@ PrefabInstance:
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: easyTilePrefabs.Array.size
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
@@ -2824,7 +2834,7 @@ PrefabInstance:
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: easyTilePrefabs.Array.size
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
@@ -3027,30 +3037,31 @@ PrefabInstance:
         type: 3}
       propertyPath: easyTilePrefabs.Array.data[6]
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
-        type: 3}
-      propertyPath: easyTilePrefabs.Array.data[7]
-      value: 
-      objectReference: {fileID: 6464099595993472884, guid: 9287c2e83c66dc94fbd3ba73117d12d1,
-        type: 3}
-    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
-        type: 3}
-      propertyPath: easyTilePrefabs.Array.data[8]
-      value: 
-      objectReference: {fileID: 6464099595993472884, guid: 9287c2e83c66dc94fbd3ba73117d12d1,
-        type: 3}
-    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
-        type: 3}
-      propertyPath: easyTilePrefabs.Array.data[7]
-      value: 
       objectReference: {fileID: 7352844860348743679, guid: 3a5553d50b8fcb14fbf6fd58eabb458f,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
-      propertyPath: easyTilePrefabs.Array.data[8]
+      propertyPath: easyTilePrefabs.Array.data[7]
       value: 
       objectReference: {fileID: 7253584168042880688, guid: 48039ddab2cb41d41bbae935ea36d3cd,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: easyTilePrefabs.Array.data[8]
+      value: 
+      objectReference: {fileID: 6464099595993472884, guid: 9287c2e83c66dc94fbd3ba73117d12d1,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: easyTilePrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 7253584168042880688, guid: 48039ddab2cb41d41bbae935ea36d3cd,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: easyTilePrefabs.Array.data[8]
+      value: 
+      objectReference: {fileID: 6464099595993472884, guid: 9287c2e83c66dc94fbd3ba73117d12d1,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
@@ -3289,7 +3300,7 @@ PrefabInstance:
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: roadOnScreen
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a55b368d5bc33740b33ff1d62b7078e, type: 3}

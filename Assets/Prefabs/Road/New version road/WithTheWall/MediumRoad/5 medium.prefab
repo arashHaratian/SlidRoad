@@ -305,6 +305,7 @@ Transform:
   - {fileID: 1352191163226604165}
   - {fileID: 2167069180622852817}
   - {fileID: 8835614553659553936}
+  - {fileID: 8896618155309308171}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -333,7 +334,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   probabiltyInsertGoodPackage: 30
-  probabiltyInsertBadPackage: 40
+  probabiltyInsertBadPackage: 60
+--- !u!1 &5897081940360946417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8896618155309308171}
+  m_Layer: 0
+  m_Name: Spawn Bad Thing (2)
+  m_TagString: BadPoint
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8896618155309308171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5897081940360946417}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4, y: 2, z: 28.95}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5506398742519935817}
+  m_RootOrder: 171
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8257175367404776426
 GameObject:
   m_ObjectHideFlags: 0
