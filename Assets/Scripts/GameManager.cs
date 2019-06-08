@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     private Coroutine lastGameLoop;
     private Coroutine lastRoundStarting;
     private PlayerManager playerManagerScript;
+
     private bool gameOver;
     public bool paused;
 
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
         gameOver = false;
         gameSpeed = firstSpeed;
         Movement.Speed = Vector3.back * firstSpeed;
+        playerManagerScript.setActiceScoreManager(false);
         RoadGenerator.Instance.Restart();
         ColorManager.instance.firstStage();
 
@@ -60,8 +62,7 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         gameOverCollider.enabled = true;
-        playerManagerScript.enabled = false;
-        playerManagerScript.enabled = true;
+        playerManagerScript.setActiceScoreManager(true);
         Count = 0;
         if(lastRoundStarting != null)
             StopCoroutine(lastRoundStarting);
@@ -109,7 +110,7 @@ public class GameManager : MonoBehaviour
     {
         GameAnalyticsEvent.Instance.getGameOverRoad(RoadGenerator.Instance.CurrentRoad.name);
         GameAnalyticsEvent.Instance.getScore();
-        playerManagerScript.enabled = false;
+        playerManagerScript.setActiceScoreManager(false);
         PanelAndButtonsManager.instance.GameOver();
         SoundManager.instance.Reset();
         gameOverCollider.enabled = false;

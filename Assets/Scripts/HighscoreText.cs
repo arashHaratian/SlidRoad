@@ -8,10 +8,25 @@ using UnityEngine.UI;
 public class HighscoreText : MonoBehaviour
 {
     [SerializeField] private Text _highScoreText;
-
-    public void OnEnable()
+    private float lastHighScore;
+    private void Start()
     {
         _highScoreText = GetComponent<Text>();
-        _highScoreText.text = ((int)PlayerPrefs.GetFloat("HighScore")).ToString();
+        lastHighScore = PlayerPrefs.GetFloat("HighScore");
+        _highScoreText.text = ((int)lastHighScore).ToString();
+    }
+
+    private void Update()
+    {
+        if (lastHighScore != ScoreManager.highScore)
+        {
+            updateText();
+            lastHighScore = ScoreManager.highScore;
+        }
+    }
+
+    public void updateText()
+    {
+        _highScoreText.text = ((int)ScoreManager.highScore).ToString();
     }
 }
