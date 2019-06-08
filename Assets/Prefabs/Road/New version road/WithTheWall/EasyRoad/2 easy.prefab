@@ -6142,6 +6142,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.11, y: 2.11, z: 2.11}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &4333333110318512736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5310107835022028942}
+  m_Layer: 0
+  m_Name: Spawn Bad Thing (1)
+  m_TagString: BadPoint
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5310107835022028942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4333333110318512736}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 11}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6165154809159059750}
+  m_RootOrder: 146
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4335157250621626589
 GameObject:
   m_ObjectHideFlags: 0
@@ -9043,6 +9073,7 @@ Transform:
   - {fileID: 4929210139068376568}
   - {fileID: 5052152941397996575}
   - {fileID: 3450032702947573699}
+  - {fileID: 5310107835022028942}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -9070,8 +9101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e1ec4de8f4c89b47b92d1c0abd2282e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  probabiltyInsertGoodPackage: 20
-  probabiltyInsertBadPackage: 40
+  probabiltyInsertGoodPackage: 10
+  probabiltyInsertBadPackage: 50
 --- !u!1 &6595765704871574668
 GameObject:
   m_ObjectHideFlags: 0
