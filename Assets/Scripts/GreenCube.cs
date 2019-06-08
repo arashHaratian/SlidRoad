@@ -25,6 +25,12 @@ public class GreenCube : MonoBehaviour
                     ScoreManager.combo++;
                     ShowCombo.Instance.UpdateText(ScoreManager.combo.ToString(),"x");
                     Destroy(gameObject);
+                if (ScoreManager.numberOfTakenGreenboxes == 3)
+                {
+                    PlayerManager.instance.tailParticles.SetActive(false);
+                    PlayerManager.instance.smokeParticles.SetActive(true);
+                }
+
             }
             else
             {                          
@@ -33,7 +39,12 @@ public class GreenCube : MonoBehaviour
                     GameAnalyticsEvent.Instance.apticMode();                
                     ColorManager.instance.thirdStage();
                 }
-            
+                if (ScoreManager.numberOfTakenGreenboxes == 7)
+                {
+                    PlayerManager.instance.smokeParticles.SetActive(false);
+                    PlayerManager.instance.fireParticles.SetActive(true);
+                }
+                
                 ScoreManager.score += ScoreManager.numberOfTakenGreenboxes * 50 + 50;
                 ShowCombo.Instance.ApticeScore((ScoreManager.numberOfTakenGreenboxes * 50 + 50).ToString());
                 Destroy(gameObject);
