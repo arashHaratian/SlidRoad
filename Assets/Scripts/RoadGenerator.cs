@@ -20,7 +20,7 @@ public class RoadGenerator : MonoBehaviour
     public GameObject[] mediumTilePrefabs;
     public GameObject[] hardTilePrefabs;
     public GameObject[] withoutTheWallTilePrefabs;
-    public int roadOnScreen = 6;
+    public int roadOnScreen ;
     public int counts;
 
     public GameObject CurrentRoad
