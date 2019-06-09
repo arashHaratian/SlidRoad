@@ -41,20 +41,20 @@ public class PlayerManager : MonoBehaviour
     }
 
 
-    private void OnDisable()
-    {
-        tailParticles.SetActive(true);
-        fireParticles.SetActive(false);
-        smokeParticles.SetActive(false);
-        this.GetComponent<ScoreManager>().enabled = false;
-    }
+    //private void OnDisable()
+    //{
+    //    tailParticles.SetActive(true);
+    //    fireParticles.SetActive(false);
+    //    smokeParticles.SetActive(false);
+    //    this.GetComponent<ScoreManager>().enabled = false;
+    //}
 
-    private void OnEnable()
-    {
-        this.GetComponent<ScoreManager>().enabled = true;
-        if (Input.touchCount > 0)
-            lastPosition = Input.touches[0].position;
-    }
+    //private void OnEnable()
+    //{
+    //    this.GetComponent<ScoreManager>().enabled = true;
+    //    if (Input.touchCount > 0)
+    //        lastPosition = Input.touches[0].position;
+    //}
 
     private void Update()
     {
@@ -163,7 +163,10 @@ public class PlayerManager : MonoBehaviour
             }
         }
     }
-
+    public void setActiceScoreManager(bool state)
+    {
+        this.GetComponent<ScoreManager>().enabled = state;
+    }
     bool CanMove(Vector3 start, Vector3 end, out RaycastHit hit)
     {
         return !Physics.Linecast(start, end, out hit, blockingLayer);
