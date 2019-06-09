@@ -197,4 +197,12 @@ public class PlayerManager : MonoBehaviour
             yield return null;
         }
     }
+
+    public void Reset()
+    {
+        tailParticles.SetActive(true);
+        fireParticles.SetActive(false);
+        smokeParticles.SetActive(false);
+        transform.position = new Vector3(0, 2, 14.5f);
+    }
 }
