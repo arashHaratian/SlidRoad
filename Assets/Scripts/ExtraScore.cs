@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class ExtraScore : MonoBehaviour
 {
-    public int waitTime_;
-    
     private float extraScore_;
     private bool isCollisionStay_;
     private void Awake()

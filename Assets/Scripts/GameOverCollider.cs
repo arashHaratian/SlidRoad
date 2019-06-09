@@ -6,6 +6,7 @@ public class GameOverCollider : MonoBehaviour
 {
     public float sppedOfComingBack;
     public float sppedOfComingForward;
+    public GameObject roadMap;
     public GameObject player;
 
     private void Update()
@@ -13,9 +14,14 @@ public class GameOverCollider : MonoBehaviour
         if(player.transform.position.z < 6)
         {
             player.transform.position += Vector3.forward * Time.deltaTime * sppedOfComingForward;
+            roadMap.transform.position += Vector3.forward * Time.deltaTime * sppedOfComingForward;
         }
+
         if (player.transform.position.z > 6.1f)
+        {
             player.transform.position -= Vector3.forward * Time.deltaTime * sppedOfComingBack;
+            roadMap.transform.position -= Vector3.forward * Time.deltaTime * sppedOfComingBack;
+        }
     }
     private void OnTriggerEnter(Collider other)
     {

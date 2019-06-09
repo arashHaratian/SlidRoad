@@ -51,8 +51,8 @@ public class GameManager : MonoBehaviour
         GameAnalytics.NewDesignEvent("test");
         paused = false; 
         gameOver = false;
-        gameSpeed = firstSpeed;
-        Movement.Speed = Vector3.back * firstSpeed;
+        gameSpeed = 0;
+        Movement.Speed = Vector3.zero;
         playerManagerScript.setActiceScoreManager(false);
         RoadGenerator.Instance.Restart();
         ColorManager.instance.firstStage();
@@ -64,12 +64,13 @@ public class GameManager : MonoBehaviour
         gameOverCollider.enabled = true;
         playerManagerScript.setActiceScoreManager(true);
         Count = 0;
+        gameSpeed = firstSpeed;
+        Movement.Speed = Vector3.back * firstSpeed;
         if(lastRoundStarting != null)
             StopCoroutine(lastRoundStarting);
         if (lastGameLoop != null)
             StopCoroutine(lastGameLoop);
         gameOver = false;
-        RoadGenerator.Instance.StartGame();
         //RoadGenerator.Instance.Restart();
         //player.transform.position = new Vector3(0, 2, 2);
 
@@ -130,7 +131,7 @@ public class GameManager : MonoBehaviour
         player.transform.position = new Vector3(0, 2, 14.5f);
         playerParticle.gameObject.SetActive(false);
         playerParticle.gameObject.SetActive(true);
-        gameSpeed = firstSpeed;
-        Movement.Speed = Vector3.back * firstSpeed;
+        gameSpeed = 0;
+        Movement.Speed = Vector3.zero;
     }
 }

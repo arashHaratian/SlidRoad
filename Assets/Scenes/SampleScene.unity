@@ -1390,6 +1390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sppedOfComingBack: 2
   sppedOfComingForward: 1.5
+  roadMap: {fileID: 1797551639}
   player: {fileID: 3745113664528203418}
 --- !u!114 &1627092104
 MonoBehaviour:
@@ -1521,7 +1522,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797551639}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 14.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2198,8 +2199,13 @@ PrefabInstance:
     - target: {fileID: 7302676832231542334, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
         type: 3}
       propertyPath: gravity
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7302676832231542328, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
+        type: 3}
+      propertyPath: roadMapGameObject
+      value: 
+      objectReference: {fileID: 1797551639}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6, type: 3}
 --- !u!1001 &6323219213510410811
@@ -2563,17 +2569,17 @@ PrefabInstance:
     - target: {fileID: 4223530653085803342, guid: 22f27581b0254a54494e759a29829bc9,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4223530653085803342, guid: 22f27581b0254a54494e759a29829bc9,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4223530653085803342, guid: 22f27581b0254a54494e759a29829bc9,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -26
       objectReference: {fileID: 0}
     - target: {fileID: 4223530653085803342, guid: 22f27581b0254a54494e759a29829bc9,
         type: 3}
@@ -2583,7 +2589,7 @@ PrefabInstance:
     - target: {fileID: 4223530653085803342, guid: 22f27581b0254a54494e759a29829bc9,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 425.5
       objectReference: {fileID: 0}
     - target: {fileID: 5204744694814402376, guid: 22f27581b0254a54494e759a29829bc9,
         type: 3}
@@ -2738,7 +2744,7 @@ PrefabInstance:
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: easyTilePrefabs.Array.size
-      value: 13
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
@@ -2759,13 +2765,13 @@ PrefabInstance:
         type: 3}
       propertyPath: easyTilePrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 135730370273546291, guid: a5d33695c7c387a4b9cc39ffd6024486,
+      objectReference: {fileID: 8117787148328415884, guid: f0209d63feed5c14995cdd29c005d39b,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: easyTilePrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 5106723719098883742, guid: b57577e6dd2391e4f92df617f76092e3,
+      objectReference: {fileID: 135730370273546291, guid: a5d33695c7c387a4b9cc39ffd6024486,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
@@ -2833,6 +2839,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4084839427861057654, guid: e5940fed781daef49a9c4489abbb9df3,
         type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: firstTile
+      value: 
+      objectReference: {fileID: 135730370273546291, guid: a5d33695c7c387a4b9cc39ffd6024486,
+        type: 3}
+    - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
+        type: 3}
+      propertyPath: roadMap
+      value: 
+      objectReference: {fileID: 1797551639}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a55b368d5bc33740b33ff1d62b7078e, type: 3}
 --- !u!114 &8826809967629812294

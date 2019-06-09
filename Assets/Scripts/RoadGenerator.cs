@@ -19,17 +19,14 @@ public class RoadGenerator : MonoBehaviour
     public GameObject[] easyTilePrefabs;
     public GameObject[] mediumTilePrefabs;
     public GameObject[] hardTilePrefabs;
-    public GameObject[] withoutTheWallTilePrefabs;
-    public int roadOnScreen ;
+    public GameObject roadMap;
+    public int roadOnScreen;
     public int counts;
 
     public GameObject CurrentRoad
     {
         get { return activeTiles[1]; }
     }
-
-    public bool startGame;
-
     private GameObject lastRoad;
     private Vector3 endOfRoad;
     private int lastPrefabIndex;
@@ -46,7 +43,7 @@ public class RoadGenerator : MonoBehaviour
             Destroy(gameObject);
         else
             _instance = this;
-        startGame = false;
+        
         activeTiles = new List<GameObject>();
     }
 
@@ -55,20 +52,14 @@ public class RoadGenerator : MonoBehaviour
         SpawnFirstTile();
         for (int i = 1; i < roadOnScreen - 1; i++)
         {
-            SpawnSmoothTile();
+            SpawnTile(easyTilePrefabs);
         }
-
-        startGame = false;
-
-        //   roadColor = Random.ColorHSV(Random.value, Random.value);
+        
+     //   roadColor = Random.ColorHSV(Random.value, Random.value);
         //MeshRenderer[] renderer =  activeTiles[0].GetComponentsInChildren<MeshRenderer> ();
-        // renderer[0].material.color = roadColor;
+       // renderer[0].material.color = roadColor;
     }
 
-    public void StartGame()
-    {
-        startGame = true;
-    }
     public void Restart()
     {
         if (activeTiles.Count > 0)
@@ -88,18 +79,16 @@ public class RoadGenerator : MonoBehaviour
     {
         counts++;
         lastRoad = Instantiate(tiles[RandomPrefabIndex(tiles)], lastRoad.transform.GetChild(0).gameObject.transform.position,lastRoad.transform.rotation);
+        lastRoad.transform.parent = roadMap.transform;
         activeTiles.Add(lastRoad);
     }
 
-    public void SpawnSmoothTile()
-    {
-        lastRoad = Instantiate(firstTile, lastRoad.transform.GetChild(0).gameObject.transform.position, Quaternion.identity);
-        activeTiles.Add(lastRoad);
-    }
     private void SpawnFirstTile()
     {
         lastRoad = Instantiate(firstTile, Vector3.zero, Quaternion.identity);
+        lastRoad.transform.parent = roadMap.transform;
         activeTiles.Add(lastRoad);
+        GameOverManager.instance.CalGameOverPosition(lastRoad);
     }
 
    public void DeleteTile()
