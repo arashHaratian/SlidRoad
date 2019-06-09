@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
     public static int combo;
 //    public HighscoreText gameOverHighscore;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         score = 0;
         highScore = PlayerPrefs.GetFloat("HighScore");
