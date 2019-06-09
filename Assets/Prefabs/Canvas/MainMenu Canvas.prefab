@@ -897,7 +897,6 @@ GameObject:
   - component: {fileID: 6413728299789415241}
   - component: {fileID: 4705282024544444826}
   - component: {fileID: 1033703044}
-  - component: {fileID: 1033703045}
   m_Layer: 5
   m_Name: Tutorial
   m_TagString: Untagged
@@ -994,19 +993,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1033703045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5501684473644097609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d12d0435f3951064d929f57efdab2265, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 0}
 --- !u!1 &5600283818873853824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,7 +1103,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 425.5, y: 0}
   m_SizeDelta: {x: 0, y: 48}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2592759123528252427
@@ -1336,10 +1322,10 @@ RectTransform:
   m_Father: {fileID: 3895261224087573288}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: -272}
-  m_SizeDelta: {x: 424, y: 108.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.0000076293945, y: -272}
+  m_SizeDelta: {x: 0, y: 108.5}
   m_Pivot: {x: 0.49999997, y: -0.000000007450581}
 --- !u!222 &7660484862067522099
 CanvasRenderer:
@@ -1382,7 +1368,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SLIDROAD
+  m_Text: ROAD ROLLER
 --- !u!1 &7628277811005955466
 GameObject:
   m_ObjectHideFlags: 0
