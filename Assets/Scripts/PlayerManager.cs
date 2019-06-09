@@ -11,56 +11,36 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
+    public GameObject particleEffect;
     public GameObject tailParticles;
     public GameObject smokeParticles;
     public GameObject fireParticles;
+    public GameObject roadMapGameObject;
 
 //    private Rigidbody playerRigidbody;
     private Vector2 lastPosition; 
     private Vector2 currentPosition;
     private float distanceOfX;
+    private Rotation roadMap;
     private bool wrongTabPosition;
-    private Vector3 playerPosition;
-    private float radius;
-    private bool collision;
-
-    public LayerMask blockingLayer;
+    
     public static PlayerManager instance = null;
-    public float maxMove;
-    public float moveSpeed;
+    
+
     private void Start()
     {
         if (!instance)
             instance = this;
         else if(instance != this)
             Destroy(this.gameObject);
+        roadMap = roadMapGameObject.GetComponent<Rotation>();
         wrongTabPosition = false;
-        playerPosition = new Vector3(0,0,0);
-        radius = transform.localScale.x / 2;
-        collision = false;
     }
-
-
-    //private void OnDisable()
-    //{
-    //    tailParticles.SetActive(true);
-    //    fireParticles.SetActive(false);
-    //    smokeParticles.SetActive(false);
-    //    this.GetComponent<ScoreManager>().enabled = false;
-    //}
-
-    //private void OnEnable()
-    //{
-    //    this.GetComponent<ScoreManager>().enabled = true;
-    //    if (Input.touchCount > 0)
-    //        lastPosition = Input.touches[0].position;
-    //}
 
     private void Update()
     {
         if(!GameManager.instance.paused)
             Rotation();
-        
     }
 
     private void Rotation()
@@ -68,23 +48,25 @@ public class PlayerManager : MonoBehaviour
 //#if UNITY_STANDALONE || UNITY_WEBPLAYER
         if (Input.GetMouseButtonDown(0))
         {
-            if (Input.mousePosition.y > Screen.height - Screen.height / 13 || Input.mousePosition.y < Screen.height / 25)
+            if (Input.mousePosition.y > Screen.height - Screen.height / 13 ||
+                Input.mousePosition.y < Screen.height / 25)
             {
                 wrongTabPosition = true;
                 return;
             }
+
             wrongTabPosition = false;
-            lastPosition.x = Input.mousePosition.x - Screen.width/2;
+            lastPosition = Input.mousePosition;
         }
         else if (Input.GetMouseButton(0))
         {
             if (wrongTabPosition)
                 return;
-            currentPosition.x = Input.mousePosition.x - Screen.width/2;
-            distanceOfX = (currentPosition.x - lastPosition.x);
-            MoveBall(distanceOfX * (maxMove + moveSpeed) / (Screen.width / 2));
+            currentPosition = Input.mousePosition;
+
+            distanceOfX = (currentPosition.x - lastPosition.x) / Screen.width * -1;
+            roadMap.Rotate(distanceOfX);
             lastPosition = currentPosition;
-        }
 //#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
 //        if (Input.touchCount > 0)
 //        {
@@ -113,88 +95,11 @@ public class PlayerManager : MonoBehaviour
 //            }
 //        }
 //#endif
-    }
-
-    void MoveBall(float movementValue)
-    {
-        playerPosition = transform.position;
-        Vector3 newPlayerPosition = playerPosition + Vector3.right * movementValue;
-        if (movementValue < 0)
-            LeftMove(newPlayerPosition);
-        else
-            RightMove(newPlayerPosition);
-        SoundManager.instance.ChangeVolumeMovement(Math.Abs(movementValue) * 5);
-    }
-
-    void RightMove(Vector3 newPlayerPosition)
-    {
-        RaycastHit hit;
-        if (CanMove(playerPosition + Vector3.left * 0.2f, newPlayerPosition + Vector3.right * radius, out hit))
-        {
-            transform.position = newPlayerPosition;
-            collision = false;
-        }
-        else
-        {
-            if (!collision)
-            {
-                SoundManager.instance.CollisionPlay(0.1f);
-                collision = true;
-            }
-            transform.position = hit.point - Vector3.right * radius;
         }
     }
 
-    void LeftMove(Vector3 newPlayerPosition)
-    {
-        RaycastHit hit;
-        if (CanMove(playerPosition + Vector3.right * 0.2f, newPlayerPosition - Vector3.right * radius, out hit))
-        {
-            transform.position = newPlayerPosition;
-            collision = false;
-        }
-        else
-        {
-            transform.position = hit.point + Vector3.right * radius;
-            if (!collision)
-            {
-                SoundManager.instance.CollisionPlay(0.1f);
-                collision = true;
-            }
-        }
-    }
     public void setActiceScoreManager(bool state)
     {
         this.GetComponent<ScoreManager>().enabled = state;
-    }
-    bool CanMove(Vector3 start, Vector3 end, out RaycastHit hit)
-    {
-        return !Physics.Linecast(start, end, out hit, blockingLayer);
-    }
-
-    public void RaiseSize(int size, float time)
-    {
-        StartCoroutine(StartRaise(size, time));
-    }
-
-    private IEnumerator StartRaise(int size, float time)
-    {
-        while (transform.localScale.x <= size)
-        {
-            transform.localScale += Vector3.one * Time.deltaTime;
-            yield return null;
-        }
-
-        float firstTime = Time.time;
-        while (Time.time < firstTime + time)
-        {
-            yield return null;
-        }
-        
-        while (transform.localScale.x >= 1)
-        {
-            transform.localScale -= Vector3.one * Time.deltaTime;
-            yield return null;
-        }
     }
 }
