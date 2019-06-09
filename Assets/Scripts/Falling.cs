@@ -8,6 +8,7 @@ public class Falling : MonoBehaviour
     public float radius;
     public float gravity;
     public GameObject shade;
+    public ExtraScore extraScore;
 
     private Vector3 newPlayerPosition;
     private bool collision;
@@ -24,10 +25,13 @@ public class Falling : MonoBehaviour
         newPlayerPosition = transform.position + Vector3.down * Time.deltaTime * gravity;
         if (!IsFalling())
         {
-            if(!shade.activeSelf)
+
+            if (!shade.activeSelf)
                 shade.SetActive(true);
-            if(collision)
+            if (collision)
                 SoundManager.instance.PlayFallingCollision(0.3f);
+            extraScore.IsCollisionStay = hit.transform.CompareTag("Edge");
+
             collision = false;
             transform.position = hit.point + Vector3.up * radius;
         }

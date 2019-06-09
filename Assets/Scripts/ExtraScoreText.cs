@@ -27,7 +27,12 @@ public class ExtraScoreText : MonoBehaviour
     
     public void UpdateText(string newText)
     {
-  
+//        if (lastFinishTextCo != null)
+//        {
+//            StopCoroutine(lastFinishTextCo);
+//            text.text = "";
+//            text.color += Color.black;
+//        }
         text.text = newText;
     }
 
