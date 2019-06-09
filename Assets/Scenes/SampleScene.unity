@@ -1523,22 +1523,22 @@ MonoBehaviour:
   secondTintFirst: {r: 0.2509804, g: 0.43137255, b: 0.5176471, a: 0}
   darkTextureTintFirst: {r: 0.87058824, g: 0.8156863, b: 1, a: 0}
   darkSecondTintFirst: {r: 0.46666667, g: 0.36078432, b: 0.7176471, a: 0}
-  secondModeColor: {r: 0.45490196, g: 0.34117648, b: 0.34509805, a: 0}
-  secondModeColorDark: {r: 0.8392157, g: 0.5647059, b: 0.57254905, a: 0}
-  fogSecondModeColor: {r: 0.99215686, g: 0.5686275, b: 0.4745098, a: 1}
-  backGroundSecondModeColor: {r: 0.99215686, g: 0.5686275, b: 0.4745098, a: 1}
-  textureTintSecond: {r: 0.4392157, g: 0.32941177, b: 0.33333334, a: 0}
-  secondTintSecond: {r: 0.28235295, g: 0.21568628, b: 0.21568628, a: 0}
-  darkTextureTintSecond: {r: 0.6117647, g: 0.45882353, b: 0.4627451, a: 0}
-  darkSecondTintSecond: {r: 0.35686275, g: 0.06666667, b: 0.06666667, a: 0}
-  thirdModeColor: {r: 0.94509804, g: 0.65882355, b: 0.30588236, a: 0}
-  thirdModeColorDark: {r: 1, g: 0.80784315, b: 0.59607846, a: 0}
-  fogThirdModeColor: {r: 0.42352942, g: 0.7764706, b: 0.69411767, a: 1}
-  backGroundThirdModeColor: {r: 0.42352942, g: 0.7764706, b: 0.69411767, a: 1}
-  textureTintThird: {r: 0.9529412, g: 0.84313726, b: 0.79607844, a: 0}
-  secondTintThird: {r: 0.89411765, g: 0.44705883, b: 0.2627451, a: 0}
-  darkTextureTintThird: {r: 1, g: 0.84313726, b: 0.7764706, a: 0}
-  darkSecondTintThird: {r: 0.8862745, g: 0.4509804, b: 0.27058825, a: 0}
+  secondModeColor: {r: 0.105882354, g: 0.5686275, b: 0.78431374, a: 0}
+  secondModeColorDark: {r: 0.4862745, g: 0.7647059, b: 1, a: 0}
+  fogSecondModeColor: {r: 0.4117647, g: 0.53333336, b: 0.77254903, a: 1}
+  backGroundSecondModeColor: {r: 0.4117647, g: 0.53333336, b: 0.77254903, a: 1}
+  textureTintSecond: {r: 0.5058824, g: 0.83137256, b: 1, a: 0}
+  secondTintSecond: {r: 0.29411766, g: 0.4862745, b: 0.65882355, a: 0}
+  darkTextureTintSecond: {r: 0.7411765, g: 0.90588236, b: 0.99215686, a: 0}
+  darkSecondTintSecond: {r: 0.1764706, g: 0.5254902, b: 0.8, a: 0}
+  thirdModeColor: {r: 0.45490196, g: 0.34117648, b: 0.34509805, a: 0}
+  thirdModeColorDark: {r: 0.8392157, g: 0.5647059, b: 0.57254905, a: 0}
+  fogThirdModeColor: {r: 0.99215686, g: 0.5686275, b: 0.4745098, a: 1}
+  backGroundThirdModeColor: {r: 0.99215686, g: 0.5686275, b: 0.4745098, a: 1}
+  textureTintThird: {r: 0.4392157, g: 0.32941177, b: 0.33333334, a: 0}
+  secondTintThird: {r: 0.28235295, g: 0.21568628, b: 0.21568628, a: 0}
+  darkTextureTintThird: {r: 0.6117647, g: 0.45882353, b: 0.4627451, a: 0}
+  darkSecondTintThird: {r: 0.35686275, g: 0.06666667, b: 0.06666667, a: 0}
   BlockMaterial: {fileID: 2100000, guid: b10429a4f7c7de746ad2f27d3d4e9160, type: 2}
   DarkBlockMaterial: {fileID: 2100000, guid: d590b5adfdc2d0945817f3a7fbc7423a, type: 2}
 --- !u!1 &1762035499
@@ -2698,7 +2698,7 @@ PrefabInstance:
     - target: {fileID: 4223530653085803342, guid: 22f27581b0254a54494e759a29829bc9,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 425.5
       objectReference: {fileID: 0}
     - target: {fileID: 5204744694814402376, guid: 22f27581b0254a54494e759a29829bc9,
         type: 3}
