@@ -22,6 +22,7 @@ public class RoadGenerator : MonoBehaviour
     public GameObject roadMap;
     public int roadOnScreen;
     public int counts;
+    public Vector3 firstRoadPosition;
 
     public GameObject CurrentRoad
     {
@@ -85,7 +86,7 @@ public class RoadGenerator : MonoBehaviour
 
     private void SpawnFirstTile()
     {
-        lastRoad = Instantiate(firstTile, Vector3.zero, Quaternion.identity);
+        lastRoad = Instantiate(firstTile, firstRoadPosition, Quaternion.identity);
         lastRoad.transform.parent = roadMap.transform;
         activeTiles.Add(lastRoad);
         GameOverManager.instance.CalGameOverPosition(lastRoad);

@@ -11,7 +11,6 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
-    public GameObject particleEffect;
     public GameObject tailParticles;
     public GameObject smokeParticles;
     public GameObject fireParticles;
@@ -23,7 +22,8 @@ public class PlayerManager : MonoBehaviour
     private float distanceOfX;
     private Rotation roadMap;
     private bool wrongTabPosition;
-    
+    private Vector3 resetPositionPlayer;
+    private Vector3 resetRoadMapPosition;
     public static PlayerManager instance = null;
     
 
@@ -35,6 +35,8 @@ public class PlayerManager : MonoBehaviour
             Destroy(this.gameObject);
         roadMap = roadMapGameObject.GetComponent<Rotation>();
         wrongTabPosition = false;
+        resetPositionPlayer = new Vector3(0, 2, 14.5f);
+        resetRoadMapPosition = new Vector3(0, 0, 14.5f);
     }
 
     private void Update()
@@ -101,5 +103,20 @@ public class PlayerManager : MonoBehaviour
     public void setActiceScoreManager(bool state)
     {
         this.GetComponent<ScoreManager>().enabled = state;
+    }
+
+    public void SetActiveFalling(bool flag)
+    {
+        GetComponent<Falling>().enabled = flag;
+    }
+
+    public void Reset()
+    {
+        tailParticles.SetActive(true);
+        fireParticles.SetActive(false);
+        smokeParticles.SetActive(false);
+        transform.position = resetPositionPlayer;
+        roadMap.transform.position = resetRoadMapPosition;
+        roadMap.transform.rotation = Quaternion.identity;
     }
 }

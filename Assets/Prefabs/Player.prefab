@@ -4903,7 +4903,7 @@ Rigidbody:
   m_Drag: 1
   m_AngularDrag: 1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
@@ -4922,11 +4922,7 @@ MonoBehaviour:
   tailParticles: {fileID: 6242271563781928400}
   smokeParticles: {fileID: 2080186115286426920}
   fireParticles: {fileID: 1326465501513513699}
-  blockingLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  maxMove: 4.5
-  moveSpeed: 3.5
+  roadMapGameObject: {fileID: 0}
 --- !u!114 &7302676832231542329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4956,7 +4952,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   radius: 0.5
-  gravity: 40
+  gravity: 10
   shade: {fileID: 6242271564809657475}
 --- !u!114 &3745113664528203420
 MonoBehaviour:

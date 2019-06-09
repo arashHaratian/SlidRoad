@@ -7,11 +7,12 @@ public class ExtraScoreText : MonoBehaviour
 {
 
     public static ExtraScoreText Instance = null;
-    private Text text;
+    public Text text;
 
     private int waitForDestroyColor;
     public Color scoreColor; 
     public Color destroyColor;
+    public Coroutine lastFinishTextCo;
    
     // Start is called before the first frame update
     void Start()
@@ -26,18 +27,20 @@ public class ExtraScoreText : MonoBehaviour
     
     public void UpdateText(string newText)
     {
+  
         text.text = newText;
     }
 
 
     public void FinishExtraScore()
     {
-        StartCoroutine(FinishExtraScoreCoroutine());
+        lastFinishTextCo = StartCoroutine(FinishExtraScoreCoroutine());
         StopCoroutine(FinishExtraScoreCoroutine());
     }
 
     private IEnumerator FinishExtraScoreCoroutine()
     {
+        print("A");
         while (text.color.a >= 0)
         {
             text.color -= Color.black * Time.deltaTime; 

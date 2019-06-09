@@ -11,7 +11,7 @@ public class DetectionOfPlayerMovement : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (RoadGenerator.Instance.counts - 1 < RoadGenerator.Instance.easyTilePrefabs.Length)
+            if (RoadGenerator.Instance.counts < 6)
                 RoadGenerator.Instance.SpawnTile(RoadGenerator.Instance.easyTilePrefabs);
 
             else

@@ -12,10 +12,9 @@ public class HighscoreText : MonoBehaviour
     private void Start()
     {
         _highScoreText = GetComponent<Text>();
-        lastHighScore = PlayerPrefs.GetFloat("HighScore");
+        lastHighScore = PlayerPrefs.GetFloat("highScore");
         _highScoreText.text = ((int)lastHighScore).ToString();
     }
-
     private void Update()
     {
         if (lastHighScore != ScoreManager.highScore)

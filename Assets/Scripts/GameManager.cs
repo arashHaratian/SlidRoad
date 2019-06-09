@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     private float gameSpeed;
     public float timeIncreaseSpeed;
     public float maxSpeed;
-    private float Count = 0;
+    private float Count;
 
     #endregion
     [SerializeField]private ParticleSystem playerParticle;
@@ -54,13 +54,14 @@ public class GameManager : MonoBehaviour
         gameSpeed = 0;
         Movement.Speed = Vector3.zero;
         playerManagerScript.setActiceScoreManager(false);
-        RoadGenerator.Instance.Restart();
+            RoadGenerator.Instance.Restart();
         ColorManager.instance.firstStage();
 
     }
 
     public void Restart()
     {
+        playerManagerScript.SetActiveFalling(true);
         gameOverCollider.enabled = true;
         playerManagerScript.setActiceScoreManager(true);
         Count = 0;
@@ -116,8 +117,8 @@ public class GameManager : MonoBehaviour
         SoundManager.instance.Reset();
         gameOverCollider.enabled = false;
         Movement.Speed = Vector3.zero;
+        playerManagerScript.SetActiveFalling(false);
     }
-
     private void OnApplicationQuit()
     {
         GameAnalyticsEvent.Instance.getLastRoadBeforeExit(RoadGenerator.Instance.CurrentRoad.name);
@@ -126,9 +127,9 @@ public class GameManager : MonoBehaviour
     public void resetPlayerAndCamera()
     {
         Time.timeScale = 1;
+        playerManagerScript.Reset();
         RoadGenerator.Instance.Restart();
         ColorManager.instance.firstStage();
-        player.transform.position = new Vector3(0, 2, 14.5f);
         playerParticle.gameObject.SetActive(false);
         playerParticle.gameObject.SetActive(true);
         gameSpeed = 0;

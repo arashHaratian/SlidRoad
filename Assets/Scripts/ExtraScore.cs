@@ -12,7 +12,6 @@ public class ExtraScore : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        PlayerManager.instance.particleEffect.SetActive(true);
         if (other.gameObject.tag == "Player")
         {
             isCollisionStay_ = true;
@@ -31,7 +30,7 @@ public class ExtraScore : MonoBehaviour
 
     private void OnCollisionExit(Collision other)
     {
-        PlayerManager.instance.particleEffect.SetActive(false);
+
         if (other.gameObject.tag == "Player")
         {
             isCollisionStay_ = false;
