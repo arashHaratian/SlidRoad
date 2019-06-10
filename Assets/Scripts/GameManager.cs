@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
     public float timeIncreaseSpeed;
     public float maxSpeed;
     private float Count;
-
     #endregion
+    
     [SerializeField]private ParticleSystem playerParticle;
     private Coroutine lastGameLoop;
     private Coroutine lastRoundStarting;
@@ -72,11 +72,10 @@ public class GameManager : MonoBehaviour
         if (lastGameLoop != null)
             StopCoroutine(lastGameLoop);
         gameOver = false;
-        //RoadGenerator.Instance.Restart();
-        //player.transform.position = new Vector3(0, 2, 2);
-
+     
         Init();
     }
+    
     public void Init()
     {
         lastGameLoop = StartCoroutine(GameLoop());
@@ -119,6 +118,7 @@ public class GameManager : MonoBehaviour
         Movement.Speed = Vector3.zero;
         playerManagerScript.SetActiveFalling(false);
     }
+    
     private void OnApplicationQuit()
     {
         GameAnalyticsEvent.Instance.getLastRoadBeforeExit(RoadGenerator.Instance.CurrentRoad.name);
