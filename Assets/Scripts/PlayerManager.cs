@@ -200,6 +200,7 @@ public class PlayerManager : MonoBehaviour
 
     public void Reset()
     {
+        tailParticles.SetActive(false);
         tailParticles.SetActive(true);
         fireParticles.SetActive(false);
         smokeParticles.SetActive(false);
