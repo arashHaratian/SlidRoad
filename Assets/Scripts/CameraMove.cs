@@ -9,7 +9,6 @@ public class CameraMove : MonoBehaviour
 
     public float smoothing = 5f;
     public Transform target;
-
     Vector3 offset;
 
 
@@ -29,6 +28,7 @@ public class CameraMove : MonoBehaviour
     {
         Vector3 targetCamPos = target.position + offset;
         targetCamPos.x = transform.position.x;
+        targetCamPos.z = transform.position.z;     
         transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
     }
 }
