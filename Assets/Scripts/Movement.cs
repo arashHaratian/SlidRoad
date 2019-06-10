@@ -15,9 +15,6 @@ public class Movement : MonoBehaviour
         set { speed = value; }
         get { return speed; }
     }
-
-    private static float deltaSpeed;
-
     
     private void Update()
     {
