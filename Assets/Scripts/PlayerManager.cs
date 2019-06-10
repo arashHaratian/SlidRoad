@@ -15,6 +15,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject smokeParticles;
     public GameObject fireParticles;
     public GameObject roadMapGameObject;
+    public float rotaiteSoundVolume;
 
 //    private Rigidbody playerRigidbody;
     private Vector2 lastPosition; 
@@ -68,6 +69,7 @@ public class PlayerManager : MonoBehaviour
 
             distanceOfX = (currentPosition.x - lastPosition.x) / Screen.width * -1;
             roadMap.Rotate(distanceOfX);
+            SoundManager.instance.ChangeVolumeMovement(Math.Abs(distanceOfX * rotaiteSoundVolume));
             lastPosition = currentPosition;
 //#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
 //        if (Input.touchCount > 0)
