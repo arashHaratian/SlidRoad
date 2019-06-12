@@ -45,7 +45,6 @@ public class ExtraScoreText : MonoBehaviour
 
     private IEnumerator FinishExtraScoreCoroutine()
     {
-        print("A");
         while (text.color.a >= 0)
         {
             text.color -= Color.black * Time.deltaTime; 
