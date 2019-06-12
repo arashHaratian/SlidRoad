@@ -37,6 +37,7 @@ public class Falling : MonoBehaviour
         }
         else
         {
+            extraScore.IsCollisionStay =false;
             if(shade.activeSelf)
                 shade.SetActive(false);
             collision = true;
