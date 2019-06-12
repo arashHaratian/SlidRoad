@@ -11,7 +11,7 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
-    public GameObject tailParticles;
+//    public GameObject tailParticles;
     public GameObject smokeParticles;
     public GameObject fireParticles;
     public GameObject roadMapGameObject;
@@ -114,7 +114,7 @@ public class PlayerManager : MonoBehaviour
 
     public void Reset()
     {
-        tailParticles.SetActive(true);
+//        tailParticles.SetActive(true);
         fireParticles.SetActive(false);
         smokeParticles.SetActive(false);
         transform.position = resetPositionPlayer;

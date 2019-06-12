@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     private float Count;
     #endregion
     
-    [SerializeField]private ParticleSystem playerParticle;
+//    [SerializeField]private ParticleSystem playerParticle;
     private Coroutine lastGameLoop;
     private Coroutine lastRoundStarting;
     private PlayerManager playerManagerScript;
@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         DontDestroyOnLoad(this.gameObject);
 
-        playerParticle = player.GetComponentInChildren<ParticleSystem>();
+//        playerParticle = player.GetComponentInChildren<ParticleSystem>();
         playerManagerScript = player.GetComponent<PlayerManager>();
         gameOverCollider.enabled = false;
     }
@@ -130,8 +130,8 @@ public class GameManager : MonoBehaviour
         playerManagerScript.Reset();
         RoadGenerator.Instance.Restart();
         ColorManager.instance.firstStage();
-        playerParticle.gameObject.SetActive(false);
-        playerParticle.gameObject.SetActive(true);
+//        playerParticle.gameObject.SetActive(false);
+//        playerParticle.gameObject.SetActive(true);
         gameSpeed = 0;
         Movement.Speed = Vector3.zero;
     }

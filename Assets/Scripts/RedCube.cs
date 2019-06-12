@@ -11,7 +11,7 @@ public class RedCube : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerManager.instance.tailParticles.SetActive(true);
+//            PlayerManager.instance.tailParticles.SetActive(true);
             PlayerManager.instance.fireParticles.SetActive(false);
             PlayerManager.instance.smokeParticles.SetActive(false);
             ColorManager.instance.firstStage();

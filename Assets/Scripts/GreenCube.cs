@@ -27,7 +27,7 @@ public class GreenCube : MonoBehaviour
                     Destroy(gameObject);
                 if (ScoreManager.numberOfTakenGreenboxes == 3)
                 {
-                    PlayerManager.instance.tailParticles.SetActive(false);
+//                    PlayerManager.instance.tailParticles.SetActive(false);
                     PlayerManager.instance.smokeParticles.SetActive(true);
                 }
 
