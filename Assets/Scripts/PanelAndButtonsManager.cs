@@ -135,5 +135,10 @@ public class PanelAndButtonsManager : MonoBehaviour
         SoundManager.instance.Mute(muteLine.IsActive());
         muteLine.enabled = !muteLine.IsActive();
     }
+
+    public void openPrivacyPalicy()
+    {
+        Application.OpenURL("https://funtherapy.games/privacy/slidroad.html");   
+    }
 }
 
