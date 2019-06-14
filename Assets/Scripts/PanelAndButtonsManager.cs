@@ -16,6 +16,7 @@ public class PanelAndButtonsManager : MonoBehaviour
     public Image muteLine;
     public Button muteButton;
     public Button helpButton;
+    public Button policyButton;
     public Slider tutotrial;
 
     //pasue refs
@@ -119,6 +120,7 @@ public class PanelAndButtonsManager : MonoBehaviour
         gameOverCanvas.enabled = false;
         mainMenuCanvas.enabled = true;
         helpButton.gameObject.SetActive(true);
+        policyButton.gameObject.SetActive(true);
         muteButton.gameObject.SetActive(true);
         tutotrial.gameObject.SetActive(false);
     }
@@ -126,6 +128,7 @@ public class PanelAndButtonsManager : MonoBehaviour
     public void OnHelpButtonClick()
     {
         helpButton.gameObject.SetActive(false);
+        policyButton.gameObject.SetActive(false);
         muteButton.gameObject.SetActive(false);
         tutotrial.gameObject.SetActive(true);
     }
