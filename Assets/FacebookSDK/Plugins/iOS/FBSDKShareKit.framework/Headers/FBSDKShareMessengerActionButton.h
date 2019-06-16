@@ -20,12 +20,9 @@
 
 #import <FBSDKCoreKit/FBSDKCopying.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 /**
  A base interface for Messenger share action buttons.
  */
-NS_SWIFT_NAME(ShareMessengerActionButton)
 @protocol FBSDKShareMessengerActionButton <FBSDKCopying, NSSecureCoding>
 
 /**
@@ -35,5 +32,3 @@ NS_SWIFT_NAME(ShareMessengerActionButton)
 @property (nonatomic, copy) NSString *title;
 
 @end
-
-NS_ASSUME_NONNULL_END
