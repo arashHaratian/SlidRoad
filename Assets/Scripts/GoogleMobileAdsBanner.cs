@@ -27,9 +27,9 @@ public class GoogleMobileAdsBanner : MonoBehaviour
     private void RequestBanner()
     {
 #if UNITY_ANDROID
-        string adUnitId = "ca-app-pub-3940256099942544/6300978111";
+        string adUnitId = "ca-app-pub-1278119892895852/2602063750";
 #elif UNITY_IPHONE
-            string adUnitId = "ca-app-pub-3940256099942544/2934735716";
+            string adUnitId = "ca-app-pub-1278119892895852/5564103167";
 #else
             string adUnitId = "unexpected_platform";
 #endif
