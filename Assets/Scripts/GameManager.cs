@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     {
         get { return gameOver; }
         set { gameOver = value; }
+        
     }
 
     private void Awake()
@@ -117,6 +118,9 @@ public class GameManager : MonoBehaviour
         gameOverCollider.enabled = false;
         Movement.Speed = Vector3.zero;
         playerManagerScript.SetActiveFalling(false);
+        if (GoogleMobileAdsInterstitial.Instance.interstitial.IsLoaded()) {
+            GoogleMobileAdsInterstitial.Instance.interstitial.Show();
+        }
     }
     
     private void OnApplicationQuit()
