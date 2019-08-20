@@ -34,6 +34,11 @@ public class GoogleMobileAdsBanner : MonoBehaviour
       string adUnitId = "unexpected_platform";
   #endif
 
+        if (this.bannerView != null)
+        {
+            this.bannerView.Destroy();
+        }
+        
         // Create a 320x50 banner at the top of the screen.
         bannerView = new BannerView(adUnitId, AdSize.SmartBanner, AdPosition.Bottom);
         

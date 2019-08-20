@@ -7,6 +7,7 @@ using GoogleMobileAds.Api;
 public class GoogleMobileAdsInterstitial : MonoBehaviour
 {
   public InterstitialAd interstitial;
+  
   private static GoogleMobileAdsInterstitial _instance;
   public static GoogleMobileAdsInterstitial Instance { get { return _instance; } }
 
@@ -28,6 +29,7 @@ public class GoogleMobileAdsInterstitial : MonoBehaviour
               string appId = "unexpected_platform";
   #endif
   
+          
           // Initialize the Google Mobile Ads SDK.
           MobileAds.Initialize(appId);
   
@@ -43,6 +45,12 @@ public class GoogleMobileAdsInterstitial : MonoBehaviour
              string adUnitId = "unexpected_platform";
          #endif
      
+      if (this.interstitial != null)
+      {
+          this.interstitial.Destroy();
+      }
+
+      
          // Initialize an InterstitialAd.
          this.interstitial = new InterstitialAd(adUnitId);
          // Create an empty ad request.
