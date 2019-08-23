@@ -120,6 +120,7 @@ public class GameManager : MonoBehaviour
         playerManagerScript.SetActiveFalling(false);
         if (GoogleMobileAdsInterstitial.Instance.interstitial.IsLoaded()) {
             GoogleMobileAdsInterstitial.Instance.interstitial.Show();
+            GoogleMobileAdsInterstitial.Instance.RequestInterstitial();
         }
     }
     

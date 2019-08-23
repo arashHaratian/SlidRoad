@@ -16,7 +16,9 @@ public class GoogleMobileAdsInterstitial : MonoBehaviour
           if (_instance != null && _instance != this)
           {
               Destroy(gameObject);
-          } else {
+          } 
+          else 
+          {
               _instance = this;
           }
           
@@ -35,8 +37,9 @@ public class GoogleMobileAdsInterstitial : MonoBehaviour
   
           this.RequestInterstitial();
       }
-  private void RequestInterstitial()
+  public void RequestInterstitial()
   {
+      Debug.Log("------------------------------------------");
      #if UNITY_ANDROID
              string adUnitId = "ca-app-pub-3940256099942544/1033173712";
          #elif UNITY_IPHONE
@@ -47,16 +50,20 @@ public class GoogleMobileAdsInterstitial : MonoBehaviour
      
       if (this.interstitial != null)
       {
+          Debug.Log("+++++++++++++++++++++++++++++++++++++++++++");
           this.interstitial.Destroy();
       }
 
       
          // Initialize an InterstitialAd.
          this.interstitial = new InterstitialAd(adUnitId);
+         Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
          // Create an empty ad request.
          AdRequest request = new AdRequest.Builder().Build();
+         Debug.Log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
          // Load the interstitial with the request.
          this.interstitial.LoadAd(request);
+         Debug.Log("##########################################");
 
   }
 
