@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public float timeIncreaseSpeed;
     public float maxSpeed;
     private float Count;
+    private int AdsCount;
     #endregion
     
 //    [SerializeField]private ParticleSystem playerParticle;
@@ -118,10 +119,13 @@ public class GameManager : MonoBehaviour
         gameOverCollider.enabled = false;
         Movement.Speed = Vector3.zero;
         playerManagerScript.SetActiveFalling(false);
-        if (GoogleMobileAdsInterstitial.Instance.interstitial.IsLoaded()) {
+        if (AdsCount == 0 && GoogleMobileAdsInterstitial.Instance.interstitial.IsLoaded()) {
             GoogleMobileAdsInterstitial.Instance.interstitial.Show();
             GoogleMobileAdsInterstitial.Instance.RequestInterstitial();
         }
+        AdsCount++;
+        if (AdsCount == 4)
+            AdsCount = 0;
     }
     
     private void OnApplicationQuit()
