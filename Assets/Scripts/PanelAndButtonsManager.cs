@@ -141,7 +141,7 @@ public class PanelAndButtonsManager : MonoBehaviour
 
     public void openPrivacyPalicy()
     {
-        Application.OpenURL("https://funtherapy.games/privacy/slidroad.html");   
+        Application.OpenURL("https://www.joyixir.com/privacy/slidroad.html");   
     }
 }
 
