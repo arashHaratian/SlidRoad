@@ -23,10 +23,10 @@ public class GoogleMobileAdsInterstitial : MonoBehaviour
           }
           
   #if UNITY_ANDROID
-          string appId = "ca-app-pub-1278119892895852~2246840533";
+          string appId = "ca-app-pub-1278119892895852/5115480793";
           
   #elif UNITY_IPHONE
-              string appId = "ca-app-pub-1278119892895852~2813816747";
+              string appId = "ca-app-pub-1278119892895852/1122171565";
   #else
               string appId = "unexpected_platform";
   #endif
