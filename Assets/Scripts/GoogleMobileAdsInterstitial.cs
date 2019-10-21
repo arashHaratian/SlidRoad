@@ -23,10 +23,10 @@ public class GoogleMobileAdsInterstitial : MonoBehaviour
           }
           
   #if UNITY_ANDROID
-          string appId = "ca-app-pub-1278119892895852/5115480793";
+          string appId = "ca-app-pub-1278119892895852~2246840533";
           
   #elif UNITY_IPHONE
-              string appId = "ca-app-pub-1278119892895852/1122171565";
+              string appId = "ca-app-pub-1278119892895852~2813816747";
   #else
               string appId = "unexpected_platform";
   #endif
@@ -41,9 +41,9 @@ public class GoogleMobileAdsInterstitial : MonoBehaviour
   {
       
      #if UNITY_ANDROID
-             string adUnitId = "ca-app-pub-3940256099942544/1033173712";
+             string adUnitId = "ca-app-pub-1278119892895852/5115480793";
          #elif UNITY_IPHONE
-             string adUnitId = "ca-app-pub-3940256099942544/4411468910";
+             string adUnitId = "ca-app-pub-1278119892895852/1122171565";
          #else
              string adUnitId = "unexpected_platform";
          #endif
