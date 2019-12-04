@@ -67,6 +67,8 @@ public class PanelAndButtonsManager : MonoBehaviour
         gameOverCanvas.enabled = false;
         pauseCanvas.enabled = false;
         HUDCanvas.enabled = true;
+        muteButton.gameObject.SetActive(false);
+        tutotrial.gameObject.SetActive(true);
     }
     public void Restart()
     {
