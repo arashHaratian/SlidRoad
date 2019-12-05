@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using GameAnalyticsSDK;
@@ -27,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     private bool gameOver;
     public bool paused;
-
+    public bool firstTouch;
     public bool GameOver
     {
         get { return gameOver; }
@@ -61,21 +62,31 @@ public class GameManager : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if (PanelAndButtonsManager.instance.HUDCanvas.enabled)
+        {
+            if (Input.GetMouseButton(0))
+                Restart();
+        }
+    }
+
     public void Restart()
     {
+        PanelAndButtonsManager.instance.tutotrial.gameObject.SetActive(false);
         playerManagerScript.SetActiveFalling(true);
-        gameOverCollider.enabled = true;
-        playerManagerScript.setActiceScoreManager(true);
-        Count = 0;
-        gameSpeed = firstSpeed;
-        Movement.Speed = Vector3.back * firstSpeed;
-        if(lastRoundStarting != null)
-            StopCoroutine(lastRoundStarting);
-        if (lastGameLoop != null)
-            StopCoroutine(lastGameLoop);
-        gameOver = false;
+            gameOverCollider.enabled = true;
+            playerManagerScript.setActiceScoreManager(true);
+            Count = 0;
+            gameSpeed = firstSpeed;
+            Movement.Speed = Vector3.back * firstSpeed;
+            if(lastRoundStarting != null)
+                StopCoroutine(lastRoundStarting);
+            if (lastGameLoop != null)
+                StopCoroutine(lastGameLoop);
+            gameOver = false;
      
-        Init();
+            Init();
     }
     
     public void Init()

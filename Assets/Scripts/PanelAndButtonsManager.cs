@@ -79,7 +79,7 @@ public class PanelAndButtonsManager : MonoBehaviour
     public void TapToPlay()
     {
         PlayMenu();
-        GameManager.instance.Restart();
+        //GameManager.instance.Restart();
     }
     //-----------------------------------------------------
 
