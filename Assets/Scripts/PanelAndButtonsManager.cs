@@ -63,6 +63,7 @@ public class PanelAndButtonsManager : MonoBehaviour
 
     private void PlayMenu()
     {
+        ScoreManager.score = 0;
         mainMenuCanvas.enabled = false;
         gameOverCanvas.enabled = false;
         pauseCanvas.enabled = false;
