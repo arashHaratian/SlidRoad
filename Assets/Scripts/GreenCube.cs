@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
@@ -8,23 +9,32 @@ public class GreenCube : MonoBehaviour
 {
     public float speed;
     public static bool isGreenEated;
+    public static int countGreenCubes;
+
+
+    private void Start()
+    {
+        countGreenCubes = PlayerPrefs.GetInt("Green Cubes Count");
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-             isGreenEated = true;
+            isGreenEated = true;
+            countGreenCubes++;
+            PlayerPrefs.SetInt("Green Cubes Count", countGreenCubes);
             ScoreManager.numberOfTakenGreenboxes++;
             SoundManager.instance.PlayGetGreen(0.4f);
-        
+
             if (ScoreManager.numberOfTakenGreenboxes < 4)
             {
-                if (ScoreManager.numberOfTakenGreenboxes == 1)     
-                    ColorManager.instance.secondStage();   
-                
-                    ScoreManager.combo++;
-                    ShowCombo.Instance.UpdateText(ScoreManager.combo.ToString(),"x");
-                    Destroy(gameObject);
+                if (ScoreManager.numberOfTakenGreenboxes == 1)
+                    ColorManager.instance.secondStage();
+
+                ScoreManager.combo++;
+                ShowCombo.Instance.UpdateText(ScoreManager.combo.ToString(), "x");
+                Destroy(gameObject);
                 if (ScoreManager.numberOfTakenGreenboxes == 3)
                 {
 //                    PlayerManager.instance.tailParticles.SetActive(false);
@@ -33,22 +43,23 @@ public class GreenCube : MonoBehaviour
 
             }
             else
-            {                          
+            {
                 if (ScoreManager.numberOfTakenGreenboxes == 4)
                 {
-                    GameAnalyticsEvent.Instance.apticMode();                
+                    GameAnalyticsEvent.Instance.apticMode();
                     ColorManager.instance.thirdStage();
                 }
+
                 if (ScoreManager.numberOfTakenGreenboxes == 7)
                 {
                     PlayerManager.instance.smokeParticles.SetActive(false);
                     PlayerManager.instance.fireParticles.SetActive(true);
                 }
-                
+
                 ScoreManager.score += ScoreManager.numberOfTakenGreenboxes * 50 + 50;
                 ShowCombo.Instance.ApticeScore((ScoreManager.numberOfTakenGreenboxes * 50 + 50).ToString());
                 Destroy(gameObject);
-         }           
-      }
-   }
+            }
+        }
+    }
 }

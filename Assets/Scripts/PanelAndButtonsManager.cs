@@ -52,6 +52,7 @@ public class PanelAndButtonsManager : MonoBehaviour
         gameOverCanvas.gameObject.SetActive(true);
         HUDCanvas.gameObject.SetActive(true);
         pauseCanvas.gameObject.SetActive(true);
+        GreenCube.countGreenCubes = PlayerPrefs.GetInt("Green Cubes Count");
     }
 
     //-------------------GameManager functions----------------------------------
