@@ -24,6 +24,9 @@ public class PanelAndButtonsManager : MonoBehaviour
 
     //HUD refs
     public Canvas HUDCanvas;
+    
+    //Customize refs
+    public Canvas CustomizeCanvas_;
 
     // Game Over refs
     public Canvas gameOverCanvas;
@@ -43,6 +46,7 @@ public class PanelAndButtonsManager : MonoBehaviour
 
     private void Start()
     {
+        CustomizeCanvas_.enabled = false;
         mainMenuCanvas.enabled = true;
         pauseCanvas.enabled = false;
         gameOverCanvas.enabled = false;
@@ -62,7 +66,7 @@ public class PanelAndButtonsManager : MonoBehaviour
         HUDCanvas.enabled = false;
     }
 
-    private void PlayMenu()
+    public void PlayMenu()
     {
         ScoreManager.score = 0;
         mainMenuCanvas.enabled = false;
@@ -72,17 +76,24 @@ public class PanelAndButtonsManager : MonoBehaviour
         muteButton.gameObject.SetActive(false);
         tutotrial.gameObject.SetActive(true);
     }
+
+    public void CustomizeMenu()
+    {
+        CustomizeCanvas_.enabled = true;
+        mainMenuCanvas.enabled = false;
+        pauseCanvas.enabled = false;
+        gameOverCanvas.enabled = false;
+        HUDCanvas.enabled = false;
+
+    }
+    
     public void Restart()
     {
         GameManager.instance.paused = false;
         OpenMainMenu();
         GameManager.instance.resetPlayerAndCamera();
     }
-    public void TapToPlay()
-    {
-        PlayMenu();
-        //GameManager.instance.Restart();
-    }
+   
     //-----------------------------------------------------
 
     //-------------------Buttons Functions----------------------------------
@@ -128,6 +139,7 @@ public class PanelAndButtonsManager : MonoBehaviour
         muteButton.gameObject.SetActive(true);
         tutotrial.gameObject.SetActive(false);
     }
+    
 
     public void OnHelpButtonClick()
     {
@@ -142,10 +154,11 @@ public class PanelAndButtonsManager : MonoBehaviour
         SoundManager.instance.Mute(muteLine.IsActive());
         muteLine.enabled = !muteLine.IsActive();
     }
-
+    
     public void openPrivacyPalicy()
     {
         Application.OpenURL("https://www.joyixir.com/privacy/slidroad.html");   
     }
+    
 }
 
