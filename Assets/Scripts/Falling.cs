@@ -14,8 +14,8 @@ public class Falling : MonoBehaviour
     private bool collision;
     private Vector3 end;
     private RaycastHit hit;
-    
-    private void Start()
+    public static Falling instance;
+        private void Start()
     {
         collision = false;
     }

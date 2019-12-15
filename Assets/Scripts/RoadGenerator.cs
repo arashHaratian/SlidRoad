@@ -16,14 +16,17 @@ public class RoadGenerator : MonoBehaviour
     
    
     public GameObject firstTile;
-    public GameObject[] easyTilePrefabs;
-    public GameObject[] mediumTilePrefabs;
-    public GameObject[] hardTilePrefabs;
+    public GameObject[] step1;
+    public GameObject[] step2;
+    public GameObject[] step3;
+    public GameObject[] step4;
+    public GameObject[] step5;
+    public GameObject[] step6;
     public GameObject roadMap;
     public int roadOnScreen;
     public int counts;
     public Vector3 firstRoadPosition;
-
+    public int index;
     public GameObject CurrentRoad
     {
         get { return activeTiles[1]; }
@@ -53,7 +56,8 @@ public class RoadGenerator : MonoBehaviour
         SpawnFirstTile();
         for (int i = 1; i < roadOnScreen - 1; i++)
         {
-            SpawnTile(easyTilePrefabs);
+            SpawnTile(step1);
+            index++;
         }
         
      //   roadColor = Random.ColorHSV(Random.value, Random.value);
@@ -71,7 +75,8 @@ public class RoadGenerator : MonoBehaviour
             }
             activeTiles.Clear();
             counts = 0;
-            DetectionOfPlayerMovement.num = 0;
+            index = 0;
+            //DetectionOfPlayerMovement.num = 0;
         }
         Init();   
     }
@@ -79,7 +84,8 @@ public class RoadGenerator : MonoBehaviour
     public void SpawnTile(GameObject[] tiles)
     {
         counts++;
-        lastRoad = Instantiate(tiles[RandomPrefabIndex(tiles)], lastRoad.transform.GetChild(0).gameObject.transform.position,lastRoad.transform.rotation);
+        lastRoad = Instantiate(tiles[index], lastRoad.transform.GetChild(0).gameObject.transform.position,lastRoad.transform.rotation);
+        index++;
         lastRoad.transform.parent = roadMap.transform;
         activeTiles.Add(lastRoad);
     }
@@ -98,16 +104,18 @@ public class RoadGenerator : MonoBehaviour
         activeTiles.RemoveAt(0);
     }
 
-    private int RandomPrefabIndex(GameObject[] tiles)
-    {
-       if (easyTilePrefabs.Length <= 1)
-           return 0;
-        int randomIndex = lastPrefabIndex;
-        while (randomIndex == lastPrefabIndex)
-        {
-            randomIndex = Random.Range(0, tiles.Length);
-        }
-        lastPrefabIndex = randomIndex;
-        return randomIndex;
-    }
+//    private int PrefabIndex(GameObject[] tiles)
+//    {
+//        
+//       if (step1.Length <= 1)
+//           return 0;
+//        int randomIndex = lastPrefabIndex;
+//        while (randomIndex == lastPrefabIndex)
+//        {
+//            randomIndex = Random.Range(0, tiles.Length);
+//        }
+//        lastPrefabIndex = randomIndex;
+//        return randomIndex;
+//}
+
 }
