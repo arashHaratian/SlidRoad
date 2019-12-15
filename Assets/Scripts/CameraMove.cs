@@ -26,9 +26,13 @@ public class CameraMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 targetCamPos = target.position + offset;
-        targetCamPos.x = transform.position.x;
-        targetCamPos.z = transform.position.z;     
-        transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
+        if (Falling.instance.IsFalling() == false)
+        {
+            Vector3 targetCamPos = target.position + offset;
+            targetCamPos.x = transform.position.x;
+            targetCamPos.z = transform.position.z;     
+            transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
+        }
+        
     }
 }
