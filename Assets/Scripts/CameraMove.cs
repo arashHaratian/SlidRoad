@@ -26,7 +26,8 @@ public class CameraMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Falling.instance.IsFalling() == false)
+        
+        if (Falling.instance.IsFalling() == false )
         {
             Vector3 targetCamPos = target.position + offset;
             targetCamPos.x = transform.position.x;

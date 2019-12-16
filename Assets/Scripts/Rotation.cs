@@ -14,17 +14,21 @@ public class Rotation : MonoBehaviour
 
     public void Rotate(float rotate)
     {
-        finalSpeed = rotate * rotateRange;
+        if (GameManager.instance.GameOver == false)
+        {
+            finalSpeed = rotate * rotateRange;
 //        transform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.Euler(0,finalSpeed,0),1);
-        transform.Rotate(Vector3.up * finalSpeed);
-        float y = transform.rotation.eulerAngles.y;
-        if (y > rotateRange/2 && y < 180)
-        {
-            transform.rotation = Quaternion.Euler(0,rotateRange/2,0);
+            transform.Rotate(Vector3.up * finalSpeed);
+            float y = transform.rotation.eulerAngles.y;
+            if (y > rotateRange/2 && y < 180)
+            {
+                transform.rotation = Quaternion.Euler(0,rotateRange/2,0);
+            }
+            else if(y < 360 - rotateRange/2 && y >= 180)
+            {
+                transform.rotation = Quaternion.Euler(0,-rotateRange/2,0);
+            }
         }
-        else if(y < 360 - rotateRange/2 && y >= 180)
-        {
-            transform.rotation = Quaternion.Euler(0,-rotateRange/2,0);
         }
-    }
+        
 }
