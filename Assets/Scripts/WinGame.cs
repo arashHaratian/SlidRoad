@@ -9,7 +9,7 @@ public class WinGame : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            PanelAndButtonsManager.instance.winCanvas_.enabled = true;
+           GameManager.instance.WinTheGame();
         }
     }
 

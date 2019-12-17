@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 868770094179327682}
   - component: {fileID: 2684803840160627652}
   m_Layer: 0
-  m_Name: Win road
+  m_Name: EndRoad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -205,7 +205,7 @@ PrefabInstance:
     - target: {fileID: 8075551974029095033, guid: 9d91348f8be77064381d5a58acbd46af,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 8075551974029095033, guid: 9d91348f8be77064381d5a58acbd46af,
         type: 3}
@@ -257,7 +257,8 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7756801762646011049, guid: 9d91348f8be77064381d5a58acbd46af, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9d91348f8be77064381d5a58acbd46af, type: 3}
 --- !u!1 &4035546979103718022 stripped
 GameObject:

@@ -26,6 +26,7 @@ public class PanelAndButtonsManager : MonoBehaviour
     public static PanelAndButtonsManager instance = null;
     public Canvas diamondCanvas_;
     public Canvas winCanvas_;
+    private bool step1;
     //-----------------------------------------------------
     private void Awake()
     {
@@ -50,16 +51,28 @@ public class PanelAndButtonsManager : MonoBehaviour
         HUDCanvas.gameObject.SetActive(true);
         pauseCanvas.gameObject.SetActive(true);
         diamondCanvas_.gameObject.SetActive(true);
+        winCanvas_.gameObject.SetActive(true);
+        mainMenuCanvas_.gameObject.SetActive(true);
         GreenCube.countGreenCubes = PlayerPrefs.GetInt("Green Cubes Count");
     }
 
     //-------------------GameManager functions----------------------------------
     public void GameOver()
     {
-        gameOverCanvas.enabled = true;
-        HUDCanvas.enabled = false;
+        if (mainMenuCanvas_.enabled == false && startGameCanvas_.enabled == false)
+        {
+            gameOverCanvas.enabled = true;
+            HUDCanvas.enabled = false;
+        }
+       
     }
 
+    public void WinGame()
+    {
+        winCanvas_.enabled = true;
+        HUDCanvas.enabled = false;
+
+    }
     public void PlayMenu()
     {
         ScoreManager.score = 0;
@@ -124,15 +137,28 @@ public class PanelAndButtonsManager : MonoBehaviour
         policyButton.gameObject.SetActive(true);
         muteButton.gameObject.SetActive(true);
         tutotrial.gameObject.SetActive(false);
+        step1 = false;
     }
 
     public void OnStep1ButtonClick()
     {
+        gameOverCanvas.enabled = false;
         startGameCanvas_.enabled = true;
         mainMenuCanvas_.enabled = false;
         pauseCanvas.enabled = false;
-        gameOverCanvas.enabled = false;
         HUDCanvas.enabled = false;
+        step1 = true;
+    }
+
+    public void PlayAgainGame()
+    {
+        if (step1)
+        {
+            step1Button_.enabled = true;
+            OnStep1ButtonClick();
+            winCanvas_.enabled = false;
+            Restart();
+        }
        
     }
     
