@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
         Count = 0;
     }
 
-    void GameIsOver()
+    public void GameIsOver()
     {
         GameAnalyticsEvent.Instance.getGameOverRoad(RoadGenerator.Instance.CurrentRoad.name);
         GameAnalyticsEvent.Instance.getScore();
