@@ -866,7 +866,7 @@ PrefabInstance:
     - target: {fileID: 8804895039736005808, guid: 8c2e800a41f491a4eb12b8e39baa74ee,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 425.05865
+      value: 426.69998
       objectReference: {fileID: 0}
     - target: {fileID: 8804895039736005808, guid: 8c2e800a41f491a4eb12b8e39baa74ee,
         type: 3}
@@ -3208,7 +3208,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 425.05865, y: 0}
+  m_AnchoredPosition: {x: 426.69998, y: 0}
   m_SizeDelta: {x: 0, y: 48}
   m_Pivot: {x: 0.5, y: 0.50000006}
 --- !u!114 &1463392237
@@ -5481,6 +5481,21 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8983377537290600227, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8983377537290600227, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8983377537290600227, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 7128434798677885847, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
         type: 3}
       propertyPath: roadMapGameObject
@@ -5505,6 +5520,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6242271564323680421}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6242271564323680433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6242271564323680423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99dd037429ecc9240b5930798dfaaabe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6323219213510410811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6351,12 +6378,12 @@ PrefabInstance:
     - target: {fileID: 4223530653085803342, guid: 22f27581b0254a54494e759a29829bc9,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 423.85867
+      value: 425.5
       objectReference: {fileID: 0}
     - target: {fileID: 4223530653085803342, guid: 22f27581b0254a54494e759a29829bc9,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 423.85867
+      value: 425.5
       objectReference: {fileID: 0}
     - target: {fileID: 84194677929857291, guid: 22f27581b0254a54494e759a29829bc9,
         type: 3}

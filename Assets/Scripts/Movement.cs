@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     private static Vector3 speed;
     private Rigidbody rb;
+    
     public static Vector3 Speed
     {
         set { speed = value; }
@@ -18,10 +19,7 @@ public class Movement : MonoBehaviour
     
     private void Update()
     {
-        if (GameManager.instance.GameOver == false)
-        {
-            transform.position += speed * Time.deltaTime;
-        }
-       
+        transform.position += speed * Time.deltaTime;
+
     }
 }
