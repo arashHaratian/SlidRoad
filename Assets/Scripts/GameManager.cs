@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
         gameSpeed = 0;
         Movement.Speed = Vector3.zero;
         playerManagerScript.setActiceScoreManager(false);
-            RoadGenerator.Instance.Restart();
+        //RoadGenerator.Instance.Restart();
         ColorManager.instance.firstStage();
 
     }
@@ -122,7 +122,11 @@ public class GameManager : MonoBehaviour
 
     public void GameIsOver()
     {
-        GameAnalyticsEvent.Instance.getGameOverRoad(RoadGenerator.Instance.CurrentRoad.name);
+        if (PanelAndButtonsManager.instance.HUDCanvas.enabled)
+        {
+            GameAnalyticsEvent.Instance.getGameOverRoad(RoadGenerator.Instance.CurrentRoad.name);
+        }
+      
         GameAnalyticsEvent.Instance.getScore();
         playerManagerScript.setActiceScoreManager(false);
         PanelAndButtonsManager.instance.GameOver();
@@ -150,7 +154,11 @@ public class GameManager : MonoBehaviour
     }
     private void OnApplicationQuit()
     {
-        GameAnalyticsEvent.Instance.getLastRoadBeforeExit(RoadGenerator.Instance.CurrentRoad.name);
+        if (PanelAndButtonsManager.instance.HUDCanvas.enabled)
+        {
+            GameAnalyticsEvent.Instance.getLastRoadBeforeExit(RoadGenerator.Instance.CurrentRoad.name);
+        }
+        
     }
 
     public void resetPlayerAndCamera()
