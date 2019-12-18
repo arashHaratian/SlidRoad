@@ -3320,12 +3320,18 @@ PrefabInstance:
       propertyPath: roadMapGameObject
       value: 
       objectReference: {fileID: 1797551639}
+    - target: {fileID: 2670063946340551546, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4939036360552646550, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6,
         type: 3}
       propertyPath: extraScore
       value: 
       objectReference: {fileID: 1797551643}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2041002212177049852, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6f0eea8071ba59b4fbde19e8d80fe1d6, type: 3}
 --- !u!1 &8342220048160778888
 GameObject:
