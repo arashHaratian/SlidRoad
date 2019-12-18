@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ball
+  m_Name: Leaf
   m_Shader: {fileID: 4800000, guid: 650dd9526735d5b46b79224bc6e94025, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _ALPHATEST_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -19,21 +19,17 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - Texture2D_A9992FCF:
-        m_Texture: {fileID: 2800000, guid: 13e071334767da348bf46d6bc0484228, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 2, y: 2}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f8269d1e2b6704c1e9756d98d84d6bdf, type: 3}
-        m_Scale: {x: 2, y: 2}
+        m_Texture: {fileID: 2800000, guid: 97bd63a68ce224a158b8229dbda09ef7, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -48,44 +44,29 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_2C23BFA5: -0.66
-    - Vector1_A737ED8B: 1
-    - Vector1_B5716E3: -0.66
-    - Vector1_BAFB0D0C: 0.374
-    - Vector1_C3509AD1: 0.4
-    - Vector1_C686B406: -0.98
-    - Vector1_E1623CF2: -0.98
-    - _AlphaClip: 0
+    - _AlphaClip: 1
     - _Blend: 0
     - _BumpScale: 1
-    - _Cull: 2
+    - _Cull: 0
     - _Cutoff: 0.5
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
-    - _GlossinessSource: 0
+    - _GlossinessSource: 1
     - _GlossyReflections: 1
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _ReceiveShadows: 0
+    - _ReceiveShadows: 1
     - _SampleGI: 0
-    - _Shininess: 0.521
+    - _Shininess: 0.5
     - _SmoothnessTextureChannel: 0
-    - _SpecSource: 0
+    - _SpecSource: 1
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_23A40CCC: {r: 0.83137256, g: 0.8039216, b: 0.8039216, a: 0}
-    - Color_7A5B9D85: {r: 1, g: 1, b: 1, a: 1}
-    - Color_839683A9: {r: 0.8301887, g: 0.8027768, b: 0.8027768, a: 1}
-    - Color_B1D3B990: {r: 0.93333334, g: 0.92941177, b: 0.92941177, a: 0}
-    - Color_D61D1777: {r: 0.9339623, g: 0.9295568, b: 0.9295568, a: 1}
-    - Color_EB5D025E: {r: 0.9607844, g: 0.18431373, b: 0.47450984, a: 0}
-    - Vector4_3CBDACE5: {r: 0.02, g: 0.8, b: 0.5, a: 0}
-    - Vector4_8995800A: {r: 0.02, g: 0.8, b: 0.5, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SpecColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
