@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -12,27 +13,20 @@ public class PanelAndButtonsManager : MonoBehaviour
 
     //-------------------Refrences-------------------------------- 
     //mainmenu refs
-    public Canvas mainMenuCanvas;
+    public Canvas startGameCanvas_;
     public Image muteLine;
     public Button muteButton;
-    public Button helpButton;
     public Button policyButton;
     public Slider tutotrial;
-
-    //pasue refs
+    public Button step1Button_;
     public Canvas pauseCanvas;
-
-    //HUD refs
     public Canvas HUDCanvas;
-    
-    //Customize refs
-    public Canvas CustomizeCanvas_;
-
-    // Game Over refs
     public Canvas gameOverCanvas;
-
-
+    public Canvas mainMenuCanvas_;
     public static PanelAndButtonsManager instance = null;
+    public Canvas diamondCanvas_;
+    public Canvas winCanvas_;
+    private bool step1;
     //-----------------------------------------------------
     private void Awake()
     {
@@ -46,53 +40,56 @@ public class PanelAndButtonsManager : MonoBehaviour
 
     private void Start()
     {
-        CustomizeCanvas_.enabled = false;
-        mainMenuCanvas.enabled = true;
+        startGameCanvas_.enabled = false;
         pauseCanvas.enabled = false;
         gameOverCanvas.enabled = false;
         HUDCanvas.enabled = false;
+        winCanvas_.enabled = false;
 
-        mainMenuCanvas.gameObject.SetActive(true);
+        startGameCanvas_.gameObject.SetActive(true);
         gameOverCanvas.gameObject.SetActive(true);
         HUDCanvas.gameObject.SetActive(true);
         pauseCanvas.gameObject.SetActive(true);
+        diamondCanvas_.gameObject.SetActive(true);
+        winCanvas_.gameObject.SetActive(true);
+        mainMenuCanvas_.gameObject.SetActive(true);
         GreenCube.countGreenCubes = PlayerPrefs.GetInt("Green Cubes Count");
     }
 
     //-------------------GameManager functions----------------------------------
     public void GameOver()
     {
-        gameOverCanvas.enabled = true;
-        HUDCanvas.enabled = false;
+        if (mainMenuCanvas_.enabled == false && startGameCanvas_.enabled == false)
+        {
+            gameOverCanvas.enabled = true;
+            HUDCanvas.enabled = false;
+        }
+       
     }
 
+    public void WinGame()
+    {
+        winCanvas_.enabled = true;
+        HUDCanvas.enabled = false;
+
+    }
     public void PlayMenu()
     {
         ScoreManager.score = 0;
-        mainMenuCanvas.enabled = false;
+        startGameCanvas_.enabled = false;
         gameOverCanvas.enabled = false;
         pauseCanvas.enabled = false;
         HUDCanvas.enabled = true;
         muteButton.gameObject.SetActive(false);
         tutotrial.gameObject.SetActive(true);
     }
-
-    public void CustomizeMenu()
-    {
-        CustomizeCanvas_.enabled = true;
-        mainMenuCanvas.enabled = false;
-        pauseCanvas.enabled = false;
-        gameOverCanvas.enabled = false;
-        HUDCanvas.enabled = false;
-
-    }
     
     public void Restart()
     {
         GameManager.instance.paused = false;
-        OpenMainMenu();
         GameManager.instance.resetPlayerAndCamera();
     }
+    
    
     //-----------------------------------------------------
 
@@ -131,24 +128,40 @@ public class PanelAndButtonsManager : MonoBehaviour
 
     public void OpenMainMenu()
     {
+        winCanvas_.enabled = false;
+        diamondCanvas_.enabled = true;
+        mainMenuCanvas_.enabled = true;
         pauseCanvas.enabled = false;
         gameOverCanvas.enabled = false;
-        mainMenuCanvas.enabled = true;
-        helpButton.gameObject.SetActive(true);
+        startGameCanvas_.enabled = false;
         policyButton.gameObject.SetActive(true);
         muteButton.gameObject.SetActive(true);
         tutotrial.gameObject.SetActive(false);
+        step1 = false;
+    }
+
+    public void OnStep1ButtonClick()
+    {
+        gameOverCanvas.enabled = false;
+        startGameCanvas_.enabled = true;
+        mainMenuCanvas_.enabled = false;
+        pauseCanvas.enabled = false;
+        HUDCanvas.enabled = false;
+        step1 = true;
+    }
+
+    public void PlayAgainGame()
+    {
+        if (step1)
+        {
+            step1Button_.enabled = true;
+            OnStep1ButtonClick();
+            winCanvas_.enabled = false;
+            Restart();
+        }
+       
     }
     
-
-    public void OnHelpButtonClick()
-    {
-        helpButton.gameObject.SetActive(false);
-        policyButton.gameObject.SetActive(false);
-        muteButton.gameObject.SetActive(false);
-        tutotrial.gameObject.SetActive(true);
-    }
-
     public void OnMuteButtonClick()
     {
         SoundManager.instance.Mute(muteLine.IsActive());

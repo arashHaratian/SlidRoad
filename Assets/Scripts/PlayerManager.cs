@@ -42,7 +42,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
-        if(!GameManager.instance.paused)
+        if(!GameManager.instance.paused || !GameManager.instance.GameOver)
             Rotation();
     }
 

@@ -20,7 +20,11 @@ public class GameOverManager : MonoBehaviour
     private void Update()
     {
         if (PlayerManager.instance.transform.position.y < gameOverPossition)
+        {
             GameManager.instance.GameOver = true;
+            GameManager.instance.GameIsOver();
+        }
+          
     }
 
     public void Reset()

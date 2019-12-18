@@ -23,7 +23,11 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score += Time.deltaTime * constScoreMult * combo;
+        if (GameManager.instance.GameOver == false)
+        {
+            score += Time.deltaTime * constScoreMult * combo;
+        }
+        
 
         if (score > highScore)
         {

@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
         Count = 0;
     }
 
-    void GameIsOver()
+    public void GameIsOver()
     {
         GameAnalyticsEvent.Instance.getGameOverRoad(RoadGenerator.Instance.CurrentRoad.name);
         GameAnalyticsEvent.Instance.getScore();
@@ -138,7 +138,16 @@ public class GameManager : MonoBehaviour
         if (AdsCount == 4)
             AdsCount = 0;
     }
-    
+
+    public void WinTheGame()
+    {
+        playerManagerScript.setActiceScoreManager(false);
+        PanelAndButtonsManager.instance.WinGame();
+        SoundManager.instance.Reset();
+        gameOverCollider.enabled = false;
+        Movement.Speed = Vector3.zero;
+        playerManagerScript.SetActiveFalling(false);
+    }
     private void OnApplicationQuit()
     {
         GameAnalyticsEvent.Instance.getLastRoadBeforeExit(RoadGenerator.Instance.CurrentRoad.name);

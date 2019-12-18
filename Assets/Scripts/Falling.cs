@@ -14,9 +14,16 @@ public class Falling : MonoBehaviour
     private bool collision;
     private Vector3 end;
     private RaycastHit hit;
-    
-    private void Start()
+    public static Falling instance;
+        private void Start()
     {
+        if (!instance)
+            instance = this;
+        else if (instance != this)
+            Destroy(this);
+        
+        DontDestroyOnLoad(this.gameObject);
+        
         collision = false;
     }
 
@@ -45,7 +52,7 @@ public class Falling : MonoBehaviour
         }
     }
 
-    private bool IsFalling()
+    public bool IsFalling()
     {
         return !Physics.Linecast(transform.position + Vector3.up * 0.2f, newPlayerPosition + (Vector3.down * radius), out hit, blockingLayer);
     }

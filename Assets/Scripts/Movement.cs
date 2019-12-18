@@ -18,6 +18,10 @@ public class Movement : MonoBehaviour
     
     private void Update()
     {
-        transform.position += speed * Time.deltaTime;
+        if (GameManager.instance.GameOver == false)
+        {
+            transform.position += speed * Time.deltaTime;
+        }
+       
     }
 }
