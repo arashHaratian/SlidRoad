@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     private float Count;
     private int AdsCount;
     public bool isMoveBall;
+    public bool iswinTheGame;
     #endregion
     
 //    [SerializeField]private ParticleSystem playerParticle;
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
     {
         GameAnalytics.NewDesignEvent("test");
         isMoveBall = false;
+        iswinTheGame = false;
         paused = false; 
         gameOver = false;
         gameSpeed = 0;
@@ -72,6 +74,11 @@ public class GameManager : MonoBehaviour
             {
                 Restart();
             }
+        }
+
+        if (iswinTheGame)
+        {
+             Invoke("WinTheGame", 2);
         }
     }
 
@@ -151,6 +158,7 @@ public class GameManager : MonoBehaviour
 
     public void WinTheGame()
     {
+        iswinTheGame = false;
         isMoveBall = false;
         playerManagerScript.setActiceScoreManager(false);
         PanelAndButtonsManager.instance.WinGame();
