@@ -12,6 +12,7 @@ public class AnimatorManagerForBall : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         anim.SetBool("isRotateBall" , false);
+        anim.SetBool("isWin", false);
 
     }
 
@@ -25,6 +26,16 @@ public class AnimatorManagerForBall : MonoBehaviour
         else 
         {
             anim.SetBool("isRotateBall" , false);
+        }
+
+        if (GameManager.instance.iswinTheGame )
+        {
+            anim.SetBool("isWin", true);
+        }
+
+        else
+        {
+            anim.SetBool("isWin", false);
         }
     }
 }
