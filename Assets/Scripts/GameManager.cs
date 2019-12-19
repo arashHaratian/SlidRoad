@@ -75,11 +75,6 @@ public class GameManager : MonoBehaviour
                 Restart();
             }
         }
-
-        if (iswinTheGame)
-        {
-             Invoke("WinTheGame", 2);
-        }
     }
 
     public void Restart()
@@ -157,6 +152,12 @@ public class GameManager : MonoBehaviour
     }
 
     public void WinTheGame()
+    {
+        Invoke("ShowWinTheGame", 2);
+       
+    }
+
+    public void ShowWinTheGame()
     {
         iswinTheGame = false;
         isMoveBall = false;

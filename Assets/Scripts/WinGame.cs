@@ -9,7 +9,8 @@ public class WinGame : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameManager.instance.  iswinTheGame = true;
+            GameManager.instance.iswinTheGame = true;
+            GameManager.instance.WinTheGame();
         }
     }
 
