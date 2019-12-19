@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public float maxSpeed;
     private float Count;
     private int AdsCount;
+    public bool isMoveBall;
     #endregion
     
 //    [SerializeField]private ParticleSystem playerParticle;
@@ -52,12 +53,13 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         GameAnalytics.NewDesignEvent("test");
+        isMoveBall = false;
         paused = false; 
         gameOver = false;
         gameSpeed = 0;
         Movement.Speed = Vector3.zero;
         playerManagerScript.setActiceScoreManager(false);
-            RoadGenerator.Instance.Restart();
+        //RoadGenerator.Instance.Restart();
         ColorManager.instance.firstStage();
 
     }
@@ -67,12 +69,15 @@ public class GameManager : MonoBehaviour
         if (PanelAndButtonsManager.instance.HUDCanvas.enabled)
         {
             if (Input.GetMouseButton(0))
+            {
                 Restart();
+            }
         }
     }
 
     public void Restart()
     {
+        isMoveBall = true;
         PanelAndButtonsManager.instance.tutotrial.gameObject.SetActive(false);
         playerManagerScript.SetActiveFalling(true);
             gameOverCollider.enabled = true;
@@ -122,7 +127,12 @@ public class GameManager : MonoBehaviour
 
     public void GameIsOver()
     {
-        GameAnalyticsEvent.Instance.getGameOverRoad(RoadGenerator.Instance.CurrentRoad.name);
+        if (PanelAndButtonsManager.instance.HUDCanvas.enabled)
+        {
+            GameAnalyticsEvent.Instance.getGameOverRoad(RoadGenerator.Instance.CurrentRoad.name);
+        }
+
+        isMoveBall = false;
         GameAnalyticsEvent.Instance.getScore();
         playerManagerScript.setActiceScoreManager(false);
         PanelAndButtonsManager.instance.GameOver();
@@ -141,6 +151,7 @@ public class GameManager : MonoBehaviour
 
     public void WinTheGame()
     {
+        isMoveBall = false;
         playerManagerScript.setActiceScoreManager(false);
         PanelAndButtonsManager.instance.WinGame();
         SoundManager.instance.Reset();
@@ -150,7 +161,11 @@ public class GameManager : MonoBehaviour
     }
     private void OnApplicationQuit()
     {
-        GameAnalyticsEvent.Instance.getLastRoadBeforeExit(RoadGenerator.Instance.CurrentRoad.name);
+        if (PanelAndButtonsManager.instance.HUDCanvas.enabled)
+        {
+            GameAnalyticsEvent.Instance.getLastRoadBeforeExit(RoadGenerator.Instance.CurrentRoad.name);
+        }
+        
     }
 
     public void resetPlayerAndCamera()

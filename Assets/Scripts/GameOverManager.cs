@@ -34,13 +34,17 @@ public class GameOverManager : MonoBehaviour
 
     public void CalGameOverPosition(GameObject currentRoad)
     {
-        gameOverPossition = currentRoad.transform.position.y + gameOverHeight;
-        float cubePosition;
-        for (int i = 0; i < currentRoad.transform.childCount; i++)
+        if (PanelAndButtonsManager.instance.HUDCanvas.enabled)
         {
-            cubePosition = currentRoad.transform.GetChild(i).gameObject.transform.position.y;
-            if (cubePosition + gameOverHeight < gameOverPossition)
-                gameOverPossition = cubePosition + gameOverHeight;
+            gameOverPossition = currentRoad.transform.position.y + gameOverHeight;
+            float cubePosition;
+            for (int i = 0; i < currentRoad.transform.childCount; i++)
+            {
+                cubePosition = currentRoad.transform.GetChild(i).gameObject.transform.position.y;
+                if (cubePosition + gameOverHeight < gameOverPossition)
+                    gameOverPossition = cubePosition + gameOverHeight;
+            }
         }
-    }
+        }
+        
 }
