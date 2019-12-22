@@ -7,11 +7,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Gray
-  m_Shader: {fileID: 4800000, guid: e0b8d2cac47656144b46ad92f4ef1e22, type: 3}
+  m_Name: White
+  m_Shader: {fileID: 4800000, guid: 650dd9526735d5b46b79224bc6e94025, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -20,18 +20,6 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailAlbedoMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailMask:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DetailNormalMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -51,38 +39,31 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _ParallaxMap:
+    - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_2C23BFA5: 0
-    - Vector1_83F6B6AD: 0.5
-    - Vector1_970FB7F9: 6
-    - Vector1_A737ED8B: 5
-    - Vector1_C3509AD1: 0.608
-    - Vector1_C686B406: -0.4
+    - _AlphaClip: 0
+    - _Blend: 0
     - _BumpScale: 1
+    - _Cull: 2
     - _Cutoff: 0.5
-    - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
-    - _Mode: 0
     - _OcclusionStrength: 1
-    - _Parallax: 0.02
+    - _ReceiveShadows: 1
+    - _SampleGI: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _UVSec: 0
+    - _Surface: 0
+    - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_23A40CCC: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 0}
-    - Color_7A5B9D85: {r: 1, g: 0, b: 0.020209312, a: 1}
-    - Color_B1D3B990: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 0}
-    - Color_EB5D025E: {r: 0, g: 0.058753774, b: 0.16981131, a: 0}
-    - Vector4_8995800A: {r: -0.2, g: 1, b: 0, a: 0}
-    - _Color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
