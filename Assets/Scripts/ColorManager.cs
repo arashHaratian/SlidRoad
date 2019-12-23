@@ -9,7 +9,7 @@ public class ColorManager : MonoBehaviour
     public static ColorManager instance;
 
     public Image Fog;
-    public Image backGround;
+    //public Image backGround;
 
     //public Color normalModeColor;
     //public Color CameraNormalModeColor;
@@ -58,7 +58,7 @@ public class ColorManager : MonoBehaviour
     public void firstStage()
     {
         Fog.color = fogFirstModeColor;
-        backGround.color = backGroundFirstModeColor;
+       // backGround.color = backGroundFirstModeColor;
         DarkBlockMaterial.SetColor("Color_EB5D025E", firstModeColorDark);
         BlockMaterial.SetColor("Color_EB5D025E", firstModeColor);
         BlockMaterial.SetColor("Color_B1D3B990", textureTintFirst);
@@ -70,7 +70,7 @@ public class ColorManager : MonoBehaviour
     public void secondStage()
     {
         Fog.color = fogSecondModeColor;
-        backGround.color = backGroundSecondModeColor;
+       // backGround.color = backGroundSecondModeColor;
         DarkBlockMaterial.SetColor("Color_EB5D025E", secondModeColorDark);
         BlockMaterial.SetColor("Color_EB5D025E", secondModeColor);
         BlockMaterial.SetColor("Color_B1D3B990", textureTintSecond);
@@ -82,7 +82,7 @@ public class ColorManager : MonoBehaviour
     public void thirdStage()
     {
         Fog.color = fogThirdModeColor;
-        backGround.color = backGroundThirdModeColor;
+        //backGround.color = backGroundThirdModeColor;
         DarkBlockMaterial.SetColor("Color_EB5D025E", thirdModeColorDark);
         BlockMaterial.SetColor("Color_EB5D025E", thirdModeColor);
         BlockMaterial.SetColor("Color_B1D3B990", textureTintThird);
