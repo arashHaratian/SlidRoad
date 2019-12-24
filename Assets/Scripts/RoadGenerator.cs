@@ -22,6 +22,10 @@ public class RoadGenerator : MonoBehaviour
     public GameObject[] step4;
     public GameObject[] step5;
     public GameObject[] step6;
+    public GameObject[] step7;
+    public GameObject[] step8;
+    public GameObject[] step9;
+    public GameObject[] step10;
     public GameObject roadMap;
     public Vector3 firstRoadPosition;
     public GameObject CurrentRoad
@@ -55,6 +59,51 @@ public class RoadGenerator : MonoBehaviour
         if (PanelAndButtonsManager.instance.step1Button_.enabled)
         {
             SpawnTile(step1);
+        }
+        
+        if (PanelAndButtonsManager.instance.step2Button_.enabled)
+        {
+            SpawnTile(step2);
+        }
+        
+        if (PanelAndButtonsManager.instance.step3Button_.enabled)
+        {
+            SpawnTile(step3);
+        }
+        
+        if (PanelAndButtonsManager.instance.step4Button_.enabled)
+        {
+            SpawnTile(step4);
+        }
+        
+        if (PanelAndButtonsManager.instance.step5Button_.enabled)
+        {
+            SpawnTile(step5);
+        }
+        
+        if (PanelAndButtonsManager.instance.step6Button_.enabled)
+        {
+            SpawnTile(step6);
+        }
+        
+        if (PanelAndButtonsManager.instance.step7Button_.enabled)
+        {
+            SpawnTile(step7);
+        }
+        
+        if (PanelAndButtonsManager.instance.step8Button_.enabled)
+        {
+            SpawnTile(step8);
+        }
+        
+        if (PanelAndButtonsManager.instance.step9Button_.enabled)
+        {
+            SpawnTile(step9);
+        }
+        
+        if (PanelAndButtonsManager.instance.step10Button_.enabled)
+        {
+            SpawnTile(step10);
         }
     }
 

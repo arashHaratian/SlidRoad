@@ -19,6 +19,15 @@ public class PanelAndButtonsManager : MonoBehaviour
     public Button policyButton;
     public Slider tutotrial;
     public Button step1Button_;
+    public Button step2Button_;
+    public Button step3Button_;
+    public Button step4Button_;
+    public Button step5Button_;
+    public Button step6Button_;
+    public Button step7Button_;
+    public Button step8Button_;
+    public Button step9Button_;
+    public Button step10Button_;
     public Canvas pauseCanvas;
     public Canvas HUDCanvas;
     public Canvas gameOverCanvas;
@@ -27,6 +36,15 @@ public class PanelAndButtonsManager : MonoBehaviour
     public Canvas diamondCanvas_;
     public Canvas winCanvas_;
     private bool step1;
+    private bool step2;
+    private bool step3;
+    private bool step4;
+    private bool step5;
+    private bool step6;
+    private bool step7;
+    private bool step8;
+    private bool step9;
+    private bool step10;
     //-----------------------------------------------------
     private void Awake()
     {
@@ -138,6 +156,15 @@ public class PanelAndButtonsManager : MonoBehaviour
         muteButton.gameObject.SetActive(true);
         tutotrial.gameObject.SetActive(false);
         step1 = false;
+        step2 = false;
+        step3 = false;
+        step4 = false;
+        step5 = false;
+        step6 = false;
+        step7 = false;
+        step8 = false;
+        step9 = false;
+        step10 = false;
     }
 
     public void OnStep1ButtonClick()
@@ -150,16 +177,160 @@ public class PanelAndButtonsManager : MonoBehaviour
         step1 = true;
     }
 
+    public void OnStep2ButtonClick()
+    {
+        gameOverCanvas.enabled = false;
+        startGameCanvas_.enabled = true;
+        mainMenuCanvas_.enabled = false;
+        pauseCanvas.enabled = false;
+        HUDCanvas.enabled = false;
+        step2 = true;
+    }
+    
+    public void OnStep3ButtonClick()
+    {
+        gameOverCanvas.enabled = false;
+        startGameCanvas_.enabled = true;
+        mainMenuCanvas_.enabled = false;
+        pauseCanvas.enabled = false;
+        HUDCanvas.enabled = false;
+        step3 = true;
+    }
+    
+    public void OnStep4ButtonClick()
+    {
+        gameOverCanvas.enabled = false;
+        startGameCanvas_.enabled = true;
+        mainMenuCanvas_.enabled = false;
+        pauseCanvas.enabled = false;
+        HUDCanvas.enabled = false;
+        step4 = true;
+    }
+    
+    public void OnStep5ButtonClick()
+    {
+        gameOverCanvas.enabled = false;
+        startGameCanvas_.enabled = true;
+        mainMenuCanvas_.enabled = false;
+        pauseCanvas.enabled = false;
+        HUDCanvas.enabled = false;
+        step5 = true;
+    }
+    
+    public void OnStep6ButtonClick()
+    {
+        gameOverCanvas.enabled = false;
+        startGameCanvas_.enabled = true;
+        mainMenuCanvas_.enabled = false;
+        pauseCanvas.enabled = false;
+        HUDCanvas.enabled = false;
+        step6 = true;
+    }
+    
+    public void OnStep7ButtonClick()
+    {
+        gameOverCanvas.enabled = false;
+        startGameCanvas_.enabled = true;
+        mainMenuCanvas_.enabled = false;
+        pauseCanvas.enabled = false;
+        HUDCanvas.enabled = false;
+        step7 = true;
+    }
+    
+    public void OnStep8ButtonClick()
+    {
+        gameOverCanvas.enabled = false;
+        startGameCanvas_.enabled = true;
+        mainMenuCanvas_.enabled = false;
+        pauseCanvas.enabled = false;
+        HUDCanvas.enabled = false;
+        step8 = true;
+    }
+    
+    public void OnStep9ButtonClick()
+    {
+        gameOverCanvas.enabled = false;
+        startGameCanvas_.enabled = true;
+        mainMenuCanvas_.enabled = false;
+        pauseCanvas.enabled = false;
+        HUDCanvas.enabled = false;
+        step9 = true;
+    }
+    
+    public void OnStep10ButtonClick()
+    {
+        gameOverCanvas.enabled = false;
+        startGameCanvas_.enabled = true;
+        mainMenuCanvas_.enabled = false;
+        pauseCanvas.enabled = false;
+        HUDCanvas.enabled = false;
+        step10 = true;
+    }
+    
     public void PlayAgainGame()
     {
+        winCanvas_.enabled = false;
+        Restart();
+        
         if (step1)
         {
             step1Button_.enabled = true;
             OnStep1ButtonClick();
-            winCanvas_.enabled = false;
-            Restart();
         }
-       
+        
+        if (step2)
+        {
+            step2Button_.enabled = true;
+            OnStep2ButtonClick();
+        }
+        
+        if (step3)
+        {
+            step3Button_.enabled = true;
+            OnStep3ButtonClick();
+        }
+        
+        if (step4)
+        {
+            step4Button_.enabled = true;
+            OnStep4ButtonClick();
+        }
+        
+        if (step5)
+        {
+            step5Button_.enabled = true;
+            OnStep5ButtonClick();
+        }
+        
+        if (step6)
+        {
+            step6Button_.enabled = true;
+            OnStep6ButtonClick();
+        }
+        
+        if (step7)
+        {
+            step7Button_.enabled = true;
+            OnStep7ButtonClick();
+        }
+        
+        if (step8)
+        {
+            step8Button_.enabled = true;
+            OnStep8ButtonClick();
+        }
+        
+        if (step9)
+        {
+            step9Button_.enabled = true;
+            OnStep9ButtonClick();
+        }
+        
+        if (step10)
+        {
+            step10Button_.enabled = true;
+            OnStep10ButtonClick();
+        }
     }
     
     public void OnMuteButtonClick()
