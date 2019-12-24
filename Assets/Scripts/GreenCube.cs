@@ -11,7 +11,7 @@ public class GreenCube : MonoBehaviour
     public static bool isGreenEated;
     public static int countGreenCubes;
     private Animator anim;
-
+    private float delay = 0.4f;
     private void Start()
     {
         countGreenCubes = PlayerPrefs.GetInt("Green Cubes Count");
@@ -37,7 +37,7 @@ public class GreenCube : MonoBehaviour
 
                 ScoreManager.combo++;
                 ShowCombo.Instance.UpdateText(ScoreManager.combo.ToString(), "x");
-              Invoke("DestroyGreenCube", 1);
+              Invoke("DestroyGreenCube", delay);
                 
                 if (ScoreManager.numberOfTakenGreenboxes == 3)
                 {
