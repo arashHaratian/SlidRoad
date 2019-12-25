@@ -19,10 +19,10 @@ public class GameOverManager : MonoBehaviour
 
     private void Update()
     {
-        if (PlayerManager.instance.transform.position.y < gameOverPossition)
+        if (GameManager.instance.GameOver == false && PlayerManager.instance.transform.position.y < gameOverPossition)
         {
             GameManager.instance.GameOver = true;
-            //GameManager.instance.GameIsOver();
+            GameManager.instance.GameIsOver();
         }
           
     }
