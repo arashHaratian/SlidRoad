@@ -56,52 +56,52 @@ public class RoadGenerator : MonoBehaviour
     private void Init()
     {
         SpawnFirstTile();
-        if (PanelAndButtonsManager.instance.step1Button_.enabled)
+        if (PanelAndButtonsManager.instance.step1)
         {
             SpawnTile(step1);
         }
         
-        if (PanelAndButtonsManager.instance.step2Button_.enabled)
+        if (PanelAndButtonsManager.instance.step2)
         {
             SpawnTile(step2);
         }
         
-        if (PanelAndButtonsManager.instance.step3Button_.enabled)
+        if (PanelAndButtonsManager.instance.step3)
         {
             SpawnTile(step3);
         }
         
-        if (PanelAndButtonsManager.instance.step4Button_.enabled)
+        if (PanelAndButtonsManager.instance.step4)
         {
             SpawnTile(step4);
         }
         
-        if (PanelAndButtonsManager.instance.step5Button_.enabled)
+        if (PanelAndButtonsManager.instance.step5)
         {
             SpawnTile(step5);
         }
         
-        if (PanelAndButtonsManager.instance.step6Button_.enabled)
+        if (PanelAndButtonsManager.instance.step6)
         {
             SpawnTile(step6);
         }
         
-        if (PanelAndButtonsManager.instance.step7Button_.enabled)
+        if (PanelAndButtonsManager.instance.step7)
         {
             SpawnTile(step7);
         }
         
-        if (PanelAndButtonsManager.instance.step8Button_.enabled)
+        if (PanelAndButtonsManager.instance.step8)
         {
             SpawnTile(step8);
         }
         
-        if (PanelAndButtonsManager.instance.step9Button_.enabled)
+        if (PanelAndButtonsManager.instance.step9)
         {
             SpawnTile(step9);
         }
         
-        if (PanelAndButtonsManager.instance.step10Button_.enabled)
+        if (PanelAndButtonsManager.instance.step10)
         {
             SpawnTile(step10);
         }

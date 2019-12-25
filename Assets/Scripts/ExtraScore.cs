@@ -28,7 +28,36 @@ public class ExtraScore : MonoBehaviour
         }
         else if(first)
         {
-            ScoreManager.score += extraScore_;
+            if (PanelAndButtonsManager.instance.step1)
+                ScoreManager.score1 += extraScore_;
+            
+            if (PanelAndButtonsManager.instance.step2)
+                ScoreManager.score2 += extraScore_;
+            
+            if (PanelAndButtonsManager.instance.step3)
+                ScoreManager.score3 += extraScore_;
+            
+            if (PanelAndButtonsManager.instance.step4)
+                ScoreManager.score4 += extraScore_;
+            
+            if (PanelAndButtonsManager.instance.step5)
+                ScoreManager.score5 += extraScore_;
+            
+            if (PanelAndButtonsManager.instance.step6)
+                ScoreManager.score6 += extraScore_;
+            
+            if (PanelAndButtonsManager.instance.step7)
+                ScoreManager.score7 += extraScore_;
+            
+            if (PanelAndButtonsManager.instance.step8)
+                ScoreManager.score8 += extraScore_;
+            
+            if (PanelAndButtonsManager.instance.step9)
+                ScoreManager.score9 += extraScore_;
+            
+            if (PanelAndButtonsManager.instance.step10)
+                ScoreManager.score10 += extraScore_;
+            
             ExtraScoreText.Instance.FinishExtraScore();
             mult = 5;
             extraScore_ = 0;

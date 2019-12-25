@@ -35,16 +35,16 @@ public class PanelAndButtonsManager : MonoBehaviour
     public static PanelAndButtonsManager instance = null;
     public Canvas diamondCanvas_;
     public Canvas winCanvas_;
-    private bool step1;
-    private bool step2;
-    private bool step3;
-    private bool step4;
-    private bool step5;
-    private bool step6;
-    private bool step7;
-    private bool step8;
-    private bool step9;
-    private bool step10;
+    public bool step1;
+    public bool step2;
+    public bool step3;
+    public bool step4;
+    public bool step5;
+    public bool step6;
+    public bool step7;
+    public bool step8;
+    public bool step9;
+    public bool step10;
     //-----------------------------------------------------
     private void Awake()
     {
@@ -93,7 +93,16 @@ public class PanelAndButtonsManager : MonoBehaviour
     }
     public void PlayMenu()
     {
-        ScoreManager.score = 0;
+        ScoreManager.score1 = 0;
+        ScoreManager.score2 = 0;
+        ScoreManager.score3 = 0;
+        ScoreManager.score4 = 0;
+        ScoreManager.score5 = 0;
+        ScoreManager.score6 = 0;
+        ScoreManager.score7 = 0;
+        ScoreManager.score8 = 0;
+        ScoreManager.score9 = 0;
+        ScoreManager.score10 = 0;
         startGameCanvas_.enabled = false;
         gameOverCanvas.enabled = false;
         pauseCanvas.enabled = false;
