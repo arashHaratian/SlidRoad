@@ -33,6 +33,7 @@ public class AnimatorManagerForBall : MonoBehaviour
             anim.SetBool("isWin", true);
             PlayerManager.instance.smokeParticles.SetActive(false);
             PlayerManager.instance.fireParticles.SetActive(false);
+            Invoke("SetActiveBall", 2);
         }
 
         else
@@ -40,4 +41,10 @@ public class AnimatorManagerForBall : MonoBehaviour
             anim.SetBool("isWin", false);
         }
     }
+
+    private void SetActiveBall()
+    {
+        gameObject.SetActive(false);
+    }
+    
 }

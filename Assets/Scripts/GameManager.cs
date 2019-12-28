@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     #region GameSpeed
     public float firstSpeed;
-    private float gameSpeed;
+    public float gameSpeed;
     public float timeIncreaseSpeed;
     public float maxSpeed;
     private float Count;

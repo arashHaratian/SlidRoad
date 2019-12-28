@@ -58,6 +58,9 @@ public class PanelAndButtonsManager : MonoBehaviour
 
     private void Start()
     {
+        RoadGenerator.Instance.Restart();
+        Movement.Speed = Vector3.back * GameManager.instance.firstSpeed;
+        PlayerManager.instance.gameObject.SetActive(false);
         startGameCanvas_.enabled = false;
         pauseCanvas.enabled = false;
         gameOverCanvas.enabled = false;
@@ -155,6 +158,10 @@ public class PanelAndButtonsManager : MonoBehaviour
 
     public void OpenMainMenu()
     {
+        GameManager.instance.resetPlayerAndCamera();
+        RoadGenerator.Instance.Restart();
+        Movement.Speed = Vector3.back * GameManager.instance.firstSpeed;
+        PlayerManager.instance.gameObject.SetActive(false);
         winCanvas_.enabled = false;
         diamondCanvas_.enabled = true;
         mainMenuCanvas_.enabled = true;
@@ -178,104 +185,74 @@ public class PanelAndButtonsManager : MonoBehaviour
 
     public void OnStep1ButtonClick()
     {
-        gameOverCanvas.enabled = false;
-        startGameCanvas_.enabled = true;
-        mainMenuCanvas_.enabled = false;
-        pauseCanvas.enabled = false;
-        HUDCanvas.enabled = false;
         step1 = true;
+        ClickButtonSteps();
     }
 
     public void OnStep2ButtonClick()
     {
-        gameOverCanvas.enabled = false;
-        startGameCanvas_.enabled = true;
-        mainMenuCanvas_.enabled = false;
-        pauseCanvas.enabled = false;
-        HUDCanvas.enabled = false;
         step2 = true;
+        ClickButtonSteps();
     }
     
     public void OnStep3ButtonClick()
     {
-        gameOverCanvas.enabled = false;
-        startGameCanvas_.enabled = true;
-        mainMenuCanvas_.enabled = false;
-        pauseCanvas.enabled = false;
-        HUDCanvas.enabled = false;
         step3 = true;
+        ClickButtonSteps();
     }
     
     public void OnStep4ButtonClick()
     {
-        gameOverCanvas.enabled = false;
-        startGameCanvas_.enabled = true;
-        mainMenuCanvas_.enabled = false;
-        pauseCanvas.enabled = false;
-        HUDCanvas.enabled = false;
         step4 = true;
+        ClickButtonSteps();
     }
     
     public void OnStep5ButtonClick()
     {
-        gameOverCanvas.enabled = false;
-        startGameCanvas_.enabled = true;
-        mainMenuCanvas_.enabled = false;
-        pauseCanvas.enabled = false;
-        HUDCanvas.enabled = false;
         step5 = true;
+        ClickButtonSteps();
     }
     
     public void OnStep6ButtonClick()
     {
-        gameOverCanvas.enabled = false;
-        startGameCanvas_.enabled = true;
-        mainMenuCanvas_.enabled = false;
-        pauseCanvas.enabled = false;
-        HUDCanvas.enabled = false;
         step6 = true;
+        ClickButtonSteps();
     }
     
     public void OnStep7ButtonClick()
     {
-        gameOverCanvas.enabled = false;
-        startGameCanvas_.enabled = true;
-        mainMenuCanvas_.enabled = false;
-        pauseCanvas.enabled = false;
-        HUDCanvas.enabled = false;
         step7 = true;
+        ClickButtonSteps();
     }
     
     public void OnStep8ButtonClick()
     {
-        gameOverCanvas.enabled = false;
-        startGameCanvas_.enabled = true;
-        mainMenuCanvas_.enabled = false;
-        pauseCanvas.enabled = false;
-        HUDCanvas.enabled = false;
         step8 = true;
+        ClickButtonSteps();
     }
     
     public void OnStep9ButtonClick()
     {
-        gameOverCanvas.enabled = false;
-        startGameCanvas_.enabled = true;
-        mainMenuCanvas_.enabled = false;
-        pauseCanvas.enabled = false;
-        HUDCanvas.enabled = false;
         step9 = true;
+        ClickButtonSteps();
     }
     
     public void OnStep10ButtonClick()
     {
+        step10 = true;
+        ClickButtonSteps();
+    }
+
+    private void ClickButtonSteps()
+    {
+        PlayerManager.instance.gameObject.SetActive(true);
         gameOverCanvas.enabled = false;
         startGameCanvas_.enabled = true;
         mainMenuCanvas_.enabled = false;
         pauseCanvas.enabled = false;
         HUDCanvas.enabled = false;
-        step10 = true;
+        
     }
-    
     public void PlayAgainGame()
     {
         winCanvas_.enabled = false;

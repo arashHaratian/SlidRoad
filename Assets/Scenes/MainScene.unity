@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2260,7 +2260,6 @@ GameObject:
   m_Component:
   - component: {fileID: 732011332}
   - component: {fileID: 732011334}
-  - component: {fileID: 732011333}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -2289,35 +2288,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
---- !u!114 &732011333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732011331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.4348196, g: 0.3999644, b: 0.7924528, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
 --- !u!222 &732011334
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7949,7 +7919,7 @@ PrefabInstance:
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: step1.Array.size
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
@@ -7959,12 +7929,12 @@ PrefabInstance:
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: step4.Array.size
-      value: 15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: step5.Array.size
-      value: 17
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
@@ -7994,7 +7964,7 @@ PrefabInstance:
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: step3.Array.size
-      value: 12
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
@@ -8005,7 +7975,7 @@ PrefabInstance:
         type: 3}
       propertyPath: step1.Array.data[0]
       value: 
-      objectReference: {fileID: 412150904736649752, guid: 9f502f4025025e34fa270482711d115b,
+      objectReference: {fileID: 2813990732858260055, guid: 4e78efcfcca228b479f8de021ce03a31,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
@@ -8065,7 +8035,7 @@ PrefabInstance:
         type: 3}
       propertyPath: step4.Array.data[0]
       value: 
-      objectReference: {fileID: 7907844245087639102, guid: 32dd86dcee6b9354f93d9529fcead0e1,
+      objectReference: {fileID: 2813990732858260055, guid: 4e78efcfcca228b479f8de021ce03a31,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
@@ -8077,31 +8047,31 @@ PrefabInstance:
         type: 3}
       propertyPath: step6.Array.data[0]
       value: 
-      objectReference: {fileID: 7907844245087639102, guid: 32dd86dcee6b9354f93d9529fcead0e1,
+      objectReference: {fileID: 2813990732858260055, guid: 4e78efcfcca228b479f8de021ce03a31,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: step7.Array.data[0]
       value: 
-      objectReference: {fileID: 7849711492816271853, guid: b467c934fca7469419e64ecbc8668bb7,
+      objectReference: {fileID: 2813990732858260055, guid: 4e78efcfcca228b479f8de021ce03a31,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: step8.Array.data[0]
       value: 
-      objectReference: {fileID: 7849711492816271853, guid: b467c934fca7469419e64ecbc8668bb7,
+      objectReference: {fileID: 2813990732858260055, guid: 4e78efcfcca228b479f8de021ce03a31,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: step9.Array.data[0]
       value: 
-      objectReference: {fileID: 412150904736649752, guid: 9f502f4025025e34fa270482711d115b,
+      objectReference: {fileID: 2813990732858260055, guid: 4e78efcfcca228b479f8de021ce03a31,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
       propertyPath: step10.Array.data[0]
       value: 
-      objectReference: {fileID: 7849711492816271853, guid: b467c934fca7469419e64ecbc8668bb7,
+      objectReference: {fileID: 2813990732858260055, guid: 4e78efcfcca228b479f8de021ce03a31,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
@@ -8167,7 +8137,7 @@ PrefabInstance:
         type: 3}
       propertyPath: step3.Array.data[0]
       value: 
-      objectReference: {fileID: 2091877114292134747, guid: 96dbae828f0343e45b92ab85d82a1b50,
+      objectReference: {fileID: 2813990732858260055, guid: 4e78efcfcca228b479f8de021ce03a31,
         type: 3}
     - target: {fileID: 8709932130147190013, guid: 2a55b368d5bc33740b33ff1d62b7078e,
         type: 3}
