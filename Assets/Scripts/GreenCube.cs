@@ -11,7 +11,7 @@ public class GreenCube : MonoBehaviour
     public static bool isGreenEated;
     public static int countGreenCubes;
     private Animator anim;
-    private float delay = 0.4f;
+    private float delay = 0.3f;
     private void Start()
     {
         countGreenCubes = PlayerPrefs.GetInt("Green Cubes Count");
@@ -54,7 +54,7 @@ public class GreenCube : MonoBehaviour
                     ColorManager.instance.thirdStage();
                 }
 
-                if (ScoreManager.numberOfTakenGreenboxes == 7)
+                if (ScoreManager.numberOfTakenGreenboxes == 6)
                 {
                     PlayerManager.instance.smokeParticles.SetActive(false);
                     PlayerManager.instance.fireParticles.SetActive(true);
