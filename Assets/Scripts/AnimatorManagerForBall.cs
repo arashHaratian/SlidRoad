@@ -31,6 +31,8 @@ public class AnimatorManagerForBall : MonoBehaviour
         if (GameManager.instance.iswinTheGame )
         {
             anim.SetBool("isWin", true);
+            PlayerManager.instance.smokeParticles.SetActive(false);
+            PlayerManager.instance.fireParticles.SetActive(false);
         }
 
         else
