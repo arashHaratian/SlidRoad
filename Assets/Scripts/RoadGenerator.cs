@@ -26,6 +26,7 @@ public class RoadGenerator : MonoBehaviour
     public GameObject[] step8;
     public GameObject[] step9;
     public GameObject[] step10;
+    public GameObject[] backgrondOfMainMenu;
     public GameObject roadMap;
     public Vector3 firstRoadPosition;
     public GameObject CurrentRoad
@@ -53,9 +54,26 @@ public class RoadGenerator : MonoBehaviour
         activeTiles = new List<GameObject>();
     }
 
+   
+    private IEnumerator SpawnTileAfterSeconds()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(15);
+            if (PanelAndButtonsManager.instance.mainMenuCanvas_.enabled)
+            {
+                EndlesSpawnTile();
+                DeleteTile();
+            }
+           
+        }
+    }
+
     private void Init()
     {
         SpawnFirstTile();
+           
+        
         if (PanelAndButtonsManager.instance.step1)
         {
             SpawnTile(step1);
@@ -105,7 +123,13 @@ public class RoadGenerator : MonoBehaviour
         {
             SpawnTile(step10);
         }
+
+        if (PanelAndButtonsManager.instance.mainMenuCanvas_.enabled)
+        {
+            SpawnTile(backgrondOfMainMenu);
+        }
     }
+    
 
     public void Restart()
     {
@@ -127,16 +151,32 @@ public class RoadGenerator : MonoBehaviour
             lastRoad = Instantiate(tiles[i], lastRoad.transform.GetChild(0).gameObject.transform.position,lastRoad.transform.rotation);
             lastRoad.transform.parent = roadMap.transform;
             activeTiles.Add(lastRoad);
+            
         }
-        
+
+
+        if (PanelAndButtonsManager.instance.mainMenuCanvas_.enabled)
+        {
+             StartCoroutine(SpawnTileAfterSeconds());
+        }
+    }
+    
+    public void EndlesSpawnTile()
+    {
+        lastRoad = Instantiate(backgrondOfMainMenu[RandomPrefabIndex(backgrondOfMainMenu)], lastRoad.transform.GetChild(0).gameObject.transform.position,lastRoad.transform.rotation);
+        lastRoad.transform.parent = roadMap.transform;
+        activeTiles.Add(lastRoad);
     }
 
     private void SpawnFirstTile()
     {
+      
         lastRoad = Instantiate(firstTile, firstRoadPosition, Quaternion.identity);
         lastRoad.transform.parent = roadMap.transform;
         activeTiles.Add(lastRoad);
         GameOverManager.instance.CalGameOverPosition(lastRoad);
+        
+       
     }
 
    public void DeleteTile()
@@ -144,4 +184,17 @@ public class RoadGenerator : MonoBehaviour
         Destroy(activeTiles[0]);
         activeTiles.RemoveAt(0);
     }
+ 
+   private int RandomPrefabIndex(GameObject[] tiles)
+   {
+       if (tiles.Length <= 1)
+           return 0;
+       int randomIndex = lastPrefabIndex;
+       while (randomIndex == lastPrefabIndex)
+       {
+           randomIndex = Random.Range(0, tiles.Length);
+       }
+       lastPrefabIndex = randomIndex;
+       return randomIndex;
+   }
 }

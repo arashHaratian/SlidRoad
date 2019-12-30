@@ -59,7 +59,7 @@ public class PanelAndButtonsManager : MonoBehaviour
     private void Start()
     {
         RoadGenerator.Instance.Restart();
-        Movement.Speed = Vector3.back * GameManager.instance.firstSpeed;
+        Movement.Speed = Vector3.back * 5;
         PlayerManager.instance.gameObject.SetActive(false);
         startGameCanvas_.enabled = false;
         pauseCanvas.enabled = false;
@@ -158,9 +158,12 @@ public class PanelAndButtonsManager : MonoBehaviour
 
     public void OpenMainMenu()
     {
-        GameManager.instance.resetPlayerAndCamera();
+        Restart();
+        GameManager.instance.iswinTheGame = false;
+        GameManager.instance.GameOver = false;
         RoadGenerator.Instance.Restart();
-        Movement.Speed = Vector3.back * GameManager.instance.firstSpeed;
+        Movement.Speed = Vector3.back * 5;
+
         PlayerManager.instance.gameObject.SetActive(false);
         winCanvas_.enabled = false;
         diamondCanvas_.enabled = true;
@@ -255,6 +258,8 @@ public class PanelAndButtonsManager : MonoBehaviour
     }
     public void PlayAgainGame()
     {
+        GameManager.instance.iswinTheGame = false;
+        GameManager.instance.GameOver = false;
         winCanvas_.enabled = false;
         Restart();
         

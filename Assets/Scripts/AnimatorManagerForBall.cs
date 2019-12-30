@@ -44,7 +44,11 @@ public class AnimatorManagerForBall : MonoBehaviour
 
     private void SetActiveBall()
     {
-        gameObject.SetActive(false);
+        if (GameManager.instance.iswinTheGame)
+        {
+            gameObject.SetActive(false);
+        }
+      
     }
     
 }
