@@ -45,6 +45,8 @@ public class PanelAndButtonsManager : MonoBehaviour
     public bool step8;
     public bool step9;
     public bool step10;
+   
+    
     //-----------------------------------------------------
     private void Awake()
     {
@@ -60,7 +62,6 @@ public class PanelAndButtonsManager : MonoBehaviour
     {
         RoadGenerator.Instance.Restart();
         Movement.Speed = Vector3.back * 5;
-        PlayerManager.instance.gameObject.SetActive(false);
         startGameCanvas_.enabled = false;
         pauseCanvas.enabled = false;
         gameOverCanvas.enabled = false;

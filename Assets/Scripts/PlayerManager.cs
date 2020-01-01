@@ -38,6 +38,7 @@ public class PlayerManager : MonoBehaviour
         wrongTabPosition = false;
         resetPositionPlayer = new Vector3(0, 2, 14.5f);
         resetRoadMapPosition = new Vector3(0, 0, 14.5f);
+        gameObject.SetActive(false);
     }
 
     private void Update()
