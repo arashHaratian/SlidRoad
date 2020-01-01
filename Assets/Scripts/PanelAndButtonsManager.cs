@@ -159,11 +159,10 @@ public class PanelAndButtonsManager : MonoBehaviour
 
     public void OpenMainMenu()
     {
-        Restart();
-        GameManager.instance.iswinTheGame = false;
+        GameManager.instance.iswinTheGame = false; 
         GameManager.instance.GameOver = false;
-        RoadGenerator.Instance.Restart();
-        Movement.Speed = Vector3.back * 5;
+//        RoadGenerator.Instance.Restart();
+        
 
         PlayerManager.instance.gameObject.SetActive(false);
         winCanvas_.enabled = false;
@@ -185,6 +184,8 @@ public class PanelAndButtonsManager : MonoBehaviour
         step8 = false;
         step9 = false;
         step10 = false;
+        Restart();
+        Movement.Speed = Vector3.back * 5;
     }
 
     public void OnStep1ButtonClick()
@@ -333,7 +334,7 @@ public class PanelAndButtonsManager : MonoBehaviour
     
     public void openPrivacyPalicy()
     {
-        Application.OpenURL("https://www.joyixir.com/privacy/slidroad.html");   
+        Application.OpenURL("https://www.joyixir.com/en/privacy/slidroad/");   
     }
     
 }

@@ -57,6 +57,7 @@ public class RoadGenerator : MonoBehaviour
    
     private IEnumerator SpawnTileAfterSeconds()
     {
+        Debug.Log("routine");
         while (true)
         {
             yield return new WaitForSeconds(15);
@@ -65,7 +66,6 @@ public class RoadGenerator : MonoBehaviour
                 EndlesSpawnTile();
                 DeleteTile();
             }
-           
         }
     }
 
@@ -73,6 +73,15 @@ public class RoadGenerator : MonoBehaviour
     {
         SpawnFirstTile();
            
+        
+        if (PanelAndButtonsManager.instance.mainMenuCanvas_.enabled)
+        {
+            SpawnTile(backgrondOfMainMenu);
+            StartCoroutine(SpawnTileAfterSeconds());
+            return;
+        }
+        StopAllCoroutines();
+        
         
         if (PanelAndButtonsManager.instance.step1)
         {
@@ -123,11 +132,6 @@ public class RoadGenerator : MonoBehaviour
         {
             SpawnTile(step10);
         }
-
-        if (PanelAndButtonsManager.instance.mainMenuCanvas_.enabled)
-        {
-            SpawnTile(backgrondOfMainMenu);
-        }
     }
     
 
@@ -148,16 +152,10 @@ public class RoadGenerator : MonoBehaviour
     {
         for (int i = 0; i < tiles.Length; i++)
         {
-            lastRoad = Instantiate(tiles[i], lastRoad.transform.GetChild(0).gameObject.transform.position,lastRoad.transform.rotation);
+            lastRoad = Instantiate(tiles[i], lastRoad.transform.GetChild(0).gameObject.transform.position,
+                lastRoad.transform.rotation);
             lastRoad.transform.parent = roadMap.transform;
             activeTiles.Add(lastRoad);
-            
-        }
-
-
-        if (PanelAndButtonsManager.instance.mainMenuCanvas_.enabled)
-        {
-             StartCoroutine(SpawnTileAfterSeconds());
         }
     }
     
