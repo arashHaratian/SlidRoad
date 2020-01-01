@@ -540,10 +540,20 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2271595167087231102, guid: d90316e7ed66540439541f018770ab1f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 280
+      objectReference: {fileID: 0}
     - target: {fileID: 2271595166141313427, guid: d90316e7ed66540439541f018770ab1f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000030517578
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271595166141313427, guid: d90316e7ed66540439541f018770ab1f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5370011529115111606, guid: d90316e7ed66540439541f018770ab1f,
         type: 3}
@@ -3488,21 +3498,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4378946474477044550, guid: 4c0eeaf14439099459a198ea70f178e4,
-        type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 800
-      objectReference: {fileID: 0}
-    - target: {fileID: 4378946474477044550, guid: 4c0eeaf14439099459a198ea70f178e4,
-        type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 4378946474477044550, guid: 4c0eeaf14439099459a198ea70f178e4,
-        type: 3}
-      propertyPath: m_ScreenMatchMode
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c0eeaf14439099459a198ea70f178e4, type: 3}
 --- !u!1001 &4808529687643332602
@@ -3700,7 +3695,7 @@ PrefabInstance:
     - target: {fileID: 658298489269472165, guid: fa4114c169826fd47bb036fe2ba52fd5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 426
+      value: 424.7027
       objectReference: {fileID: 0}
     - target: {fileID: 658298489269472165, guid: fa4114c169826fd47bb036fe2ba52fd5,
         type: 3}
@@ -4108,7 +4103,7 @@ PrefabInstance:
     - target: {fileID: 6967742836442471404, guid: 8c2e800a41f491a4eb12b8e39baa74ee,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 426
+      value: 424.7027
       objectReference: {fileID: 0}
     - target: {fileID: 6967742836442471404, guid: 8c2e800a41f491a4eb12b8e39baa74ee,
         type: 3}
@@ -4342,7 +4337,7 @@ PrefabInstance:
     - target: {fileID: 799782759426018763, guid: 8885322d168b03e44ada71f01248df1c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 425.5
+      value: 424.2027
       objectReference: {fileID: 0}
     - target: {fileID: 799782759426018763, guid: 8885322d168b03e44ada71f01248df1c,
         type: 3}
@@ -4905,26 +4900,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1874637719}
-    - target: {fileID: 7597213417155341925, guid: 974c00410f26a3d4e89344fdd9eff475,
-        type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 800
-      objectReference: {fileID: 0}
-    - target: {fileID: 7597213417155341925, guid: 974c00410f26a3d4e89344fdd9eff475,
-        type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 7597213417155341925, guid: 974c00410f26a3d4e89344fdd9eff475,
-        type: 3}
-      propertyPath: m_ScreenMatchMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7597213417155341925, guid: 974c00410f26a3d4e89344fdd9eff475,
-        type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 974c00410f26a3d4e89344fdd9eff475, type: 3}
 --- !u!1001 &8709932131583575628
@@ -6291,11 +6266,11 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
