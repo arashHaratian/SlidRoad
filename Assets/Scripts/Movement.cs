@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
     
     private void Update()
     {
-        if (GameManager.instance.iswinTheGame == false && GameManager.instance.GameOver == false)
+        if (GameManager.instance.iswinTheGame == false && GameManager.instance.GameOver == false && PanelAndButtonsManager.instance.winCanvas_.enabled == false)
         {
             transform.position += speed * Time.deltaTime;
         }

@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
     {
         if (PanelAndButtonsManager.instance.HUDCanvas.enabled)
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) && isMoveBall == false)
             {
                 Restart();
             }
@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
+        SoundManager.instance.PlayGame();
         isMoveBall = true;
         PanelAndButtonsManager.instance.tutotrial.gameObject.SetActive(false);
         playerManagerScript.SetActiveFalling(true);

@@ -25,9 +25,9 @@ public class SoundManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    private void Start()
+    public void PlayGame()
     {
-        movePlayer.volume = 0;
+        movePlayer.volume = 1;
         movePlayer.Play();
     }
 
@@ -67,7 +67,7 @@ public class SoundManager : MonoBehaviour
 
     public void ChangeVolumeMovement(float volume)
     {
-        movePlayer.volume = volume;
+       //movePlayer.volume = volume;
     }
 
     public void Mute(bool stateOfVol)

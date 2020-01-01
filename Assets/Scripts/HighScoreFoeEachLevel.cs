@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class HighScoreFoeEachLevel : MonoBehaviour
 {
-    public Button StepButton;
     [SerializeField] private Text _highScoreText;
     public int level;
 
