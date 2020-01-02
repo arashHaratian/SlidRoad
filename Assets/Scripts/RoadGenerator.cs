@@ -156,6 +156,7 @@ public class RoadGenerator : MonoBehaviour
                 lastRoad.transform.rotation);
             lastRoad.transform.parent = roadMap.transform;
             activeTiles.Add(lastRoad);
+            PackageManager.Instance.InsertPackage(lastRoad);
         }
     }
     

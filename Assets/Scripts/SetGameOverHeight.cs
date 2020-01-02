@@ -10,7 +10,7 @@ public class SetGameOverHeight : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GameOverManager.instance.CalGameOverPosition(RoadGenerator.Instance.CurrentRoad);
-            PackageManager.Instance.InsertPackage(RoadGenerator.Instance.ActiveTiles[1]);
+            
         }
         
     }
