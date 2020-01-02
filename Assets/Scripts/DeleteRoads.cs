@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class DetectionOfPlayerMovement : MonoBehaviour
+public class DeleteRoads : MonoBehaviour
 {
 //    public static int num;
     private void OnTriggerEnter(Collider other)
@@ -12,8 +12,8 @@ public class DetectionOfPlayerMovement : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             RoadGenerator.Instance.DeleteTile();
-            GameOverManager.instance.CalGameOverPosition(RoadGenerator.Instance.CurrentRoad);
-            PackageManager.Instance.InsertPackage(RoadGenerator.Instance.ActiveTiles[1]);
+           // GameOverManager.instance.CalGameOverPosition(RoadGenerator.Instance.CurrentRoad);
+           // PackageManager.Instance.InsertPackage(RoadGenerator.Instance.ActiveTiles[1]);
         }
         
     }

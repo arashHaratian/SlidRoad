@@ -59,7 +59,7 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.GameOver == false)
+        if (GameManager.instance.GameOver == false && GameManager.instance.iswinTheGame == false)
         {
             if (PanelAndButtonsManager.instance.step1) 
                 score1 += Time.deltaTime * constScoreMult * combo;

@@ -6,4 +6,5 @@ public class PackageChance : MonoBehaviour
 {
     public int probabiltyInsertGoodPackage;
     public int probabiltyInsertBadPackage;
+    
 }

@@ -45,6 +45,7 @@ public class PackageManager: MonoBehaviour
     
     void SpawnGoodObject()
     {
+       
         if(goodPoints.Count == 0)
             return;
         int probabilityGoodPackage;
@@ -55,7 +56,7 @@ public class PackageManager: MonoBehaviour
         {
             Instantiate(greenCube, instantiatePoint);
         }
-   }
+    }
     void SpawnBadObject()
     {
         if (ScoreManager.numberOfTakenGreenboxes == 0 || badPoints.Count == 0)
