@@ -34,18 +34,16 @@ public class GameOverManager : MonoBehaviour
 
     public void CalGameOverPosition(GameObject currentRoad)
     {
-        if (PanelAndButtonsManager.instance.HUDCanvas.enabled)
-        {
-            gameOverPossition =  gameOverHeight;
+        
+        gameOverPossition =  gameOverHeight;
             float cubePosition;
             for (int i = 0; i < currentRoad.transform.childCount; i++)
             {
                 cubePosition = currentRoad.transform.GetChild(i).gameObject.transform.position.y;
                 if (cubePosition  < gameOverPossition)
                     gameOverPossition = cubePosition ;
-
             }
-        }
+          
     }
         
 }

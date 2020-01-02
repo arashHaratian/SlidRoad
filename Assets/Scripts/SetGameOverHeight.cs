@@ -9,6 +9,7 @@ public class SetGameOverHeight : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            RoadGenerator.Instance.CurrentRoad = transform.parent.gameObject;
             GameOverManager.instance.CalGameOverPosition(RoadGenerator.Instance.CurrentRoad);
             
         }

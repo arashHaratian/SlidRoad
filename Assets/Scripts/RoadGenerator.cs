@@ -29,11 +29,8 @@ public class RoadGenerator : MonoBehaviour
     public GameObject[] backgrondOfMainMenu;
     public GameObject roadMap;
     public Vector3 firstRoadPosition;
-    public GameObject CurrentRoad
-    {
-        
-        get { return activeTiles[1]; }
-    }
+    public GameObject CurrentRoad;
+    
     private GameObject lastRoad;
     private Vector3 endOfRoad;
     private int lastPrefabIndex;
@@ -173,7 +170,7 @@ public class RoadGenerator : MonoBehaviour
         lastRoad = Instantiate(firstTile, firstRoadPosition, Quaternion.identity);
         lastRoad.transform.parent = roadMap.transform;
         activeTiles.Add(lastRoad);
-        GameOverManager.instance.CalGameOverPosition(lastRoad);
+       // GameOverManager.instance.CalGameOverPosition(lastRoad);
         
        
     }
